@@ -20,7 +20,7 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Malja
+title:                 8mprogrammer
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -49,9 +49,9 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             ERROR
-    url:               /example/
+    url:               /error_post/
   - title:             Blog
-    url:               /Blog/
+    url:               /blog/
   - title:             About
     url:               /about.md/
 
