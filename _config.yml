@@ -10,7 +10,7 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 8mprogrammer
+title:                 Jun Su Kim
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -18,10 +18,10 @@ description:           >
   Learning Dev
 
 # A shorter description for the sidebar.
-tagline:                낑낑             
+tagline:               llama me Malja              
 
 # A list of keywords for your blog
-keywords:              [Yeardream,Developer,Data]
+keywords:              [Yeardream,Developer,Data Mining,Python]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -351,12 +351,12 @@ plugins:
 #   publisher:           <id>
 #   admins:              <id>
 
-# Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
-#   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
+Used on index and about sites
+social:
+  name:                <firstname> <lastname>
+  links:
+    - https://twitter.com/<username>
+    - https://github.com/<username>
 
 
 # Plugin Configs
