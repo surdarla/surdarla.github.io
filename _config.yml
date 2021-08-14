@@ -39,7 +39,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             ERROR
-    url:               /error_post/
+    url:               /error_post/_post/
   - title:             Blog
     url:               /blog/
   - title:             About
