@@ -8,9 +8,14 @@ sitemap: false
 permalink: /doc/
 ---
 
-주요내용을 컨트롤+d로 쓰자.
+description이랑 제목 바로 밑의 주요내용은 컨트롤+d로 동시수정하자.
 위에 description은 안나오고 위에만 나온다.
 [please let me know](mailto:mail@qwtel.com).이런식으로 link가능하다.
+
+이렇게 링크많이 달릴 페이지를 만들때 사용하는 기능인듯.
+1. 파일 하나 만들어서
+2. 안에 readme.md만들고, 메인페이지를 만들어준다.
+3. 링크들로 체운다.
 
 '{:.note}'가 문단 밑에 있으면 note가 생기면서 옆에 라인생긴다.
 {:.note}
