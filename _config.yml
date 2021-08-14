@@ -38,8 +38,12 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title: Python
-    url: /Python/
+  - title: Dev
+    url: /Dev/
+    - title: Python
+      url: /Dev/Python/
+    - title: DataMining
+      url: /Dev/Dataming/
   - title: Doc
     url: /doc/
   - title: Portfolio
