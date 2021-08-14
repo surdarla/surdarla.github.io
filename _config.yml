@@ -62,12 +62,12 @@ author:
 copyright:             © 2021. All rights reserved.
 
 # Format of the permalinks
-permalink:             /:categories/:year-:month-:day-:title/
-
+# permalink:             /:categories/:year-:month-:day-:title/
+permalink: none
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
 paginate_path:         /:num/
-
+excerp_separator: <!--more-->
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -128,11 +128,15 @@ defaults:
       sitemap:         false
 
   # # You can use the following to enable comments on all posts.
-  # - scope:
-  #     type:            posts
-  #   values:
-  #     comments:        true
-
+  - scope:
+      path: about.md
+    values:
+      menu: true
+      order: 1
+  - scope:
+      type: posts
+    values:
+      comments: true
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
   - scope:
