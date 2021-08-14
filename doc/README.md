@@ -2,48 +2,27 @@
 layout: page
 title: DataMining
 description: >
-  Here you should be able to find everything you need to know to accomplish the most common tasks when blogging with Hydejack.
+  주요내용을 컨트롤+d로 쓰자.
 hide_description: true
 sitemap: false
 permalink: /doc/
 ---
 
-Here you should be able to find everything you need to know to accomplish the most common tasks when blogging with Hydejack.
-Should you think something is missing, [please let me know](mailto:mail@qwtel.com).
-Should you discover a mistake in the docs (or a bug in general) feel free to [open an issue](https://github.com/hydecorp/hydejack/issues) on GitHub.
+주요내용을 컨트롤+d로 쓰자.
+위에 description은 안나오고 위에만 나온다.
+[please let me know](mailto:mail@qwtel.com).이런식으로 link가능하다.
 
-While this manual tries to be beginner-friendly, as a user of Jekyll it is assumed that you are comfortable running shell commands and editing text files.
+'{:.note}'가 문단 밑에 있으면 note가 생기면서 옆에 라인생긴다.
 {:.note}
 
 
-## Getting started
+## 중간제목은 샵2개. 
+별표가 밑줄인듯. 그리고 []하면 href기능. '{:.heading.flip-title}'하면 누른거 제목 md를 찾는다는 이야기인듯
 * [Install]{:.heading.flip-title} --- How to install and run Hydejack.
 * [Upgrade]{:.heading.flip-title} --- You can skip this if you haven't used Hydejack before.
 * [Config]{:.heading.flip-title} --- Once Jekyll is running you can start editing your config file.
-{:.related-posts.faded}
-
-## Using Hydejack
-* [Basics]{:.heading.flip-title} --- How to add different types of content.
-* [Writing]{:.heading.flip-title} --- Producing markdown content for Hydejack.
-* [Scripts]{:.heading.flip-title} --- How to include 3rd party scripts on your site.
-* [Build]{:.heading.flip-title} --- How to build the static files for deployment.
-* [Advanced]{:.heading.flip-title} --- Guides for more advanced tasks.
-{:.related-posts.faded}
-
-## Other
-* [LICENSE]{:.heading.flip-title} --- The license of this project.
-* [NOTICE]{:.heading.flip-title} --- Parts of this program are provided under separate licenses.
-* [CHANGELOG]{:.heading.flip-title} --- Version history of Hydejack.
-{:.related-posts.faded}
+{:.related-posts.faded} #md하나 누르면 다른 내용은 사라지면서 들어간다는 뉘앙스
 
 [install]: install.md
 [upgrade]: upgrade.md
 [config]: config.md
-[basics]: basics.md
-[writing]: writing.md
-[scripts]: scripts.md
-[build]: build.md
-[advanced]: advanced.md
-[LICENSE]: ../LICENSE.md
-[NOTICE]: ../NOTICE.md
-[CHANGELOG]: ../CHANGELOG.md
