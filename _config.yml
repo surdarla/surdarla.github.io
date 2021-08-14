@@ -39,7 +39,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             ERROR
-    url:               /error_post/_post/
+    url:               /post/
   - title:             Blog
     url:               /blog/
   - title:             About
@@ -63,7 +63,7 @@ permalink:             /:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /blog/page:num/
+paginate_path:         /:num/
 
 
 # Theme
