@@ -38,12 +38,21 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             post
-    url:               /post/
-  - title:             docs
-    url:               /docs/
-  - title:             About
-    url:               /about/
+  - title: Blog
+    url:   /blog/
+      - title: Python
+        url: /python/
+      - title: Javascript
+        url: /javascript/
+      - title: Error
+        url: /error/
+  - title: Projects
+    url:   /projects/
+  - title: Resume
+    url:   /resume/
+  - title: About
+    url:   /about/
+
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
