@@ -18,7 +18,7 @@ description:           >
   Learning Dev
 
 # A shorter description for the sidebar.
-tagline:                8m Programmer              
+tagline:                낑낑             
 
 # A list of keywords for your blog
 keywords:              [Yeardream,Developer,Data]
@@ -38,20 +38,15 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title: Blog
-    url:   /blog/
-      - title: Python
-        url: /python/
-      - title: Javascript
-        url: /javascript/
-      - title: Error
-        url: /error/
+  - title: Python
+    url: /python/
+  - title: Data Mining
+    url: /datamining/
   - title: Projects
-    url:   /projects/
+    url: /projects/
   - title: Resume
-    url:   /resume/
-  - title: About
-    url:   /about/
+    url: /resume/
+
 
 
 # Add links to the footer.
