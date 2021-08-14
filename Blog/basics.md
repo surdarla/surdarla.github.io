@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Basics
-description: \>
+description: >
   This chapter covers the basics of content creation with Hydejack.
-hide\_description: true
+hide_description: true
 sitemap: false
 ---
 
 This chapter covers the basics of content creation with Hydejack.
 
-1. this unordered seed list will be replaced by toc as unordered list
+0. this unordered seed list will be replaced by toc as unordered list
 {:toc}
 
 
