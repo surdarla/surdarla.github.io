@@ -20,15 +20,15 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:  Jun Su Kim
+title:  Malja
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Data를 보는 중
+  Learning Dev
 
 # A shorter description for the sidebar.
-tagline:  Data Miner               
+tagline:  8m Programmer              
 
 # A list of keywords for your blog
 keywords:              [Yeardream,Developer,Data]
