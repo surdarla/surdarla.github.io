@@ -20,7 +20,7 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:  Malja
+title:                 Malja
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -28,7 +28,7 @@ description:           >
   Learning Dev
 
 # A shorter description for the sidebar.
-tagline:  8m Programmer              
+tagline:                8m Programmer              
 
 # A list of keywords for your blog
 keywords:              [Yeardream,Developer,Data]
@@ -41,10 +41,10 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <Malja><Kim>
+  name:                <Malja> <Kim>
   email:               <rlskejdk@naver.com>
   # # Used by `jekyll-seo-tag`:
-   twitter:             <rlskejdk>
+  # twitter:             <rlskejdk>
 
 # Add links to the sidebar.
 menu:
