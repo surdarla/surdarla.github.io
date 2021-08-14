@@ -6,6 +6,8 @@ description: >
 hide_description: true
 sitemap: false
 permalink: /doc/
+tag: Datamining
+
 ---
 
 description이랑 제목 바로 밑의 주요내용은 컨트롤+d로 동시수정하자.
