@@ -128,15 +128,15 @@ defaults:
       sitemap:         false
 
   # # You can use the following to enable comments on all posts.
-  - scope:
-      path: about.md
-    values:
-      menu: true
-      order: 1
-  - scope:
-      type: posts
-    values:
-      comments: true
+  # - scope:
+  #     path: about.md
+  #   values:
+  #     menu: true
+  #     order: 1
+  # - scope:
+  #     type: posts
+  #   values:
+  #     comments: true
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
   - scope:
