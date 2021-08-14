@@ -17,7 +17,7 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  kr
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:  Jun Su Kim
@@ -25,14 +25,13 @@ title:  Jun Su Kim
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  Data를 보는 중
 
 # A shorter description for the sidebar.
 tagline:  Data Miner               
 
 # A list of keywords for your blog
-keywords:              []
+keywords:              [Yeardream,Developer,Data]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -42,19 +41,19 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <firstname> <lastname>
-  email:               <mail@domain.tld>
+  name:                <Jun Su> <Kim>
+  email:               <rlskejdk@naver.com>
   # # Used by `jekyll-seo-tag`:
-  # twitter:             <username>
+   twitter:             <rlskejdk>
 
 # Add links to the sidebar.
 menu:
-  - title:             Example
+  - title:             ERROR
     url:               /example/
-  - title:             Documentation
-    url:               /docs/
+  - title:             Blog
+    url:               /Blog/
   - title:             About
-    url:               /about/
+    url:               /about.md/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -64,7 +63,7 @@ legal:
   - title:             NOTICE
     url:               /NOTICE/
   - title:             CHANGELOG
-    url:               /CHANGELOG/
+    url:               /https://github.com/rlskejdk/8mprogrammer/
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2021. All rights reserved.
