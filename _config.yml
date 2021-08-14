@@ -40,10 +40,6 @@ author:
 menu:
   - title: Dev
     url: /Dev/
-    - title: Python
-      url: /Dev/Python/
-    - title: DataMining
-      url: /Dev/Dataming/
   - title: Doc
     url: /doc/
   - title: Portfolio
