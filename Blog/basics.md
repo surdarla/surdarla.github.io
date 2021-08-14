@@ -1,20 +1,20 @@
 ---
 layout: page
 title: Basics
-description: >
+description: \>
   This chapter covers the basics of content creation with Hydejack.
-hide_description: true
+hide\_description: true
 sitemap: false
 ---
 
 This chapter covers the basics of content creation with Hydejack.
 
-0. this unordered seed list will be replaced by toc as unordered list
+1. this unordered seed list will be replaced by toc as unordered list
 {:toc}
 
 
 ## Adding images
-Adding good images is key to a engaging blog experience. You can provide an `image` attribute in in the front matter of posts, pages, and projects* that will be used by Hydejack in a variety of ways, 
+Adding good images is key to a engaging blog experience. You can provide an `image` attribute in in the front matter of posts, pages, and projects\* that will be used by Hydejack in a variety of ways, 
 such as header image in the `blog` and `post` layout, social media previews, cards in the `gird` and `projects` layout\*, thumbnails in the search dropdown\*, etc.
 
 The `image` attribute will accept an URL to an image, but it is recommended that you provide a `path` / `srcset` hash instead, e.g. 
@@ -29,29 +29,23 @@ image:
 ```
 
 Hydejack will show the image in various sizes depending on available screen width so that no specific size will fit all. 
-Instead, I recommend using a [mipmap]-like approach, providing the image in multiple sizes, each image half the width of the previous one.
-Since Hydejack provides an appropriate [`sizes` attribute][mdn-sizes], the browser can chose the best image from the provided source set.
+Instead, I recommend using a [mipmap][1]-like approach, providing the image in multiple sizes, each image half the width of the previous one.
+Since Hydejack provides an appropriate [`sizes` attribute][2], the browser can chose the best image from the provided source set.
 
-If you have [ImageMagick] installed, you can use the following commands to create images at 50%, 25%, and 12.5% of the original image. 
+If you have [ImageMagick][3] installed, you can use the following commands to create images at 50%, 25%, and 12.5% of the original image. 
 Other image tools will provide similar capabilities.
 
-    convert your-image.jpg -resize 50% -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB your-image@0,5x.jpg
-    convert your-image.jpg -resize 25% -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB your-image@0,25x.jpg
-    convert your-image.jpg -resize 12.5% -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB your-image@0,125x.jpg
+```
+convert your-image.jpg -resize 50% -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB your-image@0,5x.jpg
+convert your-image.jpg -resize 25% -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB your-image@0,25x.jpg
+convert your-image.jpg -resize 12.5% -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB your-image@0,125x.jpg
+```
 
-Note that the keys in the `srcset` hash have to be valid "descriptors" (as defined [here][mdn-srcset]). In practice this means the width in pixels followed by `w`.
+Note that the keys in the `srcset` hash have to be valid "descriptors" (as defined [here][4]). In practice this means the width in pixels followed by `w`.
 
 The `path` key is a fallback image for browsers that don't support the `srcset` attribute. It's also used by `jekyll-seo-tag` for social media previews.
 
-For more information on `srcset`, see the [documentation at MDN][mdn-srcset], or [this article from CSS-Tricks][csstricks].
-
-[imagemagick]: https://imagemagick.org/index.php
-[mipmap]: https://en.wikipedia.org/wiki/Mipmap
-[mdn-srcset]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset
-[mdn-sizes]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes
-[csstricks]: https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
-
-
+For more information on `srcset`, see the [documentation at MDN][5], or [this article from CSS-Tricks][6].
 
 ## Adding an entry to the sidebar
 To add links to the sidebar, populate the `menu` entry in `_config.yml` with a list of `title`-`url` pairs, e.g.:
@@ -76,14 +70,14 @@ To add links to external sites, simply provide a fully qualified URL, e.g.
 menu:
   - title: "@qwtel"
     url:   https://qwtel.com/
-``` 
+```
 
 ## Adding a category or tag
 Hydejack allows you to use the `list` or `grid`\* layout to show all posts of a particular category or tag.
 
 Before you start, make sure your config files contains the `features_categories` and `featured_tags` collections:
 
-~~~yml
+```yml
 # file: `_config.yml`
 collections:
   featured_categories:
@@ -92,28 +86,28 @@ collections:
   featured_tags:
     permalink:         /tag-:name/
     output:            true
-~~~
+```
 
 ### Recap: Categories and tags in Jekyll
 Posts in Jekyll can belong to one or more categories, as well as one or more tags. They are defined in a post's front matter:
 
-~~~yml
+```yml
 ---
 layout:     post
 title:      Welcome to Jekyll
 categories: [jekyll, update]
 tags:       [jekyll, update]
 ---
-~~~
+```
 
 Posts can also be assigned to a category based on their position within the folder structure, e.g.
 
-~~~
+```
 ├── jekyll
 │   └── update
 │       └── _posts
 │           └── 2017-04-07-welcome-to-jekyll.markdown
-~~~
+```
 
 This will place "Welcome to Jekyll" in the categories `jekyll` and `update`.
 
@@ -123,7 +117,7 @@ This is now the preferred way of assigning categories in Hydejack, as it makes U
 Whether you use this method or not, categories will always be part of a posts URL, while tags will not.
 
 Type       | URL
------------|----
+\-----------|----
 Categories | `/jekyll/update/2017-04-07-welcome-to-jekyll/`
 Tags       | `/2017-04-07-welcome-to-jekyll/`
 {:.scroll-table-small}
@@ -134,22 +128,22 @@ As far as Jekyll is concerned, this is the only difference.
 Categories and tags are displayed by Hydejack below the title, after the date. Categories are displayed with the preposition "in", while tags are displayed with the preposition "on", e.g.
 
 Type       | Title
------------|------
+\-----------|------
 Categories | Welcome to Jekyll¬ 07 Apr 2017 **in** Jekyll / Update
 Tags       | Welcome to Jekyll¬ 07 Apr 2017 **on** Jekyll, Update
 Both       | Welcome to Jekyll¬ 07 Apr 2017 **in** Jekyll / Update **on** Jekyll, Update
 {:.scroll-table-small}
 
-You can adjust these in [`_data/string.yml`][strings].
+You can adjust these in [`_data/string.yml`][7].
 
 ### Creating a new category or tag
 By default, categories and tags are rendered as plain text. Further steps are necessary if you want them to link to a page that contains a list of all posts that belong to that category or tag.
 
-For each featured category or tag, a file called `<category-name>.md` or `<tag-name>.md` has to be created inside the `_featured_tags` and `_featured_categories` folders, respectively. Each file in these folders is part of a [Jekyll Collection](https://jekyllrb.com/docs/collections/).
+For each featured category or tag, a file called `<category-name>.md` or `<tag-name>.md` has to be created inside the `_featured_tags` and `_featured_categories` folders, respectively. Each file in these folders is part of a [Jekyll Collection][8].
 
 The meta data of a category or tag is set in the files front matter, e.g.
 
-~~~yml
+```yml
 # file: `_featured_categories/hyde.md`
 ---
 layout: list
@@ -159,7 +153,7 @@ description: >
   Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme.
   It's based on [Poole](http://getpoole.com), the Jekyll butler.
 ---
-~~~
+```
 
 `layout`
 : Must either `list` or `grid`\*
@@ -174,7 +168,7 @@ description: >
 : A medium-length description, used on the tag or category's detail page and shown in a message box below the title.
 
 `menu`
-: Set to to `true` if you want the category or tag to appear in the sidebar. For more information, see [Adding an entry to the sidebar](#adding-an-entry-to-the-sidebar).
+: Set to to `true` if you want the category or tag to appear in the sidebar. For more information, see [Adding an entry to the sidebar][9].
 
 Once the file is created, the page can be found at `/category/<categoryname>/` or `/tag/<tagname>/`.
 
@@ -183,9 +177,9 @@ Once the file is created, the page can be found at `/category/<categoryname>/` o
 About pages are a frequent use case, so Hydejack has a special layout for it. It is a slight modification of the `page` layout that allows showing the author information by adding the `<!--author-->` marker somewhere on the page.
 
 To create an about page, make sure `layout` is set to `about`.
-For more on authors, see [Adding an author](config.md#adding-an-author).
+For more on authors, see [Adding an author][10].
 
-~~~md
+```md
 <!-- file: `about.md` -->
 ---
 layout: about
@@ -195,27 +189,27 @@ title:  About
 Some content
 
 <!--author-->
-~~~
+```
 
 
 ## Adding a cover page
 Hydejack 8 introduces cover pages, i.e. pages witht he sidebar opened, so that it spans the entire screen. This feature is intended for landing pages. To enable it on a page, simply add `cover: true` to the front matter.
 
-![Cover page example](../assets/img/blog/hydejack-8@0,5x.png){:.lead width="960" height="540" loading="lazy"}
+![Cover page example][image-1]{:.lead width="960" height="540" loading="lazy"}
 
-~~~yml
+```yml
 # file: `index.md`
 ---
 layout: welcome
 title:  Welcome
 cover:  true #!! Add this
 ---
-~~~
+```
 
 ## Adding related posts to a post
 You can choose which posts will appear in the "Related Posts" section below a post by adding the `related_posts` key to the front matter of a post
 
-~~~yml
+```yml
 # file: `category/_posts/2020-02-01-some-post.md`
 ---
 layout: post
@@ -226,7 +220,7 @@ related_posts:
   # but this will break when changing the `permalink` setting!
   - /blog/category/2020-01-02-other-other-post/
 ---
-~~~
+```
 
 ## Customization
 ### Adding custom CSS
@@ -244,24 +238,24 @@ To add custom HTML elements to the `<head>` of the document, open `_includes/my-
 To add custom HTML elements to the `<body>` of the document, open `_includes/my-body.html` (create the folder/the files if they don't exist) and add your elements there.
 
 What's the difference to `my-scripts.html`?
-: This file was used in earlier versions of Hydejack to accomplish the same goal. However, there are still instances were you might want to prefer `my-scripts.html` over `my-body.html`, as it won't load scrips on redirect pages and will be ignored by browsers < IE10.
+: This file was used in earlier versions of Hydejack to accomplish the same goal. However, there are still instances were you might want to prefer `my-scripts.html` over `my-body.html`, as it won't load scrips on redirect pages and will be ignored by browsers \< IE10.
 
 
-## Adding a welcome page*
+## Adding a welcome page\*
 If you bought the PRO version of Hydejack you have access to the `welcome` layout.
 It is intended to showcase your projects and blog posts in a compact way.
-Technically, it is a modified version of the `about` layout, so it allows showing the author information where the `<!--author-->` marker is put. [Demo][welcome].
+Technically, it is a modified version of the `about` layout, so it allows showing the author information where the `<!--author-->` marker is put. [Demo][11].
 
 You can create a welcome page by creating a new markdown file and setting the layout to `welcome` in the front matter.
 
-~~~yml
+```yml
 # file: `index.md`
 ---
 layout: welcome
 title:  Welcome
 cover:  true
 ---
-~~~
+```
 
 Without further configuration, the welcome page will just look like a regular page. However, it can be enhanced through the use of markers:
 - To show the two most recent projects, add the `<!--projects-->` marker to the content
@@ -270,7 +264,7 @@ Without further configuration, the welcome page will just look like a regular pa
 
 The welcome layout also supports selecting specific projects and posts, by adding to the front matter, e.g.:
 
-~~~yml
+```yml
 # file: `index.md`
 ---
 selected_projects:
@@ -283,7 +277,7 @@ selected_posts:
 posts_page: /blog/
 featured: false
 ---
-~~~
+```
 
 `selected_projects`
 : A list of paths to projects that should be featured in the `<!--projects-->` marker.
@@ -311,27 +305,27 @@ featured: false
   i.e. it will apply to the entire page.
 
 
-## Projects*
+## Projects\*
 
 ### Adding a projects page
 The projects page will show all projects of a particular collection.
 
 First, you need to make sure that you have the `projects` collection defined in `_config.yml`:
 
-~~~yml
+```yml
 # file: `_config.yml`
 collections:
   projects:
     permalink: /projects/:path/
     output:    true
-~~~
+```
 
 Next, add a `projects.md` to in the root (you can adjust the name/location to match the `permalink` of the
 collection).
 This file has the `projects` layout (mind the "s" at the end) and should have a `show_collection` key,
 with the name of the collection as a value, e.g.:
 
-~~~yml
+```yml
 # file: `projects.md`
 ---
 layout:          projects
@@ -339,7 +333,7 @@ title:           Projects*
 show_collection: projects
 featured:        true
 ---
-~~~
+```
 
 `layout`
 : Must be `projects`.
@@ -349,7 +343,7 @@ featured:        true
   (for the link that directs back to the projects page).
 
 `show_collection`
-: The name of the collection you want display on this page. Defaults to `projects`. See [Organizing Projects](#organizing-projects) for detail on how to handle multiple project collections.
+: The name of the collection you want display on this page. Defaults to `projects`. See [Organizing Projects][12] for detail on how to handle multiple project collections.
 
 `featured`
 : Optional. When `true`, project thumbnails will span the full width, instead of only half.
@@ -358,14 +352,14 @@ featured:        true
 
 
 ### Adding a project
-Projects are organized using [Jekyll Collections](https://jekyllrb.com/docs/collections/).
-Each project generates an entry on the projects layout ([Demo][projects]) as well as its own detail page ([Demo][project]).
+Projects are organized using [Jekyll Collections][13].
+Each project generates an entry on the projects layout ([Demo][14]) as well as its own detail page ([Demo][15]).
 
 Each project is defined by a file in the `_projects` directory.
 The project's meta information is defined in the file's front matter. You can also add markdown content.
 A project's front matter should look like:
 
-~~~yml
+```yml
 # file: `_projects/hyde-v2.md`
 ---
 layout:      project
@@ -388,7 +382,7 @@ links:
     url:     https://github.com/poole/hyde
 featured:    false
 ---
-~~~
+```
 
 `layout`
 : Must be set to `project`
@@ -397,7 +391,7 @@ featured:    false
 : Providing a year is the minimum requirement. Used to sort the projects.
 
 `image`
-: A 16:9 image of the project. See [Adding images](#adding-images) for details.
+: A 16:9 image of the project. See [Adding images][16] for details.
 
 `caption`
 : A short description, shown as part of each "project card" in the `projects` layout.
@@ -420,7 +414,7 @@ If you want to organize your projects using categories or tags, similar to the w
 
 The default config file comes with one projects collection predefined, but we can easily add additional collections like so:
 
-~~~yml
+```yml
 # file: `_config.yml`
 collections:
   # The default projects collection
@@ -433,12 +427,12 @@ collections:
     # Make sure the permalink path is different!
     permalink:         /other-projects/:path/
     output:            true
-~~~
+```
 
 Create a new folder in the top level directory that follows the naming convention `_<collection name>`. In our case the name is `_other_projects`.
-In it, create collection items as [shown above](#adding-a-project).
+In it, create collection items as [shown above][17].
 
-This is enough to render the project pages. To render them all on a single page, create a projects page as [described above](#adding-a-projects-page) with the `show_collection` key set to our new collection, e.g.:
+This is enough to render the project pages. To render them all on a single page, create a projects page as [described above][18] with the `show_collection` key set to our new collection, e.g.:
 
 ```yaml
 # file: "other-collection.md"
@@ -452,21 +446,21 @@ show_collection: other_projects #!!
 Note that the file name matches the `other-projects` path in the `permalink` we've defined above. This is to ensure that the directories match up.
 
 
-## Adding a resume*
+## Adding a resume\*
 Hydejack's PRO version features a generalized resume layout.
-[Demo][resume].
+[Demo][19].
 
-It generates the resume page from a valid [JSON Resume](https://jsonresume.org/), which is good news if you already have a JSON resume. Otherwise, there are various ways of obtaining one:
+It generates the resume page from a valid [JSON Resume][20], which is good news if you already have a JSON resume. Otherwise, there are various ways of obtaining one:
 
-* You can edit the [example `resume.yml`][resumeyml] in `_data` directly. It contains example entries for each type of entry.
-* You can use the visual [JSON Resume Editor](http://registry.jsonresume.org/).
-* If you have a LinkedIn profile, you can try [LinkedIn to Json Résumé](https://jmperezperez.com/linkedin-to-json-resume/).
+* You can edit the [example `resume.yml`][21] in `_data` directly. It contains example entries for each type of entry.
+* You can use the visual [JSON Resume Editor][22].
+* If you have a LinkedIn profile, you can try [LinkedIn to Json Résumé][23].
 
 Once you have a JSON Resume, place it into `_data`.
 
 To render a resume page, create a new markdown file and set the layout to `resume` in the front matter:
 
-~~~yml
+```yml
 # file: `resume.md`
 ---
 layout: resume
@@ -475,7 +469,7 @@ description: >
   A short description of the page for search engines (~150 characters long).
 hide_description: true 
 ---
-~~~
+```
 
 You can download the final `resume.json` (minified) from the assets folder. When running locally, you can find it at `_site/assets/resume.json`.
 {:.note}
@@ -483,7 +477,7 @@ You can download the final `resume.json` (minified) from the assets folder. When
 ### Changing the layout
 You can customize the layout of the resume by rearranging the entries in the `left_column` and `right_columns` keys in the front matter, e.g.
 
-~~~yml
+```yml
 # file: `resume.md`
 ---
 layout: resume
@@ -499,7 +493,7 @@ right_column:
   - skills
   - interests
 ---
-~~~
+```
 
 ### Skill level icons
 By default, the layout will replace certain keywords with star icons. The keywords are as follows:
@@ -515,17 +509,17 @@ By default, the layout will replace certain keywords with star icons. The keywor
 
 If a keyword is not recognized, the provided text will be spelled out  instead. To disable icons and always spell out the text,  set `no_skill_icons` and/or `no_langauge_icons` to `true`.
 
-~~~yml
+```yml
 # file: `resume.md`
 no_language_icons: true
 no_skill_icons: true
-~~~
+```
 
 ### Adding a specialized resume or multiple resumes
 You can add a specialized resume or multiple resumes by adding the resume YAML to the front matter under the `resume` key.
 E.g.:
 
-~~~yml
+```yml
 # file: `resume.md`
 ---
 layout: resume
@@ -539,7 +533,7 @@ resume:
     picture: "/assets/icons/icon.png"
   # ...
 ---
-~~~
+```
 
 ### Downloads
 You can add buttons to let readers print or download your resume in various formats. 
@@ -556,24 +550,43 @@ buttons:
 
 To remove a button remove the corresponding key from the hash. 
 
-While the `resume.json` is can be generated by Jekyll itself, and the vCard can be generated by an [external service][h2vx],
+While the `resume.json` is can be generated by Jekyll itself, and the vCard can be generated by an [external service][24],
 the PDF needs to be pre-generated by you.
 
 You can render a PDF from the resume page itself by using your browser's "Print to PDF" feature (Chrome works best). 
 For best results, check the following options in the print popup:
 
-[h2vx]: http://h2vx.com/vcf/
-
-![Uncheck Headers and footers, check Background graphics](/assets/img/docs/chrome-print.png){:width="299" height="588" loading="lazy"}
+![Uncheck Headers and footers, check Background graphics][image-2]{:width="299" height="588" loading="lazy"}
 
 
-Continue with [Writing](writing.md){:.heading.flip-title}
+Continue with [Writing][25]{:.heading.flip-title}
 {:.read-more}
 
-[welcome]: https://hydejack.com/
-[resume]: https://hydejack.com/resume/
-[projects]: https://hydejack.com/projects/
-[project]: https://hydejack.com/projects/default/
+[1]:	https://en.wikipedia.org/wiki/Mipmap
+[2]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes
+[3]:	https://imagemagick.org/index.php
+[4]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset
+[5]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset
+[6]:	https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
+[7]:	https://github.com/hydecorp/hydejack-site/blob/master/_data/strings.yml
+[8]:	https://jekyllrb.com/docs/collections/
+[9]:	#adding-an-entry-to-the-sidebar
+[10]:	config.md#adding-an-author
+[11]:	https://hydejack.com/
+[12]:	#organizing-projects
+[13]:	https://jekyllrb.com/docs/collections/
+[14]:	https://hydejack.com/projects/
+[15]:	https://hydejack.com/projects/default/
+[16]:	#adding-images
+[17]:	#adding-a-project
+[18]:	#adding-a-projects-page
+[19]:	https://hydejack.com/resume/
+[20]:	https://jsonresume.org/
+[21]:	https://github.com/hydecorp/hydejack-site/blob/master/_data/resume.yml
+[22]:	http://registry.jsonresume.org/
+[23]:	https://jmperezperez.com/linkedin-to-json-resume/
+[24]:	http://h2vx.com/vcf/
+[25]:	writing.md
 
-[strings]: https://github.com/hydecorp/hydejack-site/blob/master/_data/strings.yml
-[resumeyml]: https://github.com/hydecorp/hydejack-site/blob/master/_data/resume.yml
+[image-1]:	../assets/img/blog/hydejack-8@0,5x.png
+[image-2]:	/assets/img/docs/chrome-print.png
