@@ -37,13 +37,13 @@ author:
   # twitter:             <rlskejdk>
 
 # Add links to the sidebar.
-# menu:
-#   - title: Dev
-#     url: /Dev/
-#   - title: Doc
-#     url: /doc/
-#   - title: Portfolio
-#     url: /Portfolio/
+menu:
+  - title: Dev
+    url: /Dev/
+  - title: Doc
+    url: /doc/
+  - title: Portfolio
+    url: /Portfolio/
 
 
 
