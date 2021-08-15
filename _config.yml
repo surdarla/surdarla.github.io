@@ -41,11 +41,10 @@ menu:
   - title: Dev
     url: /Dev/
   - title: --Python
-    url: /--Python/  
+    url: /Dev/python/
   - title: Doc
     url: /doc/
-  - title: Portfolio
-    url: /Portfolio/
+
 
 
 
