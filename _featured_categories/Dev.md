@@ -3,8 +3,8 @@ layout: list
 type: category
 title: Dev
 slug: Dev
-sidebar: true
+no_groups: true
 order: 2
 description: >
-  DigDev
+  DigDev sidebar ->dev 
 ---
