@@ -1,14 +1,14 @@
 ---
-layout: page
-title: python
+layout: list
+type: category
+title: Python
+slug: Dev
+no_groups: true
+order: 2
 description: >
-    test python으로 잘 넘어오나
-hide_description: false
-sitemap: false
-permalink: /Dev/Python/
-tag: Dev, Python
-
+	메인dev메뉴 안에서 python누르면 python list가 생성되는지
 ---
+
 
 # 국제정치 노트
 올해 이슈가 된거 잘 정리해놓자
