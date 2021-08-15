@@ -3,13 +3,53 @@ Code used for embedding Gumroad on the Hydejack Site.
 Left here for reference, feel free to delete.
 -->
 
-
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="/assets/js/sidebar-folder.js"></script>
 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="/assets/js/swiper-control.js"></script>
+<script src="/assets/js/collapsible.js"></script>
 
 <link rel="dns-prefetch" href="https://assets.gumroad.com">
+
+<!-- for my toc affix -->
+<script type="module">
+  document.querySelector('hy-push-state').addEventListener('load', () => {
+    let tocElement = document.getElementById("markdown-toc");
+
+    if(tocElement){
+      let affixedDiv = document.createElement("div");
+      affixedDiv.style.position = "relative";
+      affixedDiv.style.top = "-1rem";
+      tocElement.parentNode.insertBefore(affixedDiv, tocElement);
+      
+      let headerList = document.getElementsByClassName("permalink");
+      if(headerList){
+        let prevElement;
+        window.addEventListener("scroll", () => {
+          let hurdleTop = affixedDiv.getBoundingClientRect().top;
+          if(hurdleTop <= 0) tocElement.classList.add("affix");
+          else tocElement.classList.remove("affix");
+  
+          for(let i=0;i<headerList.length;i++){
+            if(headerList[i].getBoundingClientRect().top >= 0){
+              prevElement?.style.removeProperty("font-weight");
+              let tocId = "markdown-toc-" + headerList[i].parentNode.id;
+              prevElement = document.getElementById(tocId);
+              prevElement.style.fontWeight = "bold";;
+  
+              break;
+            }
+          }
+        });
+      }
+    }
+  });
+</script>
+<!--  -->
+
 <script>window.GET_CLAPS_API = 'https://worker.getclaps.dev'</script>
 <script type="module">
   const ppiData = window._ppiData = fetch('https://hydejack-ppi.qwtel.workers.dev', { mode: 'cors'}).then(res => res.json()).catch(() => ({}));
