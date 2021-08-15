@@ -40,6 +40,8 @@ author:
 menu:
   - title: Dev
     url: /Dev/
+  - title: --Python
+    url: /Dev/Python/  
   - title: Doc
     url: /doc/
   - title: Portfolio
