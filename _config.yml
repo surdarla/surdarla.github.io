@@ -7,7 +7,7 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang: en
+lang: ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Malja
@@ -18,7 +18,7 @@ description:           >
   Learning Dev
 
 # A shorter description for the sidebar.
-tagline:                            
+tagline:
 
 # A list of keywords for your blog
 keywords:              [Yeardream,Developer,Data Mining,Python]
@@ -42,7 +42,7 @@ menu:
   #   url:               /project/
   - title:             Dev
     url:               /dev/
-    submenu:           
+    submenu:
       - title:           Python
         url:             /python/
       - title:           Algorithm
@@ -80,7 +80,7 @@ menu:
 
 # This text will appear in a `<small>` tag in the footer of every page.
 #copyright:             © 2021. All rights reserved.
-copyright:             
+copyright:
 
 # Format of the permalinks
 permalink:             /:categories/:year-:month-:day-:title/
@@ -99,7 +99,7 @@ remote_theme: hydecorp/hydejack@v9.0.0-rc.6
 
 # Customizaton
 # ----------------------------------------------------------------------------------------
- 
+
 # Sidebar image and theme color of the site.
 accent_image:          /assets/img/sidebar-bg.jpg
 accent_color:          rgb(79,177,186)
@@ -232,7 +232,7 @@ hydejack:
   # This will increase site build speed dramatically!
   no_inline_css:       false
 
-  # Set to `true` if you don't intend on changing the accent color on a per-page basis. 
+  # Set to `true` if you don't intend on changing the accent color on a per-page basis.
   # This will increase site build speed!
   no_page_style:       false
 
@@ -275,7 +275,7 @@ hydejack:
 
   # Buyers of the PRO version can opt to hide all dates from the theme.
   # Frequent consumers of online content will know that nothing devalues a post like
-  # seeing an old date. 
+  # seeing an old date.
   hide_dates:          false
 
   # TODO
@@ -415,22 +415,22 @@ jekyll_compose:
   default_front_matter:
     drafts:
       layout: post
-      description: > 
+      description: >
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
         path: /assets/img/sidebar-bg.jpg
     posts:
       layout: post
-      description: > 
+      description: >
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
         path: /assets/img/sidebar-bg.jpg
     projects:
-    
+
       layout: project
-      description: > 
+      description: >
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
@@ -438,25 +438,25 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://example.com
-  
+
   default_front_matter:
       drafts:
         layout: post
-        description: > 
+        description: >
           A short ~160 character description of your post for search engines,
           social media previews, etc.
         image:
           path: /assets/img/sidebar-bg.jpg
       posts:
         layout: post
-        description: > 
+        description: >
           A short ~160 character description of your post for search engines,
           social media previews, etc.
         image:
           path: /assets/img/sidebar-bg.jpg
       projects:
         layout: project
-        description: > 
+        description: >
           A short ~160 character description of your post for search engines,
           social media previews, etc.
         image:
