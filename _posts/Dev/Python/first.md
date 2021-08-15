@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Yeardream에서 시작하는 개처버개발
+category:
+  - Dev
+  - python
 image: /assets/img/blog/yeardream.jpg
 accent_image:
   background: url('/assets/img/blog/yeardream.jpg') center/cover
