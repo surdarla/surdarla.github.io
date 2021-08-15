@@ -7,7 +7,7 @@ description: >
 hide_description: false
 ---
 
-## Dev-list
+## Dev
 * [Python]{:.heading.flip-title} --- python  
 * [Algorithm]{:.heading.flip-title} --- algorithm  
 
