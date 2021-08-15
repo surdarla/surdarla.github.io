@@ -1,10 +1,9 @@
 ---
 layout: list
-
-title: Dev
+title: Python
 slug: Dev
 no_groups: true
 order: 2
 description: >
-  DigDev sidebar ->dev 
+  Dev/Python/list
 ---
