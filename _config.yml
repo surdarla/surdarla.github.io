@@ -7,7 +7,7 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Jun Su Kim
@@ -38,43 +38,61 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title: Dev
-    url: /Dev/
-  - title: --Python
-    url: /Dev/python/
-  - title: Doc
-    url: /doc/
-
-
+  - title:             Project
+    url:               /project/
+  - title:             Docs
+    url:               /docs/
+    submenu:           
+      - title:           Python
+        url:             /python/
+      - title:           Datamining
+  - title:             Algorithm
+    url:               /algorithm/
+    submenu:
+      - title:           Theory
+        url:             /theory/
+      - title:           Problem Solving
+        url:             /problem-solving/
+  - title:             Log
+    url:               /log/
+    submenu:
+      - title:           Develop
+        url:             /develop/
+      - title:           Cook
+        url:             /cook/
+      - title:           Blog
+        url:             /blog/
+  - title:             About
+    url:               /about/
 
 
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 # legal:
-#   - title:             LICENSE
-#     url:               /LICENSE/
-#   - title:             NOTICE
-#     url:               /NOTICE/
-#   - title:             CHANGELOG
-#     url:               /https://github.com/rlskejdk/8mprogrammer/
+  - title:             LICENSE
+    url:               /LICENSE/
+  - title:             NOTICE
+    url:               /NOTICE/
+  - title:             CHANGELOG
+    url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2021. All rights reserved.
 
 # Format of the permalinks
-# permalink:             /:categories/:year-:month-:day-:title/
-permalink: none
+permalink:             /:categories/:year-:month-:day-:title/
+
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
 paginate_path:         /:num/
-excerp_separator: <!--more-->
+
 
 # Theme
 # ---------------------------------------------------------------------------------------
 
 theme: jekyll-theme-hydejack
-# remote_theme: hydecorp/hydejack@v9.0.0-rc.6
+remote_theme: hydecorp/hydejack@v9.0.0-rc.6
 
 
 # Customizaton
@@ -210,7 +228,7 @@ hydejack:
 
   # Set to `true` if you do not want parts of the css inlined in <head/>
   # This will increase site build speed dramatically!
-  no_inline_css:       true
+  no_inline_css:       false
 
   # Set to `true` if you don't intend on changing the accent color on a per-page basis. 
   # This will increase site build speed!
@@ -218,7 +236,7 @@ hydejack:
 
   # Code blocks and tables "break" the layout by spanning the full available width.
   # Set this to true if you want them to be the same width as other content.
-  no_break_layout:     true
+  no_break_layout:     false
 
   # Set to `true` to disable the dynamic Table of Contents on large screens.
   no_toc:              false
@@ -408,6 +426,7 @@ jekyll_compose:
       image:
         path: /assets/img/sidebar-bg.jpg
     projects:
+    
       layout: project
       description: > 
         A short ~160 character description of your post for search engines,
@@ -417,3 +436,29 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://example.com
+  
+  default_front_matter:
+      drafts:
+        layout: post
+        description: > 
+          A short ~160 character description of your post for search engines,
+          social media previews, etc.
+        image:
+          path: /assets/img/sidebar-bg.jpg
+      posts:
+        layout: post
+        description: > 
+          A short ~160 character description of your post for search engines,
+          social media previews, etc.
+        image:
+          path: /assets/img/sidebar-bg.jpg
+      projects:
+        layout: project
+        description: > 
+          A short ~160 character description of your post for search engines,
+          social media previews, etc.
+        image:
+          path: /assets/img/sidebar-bg.jpg
+        links:
+          - title: Project Link
+            url: https://example.com
