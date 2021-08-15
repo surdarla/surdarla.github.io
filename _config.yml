@@ -10,7 +10,7 @@
 lang: en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Jun Su Kim
+title:                 Malja
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -18,7 +18,7 @@ description:           >
   Learning Dev
 
 # A shorter description for the sidebar.
-tagline:               llama me Malja              
+tagline:                            
 
 # A list of keywords for your blog
 keywords:              [Yeardream,Developer,Data Mining,Python]
@@ -40,28 +40,29 @@ author:
 menu:
   - title:             Project
     url:               /project/
-  - title:             Docs
-    url:               /docs/
+  - title:             Dev
+    url:               /dev/
     submenu:           
       - title:           Python
         url:             /python/
-      - title:           Datamining
-  - title:             Algorithm
-    url:               /algorithm/
-    submenu:
-      - title:           Theory
-        url:             /theory/
-      - title:           Problem Solving
-        url:             /problem-solving/
-  - title:             Log
-    url:               /log/
-    submenu:
-      - title:           Develop
-        url:             /develop/
-      - title:           Cook
-        url:             /cook/
-      - title:           Blog
-        url:             /blog/
+      - title:           Algorithm
+        url:             /algorithm/
+  # - title:             Algorithm
+  #   url:               /algorithm/
+  #   submenu:
+  #     - title:           Theory
+  #       url:             /theory/
+  #     - title:           Problem Solving
+  #       url:             /problem-solving/
+  # - title:             Log
+  #   url:               /log/
+  #   submenu:
+  #     - title:           Develop
+  #       url:             /develop/
+  #     - title:           Cook
+  #       url:             /cook/
+  #     - title:           Blog
+  #       url:             /blog/
   - title:             About
     url:               /about/
 
@@ -69,16 +70,17 @@ menu:
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
-legal:
-  - title:             LICENSE
-    url:               /LICENSE/
-  - title:             NOTICE
-    url:               /NOTICE/
-  - title:             CHANGELOG
-    url:               /CHANGELOG/
+# legal:
+#   - title:             LICENSE
+#     url:               /LICENSE/
+#   - title:             NOTICE
+#     url:               /NOTICE/
+#   - title:             CHANGELOG
+#     url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2021. All rights reserved.
+#copyright:             © 2021. All rights reserved.
+copyright:             
 
 # Format of the permalinks
 permalink:             /:categories/:year-:month-:day-:title/
