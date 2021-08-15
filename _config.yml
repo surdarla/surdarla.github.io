@@ -69,7 +69,7 @@ menu:
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
-# legal:
+ legal:
   - title:             LICENSE
     url:               /LICENSE/
   - title:             NOTICE
