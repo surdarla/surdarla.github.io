@@ -1,9 +1,9 @@
 ---
 layout: post
-category: Dev
-title: Python
+category: dev
+title: python
 description: >
-  ...Developing...
+  Python에 대해 공부해보자
 related_posts:
   - 
 addons:
