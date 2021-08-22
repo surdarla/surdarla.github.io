@@ -1,6 +1,6 @@
 ---
 layout: post
-category: Dev
+category: dev
 title: Algorithm
 description: >
   ...Developing...

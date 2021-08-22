@@ -7,6 +7,7 @@ description: >
 hide_description: false
 ---
 
-* [python]{:.heading.flip-title} --- python  
-
+* [Python]{:.heading.flip-title} --- python  
+* [Algorithm]{:.heading.flip-title} -- algorithm
 [python]: /python/
+[algorithm]: /algorithm/
