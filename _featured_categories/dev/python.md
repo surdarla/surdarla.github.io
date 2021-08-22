@@ -1,7 +1,7 @@
 ---
 layout: post
 category: dev
-title: python
+title: Python
 description: >
   Python에 대해 공부해보자
 related_posts:
