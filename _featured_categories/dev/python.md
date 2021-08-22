@@ -1,6 +1,6 @@
 ---
 layout: post
-category: dev
+category: Dev
 title: Python
 description: >
   Python에 대해 공부해보자
