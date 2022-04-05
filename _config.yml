@@ -47,8 +47,8 @@ menu:
         url:             /python/
       - title:           Algorithm
         url:             /algorithm/
-  # - title:             Algorithm
-  #   url:               /algorithm/
+      - title:           Paperreview
+        url:             /paperreview/
   #   submenu:
   #     - title:           Theory
   #       url:             /theory/
