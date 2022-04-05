@@ -49,6 +49,11 @@ menu:
         url:             /algorithm/
       - title:           Paperreview
         url:             /paperreview/
+  - title:             MLDL
+    url:               /mldl/
+    submenu:
+      - title:           Gan
+        url:             /gan/
   #   submenu:
   #     - title:           Theory
   #       url:             /theory/
