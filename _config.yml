@@ -10,12 +10,12 @@
 lang: ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Malja
+title:                 Surdarla
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Learning Dev
+  Learning DS
 
 # A shorter description for the sidebar.
 tagline:
@@ -31,7 +31,7 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <Malja> <Kim>
+  name:                <Junsu> <Kim>
   email:               <rlskejdk@naver.com>
   # # Used by `jekyll-seo-tag`:
   # twitter:             <rlskejdk>

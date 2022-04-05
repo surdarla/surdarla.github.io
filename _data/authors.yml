@@ -8,7 +8,9 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    전혀 예상치 못했다.
+    Hi. im surdarla. Being a junior Data Scientist.
+    Graduated 'Yeardream 1st' and now looking for a job.
+    if you want to know more about me, check my github site plz!
 
   # This photo will be used in the about section
   picture:
@@ -23,8 +25,8 @@ author1:
   # Rearrange to change the order in which they appear
   social:
     # twitter:         <username>
-    github:          rlskejdk
-    email:           rlskejdk@naver.com
+    github:          surdarla
+    # email:           rlskejdk@naver.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
