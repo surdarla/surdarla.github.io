@@ -91,7 +91,7 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 * (빈번하게 나타나지만, 문장의 특징을 나타내진 않는 a,the,조사)조사와 같은 것의 가중치를 낮출 순 없나?
 * 단어가 나온 문장의 수로 나눠주자!
 * 다른 문장에는 자주 안나오지만 특정 문장에서 빈번하게 등장하는 단어 -> **KEYWORD**를 뽑자!
-* $TFIDF = log(wordFreq/(sentenceFreq + 1))$ /0을 피하기 위해서 뒤에 처리
+* $$TFIDF = log(wordFreq/(sentenceFreq + 1))$$ /0을 피하기 위해서 뒤에 처리
 * [sklearn.feature_extraction.text.TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)
 
 하지만 여전히 단점이 많다. 순서와 맥락을 고려하지 못한다. **언어에서 의미는 순서에 따라 전혀 달라지기도 하기 때문에 이를 보완하는 embedding이 필요**했다.
