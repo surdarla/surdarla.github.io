@@ -10,5 +10,7 @@ hide_description: false
 ## Category
 
 * [GAN]{:.heading.flip-title}  
+* [NLP]{:.heading.flip-title}  
 
 [gan]: /gan/
+[nlp]: /nlp/

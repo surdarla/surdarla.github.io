@@ -54,6 +54,9 @@ menu:
     submenu:
       - title:           Gan
         url:             /gan/
+    submenu:
+      - title:           Nlp
+        url:             /nlp/
   #   submenu:
   #     - title:           Theory
   #       url:             /theory/
