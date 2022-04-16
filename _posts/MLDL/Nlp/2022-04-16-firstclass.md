@@ -26,3 +26,9 @@ sitemap :
 
 The General Understanding Evaluation benchmark
 [GLUE](https://gluebenchmark.com/leaderboard)
+사람이 하는 것 보다 더 잘하는 분야도 있다? ->
+
+## Introduction
+
+- NLP는 2018년 BERT가 나오면서 10% 이상의 성능향상을 이루었고, 지금은 그 이후 또 10% 이상의 성능향상을 이루었다.
+- 연구성과는 

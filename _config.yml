@@ -15,7 +15,7 @@ title:                 Surdarla
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Learning DS
+  Learning DS, interested in NLP
 
 # A shorter description for the sidebar.
 tagline:
@@ -38,8 +38,6 @@ author:
 
 # Add links to the sidebar.
 menu:
-  # - title:             Project
-  #   url:               /project/
   - title:             Dev
     url:               /dev/
     submenu:
@@ -49,28 +47,14 @@ menu:
         url:             /algorithm/
       - title:           Paperreview
         url:             /paperreview/
-  - title:             MLDL
+  - title:             Mldl
     url:               /mldl/
     submenu:
-      - title:           GAN
+      - title:           Gan
         url:             /gan/
     submenu:
-      - title:           NLP
+      - title:           Nlp
         url:             /nlp/
-  #   submenu:
-  #     - title:           Theory
-  #       url:             /theory/
-  #     - title:           Problem Solving
-  #       url:             /problem-solving/
-  # - title:             Log
-  #   url:               /log/
-  #   submenu:
-  #     - title:           Develop
-  #       url:             /develop/
-  #     - title:           Cook
-  #       url:             /cook/
-  #     - title:           Blog
-  #       url:             /blog/
   - title:             About
     url:               /about/
 

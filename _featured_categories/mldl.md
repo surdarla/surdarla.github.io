@@ -1,7 +1,7 @@
 ---
 layout: list
 type: category
-title: MLDL
+title: Mldl
 description: >
   MLDL 갈무리하고 정리하는 공간
 hide_description: false
