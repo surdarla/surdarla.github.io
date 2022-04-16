@@ -52,10 +52,10 @@ menu:
   - title:             MLDL
     url:               /mldl/
     submenu:
-      - title:           Gan
+      - title:           GAN
         url:             /gan/
     submenu:
-      - title:           Nlp
+      - title:           NLP
         url:             /nlp/
   #   submenu:
   #     - title:           Theory

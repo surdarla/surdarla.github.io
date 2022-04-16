@@ -1,7 +1,7 @@
 ---
 layout: post
 category: mldl
-title: Gan
+title: GAN
 description: >
   gan에 대해 정리
 related_posts:

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: mldl
-title: nlp
+title: NLP
 description: >
   nlp 정리
 related_posts:
