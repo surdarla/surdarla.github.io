@@ -70,7 +70,7 @@ The General Understanding Evaluation benchmark\
   * tokenizer → embedding → model 순으로 학습에 영향을 미치니깐 당연하다.
 * vocab.txt라고 되어있는 단어사전이 github model repo안에 포함되어있다.
 
-### Embedding 1 - Bag of words(Term frequency)
+### Word Embedding 1 - Bag of words(Term frequency)
 
 |  | 학교에 | 가서 | 수업을 | 들었다 | 온건 | 오랜만이다 | 친구 | 얘기를 |
 |---|---|---|---|---|---|---|---|---|
@@ -88,7 +88,7 @@ The General Understanding Evaluation benchmark\
   * 세상 모든 단어에 숫자를 붙여야 한다. TOO MANY!
   * 재구성이 불가능하다.
 
-### Embedding 2 - TFIDF(Term frequency with weight)
+### Word Embedding 2 - TFIDF(Term frequency with weight)
 
 TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 {:.note title="Definition of TFIDF"}
@@ -102,7 +102,7 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 >하지만 여전히 단점이 많다. **순서와 맥락**을 고려하지 못한다. 언어에서 의미는 순서에 따라 전혀 달라지기도 하기 때문에 이를 보완하는 embedding이 필요했다.
 {:.note title='BOW,TFIDF 한계'}
 
-### Embedding 3(2013) - Word2Vec
+### Word Embedding 3 - Word2Vec 2013
 
 > King - man + woman = queen \
 > [1.5,0,0] - [0,1,0] + [1.5,1,0] = [3,0,0] \
@@ -132,12 +132,12 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 |genrative|X|O|
 |대명사|BERT|GPT3|
 
-### Embedding 4 - Fasttext
+### Word Embedding 4 - Fasttext 2016
 
 페이스북에서 개발한 word2vec의 개선형 \
 [1607paper - Enriching Word Vectors with Subword Information](https://arxiv.org/pdf/1607.04606.pdf) \
-skipgram model, where each word is represented as a
-bag of character n-grams. \
+**skipgram model, where each word is represented as a
+bag of character n-grams.** \
 단어를 문자단위로 쪼개고, 각 조각마다 word2vec수행
 {:.note title='단어를 더 쪼개는 word2vec == fasttext'}
 
@@ -147,3 +147,11 @@ bag of character n-grams. \
 2. 한글의 경우 자모로 쪼개서 할 경우 성능이 향상된다.
    * <얘기를>(3-grams) → <ㅇㅒㄱㅣㄹㅡㄹ> → <ㅇㅒ,ㅇㅒㄱ,ㅒㄱㅣ,ㄱㅣㄹ,ㅣㄹㅡ,ㄹ ㅡㄹ,ㅡㄹ>
 3. OOV에 대해서 (데이터셋만 충분하다면) subword를 통해서 유사도를 계산할 수 있다.
+
+### Sentence embedding - Doc2vec 2014
+
+
+> 문장마다 Id를 부여하고, 해당 문장을 word2vec과 유사한 형태로 학습하여 문장id의 배열을 업데이트 \
+> 학습 후, 각 문장의 id마다 배열이 생성되며, 비슷한 단어로 이루어진 문장은 비슷한 배열을 갖는다. \
+> [1405 paper - Distributed Representations of Sentences and Documents](https://arxiv.org/abs/1405.4053)
+{:.lead}
