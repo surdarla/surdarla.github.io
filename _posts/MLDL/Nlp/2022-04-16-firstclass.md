@@ -120,3 +120,12 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 2. 매우 빠르고 합리적인 성능으로 상용시스템에서도 현재 많이 쓰인다.
 3. 평균을 내기 때문에 bow에 비해서 0값이 잘 안나온다. bows는 sparse representation이기 때문에 필요없는 단어에 대한 표현은 전부 0처리하는 one-hot encoding방식이기 때문에 데이터 효율이 떨어진다.
 4. 소수를 통해서 엄청나게 유연한 표현이 가능하다.([dense representation](https://wikidocs.net/33520))
+
+**NPLM(Neural Probabilistic Language Model) vs Word2vec**
+
+| |word2vec|NPLM|
+|---|---|---|
+|model|Autoencoding model|Autoregressive model|
+|방향|bidirectional|oneWay|
+|문장이해도|좋음|떨어짐|
+|genrative|X|O|
