@@ -87,6 +87,7 @@ The General Understanding Evaluation benchmark\
 ### Embedding 2 - TFIDF(Term frequency with weight)
 
 TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
+{:.note title="Definition of TFIDF"}
 
 * (빈번하게 나타나지만, 문장의 특징을 나타내진 않는 a,the,조사)조사와 같은 것의 가중치를 낮출 순 없나?
 * 단어가 나온 문장의 수로 나눠주자!
