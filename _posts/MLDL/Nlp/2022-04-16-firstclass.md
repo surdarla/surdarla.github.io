@@ -5,7 +5,7 @@ category:
     - mldl
     - nlp
 description: >
-  자연어 처리에 대해서 제대로 배워보고 정리해보자. \
+  자연어 처리에 대해서 제대로 배워보고 정리해보자.
   [유튜브 김기영님의 자연어처리 4개 강의](https://youtube.com/playlist?list=PLrLEKGJAgXxL-R9IqDH7HANWXRsS900tF)에 대해서 하나씩 정리해보는 시간을 가져보려 한다.
 image: /assets/img/blog/nlp/wall.jpeg
 accent_image:
@@ -36,7 +36,7 @@ sitemap :
 **GLUE**\
 The General Understanding Evaluation benchmark\
 [GLUE](https://gluebenchmark.com/leaderboard)
-사람이 하는 것 보다 더 잘하는 분야도 있다? -> 정리필요
+사람이 하는 것 보다 더 잘하는 분야도 있다? → 정리필요
 
 ## Tokenizer - 단어 나누기, vocab len
 
@@ -48,7 +48,7 @@ The General Understanding Evaluation benchmark\
 3. **subword 단위**
    1. 형태소 단위
       * (pro) 매우 효율적
-      * (con) 언어 지식이 필요함, 컴퓨터가 알아서 할 수 없음 -> 요즘은 덜 씀
+      * (con) 언어 지식이 필요함, 컴퓨터가 알아서 할 수 없음 → 요즘은 덜 씀
    2. BPE(byte-pair encoding)
       * 전체 문서를 문자 단위로 쪼갠 뒤, 빈번하게 나오는 문자들을 묶어서 단어사전의 수를 줄임.
       * Bottom pu 접근방식
@@ -61,13 +61,13 @@ The General Understanding Evaluation benchmark\
 
 * 이를 embedding(일상언어->숫자)이라고 한다.
 * 서로 다른 모델은 서로 다른 임베딩 방법을 가지고 있다.
-* 언어를 무작위하게 숫자를 붙이는 방법 -> 유사한 단어, 유사한 문장은 유사한 숫자가 부여 되도록 표현하는 방향으로 발전하게 된다(attention이 생각나는 부분이다.)
+* 언어를 무작위하게 숫자를 붙이는 방법 → 유사한 단어, 유사한 문장은 유사한 숫자가 부여 되도록 표현하는 방향으로 발전하게 된다(attention이 생각나는 부분이다.)
 
 * subword tokenizer도 학습 필요하다. 학습한 텍스트 데이터셋에 따라 결과가 다르다.
   * tokenizer 학습은 model 학습과 별도, 선행 된다.
 * 모든 언어처리 과정은 tokenizer로 부터 시작한다.
 * 필요한 task과 관련된 domain에 학습된 것을 골라야 결과가 좋을 수 밖에 없다.
-  * tokenizer -> embedding -> model 순으로 학습에 영향을 미치니깐 당연하다.
+  * tokenizer → embedding → model 순으로 학습에 영향을 미치니깐 당연하다.
 * vocab.txt라고 되어있는 단어사전이 github model repo안에 포함되어있다.
 
 ### Embedding 1 - Bag of words(Term frequency)
@@ -95,7 +95,7 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 
 * (빈번하게 나타나지만, 문장의 특징을 나타내진 않는 a,the,조사)조사와 같은 것의 가중치를 낮출 순 없나?
 * 단어가 나온 문장의 수로 나눠주자!
-* 다른 문장에는 자주 안나오지만 특정 문장에서 빈번하게 등장하는 단어 -> **KEYWORD**를 뽑아보자!
+* 다른 문장에는 자주 안나오지만 특정 문장에서 빈번하게 등장하는 단어 → **KEYWORD**를 뽑아보자!
 * $$TFIDF = log(wordFreq/(sentenceFreq + 1))$$ /0을 피하기 위해서 뒤에 처리
 * [sklearn.feature_extraction.text.TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)
 
@@ -105,7 +105,8 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 ### Embedding 3(2013) - Word2Vec
 
 > King - man + woman = queen \
-> [1.5,0,0] - [0,1,0] + [1.5,1,0] = [3,0,0]
+> [1.5,0,0] - [0,1,0] + [1.5,1,0] = [3,0,0] \
+> [1301paper - Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)
 {:.lead}
 
 **방식**
@@ -116,7 +117,7 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 
 **장점**
 
-1. 주변단어가 비슷한 단어들은 배열 구조가 유사해 질 것이다. -> 유사단어끼리 유사한 배열을 보여줄 것을 기대한다.
+1. 주변단어가 비슷한 단어들은 배열 구조가 유사해 질 것이다. → 유사단어끼리 유사한 배열을 보여줄 것을 기대한다.
 2. 매우 빠르고 합리적인 성능으로 상용시스템에서도 현재 많이 쓰인다.
 3. 평균을 내기 때문에 bow에 비해서 0값이 잘 안나온다. bows는 sparse representation이기 때문에 필요없는 단어에 대한 표현은 전부 0처리하는 one-hot encoding방식이기 때문에 데이터 효율이 떨어진다.
 4. 소수를 통해서 엄청나게 유연한 표현이 가능하다.([dense representation](https://wikidocs.net/33520))
@@ -129,3 +130,20 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 |방향|bidirectional|oneWay|
 |문장이해도|좋음|떨어짐|
 |genrative|X|O|
+|대명사|BERT|GPT3|
+
+### Embedding 4 - Fasttext
+
+페이스북에서 개발한 word2vec의 개선형 \
+[1607paper - Enriching Word Vectors with Subword Information](https://arxiv.org/pdf/1607.04606.pdf) \
+skipgram model, where each word is represented as a
+bag of character n-grams. \
+단어를 문자단위로 쪼개고, 각 조각마다 word2vec수행
+{:.note title='단어를 더 쪼개는 word2vec == fasttext'}
+
+**장점**
+
+1. 중간에 오타가 있어도 합리적인 결과를 얻을 수 있음.
+2. 한글의 경우 자모로 쪼개서 할 경우 성능이 향상된다.
+   * <얘기를>(3-grams) → <ㅇㅒㄱㅣㄹㅡㄹ> → <ㅇㅒ,ㅇㅒㄱ,ㅒㄱㅣ,ㄱㅣㄹ,ㅣㄹㅡ,ㄹ ㅡㄹ,ㅡㄹ>
+3. OOV에 대해서 (데이터셋만 충분하다면) subword를 통해서 유사도를 계산할 수 있다.
