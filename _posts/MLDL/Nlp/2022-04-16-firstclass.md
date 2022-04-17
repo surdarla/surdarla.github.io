@@ -5,7 +5,8 @@ category:
     - mldl
     - nlp
 description: >
-  자연어 처리에 대해서 제대로 배워보고 정리해보자. 유튜브 김기영님의 자연어처리 4개 강의에 대해서 하나씩 정리해보는 시간을 가져보려 한다.
+  자연어 처리에 대해서 제대로 배워보고 정리해보자. \
+  [유튜브 김기영님의 자연어처리 4개 강의](https://youtube.com/playlist?list=PLrLEKGJAgXxL-R9IqDH7HANWXRsS900tF)에 대해서 하나씩 정리해보는 시간을 가져보려 한다.
 image: /assets/img/blog/nlp/wall.jpeg
 accent_image:
   background: url('/assets/img/blog/nlp/wall.jpeg') center/cover
@@ -20,10 +21,10 @@ sitemap :
 * toc
 {:toc}
 
-## Introduction to AI
+## Introduction to NLP
 
-![nlp tasks]('/assets/img/blog/nlp/nlp.png')
-nlp tasks
+![nlp tasks](/assets/img/blog/nlp/nlp.png)
+다양한 NLP tasks
 {:.figcaption}
 
 * NLP는 2018년 BERT가 나오면서 10% 이상의 성능향상을 이루었고, 지금은 그 이후 또 10% 이상의 성능향상을 이루었다.
@@ -49,20 +50,18 @@ The General Understanding Evaluation benchmark\
       * (pro) 매우 효율적
       * (con) 언어 지식이 필요함, 컴퓨터가 알아서 할 수 없음 -> 요즘은 덜 씀
    2. BPE(byte-pair encoding)
-      * 전체 문서를 문자 단위로 쪼갠 뒤, 빈번하게 나오는 문자들을 묶어서 단어사전의 수를 줄임. 
+      * 전체 문서를 문자 단위로 쪼갠 뒤, 빈번하게 나오는 문자들을 묶어서 단어사전의 수를 줄임.
       * Bottom pu 접근방식
       * 학,교 < 학교
       * 30000개 정도가 될 때까지 이 과정을 반복, 그래서 거의 대부분 tokenizer들이 보면 30000개 정도인 경우가 왠지 많더라.
 
 ## NLP - Embedding
 
-자연어(프로그래밍 언어가 아닌 인간이 쓰는 언어)를 다루는 문서요약, 감성분석, 질의응답, 문장생성을 아우른다. 그런데 컴퓨터가 어떻게 인간의 언어를 알아듣는가? 그것이 중요한 부분이다. 컴퓨터는 언어를 그대로 이해하는 것이 아니라 숫자로 만들어서 이해하게 해야한다.
+자연어(프로그래밍 언어가 아닌 인간이 쓰는 언어)를 다루는 문서요약, 감성분석, 질의응답, 문장생성을 아우른다. 그런데 **컴퓨터가 어떻게 인간의 언어를 알아듣는가?** 컴퓨터는 언어를 그대로 이해하는 것이 아니라 **숫자**로 만들어서 이해하게 해야한다.
 
 * 이를 embedding(일상언어->숫자)이라고 한다.
 * 서로 다른 모델은 서로 다른 임베딩 방법을 가지고 있다.
 * 언어를 무작위하게 숫자를 붙이는 방법 -> 유사한 단어, 유사한 문장은 유사한 숫자가 부여 되도록 표현하는 방향으로 발전하게 된다(attention이 생각나는 부분이다.)
-
-
 
 * subword tokenizer도 학습 필요하다. 학습한 텍스트 데이터셋에 따라 결과가 다르다.
   * tokenizer 학습은 model 학습과 별도, 선행 된다.
@@ -101,21 +100,23 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 * [sklearn.feature_extraction.text.TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)
 
 >하지만 여전히 단점이 많다. **순서와 맥락**을 고려하지 못한다. 언어에서 의미는 순서에 따라 전혀 달라지기도 하기 때문에 이를 보완하는 embedding이 필요했다.
-{:.lead title='limit of BOW,TFIDF'}
+{:.note title='BOW,TFIDF 한계'}
 
 ### Embedding 3(2013) - Word2Vec
 
-> King - man + woman = queen
+> King - man + woman = queen \
 > [1.5,0,0] - [0,1,0] + [1.5,1,0] = [3,0,0]
 {:.lead}
 
-주변 맥락으로 단어를 표현해보자. 평균을 내기 때문에 BOW에 비해서 0값이 잘 안나온다. 소수를 통해서 엄청나게 많은 표현이 가능하다.
+**방식**
 
-방식
 1. 초기 단어를 임의의 배열로 세팅
 2. 주변 단어의 배열로 관심단어 배열을 만들기
 3. 이 과정을 내가 가진 모든 텍스트에 대해 반복하여 학습
 
 **장점**
+
 1. 주변단어가 비슷한 단어들은 배열 구조가 유사해 질 것이다. -> 유사단어끼리 유사한 배열을 보여줄 것을 기대한다.
 2. 매우 빠르고 합리적인 성능으로 상용시스템에서도 현재 많이 쓰인다.
+3. 평균을 내기 때문에 bow에 비해서 0값이 잘 안나온다. bows는 sparse representation이기 때문에 필요없는 단어에 대한 표현은 전부 0처리하는 one-hot encoding방식이기 때문에 데이터 효율이 떨어진다.
+4. 소수를 통해서 엄청나게 유연한 표현이 가능하다.([dense representation](https://wikidocs.net/33520))
