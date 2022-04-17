@@ -156,10 +156,13 @@ bag of character n-grams.** \
 
 ### Sentence embedding - Doc2vec 2014
 
-> 문장마다 Id를 부여하고, 해당 문장을 word2vec과 유사한 형태로 학습하여 문장id의 배열을 업데이트 \
-> 학습 후, 각 문장의 id마다 배열이 생성되며, 비슷한 단어로 이루어진 문장은 비슷한 배열을 갖는다. \
 > [1405 paper - Distributed Representations of Sentences and Documents](https://arxiv.org/abs/1405.4053)
 {:.lead}
+
+**방식**
+
+1. 문장마다 Id를 부여하고, 해당 문장을 word2vec과 유사한 형태로 학습하여 문장id의 배열을 업데이트
+2. 학습 후, 각 문장의 id마다 배열이 생성되며, 비슷한 단어로 이루어진 문장은 비슷한 배열을 갖는다.
 
 **여전한 문맥에 대한 단점**
 
@@ -167,3 +170,9 @@ bag of character n-grams.** \
 → Transformer를 향한 여행 시작!
 2. 트렌스포머 좋긴한데 너무 시간이 오래 걸린다. DL의 한계 \
 → Transfer Learning(pretrained weight)
+
+## Reference
+
+* [ReadyToUseAI - 김기영님 github repo](https://github.com/kiyoungkim1/ReadyToUseAI)
+* [Korpora - 한국어 코퍼스 오픈소스](https://github.com/ko-nlp/Korpora)
+* [wikidocs - 딥러닝을 이용한 자연어처리 입문 word2vec](https://wikidocs.net/22660)
