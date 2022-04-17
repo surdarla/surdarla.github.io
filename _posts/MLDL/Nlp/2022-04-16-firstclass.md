@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NLP 1차 수업 정리
+title: NLP Embedding 정리
 category: 
     - mldl
     - nlp
@@ -122,6 +122,12 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 3. 평균을 내기 때문에 bow에 비해서 0값이 잘 안나온다. bows는 sparse representation이기 때문에 필요없는 단어에 대한 표현은 전부 0처리하는 one-hot encoding방식이기 때문에 데이터 효율이 떨어진다.
 4. 소수를 통해서 엄청나게 유연한 표현이 가능하다.([dense representation](https://wikidocs.net/33520))
 
+**단점**
+
+1. 동음이의어를 구분할 수 없다.
+2. 전혀 관게 없더라도 주변 단어가 비슷하면 비슷하게 임베딩됨.
+3. 단어 단위 학습 → 문장 단위 맥락 이해 X(대명사에 대한 이해를 할 수 없다)
+
 **NPLM(Neural Probabilistic Language Model) vs Word2vec**
 
 | |word2vec|NPLM|
@@ -150,8 +156,14 @@ bag of character n-grams.** \
 
 ### Sentence embedding - Doc2vec 2014
 
-
 > 문장마다 Id를 부여하고, 해당 문장을 word2vec과 유사한 형태로 학습하여 문장id의 배열을 업데이트 \
 > 학습 후, 각 문장의 id마다 배열이 생성되며, 비슷한 단어로 이루어진 문장은 비슷한 배열을 갖는다. \
 > [1405 paper - Distributed Representations of Sentences and Documents](https://arxiv.org/abs/1405.4053)
 {:.lead}
+
+**여전한 문맥에 대한 단점**
+
+1. 여전히 대명사와 문맥에 대한 이해를 하지 못한다 \
+→ Transformer를 향한 여행 시작!
+2. 트렌스포머 좋긴한데 너무 시간이 오래 걸린다. DL의 한계 \
+→ Transfer Learning(pretrained weight)
