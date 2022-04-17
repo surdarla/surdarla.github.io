@@ -6,9 +6,9 @@ category:
     - nlp
 description: >
   자연어 처리에 대해서 제대로 배워보고 정리해보자. 유튜브 김기영님의 자연어처리 4개 강의에 대해서 하나씩 정리해보는 시간을 가져보려 한다.
-image: /assets/img/blog/nlp/nlp.png
+image: /assets/img/blog/nlp/wall.jpeg
 accent_image:
-  background: url('/assets/img/blog/nlp/nlp.png') center/cover
+  background: url('/assets/img/blog/nlp/wall.jpeg') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
@@ -21,6 +21,10 @@ sitemap :
 {:toc}
 
 ## Introduction to AI
+
+![nlp tasks]('/assets/img/blog/nlp/nlp.png')
+nlp tasks
+{:.figcaption}
 
 * NLP는 2018년 BERT가 나오면서 10% 이상의 성능향상을 이루었고, 지금은 그 이후 또 10% 이상의 성능향상을 이루었다.
 * 연구성과는 **open source**화가 잘 되어있다. 하지만 누구나 노력해서 읽고 사용하는 것은 아니다.
@@ -45,7 +49,8 @@ The General Understanding Evaluation benchmark\
       * (pro) 매우 효율적
       * (con) 언어 지식이 필요함, 컴퓨터가 알아서 할 수 없음 -> 요즘은 덜 씀
    2. BPE(byte-pair encoding)
-      * 전체 문서를 문자 단위로 쪼갠 뒤, 빈번하게 나오는 문자들을 묶어서 단어사전의 수를 줄임.
+      * 전체 문서를 문자 단위로 쪼갠 뒤, 빈번하게 나오는 문자들을 묶어서 단어사전의 수를 줄임. 
+      * Bottom pu 접근방식
       * 학,교 < 학교
       * 30000개 정도가 될 때까지 이 과정을 반복, 그래서 거의 대부분 tokenizer들이 보면 30000개 정도인 경우가 왠지 많더라.
 
@@ -91,11 +96,26 @@ TFIDF(단어빈도-역문서빈도,Term Frequency-Inverse Document Frequency)
 
 * (빈번하게 나타나지만, 문장의 특징을 나타내진 않는 a,the,조사)조사와 같은 것의 가중치를 낮출 순 없나?
 * 단어가 나온 문장의 수로 나눠주자!
-* 다른 문장에는 자주 안나오지만 특정 문장에서 빈번하게 등장하는 단어 -> **KEYWORD**를 뽑자!
+* 다른 문장에는 자주 안나오지만 특정 문장에서 빈번하게 등장하는 단어 -> **KEYWORD**를 뽑아보자!
 * $$TFIDF = log(wordFreq/(sentenceFreq + 1))$$ /0을 피하기 위해서 뒤에 처리
 * [sklearn.feature_extraction.text.TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)
 
-하지만 여전히 단점이 많다. 순서와 맥락을 고려하지 못한다. **언어에서 의미는 순서에 따라 전혀 달라지기도 하기 때문에 이를 보완하는 embedding이 필요**했다.
+>하지만 여전히 단점이 많다. **순서와 맥락**을 고려하지 못한다. 언어에서 의미는 순서에 따라 전혀 달라지기도 하기 때문에 이를 보완하는 embedding이 필요했다.
+{:.lead title='limit of BOW,TFIDF'}
 
-### Embedding 3(2013) - Word2Vec, Fasttext
+### Embedding 3(2013) - Word2Vec
 
+> King - man + woman = queen
+> [1.5,0,0] - [0,1,0] + [1.5,1,0] = [3,0,0]
+{:.lead}
+
+주변 맥락으로 단어를 표현해보자. 평균을 내기 때문에 BOW에 비해서 0값이 잘 안나온다. 소수를 통해서 엄청나게 많은 표현이 가능하다.
+
+방식
+1. 초기 단어를 임의의 배열로 세팅
+2. 주변 단어의 배열로 관심단어 배열을 만들기
+3. 이 과정을 내가 가진 모든 텍스트에 대해 반복하여 학습
+
+**장점**
+1. 주변단어가 비슷한 단어들은 배열 구조가 유사해 질 것이다. -> 유사단어끼리 유사한 배열을 보여줄 것을 기대한다.
+2. 매우 빠르고 합리적인 성능으로 상용시스템에서도 현재 많이 쓰인다.
