@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NLP Embedding 정리
+title: NLP Embedding
 category: 
     - mldl
     - nlp

@@ -1,6 +1,6 @@
 ---
 layout : post
-title: NLP Embedding 정리 2 - transformer
+title: NLP Transformer
 category:
     - mldl
     - nlp
