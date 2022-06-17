@@ -45,14 +45,14 @@ menu:
         url:             /python/
       - title:           Algorithm
         url:             /algorithm/
+
+  - title:             Deeplearning
+    url:               /deeplearning/
+    submenu:
       - title:           Paperreview
         url:             /paperreview/
-  - title:             Mldl
-    url:               /mldl/
-    submenu:
       - title:           Gan
         url:             /gan/
-    submenu:
       - title:           Nlp
         url:             /nlp/
   - title:             About

@@ -1,9 +1,9 @@
 ---
 layout: post
-category: mldl
-title: NLP
+category: deeplearning
+title: Paperreview
 description: >
-  nlp 정리
+  논문 리뷰 모음
 related_posts:
   - 
 addons:

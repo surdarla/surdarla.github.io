@@ -1,9 +1,9 @@
 ---
 layout: post
-category: dev
-title: Paperreview
+category: deeplearning
+title: GAN
 description: >
-  논문 리뷰 모음
+  gan에 대해 정리
 related_posts:
   - 
 addons:

@@ -1,9 +1,9 @@
 ---
 layout: post
-category: mldl
-title: GAN
+category: deeplearing
+title: NLP
 description: >
-  gan에 대해 정리
+  nlp 정리
 related_posts:
   - 
 addons:

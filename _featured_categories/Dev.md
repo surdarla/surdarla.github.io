@@ -11,8 +11,6 @@ hide_description: false
 
 * [Python]{:.heading.flip-title}
 * [Algorithm]{:.heading.flip-title}
-* [Paperreview]{:.heading.flip-title}
 
 [python]: /python/
 [algorithm]: /algorithm/
-[paperreview]: /paperreview/
