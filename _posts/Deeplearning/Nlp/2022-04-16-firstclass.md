@@ -1,8 +1,8 @@
 ---
 layout: post
-title: NLP Embedding
+title: NLP Embedding****
 category: 
-    - Deeplearning
+    - DeepLearning
     - nlp
 description: >
   자연어 처리에 대해서 제대로 배워보고 정리해보자.

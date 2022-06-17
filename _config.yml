@@ -46,14 +46,14 @@ menu:
       - title:           Algorithm
         url:             /algorithm/
 
-  - title:             Deeplearning
+  - title:             DeepLearning
     url:               /deeplearning/
     submenu:
-      - title:           Paperreview
+      - title:           PaperReview
         url:             /paperreview/
-      - title:           Gan
+      - title:           GAN
         url:             /gan/
-      - title:           Nlp
+      - title:           NLP
         url:             /nlp/
   - title:             About
     url:               /about/

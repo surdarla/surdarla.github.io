@@ -3,7 +3,7 @@ layout: list
 type: category
 title: DeepLearning
 description: >
-  MLDL 갈무리하고 정리하는 공간
+  Deeplearning 갈무리하고 정리하는 공간
 hide_description: false
 ---
 <!-- blank -->
