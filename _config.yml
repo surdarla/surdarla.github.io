@@ -46,7 +46,7 @@ menu:
       - title:           Algorithm
         url:             /algorithm/
 
-  - title:             DeepLearning
+  - title:             DL
     url:               /deeplearning/
     submenu:
       - title:           PaperReview
