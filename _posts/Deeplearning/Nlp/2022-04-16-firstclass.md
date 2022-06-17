@@ -2,7 +2,7 @@
 layout: post
 title: NLP Embedding
 category: 
-    - mldl
+    - Deeplearning
     - nlp
 description: >
   자연어 처리에 대해서 제대로 배워보고 정리해보자.
