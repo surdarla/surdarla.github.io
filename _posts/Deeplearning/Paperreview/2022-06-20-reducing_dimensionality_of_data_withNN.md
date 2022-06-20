@@ -15,13 +15,14 @@ sitemap :
   priority : 1.0
 ---
 
-* * toc
+
+* toc
 {:toc}
 
 > **[Deep Learning Papers Reading Roadmap 3rd paper]**
 > **[3]** Hinton, Geoffrey E., and Ruslan R. Salakhutdinov. "**Reducing the dimensionality of data with neural networks**." Science 313.5786 (2006): 504-507. [[pdf\]](http://www.cs.toronto.edu/~hinton/science.pdf) **(Milestone, Show the promise of deep learning)** ⭐⭐⭐
 
-# Curse of Dimensionality[^1]
+## Curse of Dimensionality[^1]
 
 우리가 1차원의 데이터를 다루는 것과 10000차원의 데이터를 다루는 것과는 정말 어마어마한 차이가 존재한다는 것이다. 이렇게 차원이 높은 데이터를 다룰 일이 있을까? 하고 약간 막연하게 생각할 수 있지만, 가장 간단한 예로, <u>100px by 100px 그림은 각각의 픽셀이 하나의 차원</u>이라고 했을 때 <u>10000차원 벡터</u>로 표현이 가능하다. 실제로 머신러닝 분야에서 이미지를 다룰 때는 이런 식으로 처리를 하게 된다. 이 이외에도 high dimensioanl space 상에 존재하는 데이터를 다룰 일은 매우 많이 존재한다.
 
@@ -39,7 +40,7 @@ sitemap :
 
 이를 해결하기 위해서는 결국 feature extraction 등의 기술을 사용하여 dimension을 가장 적절하게 낮추는 것이 바람직하다고 할 수 있다.
 
-# Dimensionality Reduction
+## Dimensionality Reduction
 
 > It has been obvious that since the 1980s that back propagation through deep autoencoders would be very effective for nonlinear dimensionality reduction, provided that <u>computers were fast enough</u>, <u>data sets were big enough</u>, and <u>the initial weights were close enough to a good solution.</u>
 > Autoencoders give <u>mappings in both directions between the data and code spaces</u> and they can be applied to very large data sets because both <u>the pretraining and the fine-tuning scale linearly in time and space with the number of training cases</u>.
@@ -74,10 +75,7 @@ The probability of trainig image can be raised by : Adjusting the weights and bi
 
 1. [Github implement]: https://github.com/nmeripo/Reducing-the-Dimensionality-of-Data-with-Neural-Networks
 
-2. 
+### Annotations
 
-### Annotations 
-
-[^1]: [curse of dimension from sanghuckchun ]: https://sanghyukchun.github.io/59/#59-4-cd
+[^1]: [curse of dimension from sanghuckchun ]: <https://sanghyukchun.github.io/59/#59-4-cd>
 [^2]: the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units
-
