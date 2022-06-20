@@ -52,7 +52,7 @@ Two-layer networkk called "restricted Boltzmann machine"(RBM) in which stochasti
 
 $$
 \begin{aligned}
-E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
+  E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
 \end{aligned}
 $$
 
@@ -62,9 +62,9 @@ aligned test
 * Pixel : i
 * Feature:j
 
-$$
+$$%
 \begin{aligned}
-\Delta w_{ij}=\varepsilon({\lang v_ih_j\rang}_{data} - {\lang v_ih_j\rang}_{recon})
+  \Delta w_{ij}=\varepsilon({\lang v_ih_j\rang}_{data} - {\lang v_ih_j\rang}_{recon})
 \end{aligned}
 $$
 
