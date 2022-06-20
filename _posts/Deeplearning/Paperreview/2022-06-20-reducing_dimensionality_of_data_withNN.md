@@ -15,7 +15,6 @@ sitemap :
   priority : 1.0
 ---
 
-
 * toc
 {:toc}
 
@@ -24,13 +23,13 @@ sitemap :
 
 ## Curse of Dimensionality[^1]
 
-우리가 1차원의 데이터를 다루는 것과 10000차원의 데이터를 다루는 것과는 정말 어마어마한 차이가 존재한다는 것이다. 이렇게 차원이 높은 데이터를 다룰 일이 있을까? 하고 약간 막연하게 생각할 수 있지만, 가장 간단한 예로, <u>100px by 100px 그림은 각각의 픽셀이 하나의 차원</u>이라고 했을 때 <u>10000차원 벡터</u>로 표현이 가능하다. 실제로 머신러닝 분야에서 이미지를 다룰 때는 이런 식으로 처리를 하게 된다. 이 이외에도 high dimensioanl space 상에 존재하는 데이터를 다룰 일은 매우 많이 존재한다.
+우리가 1차원의 데이터를 다루는 것과 10000차원의 데이터를 다루는 것과는 정말 어마어마한 차이가 존재한다는 것이다. 이렇게 차원이 높은 데이터를 다룰 일이 있을까? 하고 약간 막연하게 생각할 수 있지만, 가장 간단한 예로, 100px by 100px 그림은 각각의 픽셀이 하나의 차원이라고 했을 때 10000차원 벡터로 표현이 가능하다. 실제로 머신러닝 분야에서 이미지를 다룰 때는 이런 식으로 처리를 하게 된다. 이 이외에도 high dimensioanl space 상에 존재하는 데이터를 다룰 일은 매우 많이 존재한다.
 
-그렇다면 이런 high dimensional data가 왜 우리가 learning한 system의 성능을 나쁘게 만들까? 정말 간단하게 생각해보자. 만약 우리가 주어진 공간을 regular cell로 나눴다고 가정해보자. 그리고 각각의 cell에 가장 많이 존재하는 class를 그 cell의 class로 생각하여 무조건 그 cell에 존재하는 데이터는 그 class라고 하는 logic을 생각해보자. 당연히 cell의 개수를 무한하게 가져가게 된다면, 그리고 데이터가 무한하다면 이 logic은 반드시 truth로 수렴하게 될 것이다. 이 알고리듬이 제대로 동작하려면 각각의 cell, 혹은 bin이 반드시 차있어야한다. 즉, 비어있는 empty cell이 존재해서는 안된다. 따라서 데이터는 아무리 적어도 cell의 개수만큼은 존재해야한다. 그런데 이렇게 cell을 만들게 될 경우 <u>그 cell의 개수는 dimension이 증가함에 따라 exponential하게 늘어나게</u> 되는 것이다. 예를 들어 우리가 1차원상에서 3개의 bin을 가지고 있다고 하면, 이는 2차원상에서는 9개, 3차원상에서는 27개.. 이렇게 exponentially grow하게 되는 것을 알 수 있다. 이 <u>모델의 parameter들이 exponentially 증가</u>하는 것이다. (아래 슬라이드([출처](http://cssanalytics.wordpress.com/2013/10/06/random-subspace-optimization-rso/)) 참고)
+그렇다면 이런 high dimensional data가 왜 우리가 learning한 system의 성능을 나쁘게 만들까? 정말 간단하게 생각해보자. 만약 우리가 주어진 공간을 regular cell로 나눴다고 가정해보자. 그리고 각각의 cell에 가장 많이 존재하는 class를 그 cell의 class로 생각하여 무조건 그 cell에 존재하는 데이터는 그 class라고 하는 logic을 생각해보자. 당연히 cell의 개수를 무한하게 가져가게 된다면, 그리고 데이터가 무한하다면 이 logic은 반드시 truth로 수렴하게 될 것이다. 이 알고리듬이 제대로 동작하려면 각각의 cell, 혹은 bin이 반드시 차있어야한다. 즉, 비어있는 empty cell이 존재해서는 안된다. 따라서 데이터는 아무리 적어도 cell의 개수만큼은 존재해야한다. 그런데 이렇게 cell을 만들게 될 경우 그 cell의 개수는 dimension이 증가함에 따라 exponential하게 늘어나게 되는 것이다. 예를 들어 우리가 1차원상에서 3개의 bin을 가지고 있다고 하면, 이는 2차원상에서는 9개, 3차원상에서는 27개.. 이렇게 exponentially grow하게 되는 것을 알 수 있다. 이 모델의 parameter들이 exponentially 증가하는 것이다. (아래 슬라이드([출처](http://cssanalytics.wordpress.com/2013/10/06/random-subspace-optimization-rso/)) 참고)
 
 ![img](https://sanghyukchun.github.io/images/post/59-2.png)
 
-따라서 당연히 각각의 bin이 비어있지 않도록 ensure해줄 수 있는 <u>data의 개수 역시 exponentially 하게 늘어나게 되고, 즉 차원이 증가하게 되면 필요한 데이터가 exponentailly하게 늘어나게 된다는 것</u>을 의미한다. 그러나 당연히 우리가 3차원 데이터보다 100000차원 데이터를 exponential하게 더 많이 가지고 있으리라는 법은 없고, 이로 인해 문제가 발생하게 되는 것이다.
+따라서 당연히 각각의 bin이 비어있지 않도록 ensure해줄 수 있는 data의 개수 역시 exponentially 하게 늘어나게 되고, 즉 차원이 증가하게 되면 필요한 데이터가 exponentailly하게 늘어나게 된다는 것을 의미한다. 그러나 당연히 우리가 3차원 데이터보다 100000차원 데이터를 exponential하게 더 많이 가지고 있으리라는 법은 없고, 이로 인해 문제가 발생하게 되는 것이다.
 
 그리고 또 문제가 되는 것은 high dimensional space에서 정의되는 metric들로, 특히 2-norm 혹은 euclidean distance의 경우는 그 왜곡이 매우 심하여, 실제 멀리 떨어진 데이터보다 별로 멀리 떨어져있지 않고 각 dimension의 방향으로 약간의 noise가 섞여있는 데이터에 더 큰 distance를 부여하는 등의 문제가 존재한다.
 
@@ -42,12 +41,12 @@ sitemap :
 
 ## Dimensionality Reduction
 
-> It has been obvious that since the 1980s that back propagation through deep autoencoders would be very effective for nonlinear dimensionality reduction, provided that <u>computers were fast enough</u>, <u>data sets were big enough</u>, and <u>the initial weights were close enough to a good solution.</u>
-> Autoencoders give <u>mappings in both directions between the data and code spaces</u> and they can be applied to very large data sets because both <u>the pretraining and the fine-tuning scale linearly in time and space with the number of training cases</u>.
+> It has been obvious that since the 1980s that back propagation through deep autoencoders would be very effective for nonlinear dimensionality reduction, provided that computers were fast enough, data sets were big enough, andthe initial weights were close enough to a good solution.
+> Autoencoders give mappings in both directions between the data and code spaces and they can be applied to very large data sets because both the pretraining and the fine-tuning scale linearly in time and space with the number of training cases.
 
 The required gradients are easily obtained by using the chain rule to backpropagate error derivative first through the decoder network and then through the encoder network
 
-If the initial weights are close to a good solution, gradient descent works well, but finding such initial weights requires a very different type of algorithm that <u>learns one layer of features at a time</u>
+If the initial weights are close to a good solution, gradient descent works well, but finding such initial weights requires a very different type of algorithm that learns one layer of features at a time
 
 ## Pretrainig procedure
 
