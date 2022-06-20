@@ -19,7 +19,7 @@ sitemap :
 > **[Deep Learning Papers Reading Roadmap 3rd paper]**
 > **[3]** Hinton, Geoffrey E., and Ruslan R. Salakhutdinov. "**Reducing the dimensionality of data with neural networks**." Science 313.5786 (2006): 504-507. [[pdf\]](http://www.cs.toronto.edu/~hinton/science.pdf) **(Milestone, Show the promise of deep learning)** ⭐⭐⭐
 
-## Curse of Dimensionality[^1]
+## Curse of Dimensionality
 
 우리가 1차원의 데이터를 다루는 것과 10000차원의 데이터를 다루는 것과는 정말 어마어마한 차이가 존재한다는 것이다. 이렇게 차원이 높은 데이터를 다룰 일이 있을까? 하고 약간 막연하게 생각할 수 있지만, 가장 간단한 예로, 100px by 100px 그림은 각각의 픽셀이 하나의 차원이라고 했을 때 10000차원 벡터로 표현이 가능하다. 실제로 머신러닝 분야에서 이미지를 다룰 때는 이런 식으로 처리를 하게 된다. 이 이외에도 high dimensioanl space 상에 존재하는 데이터를 다룰 일은 매우 많이 존재한다.
 
@@ -48,7 +48,7 @@ If the initial weights are close to a good solution, gradient descent works well
 
 ## Pretrainig procedure
 
-Two-layer networkk called "restricted Boltzmann machine"(RBM) in which stochastic. binary pixels [^2] are connected to stochastic, binary feature detectors using symmetrically weighted connections.
+Two-layer networkk called "restricted Boltzmann machine"(RBM) in which stochastic. binary pixels are connected to stochastic, binary feature detectors using symmetrically weighted connections.
 
 $$
 E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
@@ -74,5 +74,5 @@ The probability of trainig image can be raised by : Adjusting the weights and bi
 
 ### Annotations
 
-[^1]: [curse of dimension from sanghuckchun ]: <https://sanghyukchun.github.io/59/#59-4-cd>
-[^2]: the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units
+[curse of dimension from sanghuckchun ]: <https://sanghyukchun.github.io/59/#59-4-cd>
+the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units
