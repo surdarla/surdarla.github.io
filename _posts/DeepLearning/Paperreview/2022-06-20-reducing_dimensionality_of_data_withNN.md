@@ -2,7 +2,7 @@
 layout: post
 title: Reducing the Dimemsionality of data with NN
 category: 
-    - DeepLearning
+    - deeplearning
     - paperreview
 description: >
     DBN, milestone of Deep learning eve Milestone, show the promise of deep learning
