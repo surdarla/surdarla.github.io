@@ -6,8 +6,7 @@ category:
     - paperreview
 
 description: >
-  DBN, milestone of Deep learning eve\
-  Milestone, show the promise of depp learning
+  DBN, milestone of Deep learning eve Milestone, show the promise of depp learning
 
 # invert_sidebar: true
 sitemap :
