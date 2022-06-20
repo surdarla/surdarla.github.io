@@ -1,5 +1,6 @@
 # Junsu's Github page
-<https://8mprogrammer.netlify.app/>
+
+<surdarla.github.io>
 
 ---
 Powered by [Hydejack](https://github.com/hydecorp/hydejack-starter-kit)
