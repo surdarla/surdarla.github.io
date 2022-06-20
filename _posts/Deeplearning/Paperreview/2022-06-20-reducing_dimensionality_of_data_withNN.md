@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Reducing the Dimemsionality of data with NN
+title: Reducing the Dimemsionality of data with NN
 category: 
     - DeepLearning
     - paperreview
