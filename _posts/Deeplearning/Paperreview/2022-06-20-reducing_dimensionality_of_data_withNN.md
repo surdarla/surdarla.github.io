@@ -76,3 +76,4 @@ The probability of trainig image can be raised by : Adjusting the weights and bi
 
 [curse of dimension from sanghuckchun ]: <https://sanghyukchun.github.io/59/#59-4-cd>
 the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units
+
