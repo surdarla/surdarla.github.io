@@ -4,10 +4,9 @@ title: Reducing the Dimemsionality of data with NN
 category: 
     - DeepLearning
     - paperreview
-
 description: >
-  DBN, milestone of Deep learning eve Milestone, show the promise of depp learning
-
+    DBN, milestone of Deep learning eve Milestone, show the promise of deep learning
+    and the power of neural network.
 # invert_sidebar: true
 sitemap :
   changefreq : daily
@@ -32,7 +31,7 @@ sitemap :
 
 그리고 또 문제가 되는 것은 high dimensional space에서 정의되는 metric들로, 특히 2-norm 혹은 euclidean distance의 경우는 그 왜곡이 매우 심하여, 실제 멀리 떨어진 데이터보다 별로 멀리 떨어져있지 않고 각 dimension의 방향으로 약간의 noise가 섞여있는 데이터에 더 큰 distance를 부여하는 등의 문제가 존재한다.
 
-조금 다른 예를 들어보자. 만약 D-dimensional space에서 엄청나게 얇은 구각을 만들었다고 생각해보자. 여기에서 ‘구’ 라는 것은 한 점에 대해 거리가 동일하게 떨어져있는 모든 점 내부의 영역을 의미한다는 것은 당연한 것이고.. 이 구의 부피는 $V_D(r)=K_D r^D$ 가 될 것이며, $K_D$는 그냥 D에 대한 상수라고 생각하면 된다. 그럼 반지름이 1이고 두께가 $\epsilon$인 구각의 부피와 반지름이 1인 구의 부피의 비율은 ${V_D(1) - V_D(1-\epsilon) \over V_D(1)} = 1-(1-\epsilon)^D$ 가 될 것이다. 놀랍게도, 만약 very very high dimension D에서는 이 값이 1로 수렴하게 된다. 즉, 매우 얇은 구각의 부피가 구의 부피와 같다는 의미. 혹은 대부분의 부피가 거의 surface에 가까운 엄청나게 얇은 그 shell에 존재한다는 희한하고 요상한 의미가 된다.
+조금 다른 예를 들어보자. 만약 D-dimensional space에서 엄청나게 얇은 구각을 만들었다고 생각해보자. 여기에서 ‘구’ 라는 것은 한 점에 대해 거리가 동일하게 떨어져있는 모든 점 내부의 영역을 의미한다는 것은 당연한 것이고.. 이 구의 부피는 $$V_D(r)=K_D r^D$$ 가 될 것이며, $$K_D$$는 그냥 D에 대한 상수라고 생각하면 된다. 그럼 반지름이 1이고 두께가 $$\epsilon$$인 구각의 부피와 반지름이 1인 구의 부피의 비율은 $${V_D(1) - V_D(1-\epsilon) \over V_D(1)} = 1-(1-\epsilon)^D$$ 가 될 것이다. 놀랍게도, 만약 very very high dimension D에서는 이 값이 1로 수렴하게 된다. 즉, 매우 얇은 구각의 부피가 구의 부피와 같다는 의미. 혹은 대부분의 부피가 거의 surface에 가까운 엄청나게 얇은 그 shell에 존재한다는 희한하고 요상한 의미가 된다.
 
 즉, high dimension은 (1) model의 complexity도 증가시키며 (2) 필요한 데이터의 양도 exponentially 하게 늘어나게 하고 (3) 우리가 기존에 사용하던 metric이 제대로 동작하지 않는 그야말로 끔찍한 환경이라 할 수 있다. 그래서 이런 high dimensional space에서 일어나는 여러 문제점들을 통틀어 Curse of dimension이라 한다.
 
