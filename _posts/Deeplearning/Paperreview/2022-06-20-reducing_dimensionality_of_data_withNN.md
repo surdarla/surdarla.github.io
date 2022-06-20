@@ -54,7 +54,7 @@ $$
 \begin{aligned}
 E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
 \end{aligned}
-$$
+$$\
 aligned test
 {:.figcaption}
 
