@@ -51,16 +51,24 @@ If the initial weights are close to a good solution, gradient descent works well
 Two-layer networkk called "restricted Boltzmann machine"(RBM) in which stochastic. binary pixels are connected to stochastic, binary feature detectors using symmetrically weighted connections.
 
 $$
+\begin{aligned}
 E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
+\end{aligned}
 $$
-Pixel : i
+Pixel : i\
 Feature:j
+
 $$
+\begin{aligned}
 \Delta w_{ij}=\varepsilon({\lang v_ih_j\rang}_{data} - {\lang v_ih_j\rang}_{recon})
+\end{aligned}
 $$
-learning rate : $$\varepsilon$$
-$${\lang v_ih_j\rang}_{data}$$ : when pixel i and feature detector j  are on together
-$${\lang v_ih_j\rang}_{recon}$$ : corresponding fraction for confabulations
+annotation for aligned math block
+{:.figcaption}
+
+* learning rate : $\varepsilon$
+* ${\lang v_ih_j\rang}_{data}$ : when pixel i and feature detector j  are on together
+* ${\lang v_ih_j\rang}_{recon}$ : corresponding fraction for confabulations
 
 The first layer of feature detectors then become the visible units for learning the next RBM
 
@@ -70,10 +78,11 @@ The probability of trainig image can be raised by : Adjusting the weights and bi
 
 ### References
 
-1. [Github implement]: https://github.com/nmeripo/Reducing-the-Dimensionality-of-Data-with-Neural-Networks
+1. [Github implement](https://github.com/nmeripo/Reducing-the-Dimensionality-of-Data-with-Neural-Networks)
 
 ### Annotations
 
-[curse of dimension from sanghuckchun ]: <https://sanghyukchun.github.io/59/#59-4-cd>
-the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units
+[curse of dimension from sanghuckchun]: <https://sanghyukchun.github.io/59/#59-4-cd>
+the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units[^1]
 
+[^1]: something
