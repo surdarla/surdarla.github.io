@@ -55,20 +55,21 @@ $$
 E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
 \end{aligned}
 $$
-Pixel : i\
-Feature:j
+
+* Pixel : i
+* Feature:j
 
 $$
 \begin{aligned}
 \Delta w_{ij}=\varepsilon({\lang v_ih_j\rang}_{data} - {\lang v_ih_j\rang}_{recon})
 \end{aligned}
-$$
+$$\
 annotation for aligned math block
 {:.figcaption}
 
-* learning rate : $\varepsilon$
-* ${\lang v_ih_j\rang}_{data}$ : when pixel i and feature detector j  are on together
-* ${\lang v_ih_j\rang}_{recon}$ : corresponding fraction for confabulations
+* learning rate : $$\varepsilon$$
+* $${\lang v_ih_j\rang}_{data}$$ : when pixel i and feature detector j  are on together
+* $${\lang v_ih_j\rang}_{recon}$$ : corresponding fraction for confabulations
 
 The first layer of feature detectors then become the visible units for learning the next RBM
 
@@ -83,6 +84,6 @@ The probability of trainig image can be raised by : Adjusting the weights and bi
 ### Annotations
 
 [curse of dimension from sanghuckchun]: <https://sanghyukchun.github.io/59/#59-4-cd>
-the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units[^1]
+the pixels correspond to 'visible' units of the RBM because their states are observed; the feature detectors correspond to 'hidden' units [^1]
 
 [^1]: something
