@@ -37,48 +37,50 @@ sitemap :
 - Non-trainable layer
 
 - 2 타입
-
   - Inter-Channel LRN
 
-    - $$
-      \begin{aligned}
-      	b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{j=\max(0,i-n/2)}^{\min(N-1,i+n/2)}(a_{x,y}^j)^2 \big)^\beta
-      \end{aligned}
-      $$
 
-      **The neighborhood defined is across the channel**
-      
-      $$i$$ : output of the filter i
 
-      a(x,y) : the pixel values at (x,y) position before normalization
+$$
+\begin{align*}
+	b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{j=\max(0,i-n/2)}^{\min(N-1,i+n/2)}(a_{x,y}^j)^2 \big)^\beta
+\end{align*}
+$$
 
-      b(x,y) : the pixel values at (x,y) position after normalization
-      
-      k : used to avoid any singularities - division by zero
-      
-      a : normalization constant
-      
-      $$\beta$$ : contrasting constant
-      
-      n : define the neighborhood length
-      
-      $$(k,a,\beta,n) = (0,1,1,N)$$ : standard normalization
+**The neighborhood defined is across the channel**
 
-  - Intra-Channel LRN
+$$i$$ : output of the filter i
 
-    - $$
-      b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{i=\max(0,x-n/2)}^{\min(W,x+n/2)}\sum_{j=\max(0,y-n/2)}^{\min(W,x+n/2)}(a_{x,y}^j)^2 \big)^\beta
-      $$
-      
-      **The same channels only**
+a(x,y) : the pixel values at (x,y) position before normalization
 
-      
+b(x,y) : the pixel values at (x,y) position after normalization
 
-  ## Batch normalization
+k : used to avoid any singularities - division by zero
 
-  
+a : normalization constant
 
-  
+$$\beta$$ : contrasting constant
+
+n : define the neighborhood length
+
+$$(k,a,\beta,n) = (0,1,1,N)$$ : standard normalization
+
+- Intra-Channel LRN
+
+
+$$
+b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{i=\max(0,x-n/2)}^{\min(W,x+n/2)}\sum_{j=\max(0,y-n/2)}^{\min(W,x+n/2)}(a_{x,y}^j)^2 \big)^\beta
+$$
+
+**The same channels only**
+
+
+
+## Batch normalization
+
+
+
+
 
 - 
 
