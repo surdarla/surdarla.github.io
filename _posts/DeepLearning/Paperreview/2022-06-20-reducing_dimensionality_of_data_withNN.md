@@ -7,7 +7,13 @@ category:
 description: >
     DBN, milestone of Deep learning eve Milestone, show the promise of deep learning
     and the power of neural network.
-# invert_sidebar: true
+image: /assets/img/blog/Dimensionality.png
+accent_image:
+  background: url('/assets/img/blog/Dimensionality.png') center/cover
+  overlay: false
+accent_color: '#ccc'
+theme_color: '#ccc'
+invert_sidebar: false
 sitemap :
   changefreq : daily
   priority : 1.0
@@ -16,7 +22,7 @@ sitemap :
 * toc
 {:toc}
 
-> **[Deep Learning Papers Reading Roadmap 3rd paper]**
+> **[Deep Learning Papers Reading Roadmap 3rd paper]**\
 > **[3]** Hinton, Geoffrey E., and Ruslan R. Salakhutdinov. "**Reducing the dimensionality of data with neural networks**." Science 313.5786 (2006): 504-507. [[pdf\]](http://www.cs.toronto.edu/~hinton/science.pdf) **(Milestone, Show the promise of deep learning)** ⭐⭐⭐
 
 ## Curse of Dimensionality
