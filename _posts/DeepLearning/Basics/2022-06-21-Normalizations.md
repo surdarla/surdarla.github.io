@@ -89,14 +89,35 @@ batch normalization paper에서는 단순히 train/test input data의 distributi
 
 문제는 hidden neurons 안의 분포를 직접적으로 건드릴 수 없기 때문에 batch normalization을 사용하는 것이다.
 
+### method
+
+![batch norm algorithm](https://miro.medium.com/max/405/1*Hiq-rLFGDpESpr8QNsJ1jg.png)
+
+1. Normalize the entire batch *B* to be zero mean and unit variance
+
+- Calculate the mean of the entire mini-batch output: $$u_B$$
+- Calculate the variance of the entire mini-batch output: $$\sigma_B$$
+- Normalize the mini-batch by subtracting the mean and dividing with variance
+
+2. Introduce two trainable parameters ( $$\gamma$$ : scale_variable and $$\beta$$ : shift_variable) to scale and shift the normalized mini-batch output
+   - $$\gamma = \sigma_B$$ and $$\Beta = u_B$$ 일경우에는 normalize되지 않아서 original activation이 저장된다.
+
+3. Feed (this scaled and shifted normalized mini-batch) to the activation function.
+
+![](https://miro.medium.com/max/700/1*PgUwNzUYs2_Sp5nrPfSZ5g.jpeg)
+
+
+
 ## References
 
 * [Medium-normalizations](https://towardsdatascience.com/difference-between-local-response-normalization-and-batch-normalization-272308c034ac)
 
-* [^1]: [Imagenet Classification with Deep Convolutional Neural Network:AlexNet](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
+* [^1]: [Imagenet Classification with Deep Convolutional Neural Network:AlexNet - access with safari](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
 
 * [^2]: [lateral inhibition explanation in wiki](https://ko.wikipedia.org/wiki/%EC%B8%A1%EB%A9%B4_%EC%96%B5%EC%A0%9C#:~:text=%EC%8B%A0%EA%B2%BD%EC%84%B8%ED%8F%AC%EB%93%A4%EC%9D%B4%20%ED%9D%A5%EB%B6%84%ED%95%98%EA%B2%8C%20%EB%90%98%EB%A9%B4%20%EC%98%86%EC%97%90%20%EC%9E%88%EB%8A%94%20%EC%9D%B4%EC%9B%83%20%EC%8B%A0%EA%B2%BD%EC%84%B8%ED%8F%AC%EC%97%90%20%EC%96%B5%EC%A0%9C%EC%84%B1%20%EC%8B%A0%EA%B2%BD%EC%A0%84%EB%8B%AC%EB%AC%BC%EC%A7%88%EC%9D%84%20%EC%A0%84%EB%8B%AC%ED%95%98%EC%97%AC%2C%20%EC%9D%B4%EC%9B%83%20%EC%8B%A0%EA%B2%BD%20%EC%84%B8%ED%8F%AC%EA%B0%80%20%EB%8D%9C%20%ED%99%9C%EC%84%B1%ED%99%94%EB%90%98%EB%8F%84%EB%A1%9D%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4)
 
 * [^3]: [Medium-what is ICF?](https://medium.com/analytics-vidhya/internal-covariate-shift-an-overview-of-how-to-speed-up-neural-network-training-3e2a3dcdd5cc#:~:text=So%2C%20what%20is%20Internal%20Covariate%20Shift%3F%3F)
 
-* 
+* [천상혁님 blog - batch normalization](https://sanghyukchun.github.io/88/)
+
+* [Coursera - Andrew Ng : Why does batch norm work?](https://www.coursera.org/lecture/deep-neural-network/why-does-batch-norm-work-81oTm)
