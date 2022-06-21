@@ -13,7 +13,7 @@ accent_image:
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
-invert_sidebar: false
+invert_sidebar: true
 sitemap :
   changefreq : daily
   priority : 1.0
