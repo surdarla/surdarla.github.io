@@ -55,6 +55,8 @@ menu:
         url:             /gan/
       - title:           NLP
         url:             /nlp/
+      - title:           Basics
+        url:             /basics/
   - title:             About
     url:               /about/
 
