@@ -67,11 +67,9 @@ sitemap :
   - Intra-Channel LRN
 
     - $$
-      \begin{aligned}
-      	b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{i=\max(0,x-n/2)}^{\min(W,x+n/2)}\sum_{j=\max(0,y-n/2)}^{\min(W,x+n/2)}(a_{x,y}^j)^2 \big)^\beta
-      \end{aligned}
+      b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{i=\max(0,x-n/2)}^{\min(W,x+n/2)}\sum_{j=\max(0,y-n/2)}^{\min(W,x+n/2)}(a_{x,y}^j)^2 \big)^\beta
       $$
-
+      
       **The same channels only**
 
       
