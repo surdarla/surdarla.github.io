@@ -72,17 +72,17 @@ The same channels only
 
 > The change in the distribution of hidden neurons/activations due to the change in network parameters during training
 
-Covariate 공변량 이란 종속변수(trainig data)에 대해여 독립변수(test data)와 기타 노이즈들이 공유하는 변량을 말한다. 풀어 말하면, 독립변수와 종속변수의 관계를 명확하게 밝히려 할때 **방해가 될 수 있는 요인**을 공변량이라고 한다. 
+Covariate 공변량 이란 종속변수(trainig data)에 대해여 독립변수(test data)와 기타 노이즈들이 공유하는 변량을 말한다. 풀어 말하면, 독립변수와 종속변수의 관계를 명확하게 밝히려 할때 **방해가 될 수 있는 요인**을 공변량이라고 한다.
 
 ![covariate shift](https://miro.medium.com/max/700/1*gUOjaIspVsz-PVxLDLQGQA.png)
 Roses vs No-roses classification. The feature map plotted on the right have different distributions for two different batch sampled from the dataset
 {:.figcaption}
 
-다른 분포의 data를 학습하는 것은 training의 속도를 느리게 만든다. 왜냐하면 다른 데이터 분포를 가진 두 batch들에 대해서 학습을 하니깐 parameter 조율이 많을 수 밖에 없다. 그래서 batch 안의 요소들(data)들이 서로 비슷하거나 닮지 않게 만들어주는 것이 covariate shift를 완화할 수 있다.  이를 위해서 torch.data.utils.dataloader에 shuffle=True 가 있는 것이다. 랜덤하게 배치를 구성하는 것으로 이를 막을 수 있다.
+전혀 다른 분포의 data를 학습하는 것은 training의 속도를 느리게 만든다. 아예 0인 배치를 보았다가 1인 배치를 보면 헤깔릴 것이다. (고양이는 전부 까만거 아니었어?! 갈색 고양이도 있어? - Andrew Ng) 그래서 batch 안의 요소들(data)들이 서로 너무 닮지 않게 만들어주는 것이 covariate shift를 완화할 수 있다. 즉 원하는 모델이 고양이가 까맣게만 생각하지 않게 하기 위해서 누워있는 갈색 고양이, 뛰는 고등어 고양이등을 잘 배치마다 섞어서 모델에게 input해 주는 것이다.  이를 위해서 torch.data.utils.dataloader에 shuffle=True 가 있는 것이다. 랜덤하게 배치를 구성하는 것으로 이를 막을 수 있다.
 
 그렇다면 internel은 뭐냐? hidden neurons들 안에 답이 있다. **Covariate shift for hidden layers**
 
-batch normalization paper에서는 단순히 train/test input data의 distribution이 변하는 것 뿐 아니라, 각각의 layer(hidden neurons)들의 input distribution이 training 과정에서 일정하지 않기 때문에 문제가 발생한다고 주장하며, 이렇게 **각각의 layer들의 input distribution이 consistent하지 않은 현상**을 internal convariate shift라고 정의한다. 배치안의 데이터를 랜덤하게 구성하여도, 기어코 하나의 batch가 다른 배치들보다 학습을 방해하는 분포를 가질 수 있다. 
+batch normalization paper에서는 단순히 train/test input data의 distribution이 변하는 것 뿐 아니라, 각각의 layer(hidden neurons)들의 input distribution이 training 과정에서 일정하지 않기 때문에 문제가 발생한다고 주장하며, 이렇게 **각각의 layer들의 input distribution이 consistent하지 않은 현상**을 internal convariate shift라고 정의한다. 배치안의 데이터를 랜덤하게 구성하여도, 기어코 하나의 batch가 다른 배치들보다 학습을 방해하는 분포를 가질 수 있다.
 
 여러 실험을 하다보면 특정 batch에서의 loss가 유난히 튀는 경우가 존재한다. 이러한 경우에 seed를 다양하게 실험한 뒤에 mixup하면 점수적으로 이득을 보는 경우가 있는데, 이제와서 보니 이러한 internel covariate shift를 완화해주는 것이 아니었나 싶다.
 {:.note title='개인 실험 경험'}
@@ -95,29 +95,26 @@ batch normalization paper에서는 단순히 train/test input data의 distributi
 
 1. Normalize the entire batch *B* to be zero mean and unit variance
 
-- Calculate the mean of the entire mini-batch output: $$u_B$$
-- Calculate the variance of the entire mini-batch output: $$\sigma_B$$
-- Normalize the mini-batch by subtracting the mean and dividing with variance
+   * Calculate the mean of the entire mini-batch output: $$u_B$$
+   * Calculate the variance of the entire mini-batch output: $$\sigma_B$$
+   * Normalize the mini-batch by subtracting the mean and dividing with variance
 
 2. Introduce two trainable parameters ( $$\gamma$$ : scale_variable and $$\beta$$ : shift_variable) to scale and shift the normalized mini-batch output
-   - $$\gamma = \sigma_B$$ and $$\Beta = u_B$$ 일경우에는 normalize되지 않아서 original activation이 저장된다.
+   * $$\gamma = \sigma_B$$ and $$\beta = u_B$$ 일경우에는 normalize되지 않아서 original activation이 저장된다.
 
 3. Feed (this scaled and shifted normalized mini-batch) to the activation function.
 
-![](https://miro.medium.com/max/700/1*PgUwNzUYs2_Sp5nrPfSZ5g.jpeg)
+![batch norm](https://miro.medium.com/max/700/1*PgUwNzUYs2_Sp5nrPfSZ5g.jpeg)
 
-
+### 배치정규화 성능향상 원인 분석 paper
 
 ## References
 
 * [Medium-normalizations](https://towardsdatascience.com/difference-between-local-response-normalization-and-batch-normalization-272308c034ac)
-
-* [^1]: [Imagenet Classification with Deep Convolutional Neural Network:AlexNet - access with safari](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
-
-* [^2]: [lateral inhibition explanation in wiki](https://ko.wikipedia.org/wiki/%EC%B8%A1%EB%A9%B4_%EC%96%B5%EC%A0%9C#:~:text=%EC%8B%A0%EA%B2%BD%EC%84%B8%ED%8F%AC%EB%93%A4%EC%9D%B4%20%ED%9D%A5%EB%B6%84%ED%95%98%EA%B2%8C%20%EB%90%98%EB%A9%B4%20%EC%98%86%EC%97%90%20%EC%9E%88%EB%8A%94%20%EC%9D%B4%EC%9B%83%20%EC%8B%A0%EA%B2%BD%EC%84%B8%ED%8F%AC%EC%97%90%20%EC%96%B5%EC%A0%9C%EC%84%B1%20%EC%8B%A0%EA%B2%BD%EC%A0%84%EB%8B%AC%EB%AC%BC%EC%A7%88%EC%9D%84%20%EC%A0%84%EB%8B%AC%ED%95%98%EC%97%AC%2C%20%EC%9D%B4%EC%9B%83%20%EC%8B%A0%EA%B2%BD%20%EC%84%B8%ED%8F%AC%EA%B0%80%20%EB%8D%9C%20%ED%99%9C%EC%84%B1%ED%99%94%EB%90%98%EB%8F%84%EB%A1%9D%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4)
-
-* [^3]: [Medium-what is ICF?](https://medium.com/analytics-vidhya/internal-covariate-shift-an-overview-of-how-to-speed-up-neural-network-training-3e2a3dcdd5cc#:~:text=So%2C%20what%20is%20Internal%20Covariate%20Shift%3F%3F)
-
 * [천상혁님 blog - batch normalization](https://sanghyukchun.github.io/88/)
-
 * [Coursera - Andrew Ng : Why does batch norm work?](https://www.coursera.org/lecture/deep-neural-network/why-does-batch-norm-work-81oTm)
+* [나동빈님 배치정규화 유뷰트](https://www.youtube.com/watch?v=58fuWVu5DVU&fbclid=IwAR1vMfeJ1jWwFXpOy8nfh2GXQ23WLNphP5-iDiqx7zESbGxOfxi2-tZdr1M)
+
+[^1]:[Imagenet Classification with Deep Convolutional Neural Network:AlexNet - access with safari](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
+[^2]:[lateral inhibition explanation in wiki](https://ko.wikipedia.org/wiki/%EC%B8%A1%EB%A9%B4_%EC%96%B5%EC%A0%9C#:~:text=%EC%8B%A0%EA%B2%BD%EC%84%B8%ED%8F%AC%EB%93%A4%EC%9D%B4%20%ED%9D%A5%EB%B6%84%ED%95%98%EA%B2%8C%20%EB%90%98%EB%A9%B4%20%EC%98%86%EC%97%90%20%EC%9E%88%EB%8A%94%20%EC%9D%B4%EC%9B%83%20%EC%8B%A0%EA%B2%BD%EC%84%B8%ED%8F%AC%EC%97%90%20%EC%96%B5%EC%A0%9C%EC%84%B1%20%EC%8B%A0%EA%B2%BD%EC%A0%84%EB%8B%AC%EB%AC%BC%EC%A7%88%EC%9D%84%20%EC%A0%84%EB%8B%AC%ED%95%98%EC%97%AC%2C%20%EC%9D%B4%EC%9B%83%20%EC%8B%A0%EA%B2%BD%20%EC%84%B8%ED%8F%AC%EA%B0%80%20%EB%8D%9C%20%ED%99%9C%EC%84%B1%ED%99%94%EB%90%98%EB%8F%84%EB%A1%9D%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EA%B2%83%EC%9D%B4%EB%8B%A4)
+[^3]:[Medium-what is ICF?](https://medium.com/analytics-vidhya/internal-covariate-shift-an-overview-of-how-to-speed-up-neural-network-training-3e2a3dcdd5cc#:~:text=So%2C%20what%20is%20Internal%20Covariate%20Shift%3F%3F)
