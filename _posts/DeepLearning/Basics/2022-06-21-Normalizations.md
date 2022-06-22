@@ -40,11 +40,7 @@ sitemap :
 
 #### Inter-Channel LRN
 
-$$
-\begin{align*}
- b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{j=\max(0,i-n/2)}^{\min(N-1,i+n/2)}(a_{x,y}^j)^2 \big)^\beta
-\end{align*}
-$$
+$$b_{x,y}^i = a_{x,y}^i / \big(k + a\sum_{j=\max(0,i-n/2)}^{\min(N-1,i+n/2)}(a_{x,y}^j)^2 \big)^\beta$$
 
 **The neighborhood defined is across the channel**\
 $$i$$ : output of the filter i\
