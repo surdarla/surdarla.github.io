@@ -74,11 +74,11 @@ Covariate 공변량 이란 종속변수(trainig data)에 대해여 독립변수(
 Roses vs No-roses classification. The feature map plotted on the right have different distributions for two different batch sampled from the dataset
 {:.figcaption}
 
-전혀 다른 분포의 data를 학습하는 것은 training의 속도를 느리게 만든다. 아예 0인 배치를 보았다가 1인 배치를 보면 헤깔릴 것이다. (고양이는 전부 까만거 아니었어?! 갈색 고양이도 있어? - Andrew Ng) 그래서 batch 안의 요소들(data)들이 서로 너무 닮지 않게 만들어주는 것이 covariate shift를 완화할 수 있다. 즉 원하는 모델이 고양이가 까맣게만 생각하지 않게 하기 위해서 누워있는 갈색 고양이, 뛰는 고등어 고양이등을 잘 배치마다 섞어서 모델에게 input해 주는 것이다.  이를 위해서 torch.data.utils.dataloader에 shuffle=True 가 있는 것이다. 랜덤하게 배치를 구성하는 것으로 이를 막을 수 있다.
+전혀 다른 분포의 data를 학습하는 것은 training의 속도를 느리게 만든다. 아예 0인 배치를 보았다가 1인 배치를 보면 헤깔릴 것이다. (고양이는 전부 까만거 아니었어?! 갈색 고양이도 있어? - Andrew Ng) 그래서 batch 안의 요소들(data)들이 서로 너무 닮지 않게 만들어주는 것이 covariate shift를 완화할 수 있다. 즉 원하는 모델이 고양이가 까맣게만 생각하지 않게 하기 위해서 누워있는 갈색 고양이, 뛰는 고등어 고양이등을 잘 배치마다 섞어서 모델에게 input해 주는 것이다.  이를 위해서 torch.data.utils.dataloader에 shuffle=True 가 있는 것이다. 랜덤하게 배치를 구성하는 것으로 이를 막을 수 있는 경우가 많다.
 
 그렇다면 internel은 뭐냐? hidden neurons들 안에 답이 있다. **Covariate shift for hidden layers**
 
-batch normalization paper에서는 단순히 train/test input data의 distribution이 변하는 것 뿐 아니라, 각각의 layer(hidden neurons)들의 input distribution이 training 과정에서 일정하지 않기 때문에 문제가 발생한다고 주장하며, 이렇게 **각각의 layer들의 input distribution이 consistent하지 않은 현상**을 internal convariate shift라고 정의한다. 배치안의 데이터를 랜덤하게 구성하여도, 기어코 하나의 batch가 다른 배치들보다 학습을 방해하는 분포를 가질 수 있다.
+batch normalization paper에서는 단순히 train/test input data의 distribution이 변하는 것 뿐 아니라, 각각의 layer(hidden neurons)들의 이전 layer로부터 전달받는 input의 distribution이 training 과정에서 일정하지 않기 때문에 문제가 발생한다고 주장하며, 이렇게 **각각의 layer들의 input distribution이 consistent하지 않은 현상**을 internal convariate shift라고 정의한다. 배치안의 데이터를 랜덤하게 구성하여도, 기어코 하나의 batch가 다른 배치들보다 학습을 방해하는 분포를 가질 수 있다.
 
 여러 실험을 하다보면 특정 batch에서의 loss가 유난히 튀는 경우가 존재한다. 이러한 경우에 seed를 다양하게 실험한 뒤에 mixup하면 점수적으로 이득을 보는 경우가 있는데, 이제와서 보니 이러한 internel covariate shift를 완화해주는 것이 아니었나 싶다.
 {:.note title='개인 실험 경험'}
@@ -93,16 +93,17 @@ batch normalization paper에서는 단순히 train/test input data의 distributi
 
    * Calculate the mean of the entire mini-batch output: $$u_B$$
    * Calculate the variance of the entire mini-batch output: $$\sigma_B$$
-   * Normalize the mini-batch by subtracting the mean and dividing with variance
+   * Normalize the mini-batch by **subtracting the mean and dividing with variance**
 
-2. Introduce two trainable parameters ( $$\gamma$$ : scale_variable and $$\beta$$ : shift_variable) to scale and shift the normalized mini-batch output
+2. Introduce two trainable parameters ( $$\gamma$$ : scale_variable and $$\beta$$ : shift_variable) to **scale and shift the normalized mini-batch output**
    * $$\gamma = \sigma_B$$ and $$\beta = u_B$$ 일경우에는 normalize되지 않아서 original activation이 저장된다.
+   * ?? 무슨 뜻?
 
 3. Feed (this scaled and shifted normalized mini-batch) to the activation function.
 
 ![batch norm](https://miro.medium.com/max/700/1*PgUwNzUYs2_Sp5nrPfSZ5g.jpeg)
 
-### 배치정규화 성능향상 원인 분석 paper
+### 배치정규화 성능향상 원인 분석 paper - 나동빈님
 
 ## References
 

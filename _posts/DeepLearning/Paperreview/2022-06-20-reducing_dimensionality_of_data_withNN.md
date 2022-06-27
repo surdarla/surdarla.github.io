@@ -57,9 +57,7 @@ If the initial weights are close to a good solution, gradient descent works well
 Two-layer networkk called "restricted Boltzmann machine"(RBM) in which stochastic. binary pixels are connected to stochastic, binary feature detectors using symmetrically weighted connections.
 
 $$
-  \begin{aligned}
-    E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
-  \end{aligned}
+E(v,h) = -\sum_{i \in pixels} b_iv_i - \sum_{j\in features}b_jh_j - \sum_{i,j}b_ih_jw_{ij}
 $$
 
 aligned test
@@ -69,17 +67,15 @@ aligned test
 * Feature:j
 
 $$
-  \begin{aligned}
-    \Delta w_{ij}=\varepsilon({\lang v_ih_j\rang}_{data} - {\lang v_ih_j\rang}_{recon})
-  \end{aligned}
+\Delta w_{ij}=\varepsilon({\lang v_ih_j\rang}_{data} - {\langle v_ih_j\rangle}_{recon})
 $$
 
 annotation for aligned math block
 {:.figcaption}
 
 * learning rate : $\varepsilon$
-* $${\lang v_ih_j\rang}_{data}$$ : when pixel i and feature detector j  are on together
-* $${\lang v_ih_j\rang}_{recon}$$ : corresponding fraction for confabulations
+* $${\langle v_ih_j\rangle}_{data}$$ : when pixel i and feature detector j  are on together
+* $${\langle v_ih_j\rangle}_{recon}$$ : corresponding fraction for confabulations
 
 The first layer of feature detectors then become the visible units for learning the next RBM
 
