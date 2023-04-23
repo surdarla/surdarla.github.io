@@ -6,6 +6,6 @@ root: about
 parts:
   - caption : Starting
     chapters:
-    - file: scripts/basic/test_toc.md
+    - file: scripts/basic/test_toc
       sections:
-      - file : scripts/basic/test.ipynb
+      - file : scripts/basic/test
