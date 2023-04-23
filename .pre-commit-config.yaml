@@ -1,0 +1,52 @@
+# Install pre-commit hooks via
+# pre-commit install
+
+# exclude: >
+#     (?x)^(
+#       \.vscode/settings\.json|
+#       docs/conf\.py|
+#       tests/test_tocdirective/.*|
+#       tests/test_sphinx_jupyterbook_latex/.*|
+#     )$
+
+repos:
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    - id: check-json
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+
+  # - repo: local
+  #   hooks:
+  #   - id: check-doc-req
+  #     name: Check .binder/requirements.txt up-to-date
+  #     pass_filenames: false
+  #     additional_dependencies:
+  #     - tomli
+  #     files: >-
+  #         (?x)^(
+  #             pyproject.toml|
+  #             .binder/requirements.txt|
+  #             scripts/check_doc_requirements.py|
+  #         )$
+  #     language: python
+  #     language_version: python3
+  #     entry: python scripts/check_doc_requirements.py
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    - id: isort
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+    - id: black
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+    - id: flake8
