@@ -13,6 +13,6 @@ parts:
   - caption : CS229 2018
     chapters:
     - file : scripts/CS229/introduction
-    sections :
-      - file : scripts/CS229/1
-      - file : scripts/CS229/2
+      sections :
+        - file : scripts/CS229/1
+        - file : scripts/CS229/2
