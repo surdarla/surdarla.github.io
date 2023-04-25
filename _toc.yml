@@ -9,3 +9,10 @@ parts:
     - file: scripts/basic/test_toc
       sections:
       - file : scripts/basic/test
+
+  - caption : CS229 2018
+    chapters:
+    - file : scripts/CS229/introduction
+    sections :
+      - file : scripts/CS229/1
+      - file : scripts/CS229/2
