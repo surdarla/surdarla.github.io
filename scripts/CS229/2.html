@@ -440,18 +440,26 @@ Goal = \min\limits_{\theta_{0}, \theta_{1}} J(\theta_0, \theta_1)
 </section>
 </div><p>위의 gradient descent 알고리즘을 우리의 cost function에 적용해보자.</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}
-\begin{align}
-\frac \partial {\partial{\theta}_j} J({\theta}_0, {\theta}_1) = \frac \partial {\partial{\theta}_j} \bigg[\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2\bigg]\\\end{split}\\\begin{split}j = 0 : \frac \partial {\partial{\theta}_0} J({\theta}_0, {\theta}_1) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})\\\end{split}\\\begin{split}j = 1 : \frac \partial {\partial{\theta}_1} J({\theta}_0, {\theta}_1) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})x^{(i)}\\
-\end{align}
-\end{split}\end{aligned}\end{align} \]</div>
+\[
+\frac \partial {\partial{\theta}_j} J({\theta}_0, {\theta}_1) = \frac \partial {\partial{\theta}_j} \bigg[\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2\bigg]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+j = 0 : \frac \partial {\partial{\theta}_0} J({\theta}_0, {\theta}_1) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+j = 1 : \frac \partial {\partial{\theta}_1} J({\theta}_0, {\theta}_1) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})x^{(i)}
+\]</div>
 <p>다시 표현하면</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}
-\begin{align}
-{\theta}_0 := {\theta}_0 - {\alpha}\frac 1 m\sum_{i=1}^{m}(h_\theta(x^i) - y^i)\\\end{split}\\\begin{split}{\theta}_1 := {\theta}_1 - {\alpha}\frac 1 m\sum_{i=1}^{m}(h_\theta(x^i) - y^i)x^i\\
-\end{align}
-\end{split}\end{aligned}\end{align} \]</div>
+\[
+{\theta}_0 := {\theta}_0 - {\alpha}\frac 1 m\sum_{i=1}^{m}(h_\theta(x^i) - y^i)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\theta}_1 := {\theta}_1 - {\alpha}\frac 1 m\sum_{i=1}^{m}(h_\theta(x^i) - y^i)x^i\\
+\end{split}\]</div>
 </section>
 <div class="toctree-wrapper compound">
 </div>
