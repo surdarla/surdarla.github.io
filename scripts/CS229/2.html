@@ -720,7 +720,7 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
 </section>
 <section id="cost-function">
 <h2>Cost function<a class="headerlink" href="#cost-function" title="Permalink to this heading">#</a></h2>
-<p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 {term}<span class="math notranslate nohighlight">\(`x`\)</span> input을 넣었을 때 나오는 값 {term}<span class="math notranslate nohighlight">\(`J(\theta)`\)</span>을 최소화하는 것이 learning algorithm의 성능을 높이는 것이라고 볼 수 있다.</p>
+<p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 <span class="xref std std-term">$x$</span> input을 넣었을 때 나오는 값 <span class="xref std std-term">$J(\theta)$</span>을 최소화하는 것이 learning algorithm의 성능을 높이는 것이라고 볼 수 있다.</p>
 <p>우리가 사용할 cost function은 MSE(least squared error)이다.</p>
 <div class="math notranslate nohighlight">
 \[J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2 \]</div>
