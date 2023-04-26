@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -335,6 +336,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothsis-function">Hypothsis function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent">Gradient Descent 경사하강법</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-linear-regression">Sklearn linear regression</a></li>
 </ul>
             </nav>
@@ -720,7 +722,7 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
 </section>
 <section id="cost-function">
 <h2>Cost function<a class="headerlink" href="#cost-function" title="Permalink to this heading">#</a></h2>
-<p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 <a class="reference internal" href="#term-x"><span class="xref std std-term">x</span></a> input을 넣었을 때 나오는 값 <a class="reference internal" href="#term-J-theta"><span class="xref std std-term">J(\theta)</span></a>을 최소화하는 것이 learning algorithm의 성능을 높이는 것이라고 볼 수 있다.</p>
+<p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 <span class="math notranslate nohighlight">\(x\)</span> input을 넣었을 때 나오는 값 <span class="math notranslate nohighlight">\(J(\theta)\)</span>을 최소화하는 것이 learning algorithm의 성능을 높이는 것이라고 볼 수 있다.</p>
 <p>우리가 사용할 cost function은 MSE(least squared error)이다.</p>
 <div class="math notranslate nohighlight">
 \[J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2 \]</div>
@@ -731,6 +733,30 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
 <p>평균이라면 <a class="reference internal" href="#term-m"><span class="xref std std-term">m</span></a> 데이터의 갯수대로 나눠줘야하는게 아닌가 하는 의문이 들 수 있는데, 그것은 다음주에 generalizing linear function에서 나온다고 하니 그때 첨언하겠다.</p>
 </div>
 </section>
+<section id="gradient-descent">
+<h2>Gradient Descent 경사하강법<a class="headerlink" href="#gradient-descent" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="algorithm-0">
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Ford–Fulkerson)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Inputs</strong> Given a Network <span class="math notranslate nohighlight">\(G=(V,E)\)</span> with flow capacity <span class="math notranslate nohighlight">\(c\)</span>, a source node <span class="math notranslate nohighlight">\(s\)</span>, and a sink node <span class="math notranslate nohighlight">\(t\)</span></p>
+<p><strong>Output</strong> Compute a flow <span class="math notranslate nohighlight">\(f\)</span> from <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(t\)</span> of maximum value</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(u, v) \leftarrow 0\)</span> for all edges <span class="math notranslate nohighlight">\((u,v)\)</span></p></li>
+<li><p>While there is a path <span class="math notranslate nohighlight">\(p\)</span> from <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(G_{f}\)</span> such that <span class="math notranslate nohighlight">\(c_{f}(u,v)&gt;0\)</span>
+for all edges <span class="math notranslate nohighlight">\((u,v) \in p\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Find <span class="math notranslate nohighlight">\(c_{f}(p)= \min \{c_{f}(u,v):(u,v)\in p\}\)</span></p></li>
+<li><p>For each edge <span class="math notranslate nohighlight">\((u,v) \in p\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(u,v) \leftarrow f(u,v) + c_{f}(p)\)</span> <em>(Send flow along the path)</em></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(u,v) \leftarrow f(u,v) - c_{f}(p)\)</span> <em>(The flow might be “returned” later)</em></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+</div></section>
 <section id="sklearn-linear-regression">
 <h2>Sklearn linear regression<a class="headerlink" href="#sklearn-linear-regression" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -819,6 +845,7 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothsis-function">Hypothsis function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent">Gradient Descent 경사하강법</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-linear-regression">Sklearn linear regression</a></li>
 </ul>
   </nav></div>
