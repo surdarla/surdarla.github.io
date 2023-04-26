@@ -400,40 +400,53 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
 <h2>Cost function 목적 함수<a class="headerlink" href="#cost-function" title="Permalink to this heading">#</a></h2>
 <p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 <span class="math notranslate nohighlight">\(x\)</span> input을 넣었을 때 나오는 값 <span class="math notranslate nohighlight">\(J(\theta)\)</span>을 최소화하는 것이 learning algorithm(여기서는 supervised learning, linear regression)의 성능을 높이는 것이라고 볼 수 있다.</p>
 <p>기본적인 cost function은 LSE(least squared error)이다. error에 제곱을 해주고 그것의 합을 더해줘서 최소값을 찾는 방식이다. 여기서 1/m을 해주면 mean squared error(MSE)가 된다.</p>
-<div class="math notranslate nohighlight">
-\[J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2 \]</div>
+<div class="math notranslate nohighlight" id="equation-costfunc">
+<span class="eqno">(1)<a class="headerlink" href="#equation-costfunc" title="Permalink to this equation">#</a></span>\[J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2\]</div>
 <div class="math notranslate nohighlight">
 \[Goal = \min\limits_{\theta_{0}, \theta_{1}} J(\theta_0, \theta_1)\]</div>
 <div class="admonition-m-2m admonition">
 <p class="admonition-title">왜 m이 아니라 2m인가?</p>
 <p>평균이라면 <a class="reference internal" href="#term-m"><span class="xref std std-term">m</span></a> 데이터의 갯수대로 나눠줘야하는게 아닌가 하는 의문이 들 수 있는데, 뒤에 미분을 하게 되면 ^2가 앞으로 튀어나와 1/2와 상쇄되어 1이 되기 때문이다. <span class="math notranslate nohighlight">\(\theta\)</span>를 어떤 상수로 나눠도 상관없기 때문에 가능하다.</p>
 </div>
-<p>그냥 단순하게 w = w + learning_rate * error * x 를 사용해서 update해가면서 theta들을 직접 찾아가고 cost function의 기울기를 구하기 않아도 되긴한다. 하지만 각 데이터 샘플 하나하나 마다 파라미터를 업데이트를 해가며 cost function을 최적화하는 방식으로 시간이 오래걸리고 데이터 사이즈가 커지면 mini-batch로 몇 개마다 파라미터를 업데이트 하는 것이</p>
+<p>그냥 단순하게 <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">w</span> <span class="pre">+</span> <span class="pre">learning_rate</span> <span class="pre">*</span> <span class="pre">error</span> <span class="pre">*</span> <span class="pre">x</span></code> 를 사용해서 update해가면서 theta들을 직접 찾아가고 cost function의 기울기를 구하지 않아도 되긴한다.</p>
 </section>
 <section id="gradient-descent">
 <h2>Gradient Descent 경사하강법<a class="headerlink" href="#gradient-descent" title="Permalink to this heading">#</a></h2>
+<div class="admonition- admonition">
+<p class="admonition-title">왜 경사하강법을 사용하는가?</p>
+<ol class="arabic simple">
+<li><p>각 데이터 샘플 하나하나 마다 파라미터를 업데이트를 해가며 cost function을 최적화하는 방식은 시간이 오래걸리고 데이터 사이즈가 커지면 mini-batch로 몇 개의 dataset example마다 iterative하게 파라미터를 업데이트 하는 것이 dataset이 거대해질 경우에 계산량 측면이다 최적화 시간 측면에서 유용할 수 있다.</p></li>
+<li><p>closed form solution이 없는 경우에도 사용할 수 있다.</p></li>
+<li><p>non linearity 함수나 미분계수와 근을 계산하기 어려운 경우에도 사용할 수 있다.</p></li>
+</ol>
+</div>
+<p>Gradient Descent 경사하강법은 1차 미분계수를 이용해 함수의 최소값을 찾아내는 iterative한 방법이다. Steepest Descent라고도 불린다. 앞이 하나도 안보이고 어디가 위이고 어디가 아래인지만 보이는 상황에서 한 발씩 아래로 내려가는 것과 비슷하기 때문이다. 하산의 목표가 산의 맨 밑이듯 cost function의 최소값을 찾는 것이 목표이고, cost function의 최소값의 지점은 곧 hypothesis function의 파라미터 <span class="math notranslate nohighlight">\(\theta\)</span>의 최적값이 된다.</p>
 <div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Ford–Fulkerson)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Gradient Descent Algorithm)</p>
 <section class="algorithm-content" id="proof-content">
-<p><strong>Inputs</strong> Given a Network <span class="math notranslate nohighlight">\(G=(V,E)\)</span> with flow capacity <span class="math notranslate nohighlight">\(c\)</span>, a source node <span class="math notranslate nohighlight">\(s\)</span>, and a sink node <span class="math notranslate nohighlight">\(t\)</span></p>
-<p><strong>Output</strong> Compute a flow <span class="math notranslate nohighlight">\(f\)</span> from <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(t\)</span> of maximum value</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(u, v) \leftarrow 0\)</span> for all edges <span class="math notranslate nohighlight">\((u,v)\)</span></p></li>
-<li><p>While there is a path <span class="math notranslate nohighlight">\(p\)</span> from <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(G_{f}\)</span> such that <span class="math notranslate nohighlight">\(c_{f}(u,v)&gt;0\)</span>
-for all edges <span class="math notranslate nohighlight">\((u,v) \in p\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Find <span class="math notranslate nohighlight">\(c_{f}(p)= \min \{c_{f}(u,v):(u,v)\in p\}\)</span></p></li>
-<li><p>For each edge <span class="math notranslate nohighlight">\((u,v) \in p\)</span></p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(u,v) \leftarrow f(u,v) + c_{f}(p)\)</span> <em>(Send flow along the path)</em></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(u,v) \leftarrow f(u,v) - c_{f}(p)\)</span> <em>(The flow might be “returned” later)</em></p></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+<ul class="simple">
+<li><p>start with some <span class="math notranslate nohighlight">\({\theta}_0\)</span>, <span class="math notranslate nohighlight">\({\theta}_1\)</span></p></li>
+<li><p>keep changing <span class="math notranslate nohighlight">\({\theta}_0\)</span>, <span class="math notranslate nohighlight">\({\theta}_1\)</span> to reduce <span class="math notranslate nohighlight">\(J({\theta}_0, {\theta}_1)\)</span> until we hopefully end up at a minimum</p></li>
+</ul>
+<p>repeat until convergence{<br />
+<span class="math notranslate nohighlight">\({\theta}_j := {\theta}_j - {\alpha}{\frac \partial {\partial{\theta}_j} } J({\theta}_0, {\theta}_1)\space\text {for j=0,j=1}\)</span> <br />
+}</p>
 </section>
-</div></section>
+</div><p>위의 gradient descent 알고리즘을 우리의 <a class="reference internal" href="#equation-costfunc">(1)</a>에 적용해보자.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{gather}
+\frac \partial {\partial{\theta}_j} J({\theta}_0, {\theta}_1) = \frac \partial {\partial{\theta}_j} \bigg[\frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2\bigg]\\\end{split}\\\begin{split}j = 0 : \frac \partial {\partial{\theta}_0} J({\theta}_0, {\theta}_1) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})\\\end{split}\\\begin{split}j = 1 : \frac \partial {\partial{\theta}_1} J({\theta}_0, {\theta}_1) = \frac{1}{m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})x^{(i)}\\
+\end{gather}
+\end{split}\end{aligned}\end{align} \]</div>
+<p>다시 표현하면</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{gather}
+{\theta}_0 := {\theta}_0 - {\alpha}\frac 1 m\sum_{i=1}^{m}(h_\theta(x^i) - y^i)\\\end{split}\\\begin{split}{\theta}_1 := {\theta}_1 - {\alpha}\frac 1 m\sum_{i=1}^{m}(h_\theta(x^i) - y^i)x^i\\
+\end{gather}
+\end{split}\end{aligned}\end{align} \]</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
