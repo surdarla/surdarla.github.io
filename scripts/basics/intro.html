@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Linear Regressin &amp; Gradient Descent &#8212; My Jupyter Book</title>
+    <title>Basic concepts for ML &#8212; My Jupyter Book</title>
   
   
   
@@ -69,14 +69,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/CS229/2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/intro';</script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="practice - torch sklearn numpy" href="2-1.html" />
-    <link rel="prev" title="Learning Algorithms" href="1.html" />
+    <link rel="next" title="Linear algebra summary" href="linear_algebra.html" />
+    <link rel="prev" title="practice - torch sklearn numpy" href="../CS229/2-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,20 +166,20 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1.html">Learning Algorithms</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Linear Regressin &amp; Gradient Descent</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="2-1.html">practice - torch sklearn numpy</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CS229/2-1.html">practice - torch sklearn numpy</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/intro.html">Basic concepts for ML</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../basics/linear_algebra.html">Linear algebra summary</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Basic concepts for ML</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
 </ul>
 </li>
 </ul>
@@ -253,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/scripts/CS229/2.md" target="_blank"
+      <li><a href="../../_sources/scripts/basics/intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,9 +320,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -335,21 +331,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear Regressin & Gradient Descent</h1>
+    <h1>Basic concepts for ML</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothsis-function">Hypothsis function 가설 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function 목적 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent">Gradient Descent 경사하강법</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -359,82 +345,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-regressin-gradient-descent">
-<h1>Linear Regressin &amp; Gradient Descent<a class="headerlink" href="#linear-regressin-gradient-descent" title="Permalink to this heading">#</a></h1>
-<section id="hypothsis-function">
-<h2>Hypothsis function 가설 함수<a class="headerlink" href="#hypothsis-function" title="Permalink to this heading">#</a></h2>
-<div class="admonition-hypothesis-definition admonition">
-<p class="admonition-title">Hypothesis Definition</p>
-<p>To Describe the supervised learining problem slightly more formally, our goal is, given a training set, to learn a function <span class="math notranslate nohighlight">\(h : X \mapsto Y\)</span> that <span class="math notranslate nohighlight">\(h(x)\)</span> is a “good” predictor for the corresponding value of <span class="math notranslate nohighlight">\(y\)</span>. For historical reasons, this function <span class="math notranslate nohighlight">\(h\)</span> is called a hypothesis.</p>
-</div>
-<p>hypothesis란 input(feature, x)와 output(targer,label, y)의 관계를 나타내는 함수를 말한다. input은 많이 고려할수록 더 유의미한 가설을 뽑아낼 확률이 높아지겠지만, 그에 따라 지수적으로 연산량이 늘어나며 사실상 그렇게 할 수 없다. 따라서 유의미해 보이는 feature를 selection하고 그것을 가지고 가설을 세워야 한다. 우선은 한 개의 종속변수(x)와 한 개의 독립변수(y)를 가지고 linear 선형 함수로 가설을 세워보자.</p>
-<p>옆에 보이는 것이 수식 정의에 필요한 수학적 기호의 정의들이다.</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<dl class="simple glossary">
-<dt id="term-m"><span class="math notranslate nohighlight">\(m\)</span><a class="headerlink" href="#term-m" title="Permalink to this term">#</a></dt><dd><p>number of training examples</p>
-</dd>
-<dt id="term-n"><span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#term-n" title="Permalink to this term">#</a></dt><dd><p>number of features</p>
-</dd>
-<dt id="term-x"><span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#term-x" title="Permalink to this term">#</a></dt><dd><p>input variable / features</p>
-</dd>
-<dt id="term-y"><span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#term-y" title="Permalink to this term">#</a></dt><dd><p>output variable / target variable</p>
-</dd>
-<dt id="term-x-y"><span class="math notranslate nohighlight">\((x,y)\)</span><a class="headerlink" href="#term-x-y" title="Permalink to this term">#</a></dt><dd><p>one training example</p>
-</dd>
-<dt id="term-x-i-y-i"><span class="math notranslate nohighlight">\((x^{i},y^{i})\)</span><a class="headerlink" href="#term-x-i-y-i" title="Permalink to this term">#</a></dt><dd><p><span class="math notranslate nohighlight">\(i\)</span>-th trainig example</p>
-</dd>
-<dt id="term-theta-_i"><span class="math notranslate nohighlight">\({\theta}_i\)</span><a class="headerlink" href="#term-theta-_i" title="Permalink to this term">#</a></dt><dd><p>parameters, weights</p>
-</dd>
-<dt id="term-J-theta"><span class="math notranslate nohighlight">\(J(\theta)\)</span><a class="headerlink" href="#term-J-theta" title="Permalink to this term">#</a></dt><dd><p>cost function of theta(parameter)</p>
-</dd>
-</dl>
-</aside>
-<div class="math notranslate nohighlight">
-\[
-h_{\theta}(x) = \theta_{0} + \theta_{1}x
-\]</div>
-<p>우리는 주어진 데이터로 <span class="math notranslate nohighlight">\(h_{\theta}\)</span>와 실제 가지고 있는 target값인 <span class="math notranslate nohighlight">\(y\)</span>의 차이 즉 <span class="math notranslate nohighlight">\(error = h_{\theta}(x) - y\)</span>가 가장 작은 <span class="math notranslate nohighlight">\(\theta_{0}\)</span>와 <span class="math notranslate nohighlight">\(\theta_{1}\)</span>을 찾고 싶을 것이다. 이 error,loss,cost,잔차 라고 통칭하는 이것을 최소화하는 함수를 cost function이라고 한다.</p>
-</section>
-<section id="cost-function">
-<h2>Cost function 목적 함수<a class="headerlink" href="#cost-function" title="Permalink to this heading">#</a></h2>
-<p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 <span class="math notranslate nohighlight">\(x\)</span> input을 넣었을 때 나오는 값 <span class="math notranslate nohighlight">\(J(\theta)\)</span>을 최소화하는 것이 learning algorithm(여기서는 supervised learning, linear regression)의 성능을 높이는 것이라고 볼 수 있다.</p>
-<p>기본적인 cost function은 LSE(least squared error)이다. error에 제곱을 해주고 그것의 합을 더해줘서 최소값을 찾는 방식이다. 여기서 1/m을 해주면 mean squared error(MSE)가 된다.</p>
-<div class="math notranslate nohighlight">
-\[J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2 \]</div>
-<div class="math notranslate nohighlight">
-\[Goal = \min\limits_{\theta_{0}, \theta_{1}} J(\theta_0, \theta_1)\]</div>
-<div class="admonition-m-2m admonition">
-<p class="admonition-title">왜 m이 아니라 2m인가?</p>
-<p>평균이라면 <a class="reference internal" href="#term-m"><span class="xref std std-term">m</span></a> 데이터의 갯수대로 나눠줘야하는게 아닌가 하는 의문이 들 수 있는데, 뒤에 미분을 하게 되면 ^2가 앞으로 튀어나와 1/2와 상쇄되어 1이 되기 때문이다. <span class="math notranslate nohighlight">\(\theta\)</span>를 어떤 상수로 나눠도 상관없기 때문에 가능하다.</p>
-</div>
-<p>그냥 단순하게 w = w + learning_rate * error * x 를 사용해서 update해가면서 theta들을 직접 찾아가고 cost function의 기울기를 구하기 않아도 되긴한다. 하지만 각 데이터 샘플 하나하나 마다 파라미터를 업데이트를 해가며 cost function을 최적화하는 방식으로 시간이 오래걸리고 데이터 사이즈가 커지면 mini-batch로 몇 개마다 파라미터를 업데이트 하는 것이</p>
-</section>
-<section id="gradient-descent">
-<h2>Gradient Descent 경사하강법<a class="headerlink" href="#gradient-descent" title="Permalink to this heading">#</a></h2>
-<div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Ford–Fulkerson)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Inputs</strong> Given a Network <span class="math notranslate nohighlight">\(G=(V,E)\)</span> with flow capacity <span class="math notranslate nohighlight">\(c\)</span>, a source node <span class="math notranslate nohighlight">\(s\)</span>, and a sink node <span class="math notranslate nohighlight">\(t\)</span></p>
-<p><strong>Output</strong> Compute a flow <span class="math notranslate nohighlight">\(f\)</span> from <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(t\)</span> of maximum value</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(u, v) \leftarrow 0\)</span> for all edges <span class="math notranslate nohighlight">\((u,v)\)</span></p></li>
-<li><p>While there is a path <span class="math notranslate nohighlight">\(p\)</span> from <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(G_{f}\)</span> such that <span class="math notranslate nohighlight">\(c_{f}(u,v)&gt;0\)</span>
-for all edges <span class="math notranslate nohighlight">\((u,v) \in p\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Find <span class="math notranslate nohighlight">\(c_{f}(p)= \min \{c_{f}(u,v):(u,v)\in p\}\)</span></p></li>
-<li><p>For each edge <span class="math notranslate nohighlight">\((u,v) \in p\)</span></p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(u,v) \leftarrow f(u,v) + c_{f}(p)\)</span> <em>(Send flow along the path)</em></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(u,v) \leftarrow f(u,v) - c_{f}(p)\)</span> <em>(The flow might be “returned” later)</em></p></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</section>
-</div></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-concepts-for-ml">
+<h1>Basic concepts for ML<a class="headerlink" href="#basic-concepts-for-ml" title="Permalink to this heading">#</a></h1>
+<p>linaer algebra, calculus, probability, statistics, optimization, etc.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
+</ul>
 </div>
 </section>
 
@@ -451,7 +368,7 @@ for all edges <span class="math notranslate nohighlight">\((u,v) \in p\)</span>:
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts/CS229"
+            path: "./scripts/basics"
         },
         predefinedOutput: true
     }
@@ -470,20 +387,20 @@ for all edges <span class="math notranslate nohighlight">\((u,v) \in p\)</span>:
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1.html"
+       href="../CS229/2-1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Learning Algorithms</p>
+        <p class="prev-next-title">practice - torch sklearn numpy</p>
       </div>
     </a>
     <a class="right-next"
-       href="2-1.html"
+       href="linear_algebra.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">practice - torch sklearn numpy</p>
+        <p class="prev-next-title">Linear algebra summary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -496,22 +413,6 @@ for all edges <span class="math notranslate nohighlight">\((u,v) \in p\)</span>:
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothsis-function">Hypothsis function 가설 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function 목적 함수</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent">Gradient Descent 경사하강법</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

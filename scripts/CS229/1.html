@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 1 &#8212; My Jupyter Book</title>
+    <title>Learning Algorithms &#8212; My Jupyter Book</title>
   
   
   
@@ -75,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2" href="2.html" />
+    <link rel="next" title="Linear Regressin &amp; Gradient Descent" href="2.html" />
     <link rel="prev" title="intro" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,8 +170,18 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lecture 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">Lecture 2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="2-1.html">practice - torch sklearn numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/intro.html">Basic concepts for ML</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/linear_algebra.html">Linear algebra summary</a></li>
 </ul>
 </li>
 </ul>
@@ -325,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 1</h1>
+    <h1>Learning Algorithms</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -345,7 +355,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning 비지도 학습</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">reinforcement learning 강화학습</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning 강화학습</a></li>
 </ul>
             </nav>
         </div>
@@ -357,8 +367,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-1">
-<h1>Lecture 1<a class="headerlink" href="#lecture-1" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="learning-algorithms">
+<h1>Learning Algorithms<a class="headerlink" href="#learning-algorithms" title="Permalink to this heading">#</a></h1>
 <p>random variables
 matrix vector eignevector</p>
 <section id="what-is-machine-learning">
@@ -431,7 +441,7 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
 </ul>
 </section>
 <section id="reinforcement-learning">
-<h2>reinforcement learning 강화학습<a class="headerlink" href="#reinforcement-learning" title="Permalink to this heading">#</a></h2>
+<h2>Reinforcement learning 강화학습<a class="headerlink" href="#reinforcement-learning" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p>if behaves well, ‘good dog’ compliment</p>
 </div></blockquote>
@@ -485,7 +495,7 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 2</p>
+        <p class="prev-next-title">Linear Regressin &amp; Gradient Descent</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -517,7 +527,7 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning 비지도 학습</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">reinforcement learning 강화학습</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning 강화학습</a></li>
 </ul>
   </nav></div>
 
