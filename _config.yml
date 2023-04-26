@@ -13,7 +13,7 @@ logo                        : "surdarla-logo.png"  # A path to the book logo
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 # Auto-exclude files not in the toc
-only_build_toc_files        : false
+only_build_toc_files        : True
 
 #######################################################################################
 # Execution settings
@@ -87,7 +87,7 @@ repository:
 #######################################################################################
 # Advanced and power-user settings
 sphinx:
-  extra_extensions          : [sphinx_proof]  # A list of extra extensions to load by Sphinx (added to those already used by JB).
+  extra_extensions          :   # A list of extra extensions to load by Sphinx (added to those already used by JB).
   local_extensions          :   # A list of local extensions to load by sphinx specified by "name: path" items
   recursive_update          : false # A boolean indicating whether to overwrite the Sphinx config (true) or recursively update (false)
   config                    :   # key-value pairs to directly over-ride the Sphinx configuration

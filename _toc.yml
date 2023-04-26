@@ -4,13 +4,7 @@
 format: jb-book
 root: about
 parts:
-  - caption : Starting
-    chapters:
-    - file: scripts/basic/test_toc
-      sections:
-      - file : scripts/basic/test
-
-  - caption : CS229
+  - caption : CS229 summary
     chapters :
     - file : scripts/CS229/intro
       sections :
