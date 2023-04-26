@@ -31,15 +31,15 @@ execute:
 # Parse and render settings
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
-    # - amsmath
+    - amsmath
     - colon_fence
-    # - deflist
+    - deflist
     - dollarmath
-    # - html_admonition
-    # - html_image
+    - html_admonition
+    - html_image
     - linkify
-    # - replacements
-    # - smartquotes
+    - replacements
+    - smartquotes
     - substitution
     - tasklist
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
@@ -87,7 +87,7 @@ repository:
 #######################################################################################
 # Advanced and power-user settings
 sphinx:
-  extra_extensions          :   # A list of extra extensions to load by Sphinx (added to those already used by JB).
+  extra_extensions          : [sphinx_proof]  # A list of extra extensions to load by Sphinx (added to those already used by JB).
   local_extensions          :   # A list of local extensions to load by sphinx specified by "name: path" items
   recursive_update          : false # A boolean indicating whether to overwrite the Sphinx config (true) or recursively update (false)
   config                    :   # key-value pairs to directly over-ride the Sphinx configuration

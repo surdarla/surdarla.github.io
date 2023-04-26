@@ -10,9 +10,9 @@ parts:
       sections:
       - file : scripts/basic/test
 
-  - caption : CS229 2018
-    chapters:
-    - file : scripts/CS229/introduction
+  - caption : CS229
+    chapters :
+    - file : scripts/CS229/intro
       sections :
-        - file : scripts/CS229/1
-        - file : scripts/CS229/2
+      - file : scripts/CS229/1
+      - file : scripts/CS229/2
