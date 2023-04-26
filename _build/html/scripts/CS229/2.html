@@ -55,6 +55,13 @@
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -326,8 +333,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notations">Notations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothsis-function">Hypothsis function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function</a></li>
 </ul>
             </nav>
         </div>
@@ -341,15 +348,6 @@ document.write(`
 
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-2">
 <h1>Lecture 2<a class="headerlink" href="#lecture-2" title="Permalink to this heading">#</a></h1>
-<section id="notations">
-<h2>Notations<a class="headerlink" href="#notations" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(m\)</span>: number of training examples</p></li>
-<li><p><span class="math notranslate nohighlight">\(x\)</span>: input variable / features</p></li>
-<li><p><span class="math notranslate nohighlight">\(y\)</span>: output variable / target variable</p></li>
-<li><p><span class="math notranslate nohighlight">\((x,y)\)</span>: one training example</p></li>
-<li><p><span class="math notranslate nohighlight">\((x^{i},y^{i})\)</span>:<span class="math notranslate nohighlight">\(i\)</span>-th trainig example</p></li>
-</ol>
 <p><a class="reference external" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">kaggle House Prices - Advanced Regression Techniques</a>에서 가져온 데이터를 이용하여, Linear Regression을 구현해보자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -688,13 +686,29 @@ document.write(`
 </div>
 </div>
 <p>우리의 SalesPrice가 구하기를 원하는 y이고 이것은 연속적인(continuous)한 value이기 때문에 linear regression을 사용하는 과제라고 볼 수 있다. GriLivArea(Above grade(ground) living area square feet)은 cs229에서 말하는 size(feet^2)와 가장 유사한 column이라고 생각되어서 뽑았다. 단순하게 scatter plot을 해봐도 사이드로 많이 빠진 몇 outlier들을 제외하면 어느 정도의 linear 관계를 볼 수 있을 거라고 생각된다.</p>
-</section>
 <section id="hypothsis-function">
 <h2>Hypothsis function<a class="headerlink" href="#hypothsis-function" title="Permalink to this heading">#</a></h2>
-<p>hypothesis란 input(feature)와 output(targer,label)의 관계를 나타내는 함수를 말한다. input은 많이 고려할수록 더 유의미한 가설을 뽑아낼 확률이 높아지겠지만, 그에 따라 지수적으로 연산량이 늘어나며 사실상 그렇게 할 수 없다. 따라서 유의미해 보이는 feature를 selection하고 그것을 가지고 가설을 세워야 한다. 우선은 한 개의 종속변수(x:GrivLivArea)와 한 개의 독립변수(y:SalePrice)를 가지고 linear 선형 함수로 가설을 세워보자.</p>
+<p>hypothesis란 input(feature, x)와 output(targer,label, y)의 관계를 나타내는 함수를 말한다. input은 많이 고려할수록 더 유의미한 가설을 뽑아낼 확률이 높아지겠지만, 그에 따라 지수적으로 연산량이 늘어나며 사실상 그렇게 할 수 없다. 따라서 유의미해 보이는 feature를 selection하고 그것을 가지고 가설을 세워야 한다. 우선은 한 개의 종속변수(x:GrivLivArea)와 한 개의 독립변수(y:SalePrice)를 가지고 linear 선형 함수로 가설을 세워보자.</p>
+<p>그 전에 수식에 필요한 notation들을 정리해보자</p>
+<dl class="simple glossary">
+<dt id="term-m"><span class="math notranslate nohighlight">\(m\)</span><a class="headerlink" href="#term-m" title="Permalink to this term">#</a></dt><dd><p>number of training examples</p>
+</dd>
+<dt id="term-n"><span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#term-n" title="Permalink to this term">#</a></dt><dd><p>number of features</p>
+</dd>
+<dt id="term-x"><span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#term-x" title="Permalink to this term">#</a></dt><dd><p>input variable / features</p>
+</dd>
+<dt id="term-y"><span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#term-y" title="Permalink to this term">#</a></dt><dd><p>output variable / target variable</p>
+</dd>
+<dt id="term-x-y"><span class="math notranslate nohighlight">\((x,y)\)</span><a class="headerlink" href="#term-x-y" title="Permalink to this term">#</a></dt><dd><p>one training example</p>
+</dd>
+<dt id="term-x-i-y-i"><span class="math notranslate nohighlight">\((x^{i},y^{i})\)</span><a class="headerlink" href="#term-x-i-y-i" title="Permalink to this term">#</a></dt><dd><p><span class="math notranslate nohighlight">\(i\)</span>-th trainig example</p>
+</dd>
+</dl>
 <div class="math notranslate nohighlight">
-\[h_{\theta}(x) = \theta_{0} + \theta_{1}x\]</div>
-<p>우선 간단하게 sklearn으로 한 번 구현해보자</p>
+\[
+h_{\theta}(x) = \theta_{0} + \theta_{1}x
+\]</div>
+<p>우리는 주어진 데이터로 <span class="math notranslate nohighlight">\(h_{\theta}\)</span>와 실제 가지고 있는 target값인 <span class="math notranslate nohighlight">\(y\)</span>의 차이가 가장 작은 <span class="math notranslate nohighlight">\(\theta_{0}\)</span>와 <span class="math notranslate nohighlight">\(\theta_{1}\)</span>을 찾고 싶을 것이다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;GrLivArea&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -718,6 +732,10 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="cost-function">
+<h2>Cost function<a class="headerlink" href="#cost-function" title="Permalink to this heading">#</a></h2>
+<p>가설을 세웠으면 이제 이 가설이 얼마나 정확한지를 측정해야 한다. 이를 위해 cost function을 정의한다. cost function은 가설과 실제 데이터의 차이를 나타내는 함수이다. 이를 최소화하는 것이 우리의 목표이다. cost function은 다음과 같이 정의된다.</p>
 </section>
 </section>
 
@@ -779,8 +797,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notations">Notations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothsis-function">Hypothsis function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function</a></li>
 </ul>
   </nav></div>
 
