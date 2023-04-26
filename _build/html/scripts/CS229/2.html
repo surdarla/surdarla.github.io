@@ -400,10 +400,16 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
 <h2>Cost function 목적 함수<a class="headerlink" href="#cost-function" title="Permalink to this heading">#</a></h2>
 <p>위에서 보았듯이 우리는 가설함수 <span class="math notranslate nohighlight">\(h_{\theta}(x)\)</span>와 실제값 y와의 비용(잔차 error loss)를 최소화하는 방법으로 머신을 학습시키는 것이 목표이다. 결국 이 cost function에 <span class="math notranslate nohighlight">\(x\)</span> input을 넣었을 때 나오는 값 <span class="math notranslate nohighlight">\(J(\theta)\)</span>을 최소화하는 것이 learning algorithm(여기서는 supervised learning, linear regression)의 성능을 높이는 것이라고 볼 수 있다.</p>
 <p>기본적인 cost function은 LSE(least squared error)이다. error에 제곱을 해주고 그것의 합을 더해줘서 최소값을 찾는 방식이다. 여기서 1/m을 해주면 mean squared error(MSE)가 된다.</p>
-<div class="math notranslate nohighlight" id="equation-costfunc">
-<span class="eqno">(1)<a class="headerlink" href="#equation-costfunc" title="Permalink to this equation">#</a></span>\[J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2\]</div>
 <div class="math notranslate nohighlight">
-\[Goal = \min\limits_{\theta_{0}, \theta_{1}} J(\theta_0, \theta_1)\]</div>
+\[\begin{split}
+\begin{align}
+\begin{split}
+J(\theta_0, \theta_1) &amp;= \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})^2\\
+&amp;= \frac{1}{2m}\sum_{i=1}^{m}(\theta_{0} + \theta_{1}x^{(i)} - y^{(i)})^2\\
+\end{split}\\
+Goal = \min\limits_{\theta_{0}, \theta_{1}} J(\theta_0, \theta_1)
+\end{align}
+\end{split}\]</div>
 <div class="admonition-m-2m admonition">
 <p class="admonition-title">왜 m이 아니라 2m인가?</p>
 <p>평균이라면 <a class="reference internal" href="#term-m"><span class="xref std std-term">m</span></a> 데이터의 갯수대로 나눠줘야하는게 아닌가 하는 의문이 들 수 있는데, 뒤에 미분을 하게 되면 ^2가 앞으로 튀어나와 1/2와 상쇄되어 1이 되기 때문이다. <span class="math notranslate nohighlight">\(\theta\)</span>를 어떤 상수로 나눠도 상관없기 때문에 가능하다.</p>
@@ -432,7 +438,7 @@ h_{\theta}(x) = \theta_{0} + \theta_{1}x
 <span class="math notranslate nohighlight">\({\theta}_j := {\theta}_j - {\alpha}{\frac \partial {\partial{\theta}_j} } J({\theta}_0, {\theta}_1)\space\text {for j=0,j=1}\)</span> <br />
 }</p>
 </section>
-</div><p>위의 gradient descent 알고리즘을 우리의 <a class="reference internal" href="#equation-costfunc">(1)</a>에 적용해보자.</p>
+</div><p>위의 gradient descent 알고리즘을 우리의 cost function에 적용해보자.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
 \begin{gather}
