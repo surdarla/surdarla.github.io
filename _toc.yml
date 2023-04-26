@@ -10,3 +10,11 @@ parts:
       sections :
       - file : scripts/CS229/1
       - file : scripts/CS229/2
+        sections:
+        - file : scripts/CS229/2-1
+
+  - caption : Basics
+    chapters :
+    - file : scripts/basics/intro
+      sections :
+        - file : scripts/basics/linear_algebra
