@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CS229 Lecture 1 &#8212; My Jupyter Book</title>
+    <title>Lecture 1 &#8212; My Jupyter Book</title>
   
   
   
@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -67,8 +68,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Linear Regression" href="2.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,23 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Starting</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basic/test_toc.html">staring</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../basic/test.html">first part</a></li>
-
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 2018</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction.html">Introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">CS229 Lecture 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">Linear Regression</a></li>
-</ul>
-</li>
-</ul>
-
+        
     </div>
 </nav></div>
     </div>
@@ -325,7 +308,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CS229 Lecture 1</h1>
+    <h1>Lecture 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,7 +318,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">what is machine learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">what is machine learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defiinition-of-machine-learning">Defiinition of machine learning</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning 지도 학습</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression 회귀</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification 분류</a></li>
@@ -354,13 +340,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cs229-lecture-1">
-<h1>CS229 Lecture 1<a class="headerlink" href="#cs229-lecture-1" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-1">
+<h1>Lecture 1<a class="headerlink" href="#lecture-1" title="Permalink to this heading">#</a></h1>
 <p>random variables
 matrix vector eignevector</p>
 <section id="what-is-machine-learning">
 <h2>what is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this heading">#</a></h2>
 <p>전통적인 프로그래밍은 <code class="docutils literal notranslate"><span class="pre">(rule</span> <span class="pre">based)</span> <span class="pre">explicit</span> <span class="pre">programming</span></code>이었다. 즉 특정 조건에서 특정 결과를 도출하는 방식이었다. 하지만 이런 방식은 규칙을 만드는 것이 어렵고, 규칙이 복잡해지면 복잡해질수록 규칙을 만드는 것이 어려워진다. 또한 규칙 기반의 프로그래밍은 그 규칙들을 피할 변칙들을 모두 커버해야 하는데 그것은 사실상 어렵다. 그렇기 때문에 기계가 스스로 pattern을 <code class="docutils literal notranslate"><span class="pre">learning</span></code>하는 접근법이 등장했는데, 그것이 Machine learning이다.</p>
+<section id="defiinition-of-machine-learning">
+<h3>Defiinition of machine learning<a class="headerlink" href="#defiinition-of-machine-learning" title="Permalink to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -375,6 +363,7 @@ Tom Mitchell</label><div class="sd-tab-content docutils">
 <p>– Tom Mitchell 1998  well-posed learning problem</p>
 </div>
 </div>
+</section>
 </section>
 <section id="supervised-learning">
 <h2>Supervised learning 지도 학습<a class="headerlink" href="#supervised-learning" title="Permalink to this heading">#</a></h2>
@@ -413,7 +402,7 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
 <section id="unsupervised-learning">
 <h2>Unsupervised learning 비지도 학습<a class="headerlink" href="#unsupervised-learning" title="Permalink to this heading">#</a></h2>
 <blockquote>
-<div><p>just input x, no labels</p>
+<div><p>just input x, <strong>no labels</strong></p>
 </div></blockquote>
 <ul class="simple">
 <li><p>k-means clustering</p></li>
@@ -427,7 +416,7 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
 <section id="reinforcement-learning">
 <h2>reinforcement learning 강화학습<a class="headerlink" href="#reinforcement-learning" title="Permalink to this heading">#</a></h2>
 <blockquote>
-<div><p>behave well ‘good dog’</p>
+<div><p>if behaves well, ‘good dog’ compliment</p>
 </div></blockquote>
 <p>개를 키우는 것과 비슷하다. 개가 잘하면 칭찬을 해주고 잘못하면 혼내주는 것처럼. 시간이 지남에 따라 잘하면 상을 주는 방식으로 진행된다. 게임 플레잉에서 이런 유형을 많이 볼 수 있다.</p>
 <iframe width="600" height="338" src="https://www.youtube.com/embed/xAXvfVTgqr0" title="Learning to Walk in the Real World in 1 Hour (No Simulator)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -465,24 +454,6 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="introduction.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="2.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -501,7 +472,10 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">what is machine learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">what is machine learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defiinition-of-machine-learning">Defiinition of machine learning</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning 지도 학습</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression 회귀</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification 분류</a></li>
