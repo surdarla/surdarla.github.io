@@ -1,9 +1,7 @@
-# 어쩌구 저쩌구
+# Surdarla 입니다
 
-아아아아아아ㅏㅏㅏㅇ
-나야 나~ 준수라구~
-왜 안돼 시보로로로
-why not!?!?!?!?
+해당 블로그는 refactoring 중입니다.
+jupyter-book으로 만들어진 블로그입니다.
 
 ```zsh
 jupyter-book build surdarla.github.io/
