@@ -1,0 +1,695 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NLP basics &#8212; My Jupyter Book</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/NLP_basics';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/NLP_basics.html" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Linear algebra summary" href="linear_algebra.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+
+
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+<a class="navbar-brand logo" href="../../about.html">
+
+
+
+
+
+
+
+
+
+    <img src="../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+
+
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about.html">
+                    Surdarla 입니다
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CS229/2-1.html">practice - torch sklearn numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Basic concepts for ML</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">NLP basics</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main">
+
+
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+
+    </div>
+
+
+    <div class="header-article-items__end">
+
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+
+
+
+      <li><a href="../../_sources/scripts/basics/NLP_basics.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+
+
+
+
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+
+    </div>
+
+</div>
+</div>
+
+
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>NLP basics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corpus-tokens-engrams">1. corpus, tokens, engrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">2. tokenization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#white-space-tokenization">2.1. White-space tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expression-tokenization">2.2. Regular expression tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">토큰화 고려사항</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.3 한국어에서 토큰화의 어려움</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">3. Normalization 정규화</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">3.1 stemming 어간 추출</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">3.2 lemmatization 표제어 추출</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-part-of-speech-tags">3.3 POS(part of speech tags)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+
+  <section class="tex2jax_ignore mathjax_ignore" id="nlp-basics">
+<h1>NLP basics<a class="headerlink" href="#nlp-basics" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/discussions/general/231146#1265682">Kaggle - Basics of NLP for absolute Beginners</a></p></li>
+<li><p><a class="reference external" href="https://wikidocs.net/21698">WikiDocs - 딥러닝을 이용한 자연어 처리 입문</a></p></li>
+</ul>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>예상에 따르면, 접근 가능한 데이터 중에 오직 21%의 데이터 만이 structured 형태로 존재한다. 데이터는 우리가 말하면서, 트윗하면서, Whatsapp으로 메세지를 보내는 등의 다양한 형태의 활동을 하면서 생성된다. 그 중에 대부분의 데이터가 textual form으로 존재하고, 이는 굉장히 unstructured한 형태이다.</p>
+</section>
+<section id="corpus-tokens-engrams">
+<h2>1. corpus, tokens, engrams<a class="headerlink" href="#corpus-tokens-engrams" title="Permalink to this heading">#</a></h2>
+<p>![…/images/5e880971363eccfc191c6dd51264f581_MD5.png]</p>
+<p>Corpus는 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">collection</span> <span class="pre">of</span> <span class="pre">text</span> <span class="pre">documents</span></code> 로 정의된다. 예를 들어 news들로 구성된 dataset은 코퍼스라고 할 수 있고, tweet들로 구성된 twitter dataset도 하나의 코퍼스라고 말할 수 있다. 이러한 하나의 코퍼스는 여러 documents로 이루어지고, document는 paragraph(구, 절)로 이루어지고, paragraph는 sentence(문장)으로 이루어지고, 하나의 문장은 token()으로 이루어진다.</p>
+<p>그러면 token이란 무엇인가? token은 word, phrase, engram이 될 수 있다. engram은 <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">of</span> <span class="pre">n</span> <span class="pre">words</span> <span class="pre">togather</span></code>로 정의되는 단어 뭉치다.</p>
+<p>예를 들어</p>
+<blockquote>
+<div><p>I love my phone</p>
+</div></blockquote>
+<p>이 문장을 볼 때 uni-gram(n=1)로 보면 I, love, my, phone 의 형태로 token이 4개다. Di-gram(n=2)로 보면, I love, love my, my phone으로 3개의 토큰으로 분간된다.</p>
+<p>토큰의 문장(sentence)일 수도 있다. 이럴 경우에 마침표가 대부분은 문장의 구분자로 사용될 수 있지만, 문제는 가끔 안그럴 경우가 있다는 것이다. 적절하게 해당 언어에 적합한 tokenizer를 사용해야한다. 한국어 - kss(korean sentence splitter)</p>
+</section>
+<section id="tokenization">
+<h2>2. tokenization<a class="headerlink" href="#tokenization" title="Permalink to this heading">#</a></h2>
+<p>token에 대해서 알았으니 문장과 구를 우리가 정의한 토큰(words, numbers, engrams or symbols)으로 만드는 것이 tokenization일 것이다. a process of splitting a text object into smaller units which are also called tokens.</p>
+<section id="white-space-tokenization">
+<h3>2.1. White-space tokenization<a class="headerlink" href="#white-space-tokenization" title="Permalink to this heading">#</a></h3>
+<p>가장 많이 쓰이는 tokenization 방식이 white-space tokenization방식이다. 그냥 단순하게 띄어쓰기를 기반으로 token을 분간하는 것이다.</p>
+</section>
+<section id="regular-expression-tokenization">
+<h3>2.2. Regular expression tokenization<a class="headerlink" href="#regular-expression-tokenization" title="Permalink to this heading">#</a></h3>
+<p>정규표현 토큰화. splitting pattern을 정규식으로 분간할 수 있다. 정규 표현식은 문자열의 패턴을 정의하고 일치하는 부분을 찾는데 사용된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="s1">&#39;Football, Cricket; Golf Tennis&#39;</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;r[;,\s]&#39;</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+<span class="n">Tokens</span> <span class="o">=</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span><span class="s2">&quot;Cricket&quot;</span><span class="p">,</span><span class="s2">&quot;Golf&quot;</span><span class="p">,</span><span class="s2">&quot;Tennis&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>re.split(‘r[;,\s]’, S)</p>
+<blockquote>
+<div><p>; , \s(공백) 문자열 중에 해당 3개와 같은 것으로 분할해라.</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="id1">
+<h3>토큰화 고려사항<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>구두점이나 특수 문자를 단순 제외 NO</p>
+<ul class="simple">
+<li><p>날짜 사이의 /, 구두점 in Ph.D, 소수점</p></li>
+</ul>
+</li>
+<li><p>줄임말과 단어 내에 띄어쓰기가 있는 경우</p>
+<ul class="simple">
+<li><p>rock ‘n’ roll은 하나의 단어이지만 중간에 띄어쓰기가 존재함. 띄어쓰기가 있어도 하나의 token으로 보아야함.</p></li>
+<li><p>(’) apostrophe</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h3>2.3 한국어에서 토큰화의 어려움<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>교착어의 특성</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">조사(preposition)</span></code>라는 것이 존재. 띄어쓰기 없이 바로 뒤에 붙음. 띄어쓰기 단위로는 처리가 불가.</p></li>
+<li><p>따라서 형태소 단위로 단어를 구분해주어야함.</p></li>
+</ul>
+</li>
+<li><p>띄어쓰기가 잘 안 지켜진다.</p>
+<ul class="simple">
+<li><p>띄어쓰기를 안해도 의미적으로 이해는 간다.</p></li>
+<li><p>1933년에 띄어쓰기가 보편화 되었으니 100년도 안되었다.</p></li>
+<li><p>‘모아쓰기’라는 한국어적인 특징이 존재한다.</p></li>
+<li><p>corpus 에서 전반적으로 영어에 비해 띄어쓰기가 잘 안지켜졌을 확률이 높다.</p></li>
+</ul>
+</li>
+<li><p>한국어는 어순이 중요치 않다.</p>
+<ul class="simple">
+<li><p>이건 토큰화보다는 모델링에서의 문제인데, 이전 단어가 주어질때 다음 단어가 나타날 확률을 구할때 어순이 중요치 않다는 것은 어떤 단어는 출현이 가능하다는 뜻이 된다.</p></li>
+<li><p>확률에 기반한 언어 모델()이 성능이 제대로 안나올 가능성 크다.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="normalization">
+<h2>3. Normalization 정규화<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h2>
+<p>![…/images/9b29442026783ce1e7672cbd8ce504d9_MD5.png]</p>
+<p>우리가 익히 알고 있는 정규화는 curr - min / max - min이다. 언어학과 자연어 처리에서 <code class="docutils literal notranslate"><span class="pre">morpheme(형태소</span> <span class="pre">:</span> <span class="pre">의미를</span> <span class="pre">가진</span> <span class="pre">가장</span> <span class="pre">작은</span> <span class="pre">단위)</span></code>라는 것이 단어의 기반으로 정의된다. 보통 token이라는 것은 두 개 이상의 morpheme의 합으로 구성된다. 접두사(prefix) 접미사(suffix)가 단어의 형태에 따라 변형되어 붙는다.</p>
+<p>정규화는 ‘converting a token into its base form’하는 과정이다. inflection form → base form.</p>
+<ol class="arabic simple">
+<li><p>reducing the # of unique tokens present in the text</p></li>
+<li><p>removing the variations of a word in the text</p></li>
+<li><p>removing redundant information</p></li>
+</ol>
+<section id="stemming">
+<h3>3.1 stemming 어간 추출<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h3>
+<p>laughing, laughed, laughs, laugh → laugh
+단점 : 가끔 사전에 없는 단어를 만들 수도 있다. 그래서 좋은 normalization은 아닐 수 있다. 또한 winning 같은 경우 원래의 stem은 win인데 winn으로 만들 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PosterStemmer</span><span class="p">,</span> <span class="n">LancasterStemmer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>보통 어간 추출 속도가 표제어 추출보다 빠르다.</p>
+</section>
+<section id="lemmatization">
+<h3>3.2 lemmatization 표제어 추출<a class="headerlink" href="#lemmatization" title="Permalink to this heading">#</a></h3>
+<p>Lemma 표제어는 ‘기본 사전형 단어’ 정도의 의미를 가지고 있다. 표제어 추출을 위해서는 기본적으로 POS(part of speech)가 필요하다. 형태학적 파싱(morphological parsing)을 하게되면 어간(stem)과 접사(affix)로 단어를 쪼개게 된다. 이러한 과정을 통해서 더 이상 쪼갤 수 없는 단위로 의미를 쪼개는 것이다. 이런 과정을 위해서 품사 정보를 고려하여 단어의 원형을 추출하는 것이 의미적으로 정확하고 일관된 결과를 얻는데 도움이 된다.</p>
+</section>
+<section id="pos-part-of-speech-tags">
+<h3>3.3 POS(part of speech tags)<a class="headerlink" href="#pos-part-of-speech-tags" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://datascienceschool.net/03%20machine%20learning/03.01.02%20KoNLPy%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B2%98%EB%A6%AC%20%ED%8C%A8%ED%82%A4%EC%A7%80.html">KoNLPy 한국어 처리 패키지</a></p>
+<p>품사란 문장내 단어의 문맥, 기능 그리고 활용을 정의하는 것이다. 품사는 문장 내의 다른 단어들 과의 관계로 정의된다. 머신러닝 모델이나 rule-based 모델들은 단어의 품사를 알아야 적용이 가능하다.</p>
+</section>
+</section>
+<section id="grammer">
+<h2>4. 문법 Grammer<a class="headerlink" href="#grammer" title="Permalink to this heading">#</a></h2>
+<section id="constituency-grammar">
+<h3>4.1 Constituency Grammar<a class="headerlink" href="#constituency-grammar" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="dependency-grammar">
+<h3>4.2 Dependency Grammar<a class="headerlink" href="#dependency-grammar" title="Permalink to this heading">#</a></h3>
+<p>words of a sentence are dependent upon other words of the sentence</p>
+</section>
+</section>
+<section id="subword-tokenizer">
+<h2>5. Subword Tokenizer 알고리즘<a class="headerlink" href="#subword-tokenizer" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Birthplace = Birth + Place</p>
+</div></blockquote>
+<p>아무리 많이 학습시켜도 모르는 단어가 학습과정에서 나오기 마련이다. 이를 OOV(out-of-vocabulary), UNK(unknown token)이라고 말한다. OOV문제를 일으키는 단어는 보통 더 작은 단위로 쪼개면 아는 2개로 해석될 수 있는 합성어, 희귀 단어 혹은 신조어 인 경우가 많기 때문에 단어를 더 쪼개갰다는 의미이다.</p>
+<section id="byte-pair-encoding-bpe-1994">
+<h3>5.1 Byte-Pair Encoding(BPE) 1994<a class="headerlink" href="#byte-pair-encoding-bpe-1994" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://huggingface.co/learn/nlp-course/chapter6/5?fw=pt">huggingface_DOC</a></p>
+<blockquote>
+<div><p>aaabdaaabac → (aa → Z) ZabdZabac → (ab → Y) ZYdZYac → (ZY → X) XdXac</p>
+</div></blockquote>
+<p>데이터 압축 알고리즘이다. 기본적으로 연속적으로 가장 많이 등장한 글자의 쌍을 찾아서 하나의 글자로 병합하는 방식.</p>
+<p>자연어 처리에서 BPE는 곧 subword segmentation 알고리즘을 말한다. 글자 단위에서 점차적으로 단어 집합을 만들어내는 bottom up 방식의 접근을 한다. 우선 훈련 데이터에 있는 단어들을 모든 글자 또는 유니코드 단위로 단어 집합을 만들고, 가장 많이 등장하는 유니그램을 하나의 유니그램으로 통합한다. 정리하자면 가장 빈번하게 등장하는 문자 혹은 subword의 쌍을 재귀적으로 합치며, 텍스트를 분할하는 방식이라고 볼 수 있다. 문제는 letter 수준에서 작동하기 때문에 단어 내의 내부 구조나 의미를 고려하진 않는다.</p>
+</section>
+<section id="wordpiece-tokenizer-for-bert">
+<h3>5.2 wordpiece tokenizer → for BERT<a class="headerlink" href="#wordpiece-tokenizer-for-bert" title="Permalink to this heading">#</a></h3>
+<p>bpe가 빈도수에 기반하여 가장 많이 등장한 쌍을 병합하는 것 과는 달리, 병합되었을 때 코퍼스의 우도 likelihood를 가장 높이는 쌍으로 구성. 모든 단어 앞에 <em>를 붙이고 기존에 없던 띄어쓰기 추가. 되돌릴때는 띄어쓰기 모두 없애고</em> 를 띄어쓰기화 하면 된다.
+BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BPE가 letter → token(subword) bottom up 방식이었다면, wordpiece는 word → token(subword) topdown 방식이라고 볼 수 있다. 또한 차이점은 단어 경계를 표시하는 특수 토큰[CLS],[SEP]등을 사용하여 서브워드를 생성할 수 있다는 것이다.</p>
+</section>
+<section id="sentencepiece">
+<h3>5.3 SentencePiece<a class="headerlink" href="#sentencepiece" title="Permalink to this heading">#</a></h3>
+<p>사전 토큰화 작업(pretokenization) 없이 전처리를 하지 않은 데이터(raw data)에 바로 단어 분리 토크나이저를 사용할 수 있음. 단어 분리 토큰화 수행 → 어떤 언어에도 바로 적용 가능.</p>
+</section>
+<section id="libraries">
+<h3>6. Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>spacy</p></li>
+</ol>
+<ul class="simple">
+<li><p>c 기반, 빠름</p></li>
+<li><p>그냥 이거 써라</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>nltk</p></li>
+</ol>
+<ul class="simple">
+<li><p>쓸데없이 선택지 많음</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./scripts/basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+
+
+
+
+                <footer class="bd-footer-article">
+
+<div class="footer-article-items footer-article__inner">
+
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="linear_algebra.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear algebra summary</p>
+      </div>
+    </a>
+</div></div>
+
+</div>
+
+                </footer>
+
+            </div>
+
+
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corpus-tokens-engrams">1. corpus, tokens, engrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">2. tokenization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#white-space-tokenization">2.1. White-space tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expression-tokenization">2.2. Regular expression tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">토큰화 고려사항</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.3 한국어에서 토큰화의 어려움</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">3. Normalization 정규화</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">3.1 stemming 어간 추출</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">3.2 lemmatization 표제어 추출</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-part-of-speech-tags">3.3 POS(part of speech tags)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+<div class="bd-footer-content__inner container">
+
+  <div class="footer-item">
+
+<p class="component-author">
+By Surdarla
+</p>
+
+  </div>
+
+  <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2023.
+      <br/>
+
+  </p>
+
+  </div>
+
+  <div class="footer-item">
+
+  </div>
+
+  <div class="footer-item">
+
+  </div>
+
+</div>
+          </footer>
+
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

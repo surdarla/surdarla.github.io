@@ -18,3 +18,4 @@ parts:
     - file : scripts/basics/intro
       sections :
         - file : scripts/basics/linear_algebra
+        - file : scripts/basics/NLP_basics

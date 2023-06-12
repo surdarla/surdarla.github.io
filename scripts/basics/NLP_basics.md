@@ -36,7 +36,7 @@ token에 대해서 알았으니 문장과 구를 우리가 정의한 토큰(word
 
 정규표현 토큰화. splitting pattern을 정규식으로 분간할 수 있다. 정규 표현식은 문자열의 패턴을 정의하고 일치하는 부분을 찾는데 사용된다.
 
-```{python}
+```python
 S = 'Football, Cricket; Golf Tennis'
 re.split('r[;,\s]', S)
 Tokens = "Football","Cricket","Golf","Tennis"
@@ -84,7 +84,7 @@ Tokens = "Football","Cricket","Golf","Tennis"
 laughing, laughed, laughs, laugh → laugh
 단점 : 가끔 사전에 없는 단어를 만들 수도 있다. 그래서 좋은 normalization은 아닐 수 있다. 또한 winning 같은 경우 원래의 stem은 win인데 winn으로 만들 수 있다.
 
-```{python}
+```python
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PosterStemmer, LancasterStemmer
 from nltk.tokenize import word_tokenize
