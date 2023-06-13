@@ -19,3 +19,4 @@ parts:
       sections :
         - file : scripts/basics/linear_algebra
         - file : scripts/basics/NLP_basics
+        - file : scripts/basics/EDA
