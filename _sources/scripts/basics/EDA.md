@@ -38,12 +38,14 @@
       - 상대적 중요도 (w)
 
 2. 중위값 median
-
-- numpy.median(a(array_like), axis=None, ...) $\to$ array_like
-- torch.median(input, dim=-1,keepdim=False,*,out=None) $\to$ Tensor
-- torch.quantile(input,q=0.5,dim=None,keepdim=False,*,interpolation='linear',out=None) $\to$ Tensor
+   - numpy.median(a(array_like), axis=None, ...) $\to$ array_like
+   - torch.median(input, dim=-1,keepdim=False,*,out=None) $\to$ Tensor
+   - torch.quantile(input,q=0.5,dim=None,keepdim=False,*,interpolation='linear',out=None) $\to$ Tensor
 
 3. 최빈값 mode
+   - 최대 빈도로 등장하는 값
+   - np.mode
+   - torch.mode
 
 ```{admonition} 극단값이 1개 있을떄
 :class: dropdown
@@ -59,26 +61,31 @@
 
 n개의 데이터를 작은 수에서 부터 큰 수의 순으로 놓고 몇 등분을 하기. 경계 부분의 수치를 분위수라고 한다.
 
+![4분위수](/images/4fractile.png)
+
 - 1 $\to$ 4로 갈수록 커지게됨
 - 사분위수의 범위 IQR(Interquartile Range) : $IQR = Q_3 - Q_1 = 50\%$
 - q2 = median
 - count는 분위수 모두 같다.
-![4분위수](/images/4fractile.png)
 
 #### 2. 편차 deviation $\sigma$
 
 데이터 값과 평균값의 차이\
 편차는 개별 데이터에 대하여 계산된다.
-$$\sigma_i = x_i - \mu$$
+$$
+\sigma_i = x_i - \mu
+$$
 
 #### 3. 분산 variance
 
 편차를 하나의 지표로 데이터의 특성(얼마나 흩어져 있는가)에 대한 표현
 
-$$\tag{variance}
+$$
 \sigma^2 : \text{모분산}\\
 s^2 : \text{표본분산}\\
+$$
 
+$$
 \begin{equation}
 \begin{split}
 Var(X) =& \frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2\\
@@ -113,6 +120,27 @@ $$
 P(A) = \frac{\text{A 사건이 일어나는 경우의 수}}{\text{모든 사건이 일어나는 경우의 수}}
 $$
 
+##### 1-1. 공리적 정의
+
+[link](https://m.blog.naver.com/mykepzzang/221857243092)
+
+{prf:ref}`Definition-of-Probability<확률의 공리적 정의>` 이것은 엄밀한 확률에 대한 정의이다. 대충 정리하면 표본공간의 모든 확률은 항상 1이어야하고, 각 사건의 확률은 0에서 1사이어야하고, 각 사건이 배반이면 합사건의 확률은 각 확률을 더한 것과 같다.
+
+```{prf:theorem} Definition-of-Probability
+:label: 확률의 공리적 정의
+
+**Givne** 표본공간($\Omega$)의 모든 사건들의 집합 F위에서 정의된 함수 P가 다음 3가지를 만족할 때,
+
+$(\Omega, F, P) = 확률공간$
+
+**TO** P를 확률측도(probability measure)라고 한다.
+
+1. 모든 $A \in F$에 대해 0<=P(A)<=1<=1
+2. $P(\Omega) = 1$ 
+3. 표본공간의 모든 사건이 서로 배반이면, $P(A_1 \cup A_2 ... \cup A_n = P(A_1) + P(A_2) + ... + P(A_n)$
+
+```
+
 #### 2. 확률 변수 Random Variable
 
 - 실험 : 동전을 무작위로 던져서 앞 뒤 확인
@@ -143,14 +171,21 @@ $$
 
 event 시행에서 확률변수 random variable이 어떤 값을 가질지에 대한 확률을 나타낸다. 확률변수가 취하는 값들의 집합이 자연수의 부분집합과 일대일 대응한다면 이산확률분포, 실수의 구간을 이루면 연속확률분포
 
+```{admonition} 분포 확인 단어 정리
+:class: tip
+
+  1. 첨도 kurtosis : 분포의 산의 뾰족한 정도, 최대값인 부분에서 급격한 정도.
+  2. 왜도 skewness : 비대칭도
+```
+
 ##### 3-1. 이항분포 Binomial Distribution
 
 n번의 독립 베르누이 시행(1 event $\to$ o or x)에서 성공확률이 p일 때의 확률 분포. 만약 충분하게 n의 수가 많아지면, 분포는 좌우대칭의 정규분포에 가까워진다.
 
-```{margin}
-n : 시행event의 횟수
-X=k : n회의 실행에서 k번이 뒷면이 출현
-P(X=k) : 위의 확률
+```{margin} 이항분포에서..
+n : 시행event의 횟수    
+X=k : n회의 실행에서 k번이 뒷면이 출현  
+P(X=k) : 위의 확률  
 ```
 
 $$
@@ -171,6 +206,8 @@ P(x=k) = \frac{1}{n}\\
 \end{cases}
 $$
 
+여기서 왜 12로 나누냐 분산에서?
+
 ##### 3-3. 정규분포
 
 가우시안 분포라고도 불리는 연속확률분포 중에 가장 유명한 분포이다. $\mu$ 평균값을 중심으로 대칭을 이루는 종 모양이다. 이항분포의 n 시행 횟수를 늘리면 그 분포는 정규분포와 가까워진다. {prf:ref}`Central-limit-theorem(CLT)<my-theorem>`(중심극한정리)에 의하면 독립적인 확률변수들의 평균은 정규분포에 가까워지는 성질이 있다.
@@ -187,3 +224,13 @@ Central limit theorem(CLT)
 
 **DEF** 무작위로 추출된 표본의 크기가 커질수록 표본 평균의 분포는 모집단의 분포 모양과는 관계없이 정규분포에 가까워진다.
 ```
+
+### 표본 추출 Sampling
+
+#### 층화추출(stratified random sampling)
+
+모집단을 몇 개의 이질적인 층 stratum으로 구분하여 각 층별로 임의 추출법 적용
+
+동일 층의 이질성으 낮추고 다른 층의 이질성을 높여 각 층내 분산 감소.
+
+할당 표본추출과 차이 : 확률 표본추출을 적용하지 않음
