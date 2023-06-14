@@ -360,14 +360,21 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distribution">확률과 확률 분포 Probability Distribution</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-p-a">1. 확률 Probability <span class="math notranslate nohighlight">\(P(A)\)</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">2. 확률 변수 Random Variable</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 확률 분포 Probability Distribution</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">3-1. 이항분포 Binomial Distribution</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3-2. 균일분포 Uniform Distribution</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3-3. 정규분포</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-p-a">1. 확률 Probability <span class="math notranslate nohighlight">\(P(A)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1-1. 공리적 정의</a></li>
 </ul>
 </li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">2. 확률 변수 Random Variable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. 확률 분포 Probability Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">3-1. 이항분포 Binomial Distribution</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3-2. 균일분포 Uniform Distribution</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3-3. 정규분포</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">표본 추출 Sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stratified-random-sampling">층화추출(stratified random sampling)</a></li>
 </ul>
 </li>
 </ul>
@@ -439,15 +446,20 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p>중위값 median</p></li>
-</ol>
+<li><p>중위값 median</p>
 <ul class="simple">
 <li><p>numpy.median(a(array_like), axis=None, …) <span class="math notranslate nohighlight">\(\to\)</span> array_like</p></li>
 <li><p>torch.median(input, dim=-1,keepdim=False,*,out=None) <span class="math notranslate nohighlight">\(\to\)</span> Tensor</p></li>
 <li><p>torch.quantile(input,q=0.5,dim=None,keepdim=False,*,interpolation=‘linear’,out=None) <span class="math notranslate nohighlight">\(\to\)</span> Tensor</p></li>
 </ul>
-<ol class="arabic simple" start="3">
-<li><p>최빈값 mode</p></li>
+</li>
+<li><p>최빈값 mode</p>
+<ul class="simple">
+<li><p>최대 빈도로 등장하는 값</p></li>
+<li><p>np.mode</p></li>
+<li><p>torch.mode</p></li>
+</ul>
+</li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">극단값이 1개 있을떄</p>
@@ -460,27 +472,33 @@ document.write(`
 <section id="fractile">
 <h4>1. 분위수 fractile<a class="headerlink" href="#fractile" title="Permalink to this heading">#</a></h4>
 <p>n개의 데이터를 작은 수에서 부터 큰 수의 순으로 놓고 몇 등분을 하기. 경계 부분의 수치를 분위수라고 한다.</p>
+<p><img alt="4분위수" src="../../_images/4fractile.png" /></p>
 <ul class="simple">
 <li><p>1 <span class="math notranslate nohighlight">\(\to\)</span> 4로 갈수록 커지게됨</p></li>
 <li><p>사분위수의 범위 IQR(Interquartile Range) : <span class="math notranslate nohighlight">\(IQR = Q_3 - Q_1 = 50\%\)</span></p></li>
 <li><p>q2 = median</p></li>
-<li><p>count는 분위수 모두 같다.
-<img alt="4분위수" src="../../_images/4fractile.png" /></p></li>
+<li><p>count는 분위수 모두 같다.</p></li>
 </ul>
 </section>
 <section id="deviation-sigma">
 <h4>2. 편차 deviation <span class="math notranslate nohighlight">\(\sigma\)</span><a class="headerlink" href="#deviation-sigma" title="Permalink to this heading">#</a></h4>
 <p>데이터 값과 평균값의 차이<br />
 편차는 개별 데이터에 대하여 계산된다.
-$<span class="math notranslate nohighlight">\(\sigma_i = x_i - \mu\)</span>$</p>
+$<span class="math notranslate nohighlight">\(
+\sigma_i = x_i - \mu
+\)</span>$</p>
 </section>
 <section id="variance">
 <h4>3. 분산 variance<a class="headerlink" href="#variance" title="Permalink to this heading">#</a></h4>
 <p>편차를 하나의 지표로 데이터의 특성(얼마나 흩어져 있는가)에 대한 표현</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}\tag{variance}
+\[\begin{split}
 \sigma^2 : \text{모분산}\\
-s^2 : \text{표본분산}\\\end{split}\\\begin{split}\begin{equation}
+s^2 : \text{표본분산}\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
 \begin{split}
 Var(X) =&amp; \frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2\\
 =&amp; \frac{\sum (Y_i - \bar{\mu}^2)}{N}\\
@@ -488,7 +506,7 @@ Var(X) =&amp; \frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2\\
 =&amp; E[X^2] - E[X]^2
 \end{split}
 \end{equation}
-\end{split}\end{aligned}\end{align} \]</div>
+\end{split}\]</div>
 </section>
 <section id="outlier">
 <h4>4. 이상치 outlier<a class="headerlink" href="#outlier" title="Permalink to this heading">#</a></h4>
@@ -514,6 +532,23 @@ CV = \frac{s}{\mu}
 \[
 P(A) = \frac{\text{A 사건이 일어나는 경우의 수}}{\text{모든 사건이 일어나는 경우의 수}}
 \]</div>
+<section id="id4">
+<h5>1-1. 공리적 정의<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h5>
+<p><a class="reference external" href="https://m.blog.naver.com/mykepzzang/221857243092">link</a></p>
+<p><a class="reference internal" href="#확률의 공리적 정의">Definition-of-Probability</a> 이것은 엄밀한 확률에 대한 정의이다. 대충 정리하면 표본공간의 모든 확률은 항상 1이어야하고, 각 사건의 확률은 0에서 1사이어야하고, 각 사건이 배반이면 합사건의 확률은 각 확률을 더한 것과 같다.</p>
+<div class="proof theorem admonition" id="확률의 공리적 정의">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Definition-of-Probability)</p>
+<section class="theorem-content" id="proof-content">
+<p><strong>Givne</strong> 표본공간(<span class="math notranslate nohighlight">\(\Omega\)</span>)의 모든 사건들의 집합 F위에서 정의된 함수 P가 다음 3가지를 만족할 때,</p>
+<p><span class="math notranslate nohighlight">\((\Omega, F, P) = 확률공간\)</span></p>
+<p><strong>TO</strong> P를 확률측도(probability measure)라고 한다.</p>
+<ol class="arabic simple">
+<li><p>모든 <span class="math notranslate nohighlight">\(A \in F\)</span>에 대해 0&lt;=P(A)&lt;=1&lt;=1</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span></p></li>
+<li><p>표본공간의 모든 사건이 서로 배반이면, <span class="math notranslate nohighlight">\(P(A_1 \cup A_2 ... \cup A_n = P(A_1) + P(A_2) + ... + P(A_n)\)</span></p></li>
+</ol>
+</section>
+</div></section>
 </section>
 <section id="random-variable">
 <h4>2. 확률 변수 Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this heading">#</a></h4>
@@ -535,16 +570,23 @@ P(A) = \frac{\text{A 사건이 일어나는 경우의 수}}{\text{모든 사건�
 </div>
 <p>위에서 이산확률변수와 연속확률변수의 차이 때문에 연속확률변수는 확률분포함수 f(x)를 도입하며, f(x)를 a에서 b까지 적분함으로써 확률변수의 값이 a와 b사이에 있을 확률을 구한다.</p>
 </section>
-<section id="id4">
-<h4>3. 확률 분포 Probability Distribution<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<section id="id5">
+<h4>3. 확률 분포 Probability Distribution<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <p>event 시행에서 확률변수 random variable이 어떤 값을 가질지에 대한 확률을 나타낸다. 확률변수가 취하는 값들의 집합이 자연수의 부분집합과 일대일 대응한다면 이산확률분포, 실수의 구간을 이루면 연속확률분포</p>
+<div class="tip admonition">
+<p class="admonition-title">분포 확인 단어 정리</p>
+<ol class="arabic simple">
+<li><p>첨도 kurtosis : 분포의 산의 뾰족한 정도, 최대값인 부분에서 급격한 정도.</p></li>
+<li><p>왜도 skewness : 비대칭도</p></li>
+</ol>
+</div>
 <section id="binomial-distribution">
 <h5>3-1. 이항분포 Binomial Distribution<a class="headerlink" href="#binomial-distribution" title="Permalink to this heading">#</a></h5>
 <p>n번의 독립 베르누이 시행(1 event <span class="math notranslate nohighlight">\(\to\)</span> o or x)에서 성공확률이 p일 때의 확률 분포. 만약 충분하게 n의 수가 많아지면, 분포는 좌우대칭의 정규분포에 가까워진다.</p>
 <aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>n : 시행event의 횟수
-X=k : n회의 실행에서 k번이 뒷면이 출현
+<p class="sidebar-title">이항분포에서…</p>
+<p>n : 시행event의 횟수<br />
+X=k : n회의 실행에서 k번이 뒷면이 출현<br />
 P(X=k) : 위의 확률</p>
 </aside>
 <div class="math notranslate nohighlight">
@@ -565,12 +607,13 @@ P(x=k) = \frac{1}{n}\\
 \sigma^2 = \frac{n^2-1}{12}
 \end{cases}
 \end{split}\]</div>
+<p>여기서 왜 12로 나누냐 분산에서?</p>
 </section>
-<section id="id5">
-<h5>3-3. 정규분포<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h5>
+<section id="id6">
+<h5>3-3. 정규분포<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h5>
 <p>가우시안 분포라고도 불리는 연속확률분포 중에 가장 유명한 분포이다. <span class="math notranslate nohighlight">\(\mu\)</span> 평균값을 중심으로 대칭을 이루는 종 모양이다. 이항분포의 n 시행 횟수를 늘리면 그 분포는 정규분포와 가까워진다. <a class="reference internal" href="#my-theorem">Central-limit-theorem(CLT)</a>(중심극한정리)에 의하면 독립적인 확률변수들의 평균은 정규분포에 가까워지는 성질이 있다.</p>
 <div class="proof theorem admonition" id="my-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Central-limit-theorem(CLT))</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Central-limit-theorem(CLT))</p>
 <section class="theorem-content" id="proof-content">
 <p>Central limit theorem(CLT)</p>
 <p><strong>전제</strong> Given <span class="math notranslate nohighlight">\(X_1, X_2, X_3,...X_n\)</span> with 독립항등분포, each <span class="math notranslate nohighlight">\(E(X_i) = \mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(\xi_n = \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt n \sigma}\)</span>라고 둘 때,</p>
@@ -578,6 +621,15 @@ P(x=k) = \frac{1}{n}\\
 <p><strong>DEF</strong> 무작위로 추출된 표본의 크기가 커질수록 표본 평균의 분포는 모집단의 분포 모양과는 관계없이 정규분포에 가까워진다.</p>
 </section>
 </div></section>
+</section>
+</section>
+<section id="sampling">
+<h3>표본 추출 Sampling<a class="headerlink" href="#sampling" title="Permalink to this heading">#</a></h3>
+<section id="stratified-random-sampling">
+<h4>층화추출(stratified random sampling)<a class="headerlink" href="#stratified-random-sampling" title="Permalink to this heading">#</a></h4>
+<p>모집단을 몇 개의 이질적인 층 stratum으로 구분하여 각 층별로 임의 추출법 적용</p>
+<p>동일 층의 이질성으 낮추고 다른 층의 이질성을 높여 각 층내 분산 감소.</p>
+<p>할당 표본추출과 차이 : 확률 표본추출을 적용하지 않음</p>
 </section>
 </section>
 </section>
@@ -654,14 +706,21 @@ P(x=k) = \frac{1}{n}\\
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distribution">확률과 확률 분포 Probability Distribution</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-p-a">1. 확률 Probability <span class="math notranslate nohighlight">\(P(A)\)</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">2. 확률 변수 Random Variable</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. 확률 분포 Probability Distribution</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">3-1. 이항분포 Binomial Distribution</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3-2. 균일분포 Uniform Distribution</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3-3. 정규분포</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-p-a">1. 확률 Probability <span class="math notranslate nohighlight">\(P(A)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1-1. 공리적 정의</a></li>
 </ul>
 </li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">2. 확률 변수 Random Variable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. 확률 분포 Probability Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">3-1. 이항분포 Binomial Distribution</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3-2. 균일분포 Uniform Distribution</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3-3. 정규분포</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">표본 추출 Sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stratified-random-sampling">층화추출(stratified random sampling)</a></li>
 </ul>
 </li>
 </ul>
