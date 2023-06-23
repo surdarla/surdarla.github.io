@@ -20,3 +20,9 @@ parts:
         - file : scripts/basics/linear_algebra
         - file : scripts/basics/NLP_basics
         - file : scripts/basics/EDA
+
+  - caption : Paper Review
+    chapters :
+    - file : scripts/paper_review/intro
+      sections :
+      - file : scripts/paper_review/resnet

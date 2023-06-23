@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -43,10 +42,8 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -76,6 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="intro" href="../paper_review/intro.html" />
     <link rel="prev" title="NLP basics" href="NLP_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,6 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">NLP basics</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../paper_review/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../paper_review/resnet.html">Resnet</a></li>
 </ul>
 </li>
 </ul>
@@ -410,6 +415,7 @@ document.write(`
 <li><p>시각화 이후에 이에 대한 의미를 통계적으로 찾기 위해 <code class="docutils literal notranslate"><span class="pre">확률분포</span></code>에 대한 이해 필요</p></li>
 </ol>
 </section>
+<hr class="docutils" />
 <section id="id3">
 <h2>기초 통계 지식<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <section id="representative-value">
@@ -466,6 +472,7 @@ document.write(`
 <p>이런 경우 산술평균으로 하면 해당 outlier로부터 매우 큰 영향을 받을 수 밖에 없다. 그런 경우에는 mean보단 median,mode가 더 representative value로 적합해질 수 있다.</p>
 </div>
 </section>
+<hr class="docutils" />
 <section id="distribution">
 <h3>분포 Distribution<a class="headerlink" href="#distribution" title="Permalink to this heading">#</a></h3>
 <p>대표값 만으로는 데이터가 어떤 모양을 이루는지 알 수 없다. 대표값은 점 이기 때문에. 이를 위해서 분위수 max min 분산 편차 등의 방식으로 <code class="docutils literal notranslate"><span class="pre">흩어진</span> <span class="pre">정도</span></code>를 파악한다.</p>
@@ -585,8 +592,8 @@ P(A) = \frac{\text{A 사건이 일어나는 경우의 수}}{\text{모든 사건�
 <p>n번의 독립 베르누이 시행(1 event <span class="math notranslate nohighlight">\(\to\)</span> o or x)에서 성공확률이 p일 때의 확률 분포. 만약 충분하게 n의 수가 많아지면, 분포는 좌우대칭의 정규분포에 가까워진다.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title">이항분포에서…</p>
-<p>n : 시행event의 횟수<br />
-X=k : n회의 실행에서 k번이 뒷면이 출현<br />
+<p>n : 시행event의 횟수
+X=k : n회의 실행에서 k번이 뒷면이 출현
 P(X=k) : 위의 확률</p>
 </aside>
 <div class="math notranslate nohighlight">
@@ -623,6 +630,7 @@ P(x=k) = \frac{1}{n}\\
 </div></section>
 </section>
 </section>
+<hr class="docutils" />
 <section id="sampling">
 <h3>표본 추출 Sampling<a class="headerlink" href="#sampling" title="Permalink to this heading">#</a></h3>
 <section id="stratified-random-sampling">
@@ -674,6 +682,15 @@ P(x=k) = \frac{1}{n}\\
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">NLP basics</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../paper_review/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">intro</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
 
