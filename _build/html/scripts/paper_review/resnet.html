@@ -66,8 +66,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/paper_review/resnet';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/paper_review/resnet.html" />
     <link rel="author" title="About these documents" href="../../about.html" />
@@ -181,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../basics/linear_algebra.html">Linear algebra summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/NLP_basics.html">NLP basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/activation_function.html">activation function</a></li>
 </ul>
 </li>
 </ul>
@@ -352,14 +351,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-up">문제 설정 problem set-up</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vanishing-exploding-gradients-problem">1. vanishing/exploding gradients problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sigmoid-function">sigmoid function</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#katex">katex</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degradation-problem">Degradation problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vanishing-exploding-gradients-problem">1. vanishing/exploding gradients problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degradation-problem">2. Degradation problem</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite-concepts">prerequisite concepts</a></li>
@@ -392,74 +385,10 @@ document.write(`
 <div><p>Is learning better networks as easy as stacking more layers?</p>
 <p class="attribution">—bro. of course not!</p>
 </div></blockquote>
-<p>첫번째 문제는 gradient가 소실되거나 폭발해버리는 문제다. layer가 몇 층 되지 않는 shallow한 network에서는 이러한 문제가 나타나지 않거나 걱정이 필요없을 정도 이지만, network가 깊어지면 gradient(경사도)가 <code class="docutils literal notranslate"><span class="pre">too</span> <span class="pre">small</span> <span class="pre">or</span> <span class="pre">big</span> <span class="pre">for</span> <span class="pre">training</span> <span class="pre">to</span> <span class="pre">work</span> <span class="pre">effectively</span></code>하게 되고 이 문제가 vanishing exploding gradient 문제다. sigmoid activation 함수를 생각하면 문제에 대해 이애하기 쉽다.</p>
-<section id="sigmoid-function">
-<h4>sigmoid function<a class="headerlink" href="#sigmoid-function" title="Permalink to this heading">#</a></h4>
-<section id="katex">
-<h5>katex<a class="headerlink" href="#katex" title="Permalink to this heading">#</a></h5>
-<div class="math notranslate nohighlight">
-\[\tag{sigmoid}
-h(x) = \frac {1} {1+e^{-x}}
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\tag{sigmoid derivative - chain rule}
-\begin{equation}
-\begin{split}
-h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
-    &amp;= \frac {\partial} {\partial x} \Big[ \frac {1} {1+e^{-x}} \Big]=\frac {\partial} {\partial x} (1+e^{-x})^{-1}\\
-    &amp;= -1 *(1+e^{-x})^{-2}(-e^{-x})\\
-    &amp;= \frac {-e^{-x}} {-(1+e^{-x})^2} =  \frac {e^{-x}} {(1+e^{-x})^2}\\
-    &amp;= \frac {1} {1+e^{-x}} \frac {e^{-x}} {1+e^{-x}}\\
-    &amp;= \frac {1} {1+e^{-x}} \frac {1+e^{-x}-1} {1+e^{-x}}\\
-    &amp;= \frac {1} {1+e^{-x}} \Big[ \frac {(1+e^{-x})} {1+e^{-x}} - \frac {1} {1+e^{-x}}  \Big]\\
-    &amp;= \frac {1} {1+e^{-x}} \Big[ 1 - \frac {1} {1+e^{-x}}  \Big]\\
-    &amp;=h(x)(1 - h(x)) \\
-\end{split}
-\end{equation}
-\end{split}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">sigmoid_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">step</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">step</span><span class="p">)</span> <span class="o">-</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">step</span>
-
-<span class="k">def</span> <span class="nf">other_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="p">))))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">y</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-
-<span class="n">y1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">sigmoid_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0000000000001</span><span class="p">)</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="n">other_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;derivative&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;other derivative&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/c016f7faf50779880fd31ac0861d6a4b3f36fa297f33c6ab345d7a4d5eb7513b.png" src="../../_images/c016f7faf50779880fd31ac0861d6a4b3f36fa297f33c6ab345d7a4d5eb7513b.png" />
-</div>
-</div>
-</section>
-</section>
+<p>첫번째 문제는 gradient가 소실되거나 폭발해버리는 문제다. layer가 몇 층 되지 않는 shallow한 network에서는 이러한 문제가 나타나지 않거나 걱정이 필요없을 정도 이지만, network가 깊어지면 gradient(경사도)가 <code class="docutils literal notranslate"><span class="pre">too</span> <span class="pre">small</span> <span class="pre">or</span> <span class="pre">big</span> <span class="pre">for</span> <span class="pre">training</span> <span class="pre">to</span> <span class="pre">work</span> <span class="pre">effectively</span></code>하게 되고 이 문제가 vanishing exploding gradient 문제다. sigmoid function <a class="reference internal" href="../basics/activation_function.html#equation-sigmoid-function">(1)</a> 함수를 생각하면 문제에 대해 이애하기 쉽다.</p>
 </section>
 <section id="degradation-problem">
-<h3>Degradation problem<a class="headerlink" href="#degradation-problem" title="Permalink to this heading">#</a></h3>
+<h3>2. Degradation problem<a class="headerlink" href="#degradation-problem" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="prerequisite-concepts">
@@ -534,14 +463,8 @@ h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-up">문제 설정 problem set-up</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vanishing-exploding-gradients-problem">1. vanishing/exploding gradients problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sigmoid-function">sigmoid function</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#katex">katex</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degradation-problem">Degradation problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vanishing-exploding-gradients-problem">1. vanishing/exploding gradients problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degradation-problem">2. Degradation problem</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite-concepts">prerequisite concepts</a></li>

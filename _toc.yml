@@ -20,6 +20,7 @@ parts:
         - file : scripts/basics/linear_algebra
         - file : scripts/basics/NLP_basics
         - file : scripts/basics/EDA
+        - file : scripts/basics/activation_function
 
   - caption : Paper Review
     chapters :
