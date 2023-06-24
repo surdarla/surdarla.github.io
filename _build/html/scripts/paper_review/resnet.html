@@ -73,7 +73,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="intro" href="intro.html" />
+    <link rel="next" title="nlp" href="nlp.html" />
+    <link rel="prev" title="vision" href="vision.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,8 +188,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="vision.html">vision</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Resnet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bert.html">BERT</a></li>
 </ul>
 </li>
 </ul>
@@ -361,7 +366,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut-connection-identity-mapping">shortcut connection == identity mapping?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-result">Implementation, Result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deeper-bottleneck-architectures">Deeper Bottleneck Architectures</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilsvrc15">ILSVRC’15</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
             </nav>
@@ -460,10 +472,10 @@ document.write(`
 <p>이전의 연구들에서 shortcut connection은 ‘highway networks’에서 gating function으로 이용되었다고 한다. 이 gates들은 data-dependent하고 parameter가 있었으며 닫힐 수 있었다고 한다. 하지만 resnet에서의 shortcut connection은 <code class="docutils literal notranslate"><span class="pre">parameter-free,</span> <span class="pre">never</span> <span class="pre">closed</span></code>라고 한다.</p>
 </section>
 </section>
-<section id="implementation-result">
-<h2>Implementation, Result<a class="headerlink" href="#implementation-result" title="Permalink to this heading">#</a></h2>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
 <figure class="align-default" id="resnet-fig3">
-<a class="reference internal image-reference" href="../../_images/resnet_3.png"><img alt="../../_images/resnet_3.png" src="../../_images/resnet_3.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="../../_images/resnet_3.png"><img alt="../../_images/resnet_3.png" src="../../_images/resnet_3.png" style="height: 700px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">vgg19(19.6B FLOPs) - plain 34 layers(3.6B FLOPs) - with shortcut 34 layers(3.6B FLOPs). dotted line이 dimension이 늘어나는 부분이고 이 부분은 equ2 <span class="math notranslate nohighlight">\(W_s\)</span> 1x1 convolutions로 맞춰주었다고 한다.</span><a class="headerlink" href="#resnet-fig3" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -493,6 +505,47 @@ document.write(`
 <li><p>fully convolutional form</p></li>
 <li><p>average scores at multiple scales{224,256,384,480,640}</p></li>
 </ul>
+<figure class="align-default" id="resnet-fig4">
+<a class="reference internal image-reference" href="../../_images/resnet_4.png"><img alt="../../_images/resnet_4.png" src="../../_images/resnet_4.png" style="height: 400px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>(A) zero-padding shortcuts are usedfor increasing dimensions, and all shortcuts are parameter-free</p></li>
+<li><p>(B)  projec-tion shortcuts are used for increasing dimensions, and othershortcuts are identity</p></li>
+<li><p>© all shortcuts are projection</p></li>
+</ul>
+<p>위에서 보이는 ABC는 shortcut connection을 어떻게 구성했는지가 다르고, c로 갈수록 성능은 나아졌지만, B만으로도 유의미한 문제 해결을 보임으로 모든 shortcut이 projection shortcut이 될 필요는 없다고 말한다. 해당 논문 이후에 나온 fishnet이라는 논문에서는 C의 방식을 적극채용해서 resnet보다 성능을 높였다.</p>
+<section id="deeper-bottleneck-architectures">
+<h3>Deeper Bottleneck Architectures<a class="headerlink" href="#deeper-bottleneck-architectures" title="Permalink to this heading">#</a></h3>
+<figure class="align-default" id="resnet-fig5">
+<a class="reference internal image-reference" href="../../_images/resnet_bottleneck.png"><img alt="../../_images/resnet_bottleneck.png" src="../../_images/resnet_bottleneck.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Bottlenect desingn for deeper network architecture</span><a class="headerlink" href="#resnet-fig5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="resnet-fig6">
+<a class="reference internal image-reference" href="../../_images/resnet_50.png"><img alt="../../_images/resnet_50.png" src="../../_images/resnet_50.png" style="height: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The architecture of ResNet-50-vd. (a) Stem block; (b) Stage1-Block1; © Stage1-Block2; (d) FC-Block.</span><a class="headerlink" href="#resnet-fig6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>18, 34 layers에서는 3x3,3x3로 2개의 conv layer들을 쌓아서 만들었었다면, 더 나아가서 50,101,152 layers를 위해서 1x1,3x3,1x1 를 하나의 블록으로 사용한다. 이것을 bottleneck block 이라고 부른다.</p>
+<p>(linear projection conv)1x1 첫번째 filter layer는 input의 차원을 줄이거나 늘리는데(차원을 맞추는데) 사용된다. 이를 통해 계산 비용을 줄이고, 더 적은수의 필터를 사용해서 특징을 추출하는 것이 가능하다.이 과정에서 일부 정보의 손실이 발생할 수는 있다.</p>
+<p>두번째 3x3 filter layer는 <code class="docutils literal notranslate"><span class="pre">bottleneck</span></code> 역할을 실질적으로 하는 공간으로 차원이 줄어든다. 차원이 줄어든다는 것은 feature 특징을 추출하는 것이 적어진다는 것이며, 가중치가 큰 feature에 집중하게 된다. 점차적으로 output size가 112x112 <span class="math notranslate nohighlight">\(\to\)</span> 56x56 <span class="math notranslate nohighlight">\(\to\)</span> 28x28 <span class="math notranslate nohighlight">\(\to\)</span> 14x14 <span class="math notranslate nohighlight">\(\to\)</span> 7x7 로 줄어들면서 cnn의 기본적인 역할(공간적인 특징 학습)에 충실하게 된다.</p>
+<p>마지막 1x1 filter layer는 줄어든 차원을 다시 늘려주면서 차원을 보존한다.</p>
+<p>resnet50의 구조도를 찾은 것인데 논문에서는 stage구분이 없었는데 이것은 구분을 해서 batch norm등을 다르게 사용하고 있는 것으로 표현되고 있다.</p>
+</section>
+</section>
+<section id="result">
+<h2>Result<a class="headerlink" href="#result" title="Permalink to this heading">#</a></h2>
+<section id="ilsvrc15">
+<h3>ILSVRC’15<a class="headerlink" href="#ilsvrc15" title="Permalink to this heading">#</a></h3>
+<figure class="align-default" id="resnet-fig7">
+<a class="reference internal image-reference" href="../../_images/resnet_imagenet.png"><img alt="../../_images/resnet_imagenet.png" src="../../_images/resnet_imagenet.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">“ImageNet Large Scale Visual Recognition Challenge” ILSVRC는 2010년부터 2017년까지 매년 개최된 이미지 인식 대회</span><a class="headerlink" href="#resnet-fig7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
@@ -500,6 +553,7 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference external" href="https://ayearofai.com/rohan-4-the-vanishing-gradient-problem-ec68f76ffb9b">Medium - Rohan #4: The vanishing gradient problem</a></p></li>
 <li><p><a class="reference external" href="https://hausetutorials.netlify.app/posts/2019-12-01-neural-networks-deriving-the-sigmoid-derivative/">DataScience - Neural networks: Deriving the sigmoid derivative via chain and quotient rules</a></p></li>
+<li><p><a class="reference external" href="https://www.researchgate.net/figure/The-architecture-of-ResNet-50-vd-a-Stem-block-b-Stage1-Block1-c-Stage1-Block2_fig4_349646156">ResearchGate - resnet 50 architecture</a></p></li>
 </ul>
 </section>
 </section>
@@ -536,13 +590,22 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="vision.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">intro</p>
+        <p class="prev-next-title">vision</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="nlp.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">nlp</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
 
@@ -571,7 +634,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut-connection-identity-mapping">shortcut connection == identity mapping?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-result">Implementation, Result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deeper-bottleneck-architectures">Deeper Bottleneck Architectures</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilsvrc15">ILSVRC’15</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
   </nav></div>

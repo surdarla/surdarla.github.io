@@ -24,6 +24,10 @@ parts:
 
   - caption : Paper Review
     chapters :
-    - file : scripts/paper_review/intro
+    - file : scripts/paper_review/vision
       sections :
       - file : scripts/paper_review/resnet
+
+    - file : scripts/paper_review/nlp
+      sections :
+      - file : scripts/paper_review/bert
