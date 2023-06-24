@@ -90,6 +90,7 @@ sphinx:
   config                    :
     html_baseurl : 'https://surdarla.github.io/'   # key-value pairs to directly over-ride the Sphinx configuration
     sitemap_url_scheme : "{link}"
+    sitemap_locales : [None]
   extra_extensions          :
     - sphinx_proof
     - sphinx_sitemap   # A list of extra extensions to load by Sphinx (added to those already used by JB).
