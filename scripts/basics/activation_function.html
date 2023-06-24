@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="intro" href="../paper_review/intro.html" />
+    <link rel="next" title="vision" href="../paper_review/vision.html" />
     <link rel="prev" title="EDA(Exploratory Data Analysis) 탐색적 분석" href="EDA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,8 +188,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../paper_review/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../paper_review/resnet.html">Resnet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../paper_review/bert.html">BERT</a></li>
 </ul>
 </li>
 </ul>
@@ -381,10 +385,10 @@ document.write(`
 \[
 h(x) = \frac {1} {1+e^{-x}}
 \]</div>
-<p>chain rule을 통해서 기본식에서 derivative 식까지 이해해보기
-$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa961cb3-2ee9-455b-a2d1-7d35653290dd">
-<span class="eqno">(1)<a class="headerlink" href="#equation-aa961cb3-2ee9-455b-a2d1-7d35653290dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<p>chain rule을 통해서 기본식에서 derivative 식까지 이해해보기</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
 \begin{split}
 h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
     &amp;= \frac {\partial} {\partial x} \Big[ \frac {1} {1+e^{-x}} \Big]=\frac {\partial} {\partial x} (1+e^{-x})^{-1}\\
@@ -396,8 +400,8 @@ h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
     &amp;= \frac {1} {1+e^{-x}} \Big[ 1 - \frac {1} {1+e^{-x}}  \Big]\\
     &amp;=h(x)(1 - h(x)) \\
 \end{split}
-\end{equation}\]</div>
-<p>$$</p>
+\end{equation}
+\end{split}\]</div>
 </section>
 <section id="numpy">
 <h3>numpy로 그래프 그려보기<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h3>
@@ -479,11 +483,11 @@ h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
       </div>
     </a>
     <a class="right-next"
-       href="../paper_review/intro.html"
+       href="../paper_review/vision.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">intro</p>
+        <p class="prev-next-title">vision</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
