@@ -373,16 +373,18 @@ document.write(`
 <h1>activation function<a class="headerlink" href="#activation-function" title="Permalink to this heading">#</a></h1>
 <p>설명 필요, linearity, non linearity</p>
 <section id="sigmoid-function">
-<h2>sigmoid function<a class="headerlink" href="#sigmoid-function" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><h2>sigmoid function<a class="headerlink" href="#sigmoid-function" title="Permalink to this heading">#</a></h2>
 <p>대충 설명</p>
 <section id="katex">
 <h3>katex<a class="headerlink" href="#katex" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight" id="equation-sigmoid-function">
-<span class="eqno">(1)<a class="headerlink" href="#equation-sigmoid-function" title="Permalink to this equation">#</a></span>\[h(x) = \frac {1} {1+e^{-x}}\]</div>
+<div class="math notranslate nohighlight">
+\[
+h(x) = \frac {1} {1+e^{-x}}
+\]</div>
 <p>chain rule을 통해서 기본식에서 derivative 식까지 이해해보기
 $$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1116b13b-bd7f-4406-a4ab-9d3f4e1bab35">
-<span class="eqno">(2)<a class="headerlink" href="#equation-1116b13b-bd7f-4406-a4ab-9d3f4e1bab35" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aa961cb3-2ee9-455b-a2d1-7d35653290dd">
+<span class="eqno">(1)<a class="headerlink" href="#equation-aa961cb3-2ee9-455b-a2d1-7d35653290dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{split}
 h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
     &amp;= \frac {\partial} {\partial x} \Big[ \frac {1} {1+e^{-x}} \Big]=\frac {\partial} {\partial x} (1+e^{-x})^{-1}\\

@@ -361,6 +361,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut-connection-identity-mapping">shortcut connection == identity mapping?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-result">Implementation, Result</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
             </nav>
@@ -391,7 +392,7 @@ document.write(`
 <div><p>Is learning better networks as easy as stacking more layers?</p>
 <p class="attribution">—bro. of course not!</p>
 </div></blockquote>
-<p>첫번째 문제는 gradient가 소실되거나 폭발해버리는 문제다. layer가 몇 층 되지 않는 shallow한 network에서는 이러한 문제가 나타나지 않거나 걱정이 필요없을 정도 이지만, network가 깊어지면 gradient(경사도)가 <code class="docutils literal notranslate"><span class="pre">too</span> <span class="pre">small</span> <span class="pre">or</span> <span class="pre">big</span> <span class="pre">for</span> <span class="pre">training</span> <span class="pre">to</span> <span class="pre">work</span> <span class="pre">effectively</span></code>하게 되고 이 문제가 vanishing exploding gradient 문제다. sigmoid function <a class="reference internal" href="../basics/activation_function.html#equation-sigmoid-function">(1)</a> 함수를 생각하면 문제에 대해 이애하기 쉽다.</p>
+<p>첫번째 문제는 gradient가 소실되거나 폭발해버리는 문제다. layer가 몇 층 되지 않는 shallow한 network에서는 이러한 문제가 나타나지 않거나 걱정이 필요없을 정도 이지만, network가 깊어지면 gradient(경사도)가 <code class="docutils literal notranslate"><span class="pre">too</span> <span class="pre">small</span> <span class="pre">or</span> <span class="pre">big</span> <span class="pre">for</span> <span class="pre">training</span> <span class="pre">to</span> <span class="pre">work</span> <span class="pre">effectively</span></code>하게 되고 이 문제가 vanishing exploding gradient 문제다. <a class="reference internal" href="../basics/activation_function.html#sigmoid-function"><span class="std std-ref">sigmoid function</span></a> 함수를 생각하면 문제에 대해 이애하기 쉽다.</p>
 <blockquote>
 <div><p>when n hidden layers use an activation like the sigmoid function, n small derivatives are multiplied together. Thus, the gradient decreases exponentially as we propagate down to the initial layers.</p>
 </div></blockquote>
@@ -432,8 +433,8 @@ document.write(`
 \begin{gather}
 \tag{residual mapping in fig2}F = W_2\sigma(W_1 x)\\
 \tag{a building block} \text{y} = W_2\sigma(W_1\text{x}) + x\\
-\tag{if x,F dimension same}\text{y} = F(\text{x},\{ W_i \}) + \text{x} \\
-\tag{else, linear projection} \text{y} = F(\text{x},\{ W_i \}) + W_s\text{x}
+\tag{Equ 1}\text{y} = F(\text{x},\{ W_i \}) + \text{x} \\
+\tag{Equ 2} \text{y} = F(\text{x},\{ W_i \}) + W_s\text{x}
 \end{gather}
 \end{split}\]</div>
 <ul class="simple">
@@ -458,6 +459,40 @@ document.write(`
 </ol>
 <p>이전의 연구들에서 shortcut connection은 ‘highway networks’에서 gating function으로 이용되었다고 한다. 이 gates들은 data-dependent하고 parameter가 있었으며 닫힐 수 있었다고 한다. 하지만 resnet에서의 shortcut connection은 <code class="docutils literal notranslate"><span class="pre">parameter-free,</span> <span class="pre">never</span> <span class="pre">closed</span></code>라고 한다.</p>
 </section>
+</section>
+<section id="implementation-result">
+<h2>Implementation, Result<a class="headerlink" href="#implementation-result" title="Permalink to this heading">#</a></h2>
+<figure class="align-default" id="resnet-fig3">
+<a class="reference internal image-reference" href="../../_images/resnet_3.png"><img alt="../../_images/resnet_3.png" src="../../_images/resnet_3.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">vgg19(19.6B FLOPs) - plain 34 layers(3.6B FLOPs) - with shortcut 34 layers(3.6B FLOPs). dotted line이 dimension이 늘어나는 부분이고 이 부분은 equ2 <span class="math notranslate nohighlight">\(W_s\)</span> 1x1 convolutions로 맞춰주었다고 한다.</span><a class="headerlink" href="#resnet-fig3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>in training</p>
+<ul class="simple">
+<li><p>he image is resized with its shorter side ran-domly sampled in for scale augmentation.A 224×224 crop is randomly sampled from an image or its horizontal flip, with the per-pixel mean subtracted.</p></li>
+<li><p>standard color augmentation</p></li>
+<li><p>conv <span class="math notranslate nohighlight">\(\to\)</span> Batch Normalization <span class="math notranslate nohighlight">\(\to\)</span> non-linear activation f</p>
+<ul>
+<li><p>plain 네트워크에서도 사용됨으로써 실험자체가 gradient vanishing problem 보다는 degradation problem에 집중하도록 함.</p></li>
+<li><p>ensures forward propagated signals to have non-zero variances.</p></li>
+<li><p>입력 데이터의 분산을 조정하여 gradient의 크기를 안정화하여 gradient vanishing problem을 완화하며, 작은 변화에는 덜 민감한 강겅한 모델을 만들고, 빠르게 수렴하도록 돕는 역할을 한다.</p></li>
+<li><p>또한 backward propagated gradients(역전파된 손실함수 최소화 가중치 미분값)가 건강하고 적절한 크기를 유지하는 데 도움된다.</p></li>
+</ul>
+</li>
+<li><p>weitght initialization</p></li>
+<li><p>SGD with mini-batch 256 size</p></li>
+<li><p>0.1 lr with 10 error plateaus</p></li>
+<li><p>60 x 10^4 iter</p></li>
+<li><p>0.0001 weight decay, momentum 0.9</p></li>
+<li><p>no dropout</p></li>
+</ul>
+<p>in testing</p>
+<ul class="simple">
+<li><p>standard 10-crop testing</p></li>
+<li><p>fully convolutional form</p></li>
+<li><p>average scores at multiple scales{224,256,384,480,640}</p></li>
+</ul>
 </section>
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
@@ -536,6 +571,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut-connection-identity-mapping">shortcut connection == identity mapping?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-result">Implementation, Result</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
   </nav></div>
