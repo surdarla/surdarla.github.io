@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Linear algebra summary &#8212; My Jupyter Book</title>
+    <title>math collection &#8212; My Jupyter Book</title>
   
   
   
@@ -66,15 +66,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/linear_algebra';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/linear_algebra.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/math_intro';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/math_intro.html" />
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="NLP basics" href="NLP_basics.html" />
-    <link rel="prev" title="math collection" href="math_intro.html" />
+    <link rel="next" title="Linear algebra summary" href="linear_algebra.html" />
+    <link rel="prev" title="practice - torch sklearn numpy" href="../CS229/2-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,8 +176,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="math_intro.html">math collection</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Linear algebra summary</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">math collection</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">NLP basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 <li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
@@ -269,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/scripts/basics/linear_algebra.ipynb" target="_blank"
+      <li><a href="../../_sources/scripts/basics/math_intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -279,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -338,9 +336,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -351,19 +347,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear algebra summary</h1>
+    <h1>math collection</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">linearity 선형성</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -373,24 +361,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-summary">
-<h1>Linear algebra summary<a class="headerlink" href="#linear-algebra-summary" title="Permalink to this heading">#</a></h1>
-<section id="linearity">
-<span id="id1"></span><h2>linearity 선형성<a class="headerlink" href="#linearity" title="Permalink to this heading">#</a></h2>
-<p>선형대수학, 선형회귀 등 여러 곳에서 선형성이란 말이 나오는데 제대로 이해하고 출발해보자.</p>
-<p>선형성이란 무엇일까? 어떤 선형 맵 또는 선형 함수 <span class="math notranslate nohighlight">\(f(x)\)</span>이 선형성을 가지고 있다라고 표현하기 위해서는 아래의 두 특성을 만족해야한다.</p>
-<ol class="arabic simple">
-<li><p>가산성 Additivity : <span class="math notranslate nohighlight">\(f(x+y) = f(x) + f(y)\)</span> -&gt; 연관관계가 없다는 의미로도 해석가능하다.</p></li>
-<li><p>1차 동차성 Homogeneity : <span class="math notranslate nohighlight">\(f(ax) = af(x)\)</span> -&gt; 1차원적 순수 비례 관계, 2차 이상의 비례관계를 가지지 않는다.</p></li>
-</ol>
-<ul class="simple">
-<li><p>어떤 성질이 변하는데 1차원적이다. 어떤 신호에 기울기만 곱한 형태와 같다.</p></li>
-<li><p>원래는 1차함수는 원점을 지나는(y = ax+b 라면 b=0인 경우) 이어야 선형적이라고 하지만, 고정된 b일 경우 예측가능하기 때문에 선형적이라고 표현한다.</p></li>
-<li><p>초기값만으로 그 <code class="docutils literal notranslate"><span class="pre">변화가</span> <span class="pre">쉽게</span> <span class="pre">유추</span> <span class="pre">가능</span></code>한 형태라는 의미가 담겨 있다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">중첩의</span> <span class="pre">원리</span></code>가 통하게 된다. 비선형 문제가 어려운 이유는 중첩의 원리가 통하지 않는 것이다.</p></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="math-collection">
+<h1>math collection<a class="headerlink" href="#math-collection" title="Permalink to this heading">#</a></h1>
+<p>linaer algebra, calculus, probability, statistics, optimization, etc.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NLP_basics.html">NLP basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activation_function.html">activation function</a></li>
 </ul>
-<p>정리를 해보자면 선형성이라는 것은 1차 직선적이라는 의미로 이해하기 보다는 ‘예측가능한’ 이라는 의미로 포괄적으로 이해하는 것이 옳을 것으로 보인다.</p>
-</section>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -425,20 +406,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="math_intro.html"
+       href="../CS229/2-1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">math collection</p>
+        <p class="prev-next-title">practice - torch sklearn numpy</p>
       </div>
     </a>
     <a class="right-next"
-       href="NLP_basics.html"
+       href="linear_algebra.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">NLP basics</p>
+        <p class="prev-next-title">Linear algebra summary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -451,20 +432,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">linearity 선형성</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
