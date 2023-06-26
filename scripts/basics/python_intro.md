@@ -1,0 +1,6 @@
+# python collection
+
+type, ...
+
+```{tableofcontents}
+```

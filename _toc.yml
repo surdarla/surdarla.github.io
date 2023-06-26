@@ -15,12 +15,16 @@ parts:
 
   - caption : Basics
     chapters :
-    - file : scripts/basics/intro
+    - file : scripts/basics/math_intro
       sections :
         - file : scripts/basics/linear_algebra
         - file : scripts/basics/NLP_basics
         - file : scripts/basics/EDA
         - file : scripts/basics/activation_function
+
+    - file :  scripts/basics/python_intro
+      sections :
+        - file : scripts/basics/type_in_python
 
   - caption : Paper Review
     chapters :
