@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 
@@ -9,20 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>practice - torch sklearn numpy &#8212; My Jupyter Book</title>
-
-
-
+  
+  
+  
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-
+  
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 <link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-
+  
   <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
@@ -36,12 +37,15 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
@@ -78,26 +82,26 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-
-
+  
+  
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-
-
+  
+  
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
+  
   <input type="checkbox"
           class="sidebar-toggle"
           name="__primary"
           id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
+  
   <input type="checkbox"
           class="sidebar-toggle"
           name="__secondary"
           id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
+  
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
@@ -118,46 +122,46 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
+  
     <nav class="bd-header navbar navbar-expand-lg bd-navbar">
     </nav>
-
+  
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-
+      
       <div class="bd-sidebar-primary bd-sidebar">
+        
 
-
-
+  
   <div class="sidebar-header-items sidebar-primary__section">
-
-
-
-
+    
+    
+    
+    
   </div>
-
+  
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
+  
 
 <a class="navbar-brand logo" href="../../about.html">
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+    
+    
+      
+    
+    
     <img src="../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
     <script>document.write(`<img src="../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-
-
+  
+  
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-
+        
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../about.html">
@@ -205,39 +209,39 @@ const thebe_selector_output = ".output, .cell_output"
     </div>
 </nav></div>
     </div>
-
-
+  
+  
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
+  
   <div id="rtd-footer-container"></div>
 
 
       </div>
-
+      
       <main id="main-content" class="bd-main">
-
-
+        
+        
 
 <div class="sbt-scroll-pixel-helper"></div>
 
           <div class="bd-content">
             <div class="bd-article-container">
-
+              
               <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
-
+  
     <div class="header-article-items__start">
-
+      
         <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
 </label></div>
-
+      
     </div>
-
-
+  
+  
     <div class="header-article-items__end">
-
+      
         <div class="header-article-item">
 
 <div class="article-header-buttons">
@@ -248,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    title="Source repository"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
@@ -266,15 +270,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-
-
-
+      
+      
+      
       <li><a href="../../_sources/scripts/CS229/2-1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
@@ -282,17 +286,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.ipynb</span>
 </a>
 </li>
-
-
-
-
+      
+      
+      
+      
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
@@ -300,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-
+      
   </ul>
 </div>
 
@@ -312,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-expand"></i>
@@ -342,20 +346,20 @@ document.write(`
     <span class="fa-solid fa-list"></span>
 </label>
 </div></div>
-
+      
     </div>
-
+  
 </div>
 </div>
-
-
+              
+              
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>practice - torch sklearn numpy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
-
+            
             <div>
                 <h2> Contents </h2>
             </div>
@@ -371,11 +375,11 @@ document.write(`
     </div>
 </div>
 
-
-
+              
+                
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
-
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="practice-torch-sklearn-numpy">
 <h1>practice - torch sklearn numpy<a class="headerlink" href="#practice-torch-sklearn-numpy" title="Permalink to this heading">#</a></h1>
 <p>sklearn, numpy for linear regression and gradient descent</p>
@@ -395,316 +399,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_12980</span>\<span class="mf">3484458488.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>MSSubClass</th>
-      <th>MSZoning</th>
-      <th>LotFrontage</th>
-      <th>LotArea</th>
-      <th>Street</th>
-      <th>Alley</th>
-      <th>LotShape</th>
-      <th>LandContour</th>
-      <th>Utilities</th>
-      <th>...</th>
-      <th>PoolArea</th>
-      <th>PoolQC</th>
-      <th>Fence</th>
-      <th>MiscFeature</th>
-      <th>MiscVal</th>
-      <th>MoSold</th>
-      <th>YrSold</th>
-      <th>SaleType</th>
-      <th>SaleCondition</th>
-      <th>SalePrice</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>60</td>
-      <td>RL</td>
-      <td>65.0</td>
-      <td>8450</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2008</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>208500</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>20</td>
-      <td>RL</td>
-      <td>80.0</td>
-      <td>9600</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>5</td>
-      <td>2007</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>181500</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>60</td>
-      <td>RL</td>
-      <td>68.0</td>
-      <td>11250</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>IR1</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>9</td>
-      <td>2008</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>223500</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>70</td>
-      <td>RL</td>
-      <td>60.0</td>
-      <td>9550</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>IR1</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2006</td>
-      <td>WD</td>
-      <td>Abnorml</td>
-      <td>140000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>60</td>
-      <td>RL</td>
-      <td>84.0</td>
-      <td>14260</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>IR1</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>12</td>
-      <td>2008</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>250000</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1455</th>
-      <td>1456</td>
-      <td>60</td>
-      <td>RL</td>
-      <td>62.0</td>
-      <td>7917</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>8</td>
-      <td>2007</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>175000</td>
-    </tr>
-    <tr>
-      <th>1456</th>
-      <td>1457</td>
-      <td>20</td>
-      <td>RL</td>
-      <td>85.0</td>
-      <td>13175</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>MnPrv</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2010</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>210000</td>
-    </tr>
-    <tr>
-      <th>1457</th>
-      <td>1458</td>
-      <td>70</td>
-      <td>RL</td>
-      <td>66.0</td>
-      <td>9042</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>GdPrv</td>
-      <td>Shed</td>
-      <td>2500</td>
-      <td>5</td>
-      <td>2010</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>266500</td>
-    </tr>
-    <tr>
-      <th>1458</th>
-      <td>1459</td>
-      <td>20</td>
-      <td>RL</td>
-      <td>68.0</td>
-      <td>9717</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>4</td>
-      <td>2010</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>142125</td>
-    </tr>
-    <tr>
-      <th>1459</th>
-      <td>1460</td>
-      <td>20</td>
-      <td>RL</td>
-      <td>75.0</td>
-      <td>9937</td>
-      <td>Pave</td>
-      <td>NaN</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>...</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>6</td>
-      <td>2008</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>147500</td>
-    </tr>
-  </tbody>
-</table>
-<p>1460 rows × 81 columns</p>
-</div></div></div>
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -787,7 +494,7 @@ z = \frac{x - \mu}{\sigma}
 
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">a_grad</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">b_grad</span>
-
+    
 <span class="n">result_str</span> <span class="o">=</span>  <span class="sa">r</span><span class="s2">&quot;$h(\Theta)$ = </span><span class="si">{:.2f}</span><span class="s2">x + </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">result_str</span><span class="p">))</span>
 </pre></div>
@@ -827,7 +534,7 @@ class HelloManim(Scene):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e1132e10878465dbc6afa7e95cf3aa734afa82642ecd8cff81ae09add09fb636.gif" src="../../_images/e1132e10878465dbc6afa7e95cf3aa734afa82642ecd8cff81ae09add09fb636.gif" />
+<img alt="../../_images/0e48a3774ecf4b792d6fcd61dcec9be2239ea113b6c51aad4ef973fd963301c3.gif" src="../../_images/0e48a3774ecf4b792d6fcd61dcec9be2239ea113b6c51aad4ef973fd963301c3.gif" />
 </div>
 </div>
 </section>
@@ -846,7 +553,7 @@ class HelloManim(Scene):
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts/CS229"
+            path: "./scripts\CS229"
         },
         predefinedOutput: true
     }
@@ -854,14 +561,14 @@ class HelloManim(Scene):
     <script>kernelName = 'python3'</script>
 
                 </article>
+              
 
-
-
-
+              
+              
                 <footer class="bd-footer-article">
-
+                  
 <div class="footer-article-items footer-article__inner">
-
+  
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
@@ -883,15 +590,15 @@ class HelloManim(Scene):
       <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
-
+  
 </div>
 
                 </footer>
-
+              
             </div>
-
-
-
+            
+            
+              
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
@@ -908,48 +615,48 @@ class HelloManim(Scene):
   </nav></div>
 
 </div></div>
-
-
+              
+            
           </div>
           <footer class="bd-footer-content">
-
+            
 <div class="bd-footer-content__inner container">
-
+  
   <div class="footer-item">
-
+    
 <p class="component-author">
 By Surdarla
 </p>
 
   </div>
-
+  
   <div class="footer-item">
-
+    
   <p class="copyright">
-
+    
       © Copyright 2023.
       <br/>
-
+    
   </p>
 
   </div>
-
+  
   <div class="footer-item">
-
+    
   </div>
-
+  
   <div class="footer-item">
-
+    
   </div>
-
+  
 </div>
           </footer>
-
+        
 
       </main>
     </div>
   </div>
-
+  
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
 <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
