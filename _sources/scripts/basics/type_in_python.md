@@ -81,4 +81,4 @@ def my_function(*args: ParamSpec, **kwargs: ParamSpec) -> Tuple[ParamSpec, Param
 - [솔라쿠아 - 파이썬 Typing 파헤치기 - 기초편, 심화편](https://sjquant.tistory.com/68)
 - [모던자바스크립트 deep dive - data type & variable](https://poiemaweb.com/js-data-type-variable)
 - [TechNote.kr - Python - id(), object의 unique 값(memory address)를 보여주는 함수](https://technote.kr/289)
--
+- something for nothing
