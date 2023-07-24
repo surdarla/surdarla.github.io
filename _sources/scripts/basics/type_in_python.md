@@ -66,7 +66,7 @@ class 객체는 해당 타입을 그냥 명시하면 된다. 혹은 `Type[class_
 7. **Generator, Iterable, Iterator** -
 `Generator[YieldType, SendType, ReturnType]` - sendtype을 input으로 받고 - yieldtype을 output하며 - returntype을 예외경우에 뱉는다.
 8. **Any** -
-쓰지마라
+쓰지마라,
 9. **ParamSpec** - 가변 위치 인자(*args)와 가변 키워드 인자(**kwargs)를 받고, 이들의 타입을 ParamSpec으로 지정합니다. 또한, 반환 타입으로 Tuple[ParamSpec, ParamSpec]을 사용하여 args와 kwargs의 타입을 나타낸다. 3.10v이상부터 가능하다/
 
 ```python
@@ -81,4 +81,4 @@ def my_function(*args: ParamSpec, **kwargs: ParamSpec) -> Tuple[ParamSpec, Param
 - [솔라쿠아 - 파이썬 Typing 파헤치기 - 기초편, 심화편](https://sjquant.tistory.com/68)
 - [모던자바스크립트 deep dive - data type & variable](https://poiemaweb.com/js-data-type-variable)
 - [TechNote.kr - Python - id(), object의 unique 값(memory address)를 보여주는 함수](https://technote.kr/289)
-- 
+-

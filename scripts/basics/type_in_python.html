@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 
@@ -42,6 +43,9 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
@@ -435,7 +439,7 @@ class 객체는 해당 타입을 그냥 명시하면 된다. 혹은 <code class=
 <li><p><strong>Generator, Iterable, Iterator</strong> -
 <code class="docutils literal notranslate"><span class="pre">Generator[YieldType,</span> <span class="pre">SendType,</span> <span class="pre">ReturnType]</span></code> - sendtype을 input으로 받고 - yieldtype을 output하며 - returntype을 예외경우에 뱉는다.</p></li>
 <li><p><strong>Any</strong> -
-쓰지마라</p></li>
+쓰지마라,</p></li>
 <li><p><strong>ParamSpec</strong> - 가변 위치 인자(*args)와 가변 키워드 인자(**kwargs)를 받고, 이들의 타입을 ParamSpec으로 지정합니다. 또한, 반환 타입으로 Tuple[ParamSpec, ParamSpec]을 사용하여 args와 kwargs의 타입을 나타낸다. 3.10v이상부터 가능하다/</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">ParamSpec</span><span class="p">,</span> <span class="n">Tuple</span>
@@ -469,7 +473,7 @@ class 객체는 해당 타입을 그냥 명시하면 된다. 혹은 <code class=
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts/basics"
+            path: "./scripts\basics"
         },
         predefinedOutput: true
     }
