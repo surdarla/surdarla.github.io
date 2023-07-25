@@ -34,4 +34,4 @@ parts:
 
     - file : scripts/paper_review/nlp
       sections :
-      - file : scripts/paper_review/bert
+      - file : scripts/paper_review/DebertaV3
