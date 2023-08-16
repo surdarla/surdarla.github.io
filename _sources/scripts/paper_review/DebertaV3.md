@@ -1,3 +1,4 @@
+
 # Deberta V3
 
 DEBERTAV3: IMPROVING DEBERTA USING ELECTRA-STYLE PRE-TRAINING WITH GRADIENT-DISENTANGLED EMBEDDING SHARING
@@ -46,7 +47,7 @@ Improving Efficency
 | [mDeBERTa-V3-Base](https://huggingface.co/microsoft/mdeberta-v3-base)<sup>2</sup>   | 250           | 86                     | 768         | 12     | 250K new SPM vocab, multi-lingual model with 102 languages |
 
 > 참조
-> 
+>
 > 1. This is the model(89.9) that surpassed T5 11B(89.3) and human performance(89.8) on SuperGLUE for the first time. 128K new SPM vocab.
 > 2. These V3 DeBERTa models are deberta models pre-trained with ELECTRA-style objective plus gradient-disentangled embedding sharing which significantly improves the model efficiency.
 
@@ -152,7 +153,6 @@ ELECTRA에서는 generator와 discriminator가 token embedding을 공유한다. 
 3. performance on downstream NLP tasks : 또한 NES가 다운스트림 test에서도 좋은 모습을 보이지 못했다
 
 > ES가 generator embedding으로부터 discriminator가 학습을 할 때 도움을 받는게 장점이 있다는 것을 알 수 있다.
-
 
 ### ???? average cosine similiarity of word embeddings of the G vs D
 

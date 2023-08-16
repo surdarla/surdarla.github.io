@@ -1,30 +1,82 @@
 Traceback (most recent call last):
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\site-packages\jupyter_cache\executors\utils.py", line 64, in single_nb_execution
-    **kwargs,
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\site-packages\nbclient\client.py", line 1305, in execute
+  File "C:\Users\WAI\Documents\surdarla.github.io\.venv\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\WAI\Documents\surdarla.github.io\.venv\Lib\site-packages\nbclient\client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\site-packages\jupyter_core\utils\__init__.py", line 98, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\WAI\Documents\surdarla.github.io\.venv\Lib\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
     return loop.run_until_complete(inner)
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\asyncio\base_events.py", line 587, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\WAI\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
     return future.result()
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\site-packages\nbclient\client.py", line 706, in async_execute
-    cell, index, execution_count=self.code_cells_executed + 1
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\WAI\Documents\surdarla.github.io\.venv\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\WAI\Documents\surdarla.github.io\.venv\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "c:\users\wai\appdata\local\programs\python\python37\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+  File "C:\Users\WAI\Documents\surdarla.github.io\.venv\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from manim import *
-from manim import config; config.media_embed=True
+%%manim -v WARNING  --progress_bar None -r 400,200 --format=gif --disable_caching HelloManim
+
+class HelloManim(Scene):
+    def construct(self):
+        self.camera.background_color = "#ece6e2"
+        banner_large = ManimBanner(dark_theme=False).scale(0.7)
+        self.play(banner_large.create())
+        self.play(banner_large.expand())
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[1;32m~\AppData\Local\Temp\ipykernel_3940\2253577653.py[0m in [0;36m<module>[1;34m[0m
-[1;32m----> 1[1;33m [1;32mfrom[0m [0mmanim[0m [1;32mimport[0m [1;33m*[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m      2[0m [1;32mfrom[0m [0mmanim[0m [1;32mimport[0m [0mconfig[0m[1;33m;[0m [0mconfig[0m[1;33m.[0m[0mmedia_embed[0m[1;33m=[0m[1;32mTrue[0m[1;33m[0m[1;33m[0m[0m
+[1;31mRuntimeError[0m                              Traceback (most recent call last)
+Cell [1;32mIn[7], line 1[0m
+[1;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmanim[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m-v WARNING  --progress_bar None -r 400,200 --format=gif --disable_caching HelloManim[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mclass HelloManim(Scene):[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    def construct(self):[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m        self.camera.background_color = [39;49m[38;5;124;43m"[39;49m[38;5;124;43m#ece6e2[39;49m[38;5;124;43m"[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m        banner_large = ManimBanner(dark_theme=False).scale(0.7)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m        self.play(banner_large.create())[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m        self.play(banner_large.expand())[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m'[39;49m[43m)[49m
 
-[1;31mModuleNotFoundError[0m: No module named 'manim'
+File [1;32m~\Documents\surdarla.github.io\.venv\Lib\site-packages\IPython\core\interactiveshell.py:2478[0m, in [0;36mInteractiveShell.run_cell_magic[1;34m(self, magic_name, line, cell)[0m
+[0;32m   2476[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[0;32m   2477[0m     args [38;5;241m=[39m (magic_arg_s, cell)
+[1;32m-> 2478[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[0;32m   2480[0m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[0;32m   2481[0m [38;5;66;03m# when using magics with decodator @output_can_be_silenced[39;00m
+[0;32m   2482[0m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[0;32m   2483[0m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic[38;5;241m.[39mMAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+
+File [1;32m~\Documents\surdarla.github.io\.venv\Lib\site-packages\manim\utils\ipython_magic.py:140[0m, in [0;36mManimMagic.manim[1;34m(self, line, cell, local_ns)[0m
+[0;32m    138[0m [38;5;28;01mtry[39;00m:
+[0;32m    139[0m     SceneClass [38;5;241m=[39m local_ns[config[[38;5;124m"[39m[38;5;124mscene_names[39m[38;5;124m"[39m][[38;5;241m0[39m]]
+[1;32m--> 140[0m     scene [38;5;241m=[39m [43mSceneClass[49m[43m([49m[43mrenderer[49m[38;5;241;43m=[39;49m[43mrenderer[49m[43m)[49m
+[0;32m    141[0m     scene[38;5;241m.[39mrender()
+[0;32m    142[0m [38;5;28;01mfinally[39;00m:
+[0;32m    143[0m     [38;5;66;03m# Shader cache becomes invalid as the context is destroyed[39;00m
+
+File [1;32m~\Documents\surdarla.github.io\.venv\Lib\site-packages\manim\scene\scene.py:141[0m, in [0;36mScene.__init__[1;34m(self, renderer, camera_class, always_update_mobjects, random_seed, skip_animations)[0m
+[0;32m    139[0m [38;5;28;01melse[39;00m:
+[0;32m    140[0m     [38;5;28mself[39m[38;5;241m.[39mrenderer [38;5;241m=[39m renderer
+[1;32m--> 141[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mrenderer[49m[38;5;241;43m.[39;49m[43minit_scene[49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m
+[0;32m    143[0m [38;5;28mself[39m[38;5;241m.[39mmobjects [38;5;241m=[39m []
+[0;32m    144[0m [38;5;66;03m# TODO, remove need for foreground mobjects[39;00m
+
+File [1;32m~\Documents\surdarla.github.io\.venv\Lib\site-packages\manim\renderer\cairo_renderer.py:49[0m, in [0;36mCairoRenderer.init_scene[1;34m(self, scene)[0m
+[0;32m     48[0m [38;5;28;01mdef[39;00m [38;5;21minit_scene[39m([38;5;28mself[39m, scene):
+[1;32m---> 49[0m     [38;5;28mself[39m[38;5;241m.[39mfile_writer: Any [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_file_writer_class[49m[43m([49m
+[0;32m     50[0m [43m        [49m[38;5;28;43mself[39;49m[43m,[49m
+[0;32m     51[0m [43m        [49m[43mscene[49m[38;5;241;43m.[39;49m[38;5;18;43m__class__[39;49m[38;5;241;43m.[39;49m[38;5;18;43m__name__[39;49m[43m,[49m
+[0;32m     52[0m [43m    [49m[43m)[49m
+
+File [1;32m~\Documents\surdarla.github.io\.venv\Lib\site-packages\manim\scene\scene_file_writer.py:88[0m, in [0;36mSceneFileWriter.__init__[1;34m(self, renderer, scene_name, **kwargs)[0m
+[0;32m     86[0m [38;5;66;03m# fail fast if ffmpeg is not found[39;00m
+[0;32m     87[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m ensure_executable(Path(config[38;5;241m.[39mffmpeg_executable)):
+[1;32m---> 88[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m(
+[0;32m     89[0m         [38;5;124m"[39m[38;5;124mManim could not find ffmpeg, which is required for generating video output.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[0;32m     90[0m         [38;5;124m"[39m[38;5;124mFor installing ffmpeg please consult https://docs.manim.community/en/stable/installation.html[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[0;32m     91[0m         [38;5;124m"[39m[38;5;124mMake sure to either add ffmpeg to the PATH environment variable[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[0;32m     92[0m         [38;5;124m"[39m[38;5;124mor set path to the ffmpeg executable under the ffmpeg header in Manim[39m[38;5;124m'[39m[38;5;124ms configuration.[39m[38;5;124m"[39m
+[0;32m     93[0m     )
+
+[1;31mRuntimeError[0m: Manim could not find ffmpeg, which is required for generating video output.
+For installing ffmpeg please consult https://docs.manim.community/en/stable/installation.html
+Make sure to either add ffmpeg to the PATH environment variable
+or set path to the ffmpeg executable under the ffmpeg header in Manim's configuration.
 
