@@ -21,6 +21,7 @@ parts:
         - file : scripts/basics/NLP_basics
         - file : scripts/basics/EDA
         - file : scripts/basics/activation_function
+        - file : scripts/basics/poetry
 
     - file :  scripts/basics/python_intro
       sections :
@@ -31,7 +32,15 @@ parts:
     - file : scripts/paper_review/vision
       sections :
       - file : scripts/paper_review/resnet
-
+      
     - file : scripts/paper_review/nlp
       sections :
       - file : scripts/paper_review/DebertaV3
+      - file : scripts/paper_review/DebertaV1
+
+  - caption : Algorithm
+    chapters : 
+    - file : scripts/algorithm/intro
+      sections :
+      - file : scripts/algorithm/2558.ipynb
+      - file : scripts/algorithm/3046.ipynb

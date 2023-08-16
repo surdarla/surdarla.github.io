@@ -1,0 +1,13 @@
+{
+	"auto input build": {
+		"scope": "python",
+		"prefix": "auto",
+		"body": [
+			"import sys",
+			"path = __file__[0:-2] + 'txt'",
+			"sys.stdin = open(path, 'r')",
+			"input = sys.stdin.readline",
+		],
+		"description": "input generator for Baekjoon"
+	}
+}
