@@ -18,29 +18,44 @@ parts:
     - file : scripts/basics/math_intro
       sections :
         - file : scripts/basics/linear_algebra
-        - file : scripts/basics/NLP_basics
-        - file : scripts/basics/EDA
-        - file : scripts/basics/activation_function
-        - file : scripts/basics/poetry
+        - file : scripts/basics/informateion-value
 
     - file :  scripts/basics/python_intro
       sections :
+        - file : scripts/basics/poetry
         - file : scripts/basics/type_in_python
+
+    - file :  scripts/basics/DL_intro
+      sections :
+        - file : scripts/basics/NLP_basics
+        - file : scripts/basics/EDA
+        - file : scripts/basics/activation_function
 
   - caption : Paper Review
     chapters :
     - file : scripts/paper_review/vision
       sections :
       - file : scripts/paper_review/resnet
-      
+
     - file : scripts/paper_review/nlp
       sections :
       - file : scripts/paper_review/DebertaV3
       - file : scripts/paper_review/DebertaV1
 
   - caption : Algorithm
-    chapters : 
+    chapters :
     - file : scripts/algorithm/intro
       sections :
       - file : scripts/algorithm/2558.ipynb
       - file : scripts/algorithm/3046.ipynb
+      - file : scripts/algorithm/2164.ipynb
+
+  - caption : Certificate
+    chapters :
+    - file : scripts/certificate/SQLD/SQL_intro
+      sections :
+      - file : scripts/certificate/SQLD/1.md
+
+    - file : scripts/certificate/Big_data/big_intro
+      sections :
+      - file : scripts/certificate/Big_data/1.md
