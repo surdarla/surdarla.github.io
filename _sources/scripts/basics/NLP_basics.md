@@ -10,7 +10,7 @@
 
 ## 1. corpus, tokens, engrams
 
-![../images/5e880971363eccfc191c6dd51264f581_MD5.png]
+![token to corpus](/images/5e880971363eccfc191c6dd51264f581_MD5.png)
 
 Corpus는 `a collection of text documents` 로 정의된다. 예를 들어 news들로 구성된 dataset은 코퍼스라고 할 수 있고, tweet들로 구성된 twitter dataset도 하나의 코퍼스라고 말할 수 있다. 이러한 하나의 코퍼스는 여러 documents로 이루어지고, document는 paragraph(구, 절)로 이루어지고, paragraph는 sentence(문장)으로 이루어지고, 하나의 문장은 token()으로 이루어진다.
 
@@ -69,7 +69,7 @@ Tokens = "Football","Cricket","Golf","Tennis"
 
 ## 3. Normalization 정규화
 
-![../images/9b29442026783ce1e7672cbd8ce504d9_MD5.png]
+![morpheme](/images/9b29442026783ce1e7672cbd8ce504d9_MD5.png)
 
 우리가 익히 알고 있는 정규화는 curr - min / max - min이다. 언어학과 자연어 처리에서 `morpheme(형태소 : 의미를 가진 가장 작은 단위)`라는 것이 단어의 기반으로 정의된다. 보통 token이라는 것은 두 개 이상의 morpheme의 합으로 구성된다. 접두사(prefix) 접미사(suffix)가 단어의 형태에 따라 변형되어 붙는다.
 

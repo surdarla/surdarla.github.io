@@ -181,6 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -218,11 +219,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/1.html">SQLD - 1</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/1.html">big_data 1</a></li>
 </ul>
 </li>
@@ -437,7 +438,7 @@ document.write(`
 </section>
 <section id="corpus-tokens-engrams">
 <h2>1. corpus, tokens, engrams<a class="headerlink" href="#corpus-tokens-engrams" title="Permalink to this heading">#</a></h2>
-<p>![…/images/5e880971363eccfc191c6dd51264f581_MD5.png]</p>
+<p><img alt="token to corpus" src="../../_images/5e880971363eccfc191c6dd51264f581_MD5.png" /></p>
 <p>Corpus는 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">collection</span> <span class="pre">of</span> <span class="pre">text</span> <span class="pre">documents</span></code> 로 정의된다. 예를 들어 news들로 구성된 dataset은 코퍼스라고 할 수 있고, tweet들로 구성된 twitter dataset도 하나의 코퍼스라고 말할 수 있다. 이러한 하나의 코퍼스는 여러 documents로 이루어지고, document는 paragraph(구, 절)로 이루어지고, paragraph는 sentence(문장)으로 이루어지고, 하나의 문장은 token()으로 이루어진다.</p>
 <p>그러면 token이란 무엇인가? token은 word, phrase, engram이 될 수 있다. engram은 <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">of</span> <span class="pre">n</span> <span class="pre">words</span> <span class="pre">togather</span></code>로 정의되는 단어 뭉치다.</p>
 <p>예를 들어</p>
@@ -513,7 +514,7 @@ document.write(`
 </section>
 <section id="normalization">
 <h2>3. Normalization 정규화<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h2>
-<p>![…/images/9b29442026783ce1e7672cbd8ce504d9_MD5.png]</p>
+<p><img alt="morpheme" src="../../_images/9b29442026783ce1e7672cbd8ce504d9_MD5.png" /></p>
 <p>우리가 익히 알고 있는 정규화는 curr - min / max - min이다. 언어학과 자연어 처리에서 <code class="docutils literal notranslate"><span class="pre">morpheme(형태소</span> <span class="pre">:</span> <span class="pre">의미를</span> <span class="pre">가진</span> <span class="pre">가장</span> <span class="pre">작은</span> <span class="pre">단위)</span></code>라는 것이 단어의 기반으로 정의된다. 보통 token이라는 것은 두 개 이상의 morpheme의 합으로 구성된다. 접두사(prefix) 접미사(suffix)가 단어의 형태에 따라 변형되어 붙는다.</p>
 <p>정규화는 ‘converting a token into its base form’하는 과정이다. inflection form → base form.</p>
 <ol class="arabic simple">
