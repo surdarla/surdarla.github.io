@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Linear algebra summary &#8212; My Jupyter Book</title>
+    <title>Feature selection &#8212; My Jupyter Book</title>
 
 
 
@@ -71,13 +71,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/linear_algebra';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/linear_algebra.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/information-value';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/information-value.html" />
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Feature selection" href="information-value.html" />
-    <link rel="prev" title="math collection" href="math_intro.html" />
+    <link rel="next" title="python collection" href="python_intro.html" />
+    <link rel="prev" title="Linear algebra summary" href="linear_algebra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,8 +182,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math_intro.html">math collection</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Linear algebra summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Feature selection</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-      <li><a href="../../_sources/scripts/basics/linear_algebra.ipynb" target="_blank"
+      <li><a href="../../_sources/scripts/basics/information-value.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
 
@@ -380,7 +380,7 @@ document.write(`
 
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear algebra summary</h1>
+    <h1>Feature selection</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,7 +390,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">linearity 선형성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-of-evidence-woe">Weight of Evidence(WOE) 근거의 무게</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-value">Information value 정보가치</a></li>
 </ul>
             </nav>
         </div>
@@ -402,23 +403,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
 
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-summary">
-<h1>Linear algebra summary<a class="headerlink" href="#linear-algebra-summary" title="Permalink to this heading">#</a></h1>
-<section id="linearity">
-<span id="id1"></span><h2>linearity 선형성<a class="headerlink" href="#linearity" title="Permalink to this heading">#</a></h2>
-<p>선형대수학, 선형회귀 등 여러 곳에서 선형성이란 말이 나오는데 제대로 이해하고 출발해보자.</p>
-<p>선형성이란 무엇일까? 어떤 선형 맵 또는 선형 함수 <span class="math notranslate nohighlight">\(f(x)\)</span>이 선형성을 가지고 있다라고 표현하기 위해서는 아래의 두 특성을 만족해야한다.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="feature-selection">
+<h1>Feature selection<a class="headerlink" href="#feature-selection" title="Permalink to this heading">#</a></h1>
+<p>Feature selection은 머신러닝 및 데이터 분석에서 중요한 단계 중 하나로, 모델에 가장 유의미한 특징(또는 변수)들을 선택하는 과정입니다. 이러한 선택은 모델의 성능을 향상시키고, 계산 비용을 줄여줄 수 있습니다.</p>
+<p>보통 RandomForest Classifier의 feature importance_를 사용하는 경우가 많은데 information value랑 woe에 대해서 알아보자.</p>
+<p>두 지표는 feature selection과 관련하여 변수의 중요도를 측정하는 지표입니다. 둘은 비슷하면서 다른 점이 존재함으로 차이를 명확하게 하고 가는 것이 좋을 것 입니다.</p>
+<section id="weight-of-evidence-woe">
+<h2>Weight of Evidence(WOE) 근거의 무게<a class="headerlink" href="#weight-of-evidence-woe" title="Permalink to this heading">#</a></h2>
+<p>종속 변수(target col)와 관련하여 영향력 있는 독립 변수의 예측력을 나타내는 지표입니다.</p>
+<p>여기서 이벤트(event)라는 개념이 존재하는데 로지스틱 회귀(이항 분류)에서 사용되던 것으로 두 개중의 하나의 class 혹은 label로 생각할 수 있다. 신용평가 자료에서의 경우람녀 고객이 신용채무능력이 있는 경우를 non-event, 없는 경우를 event라고 표현할 수 있을 것이다.</p>
+<p>값이 양수이면 좋은 고객(non-event)의 비율이 나쁜 고객(event)의 비율보다 큰 것이다.</p>
+<div class="math notranslate nohighlight">
+\[
+WOE = ln \genfrac [] {1pt}{1}{\text{Distribution of goods}}{\text{Distribution of bads}} = ln \genfrac [] {1pt}{1}{\text{\% of non-events}}{\text{\% of events}}
+\]</div>
 <ol class="arabic simple">
-<li><p>가산성 Additivity : <span class="math notranslate nohighlight">\(f(x+y) = f(x) + f(y)\)</span> -&gt; 연관관계가 없다는 의미로도 해석가능하다.</p></li>
-<li><p>1차 동차성 Homogeneity : <span class="math notranslate nohighlight">\(f(ax) = af(x)\)</span> -&gt; 1차원적 순수 비례 관계, 2차 이상의 비례관계를 가지지 않는다.</p></li>
+<li><p>연속형 변수인 경우, 데이터를 10개의 구간으로 binning. qcut</p></li>
+<li><p>각 그룹의 이벤트, 비이벤트의 수를 계산</p></li>
+<li><p>그들의 비율 계산</p></li>
+<li><p>자연 로그(ln) -&gt; 구간별 woe를 계산</p></li>
 </ol>
-<ul class="simple">
-<li><p>어떤 성질이 변하는데 1차원적이다. 어떤 신호에 기울기만 곱한 형태와 같다.</p></li>
-<li><p>원래는 1차함수는 원점을 지나는(y = ax+b 라면 b=0인 경우) 이어야 선형적이라고 하지만, 고정된 b일 경우 예측가능하기 때문에 선형적이라고 표현한다.</p></li>
-<li><p>초기값만으로 그 <code class="docutils literal notranslate"><span class="pre">변화가</span> <span class="pre">쉽게</span> <span class="pre">유추</span> <span class="pre">가능</span></code>한 형태라는 의미가 담겨 있다.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">중첩의</span> <span class="pre">원리</span></code>가 통하게 된다. 비선형 문제가 어려운 이유는 중첩의 원리가 통하지 않는 것이다.</p></li>
-</ul>
-<p>정리를 해보자면 선형성이라는 것은 1차 직선적이라는 의미로 이해하기 보다는 ‘예측가능한’ 이라는 의미로 포괄적으로 이해하는 것이 옳을 것으로 보인다.</p>
+<p>종속변수의 분포 유사성(event, non-evnet count)에 기초하여 연속적인 독립변수를 하나의 범주로 변환하는데 사용한다. 뭔소린지 모르겠다.</p>
+</section>
+<section id="information-value">
+<h2>Information value 정보가치<a class="headerlink" href="#information-value" title="Permalink to this heading">#</a></h2>
+<p>위에서 사용한 WOE의 events, non-event의 분포를 사용하여 구하게 된다.</p>
+<ol class="arabic simple">
+<li><p>변수의 값들을 일정한 구간(bin)으로 나눕니다.</p></li>
+<li><p>각 구간에 속한 관측치의 수와 목표 변수의 이벤트(예: 양성 클래스)가 발생한 횟수를 계산합니다.</p></li>
+<li><p>각 구간의 비율과 비율의 로그값을 계산합니다.</p></li>
+<li><p>각 구간의 정보 가치를 계산하기 위해 구간 비율과 로그값을 곱한 후, 모든 구간의 정보 가치를 합산합니다.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+IV = \sum(\text{\% of non-events} - \text{\% of events}) * WOE
+\]</div>
+<p>정보 가치는 변수와 목표 변수 간의 상관 관계를 나타내는 수치로 사용됩니다. 정보 가치가 높은 변수는 feature selection에서 우선적으로 선택되는 경향이 있습니다.
+Information value는 변수의 중요도를 측정하는 하나의 방법이지만, 다른 특징 선택 기법과 함께 사용될 수도 있습니다. 변수 간의 다중공선성을 고려하여 상호 관련된 변수 중 하나만 선택하는 등의 추가적인 고려 사항이 필요할 수 있습니다.
+하나만 선택하는 등의 추가적인 고려 사항이 필요할 수 있다.</p>
 </section>
 </section>
 
@@ -454,20 +476,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="math_intro.html"
+       href="linear_algebra.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">math collection</p>
+        <p class="prev-next-title">Linear algebra summary</p>
       </div>
     </a>
     <a class="right-next"
-       href="information-value.html"
+       href="python_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Feature selection</p>
+        <p class="prev-next-title">python collection</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -489,7 +511,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">linearity 선형성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-of-evidence-woe">Weight of Evidence(WOE) 근거의 무게</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-value">Information value 정보가치</a></li>
 </ul>
   </nav></div>
 

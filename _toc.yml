@@ -18,7 +18,7 @@ parts:
     - file : scripts/basics/math_intro
       sections :
         - file : scripts/basics/linear_algebra
-        - file : scripts/basics/informateion-value
+        - file : scripts/basics/information-value
 
     - file :  scripts/basics/python_intro
       sections :
