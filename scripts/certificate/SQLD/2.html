@@ -1,0 +1,1042 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2. 데이터 모델과 성능 &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/certificate/SQLD/2';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/certificate/SQLD/2.html" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3. SQL 기본" href="3.html" />
+    <link rel="prev" title="1. 데이터 모델링의 이해" href="1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../about.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../about.html">
+                    Surdarla 입니다
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../CS229/2-1.html">practice - torch sklearn numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/information-value.html">Feature selection</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/type_in_python.html">Type in python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/DL_intro.html">Deep learning collection</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/activation_function.html">activation function</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/resnet.html">Resnet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV3.html">Deberta V3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV1.html">DeBERTa</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/1012.html">1012 : 유기농 배추</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="SQL_intro.html">SQLD 준비과정</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">1. 데이터 모델링의 이해</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2. 데이터 모델과 성능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. SQL 기본</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Big_data/1.html">big_data 1</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/scripts/certificate/SQLD/2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2. 데이터 모델과 성능</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 성능 데이터 모델링</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">2. 정규화 Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">정규화의 목적</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">정규화의 방법</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-dependency">함수적 종속성 Functional Dependency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">정규화 이론</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">정규화와 성능</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denormalization">3. 반정규화 Denormalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">반정규화 절차</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">반정규화 기법</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4. 대용량 데이터에 따른 성능</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#db">5. DB 구조와 성능</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5-1 슈퍼타입/서브타입 데이터 모델</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pk-fk">5-2 PK/FK 컬럼 순서 조절을 통한 성능 향상</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pk-fk-db">5-3 인덱스 특성을 고려한 PK/FK DB 성능 향상</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6. 분산 DB 데이터에 따른 성능</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6-1 분산 DB 투명성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6-2 분산 DB 적용 기법</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2. 데이터 모델과 성능<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<figure class="align-default">
+<img alt="https://th.bing.com/th/id/OIP.-KvoMKZ3ekyioo7aFrQgMgHaHH?pid=ImgDet&amp;rs=1" src="https://th.bing.com/th/id/OIP.-KvoMKZ3ekyioo7aFrQgMgHaHH?pid=ImgDet&amp;rs=1" />
+</figure>
+<section id="id2">
+<h2>1. 성능 데이터 모델링<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>DB 성능향상을 위한 사항이 데이터 모델링에 반영되도록 하는 것</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>수행 시점 : 분석/설계 단계, 성능 데이터 모델링 시점이 늦어질수록 재업무 비용이 증가함.</p></li>
+<li><p>고려 사항 : 정규화 수행, DB 용량 산정과 트랜잭션 유형 파악을 통한 반정규화 수행, 정규하는 무조건 해야함.</p></li>
+</ul>
+</section>
+<section id="normalization">
+<h2>2. 정규화 Normalization<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>정규화란 다양한 분야에서 사용되는 개념으로, 주로 데이터나 값의 범위를 일정하게 조정하여 분석이나 처리를 더 효율적으로
+할 수 있도록 하는 과정을 말한다. 주로 데이터베이스, 통계학, 머신러닝, 인공지능에서 활용된다.
+정규형 Normal Form(NF) 정규화로 도출된 데이터 모델이 갖춰야할 특성</p>
+</div></blockquote>
+<p>즉 정규화는 데이터 모델이 정규성을 가지도록 하는 과정을 말하는 것. 높은 단계의 정규형은 그 이전의 정규형들이 갖는 조건들을 만족해야한다.
+핵심 정규형은 BCNF, 5NF이며, 그외의 정규형을 목표로 하지 않는다.</p>
+<section id="id3">
+<h3>정규화의 목적<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>데이터 일반화 : 데이터를 일정한 범위 내로 조정함으로써 데이터가 서로 다른 단위나 크기를 가지더라도 비교가 가능하게 한다.</p></li>
+<li><p>이상치 제거 : 데이터에 이상치(극단적인 값)가 포함될 경우, 이상치로 인한 왜곡을 줄여 정확한 분석을 돕는다.</p></li>
+<li><p>성능 개선 : 머신러닝 모델이나 통계적 분석에서 데이터의 범위가 작을 경우 모델이 더 빠르게 수렴하거나 성능이 향상될 수 있다.</p></li>
+<li><p>계산 효율성 : 정규화된 데이터는 연산이 더 간단하며 효율적으로 수행될 수 있다.</p></li>
+</ol>
+</section>
+<section id="id4">
+<h3>정규화의 방법<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>최소최대 정규화(MinMax) : 값을 0~1 사의의 범위로 조정. 1)각 값에 대해 최소값을 빼고 2)(최대값-최소값)으로 나누어 계산</p></li>
+<li><p>Z-점수 정규화(Z-Score) : 데이터를 평균이 0이고 표준편차가 1이 되도록 조정. 1)각 값에서 평균을 빼고 2)표준편차로 나누어 계산</p></li>
+<li><p>벡터 정규화(Vector) : 다차원 데이터에서 각 데이터 벡터의 크가기 동일하도록 정규화. 이를 통해 거리 기반 알고리즘에서 데이터 간 거리 계산이 공정하게 이루어진다.</p></li>
+<li><p>로그 변환(Log) : 데이터가 넓은 범위를 가지는 경우, 로그 변환을 통해 데이터 분포를 조정하여 모델 성능을 향상시키는 경우가 있음.</p></li>
+</ol>
+</section>
+<section id="functional-dependency">
+<h3>함수적 종속성 Functional Dependency<a class="headerlink" href="#functional-dependency" title="Permalink to this heading">#</a></h3>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_087.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_087.jpg" />
+</figure>
+<blockquote>
+<div><p>결정자와 종속자의 관계<br />
+결정자의 값으로 종속자의 값을 알 수 있음<br />
+어떤 관계의 속성 a,b가 있다고 가정할 때, a의 값을 알면 b의 값을 알 수 있는 관계를 말한다.
+이때 a 값은 유일해야하며, b는 중복되어도 상관 없다.
+즉, 키의 값을 알면 다른 임의의 속성 값을 구할 수 있는 것 처럼 키의 성질을 정의한 것이라고 할 수 있다.
+다치 종속(Multivalued Dependency) 여러 컬럼이 동일한 종속자 일때</p>
+</div></blockquote>
+<p>사람이라는 엔터티는 주민등록번호, 이름, 출생지, 호주라는 속성이 존재한다. 여기에서 이름, 출생지, 호주라는 속성은 주민등록번호
+속성에 종속된다. 만약 어떤 사람의 주민등록번호가 신고되면 그 사람의 이름, 출생지, 호주가 생성되어 단지 하나의 값만 가지게 된다.
+이를 기호로 표시하면 다음과 같이 표현할 수 있다.</p>
+<blockquote>
+<div><p>주민등록번호 -&gt; (이름, 출생지, 호주)</p>
+</div></blockquote>
+<p>이를 다시 표현하면 ‘주민등록번호가 이름, 출생지, 호주를 함수적으로 결정한다’라고 말할 수 있다. 실세계의 데이터들은 대부분 이런 함수적 종속성을 가지고 있다.
+함수의 종속성은 데이터가 가지고 있는 근본적인 속성으로 인식된다. 정규화의 궁극적인 목적은 반복적인 데이터를 분리하고 각 데이터가 종속된 테이블에
+적절하게 배치되도록 하는 것이므로 이 함수의 종석석을 이용하여 정규화 작업이나 각 오브젝트에 속성을 배치하는 작업에 이용된다.</p>
+</section>
+<section id="id5">
+<h3>정규화 이론<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>1차 2차 3차 보이스코드 정규화는 함수적 종속성에 근거</p></li>
+<li><p>4차 정규화는 다치 종속을 제거. 결합 종속성 제거</p></li>
+<li><p>5차 정규화는 조인에 의한 이상현상을 제거하여 정규화를 수행함</p></li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li><p>1차 정규화 : 속성의 원자성 확보, 다중값 속성을 분리함</p>
+<ul class="simple">
+<li><p>1차 정규형 1NF</p></li>
+<li><p>“릴레이션이어야 한다.”</p></li>
+<li><p>테이블에는 컬럼이나행에 순서가 존재하지만, 릴레이션에는 순서가 존재하지 않기 떄문에 순서를 고려하지 않는다.</p></li>
+<li><p>중복되는 튜플이 존재하지 않음</p></li>
+<li><p>구체적인 값을 가져야한다. 즉 값으로 NULL값을 가지지 않는다.</p></li>
+<li><p>값은 의미가 있는 한 묶음의 데이터, 즉 원자 단위여야 한다.(원자성)</p></li>
+<li><p>원자 단위이려면, 각 행마다 한 컬럼에 하나의 값을 가져야 한다.</p></li>
+</ul>
+</li>
+<li><p>2차 정규화 : 부분 함수 종속성 제거, 일부 기본키에만 종속된 속성을 분리함. 기본키가 하나의 컬럼일 때 생략 가능</p>
+<ul class="simple">
+<li><p>2차 정규형 2NF</p></li>
+<li><p>부분 함수 종속성</p></li>
+<li><p>후보키의 진부분집합에서 키가 아닌 속성에 대해, 부분 함수 종속성을 제거하는 작업</p></li>
+<li><p>릴레이션이 1NF 조건을 만족하고, 부분 함수 종속성을 가지지 않으면 2NF라고 할 수 있다.</p></li>
+</ul>
+</li>
+<li><p>3차 정규화 : 이행 함수 종속성 제거, 서로 종속관계가 있는 일반 속성을 분리함, 주 식별자와 관련성이 가장 낮음</p>
+<ul class="simple">
+<li><p>이행 함수 종속성</p></li>
+<li><p>추이 함수 종속성을 제거하는 작업</p></li>
+<li><p>추이 함수 종속성은 키가 아닌 애트리뷰트 사이의 함수 종속석을 의미한다.</p></li>
+<li><p>키가 아닌 애트리뷰트 x,y가 있고, x를 알면 y값을 알 수 있는 함수 종속성이 있다고 가정해보자.</p></li>
+<li><p>3NF는 xy사이의 함수 종속성을 제거하는 과정이다.</p></li>
+<li><p>2NF는 후보키와 키가 아닌 애트리뷰트 사이의 함수 종속성을 제거했단느 점에서 차이가 있다.</p></li>
+</ul>
+</li>
+<li><p><strong>보이스 코드 정규화(BCNF; Boyce-Codd Normal Form)</strong> : 후보키가 기본키 속성 중 일부에 함수적 종속일 때 다수의 주식별자를 분리함</p>
+<ul class="simple">
+<li><p>키가 아닌 애트리뷰트 사이에서 후보키의 진부분집합에 대한 함수 종속성을 제거하는 작업</p></li>
+<li><p>BCNF는 함수 종속성이 모두 제거된 상태의 정규형을 말한다.</p></li>
+<li><p>앞서 2NF와 3NF 그리고 BCNF를 거쳐 모든 경우의 수에 대해 함수 종속성을 제거했기 때문이다.</p></li>
+<li><p>이로 BCNF이상에서 함수 종속성에 의한 무손실 분해를 할 수 없다.</p></li>
+</ul>
+</li>
+<li><p>4차 정규화 : 다치 종속 분리</p>
+<ul class="simple">
+<li><p>MVD(multivalued dependency - 다치 종속성) 제거.</p></li>
+<li><p>폭넓게는 결합 종석성을 제거하는 과정이다</p></li>
+<li><p>속성 a를 알면 x라는 다중값(bc 속성값)을 알 수 있을 때, 이러한 종속성을 제거하는 것</p></li>
+</ul>
+</li>
+<li><p><strong>5차 정규화</strong> : 결합 종속 분리</p>
+<ul class="simple">
+<li><p>4차와 마찬가지로 결합 종속성 제거</p></li>
+<li><p>a,b,c 가 있을때 ab bc ac 속성 조합을 갖는 관계로 분해될 수 있을때, 이러한 결합 종속성을 제거하는 것</p></li>
+</ul>
+</li>
+</ol>
+<p>6차 정규성도 있지만 6차 정규성까지 하게 되면 관계가 너무 많아지므로 join을 많이 하게 된다는 단점이 존재한다.</p>
+</section>
+<section id="id6">
+<h3>정규화와 성능<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>정규화는 입출력 데이터의 양을 줄여서 성능을 향상시킴</p>
+<ul class="simple">
+<li><p>성능 향상</p>
+<ul>
+<li><p>입력 수정 삭제 시 성능은 항상 향상됨</p></li>
+<li><p>유연성 증가 : High Cohesion(응집력) &amp; Loose Coupling 원칙에 충실해짐</p></li>
+<li><p>재활용 가능성 증가 - 개념이 세분화됨</p></li>
+<li><p>데이터 중복 최소화</p></li>
+</ul>
+</li>
+<li><p>성능 저하</p>
+<ul>
+<li><p>조회시 처리 조건에 따라 성능 저하가 발생할 가능성도 존재함</p></li>
+<li><p>데이터 조회시 조인을 유발하여 CPU와 메모리를 많이 사용하게 됨</p></li>
+<li><p>반정규화로 해결 가능</p></li>
+<li><p>조인이 발생하더라도 <strong>인덱스를 사용하여 조인 연산을 수행</strong>하면 성능 상 단점이 거의 없고, 정규화를 통해 필요한 인덱스의 수를 줄일 수 있음</p></li>
+<li><p>정규화를 통해 소량의 테이블이 생성되면 성능상 유리할 수 있음</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="denormalization">
+<h2>3. 반정규화 Denormalization<a class="headerlink" href="#denormalization" title="Permalink to this heading">#</a></h2>
+<figure class="align-default" id="id14">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_089.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_089.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">반정규화란</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<blockquote>
+<div><p>데이터 중복을 허용하여 조인을 줄이는 DB 성능 향상 방법<br />
+데이터의 무결성을 희생하고 조희 성능을 향상<br />
+아예 정규화를 수행하지 않은 모델을 지칭할 때 사용<br />
+정규화된 엔티티,속성,관계에 대해 시스템의 성능향상과 개발 운영의 단순화를 위해 중복, 통합, 분리등을 수행하는 데이터 모델링의 기법을 의미</p>
+</div></blockquote>
+<p>기본적으로 정규화는 입력/수정/삭제에 대한 성능을 향상시킬 뿐만 아니라 조회에 대해서도 성능을 향상시킨다. 그러나
+정규화 만을 수행하면 엔터티의 갯수가 증가하고 관계가 많아져서 일부 여러 개의 조인이 걸려야만 데이터를 가져오는 경우가 있다.
+이러한 경우 업무적으로 조회에 대한 처리 선응이 중요하다고 판단될 때 부분적으로 반 정규화를 고려하게 되는 것이다. 또한
+정규화의 함수적 종속관계는 위반하지 않지만 데이터의 중복성을 증가시켜야만 조회의 성능을 향상시키는 경우가 있다.</p>
+<p>프로젝트에서는 설계단계에서부터 반정규화를 적용하게 되는데 반정규화를 기술적으로 수행하지 않으면
+성능이 저하된 DB가 생성될 수 있으며, 구축단계나 시험단계에서 반정규화를 적용할 때 수정에 따른 노력비용이 증가한다.</p>
+<section id="id7">
+<h3>반정규화 절차<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<figure class="align-default" id="id15">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_090.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_090.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">반정규화 절차</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
+<li><p><strong>반정규화 대상 조사</strong> : 데이터 처리 범위 및 통계성 등 조사</p>
+<ul class="simple">
+<li><p>전체적인 데이터의 양을 조사하고 데이터가 해당 프로세스를 처리할 때 성능저하가 나타날 수 있는지 검증</p></li>
+<li><p>아래의 4가지 경우를 고려하여 반정규화를 고려</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>자주 사용되는 테이블에 접근하는 프로세스의 수가 많고 항상 일정한 범위만을 조회하는 경우</p></li>
+<li><p>큰 사이즈의 테이블에 대해서 처리범위를 일정하게 줄이지 않으면 성능을 보장할 수 없을 때</p></li>
+<li><p>통계성 프로세스에 의해 통계 정보를 필요로 할 때 별도의 통계테이블(반정규화 테이블) 생성</p></li>
+<li><p>테이블에 지나치게 많은 조인이 걸려 데이터를 조회하는 작업이 기술적으로 어려울 경우</p></li>
+</ol>
+</li>
+<li><p><strong>다른 방법 검토</strong></p>
+<ol class="arabic simple">
+<li><p>뷰 VIEW</p></li>
+<li><p>클러스터링 적용</p></li>
+<li><p>인덱스 조정</p></li>
+<li><p>파이셔닝 기법 : 인위적인 테이블을 통합 분리하지 않고 물리적인 저장기법에 따라 성능을 향상</p></li>
+<li><p>응용 어플리케이션</p></li>
+</ol>
+</li>
+<li><p><strong>반정규화 적용</strong> : 정규화 수행 후 반정규화 수행</p></li>
+</ol>
+</section>
+<section id="id8">
+<h3>반정규화 기법<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>테이블 반정규화</strong></p>
+<ul>
+<li><p>테이블 병합</p>
+<ul>
+<li><p>1:1 관계 테이블 병합</p></li>
+<li><p>1:N 관계 테이블 병합 : 많은 데이터 중복 발생</p></li>
+<li><p>슈퍼타입/서브타입 테이블 병합</p></li>
+</ul>
+</li>
+<li><p>테이블 분할</p>
+<ul>
+<li><p>수직분할</p></li>
+<li><p>수평분할</p></li>
+</ul>
+</li>
+<li><p>테이블 추가</p>
+<ul>
+<li><p>중복 테이블 : 업무나 서버가 다를 때 중복 테이블 생성(원격조인 제거)</p></li>
+<li><p>통계 테이블</p></li>
+<li><p>이력 테이블</p></li>
+<li><p>부분 테이블 : 자주 이용하는 컬럼으로 구성된 테이블 생성</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>컬럼 반정규화</strong></p>
+<ul>
+<li><p>중복 컬럼 추가</p></li>
+<li><p>파생 컬럼 추가 : 필요한 값 미리 계산한 컬럼 추가</p></li>
+<li><p>이력 테이블 컬럼 추가</p></li>
+<li><p>PK에 의한 컬럼 추가 : PK의 종속자를 일반속성으로 생성</p></li>
+<li><p>응용 시스템의 오작동을 위한 컬럼 추가</p></li>
+</ul>
+</li>
+<li><p><strong>관계 반정규화</strong> : 데이터 무결성 보장 가능</p>
+<ul>
+<li><p>중복 관계 추가</p></li>
+<li><p>데이터 무결성에 영향을 미치지 않으면서 데이터 처리 성능을 향상시킬 수 있느 기법</p></li>
+<li><p>데이터 모델 전체가 관계로 연결되어 있고 관계가 서로 먼 친척간에 조인관계가 빈번하게 되어 성능저하가 예상되면</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_097.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_097.jpg" />
+</figure>
+</section>
+</section>
+<section id="id9">
+<h2>4. 대용량 데이터에 따른 성능<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_103.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_103.jpg" />
+</figure>
+<blockquote>
+<div><p>테이블 반정규화중 테이블 분할 관련</p>
+</div></blockquote>
+<p>대량의 데이터가 처리되는 테이블에 성능이 저하되는 이유는 SQL문장에서 데이터를 처리하기 위한 I/O의 양이
+증가하기 때문이다. 당연하게 데이터의 양이 많아자면 그것을 처리하기 위한 I/O량이 많아질 것이라 생각할 수 있지만,
+인덱스를 적절하게 구성하여 이용하게되면  I/O를 줄일 수 있을 것이라고 생각할 수 있다. 조회조건에 따른 인덱스를 적절하게 이용하면 해당 테이블에 데이터가 아무리 많아도 원하는 데이터만 접근하면 되기 때문에 I/O의 양이 그다지 증가하지 않을 것으로 생각할 수 있다.</p>
+<p>그러나 대량의 데이터가 하나의 테이블에 존재하게 되면 인덱스를 생성할 때 인덱스의 크기(용량)가 커지게 되고 그렇게 되면 인덱스를 찾아가는 단계가 깊어지게 되어 조회의 성능에도 영향을 미치게 된다.
+인덱스 크기가 커질 경우 조회의 성능에는 영향을 미치는 정도가 작지만 데이터를 입력/수정/삭제하는 트랜잭션의 경우 인덱스의 특성상 일량이 증가하여 더 많이 성능의 저하를 유발하게 된다.
+또한 데이터에 대한 범위 조회시 더 많은 I/O 유발할 수 있게 되어 성능저하를 유발할 수 있게 된다.</p>
+<p>칼럼이 많아지게 되면 물리적인 디스크에 여러 블록에 데이터가 저장되게 된다.
+따라서 데이터를 처리할 때 여러 블록에서 데이터를 I/O해야 하는 즉 SQL문장의 성능이 저하될 수 특징을 가지게 된다.
+물론, 테이블에 칼럼이 많아지는 현상은 정규화이론인 함수적 종속성에 근거하여 당연히 하나의 테이블에 설계할 수는 있다.
+그러나 대량 데이터를 가진 테이블에서 불필요하게 많은 양의 I/O를 유발하여 성능이 저하되는 경우에는 이것을 기술적으로 분석하여 성능을 향상하는 방법으로 분할할 수 있다.</p>
+<ol class="arabic">
+<li><p>블록 : 테이블의 데이터 저장 단위</p></li>
+<li><p>대량 데이터 발생으로 인한 현상</p>
+<ol class="arabic simple">
+<li><p>블록 I/O(입출력) 횟수 증가</p></li>
+<li><p>디스크 I/O 가능성 상승(디스크 I/O시 성능 저하)</p>
+<ul class="simple">
+<li><p><strong>로우 체이닝(Row Chaining)</strong> - 행 길이가 너무 길어 여러 블록에 걸쳐 저장되는 현상</p></li>
+<li><p><strong>로우 마이그레이션(Row Migration)</strong> - 수정된 데이터가 해당 블록이 아닌 다른 블록의 빈 공간에 저장되는 현상</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>테이블 분할 : 반정규화 기법</p>
+<ul class="simple">
+<li><p>수직분할 : 컬럼 단위로 테이블을 분할하여 I/O 감소. 너무 많은 수의 컬럼이 있는 경우 사용</p></li>
+<li><p>수평분할 : 행 단위로 테이블을 분할하여 I/O 감소.</p></li>
+</ul>
+</li>
+<li><p>파티셔닝 Partitioning : 테이블 수평분할 기법</p>
+<ul class="simple">
+<li><p>논리적으로는 하나의 테이블이지만 물리적으로 여러 데이터 파일에 분산 저장.</p></li>
+<li><p>데이터 조회 범위를 줄여 성능 향상</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Range Partition : 데이터 값의 범위 기준 분할</p></li>
+<li><p>List Partition : 특정한 값을 기준으로 분할</p></li>
+<li><p>Hash Partition : 해시 함수를 적용하여 분할. DBMS가 알아서 분할 관리. 데이터 위치를 알 수 없음</p></li>
+<li><p>Compose Partition : 여러 파티션 기법을 복합적으로 사용하여 분할</p></li>
+</ol>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Partition Index 파티션 인덱스</p>
+<ul>
+<li><p>Global Index : 여러 파티션에서 단일 인덱스 사용</p></li>
+<li><p>Local Index : 파티션 별로 각자 인덱스 사용</p></li>
+<li><p>Prefixed Index : 파티션키와 인덱스키 동일</p></li>
+<li><p>Non-Prefixed Index : 파티션 별로 각자 인덱스 사용</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="db">
+<h2>5. DB 구조와 성능<a class="headerlink" href="#db" title="Permalink to this heading">#</a></h2>
+<p>다양한 방식으로 구조를 변환하여 성능을 향상시킴</p>
+<section id="id10">
+<h3>5-1 슈퍼타입/서브타입 데이터 모델<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>슈퍼타입/서브타입 데이터 모델 변환을 통한 성능 향상<br />
+속성을 할당하여 배치하는 수평 분할된 형태의 모델<br />
+공통 속성은 슈퍼타입으로 모델링하고 <br />
+차이가 있는 속성은 서브타입으로 구분됨<br />
+<code class="docutils literal notranslate"><span class="pre">상속</span></code>과 유사한 개념으로 생각할 수 있다<br />
+변환을 통해 1) 정확하게 업무를 표현할 수 있고 2) 물리적 모델링 시 선택의 폭을 넓힐 수 있음</p>
+<p><strong>변환 기준</strong> : 데이터 양, 트랜잭션 유형</p>
+<p><strong>변환 기술</strong></p>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_110.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_110.jpg" />
+</figure>
+<ul class="simple">
+<li><p>1:1 타입(onetoone type) : 개별로 처리하는 트랜잭션에 대해 개별 테이블 구성, 슈퍼타입과 서브타입 각각 필요한 속성과 유형에 적합한 데잍터만 가지도록 분리하여 1:1관계를 가지도록 함</p></li>
+<li><p>슈퍼/서브 타입(Plus type) : 슈퍼타입과 서브타입을 공통으로 처리하는 트랜잭션에 대해 슈퍼타입과 서브타입 각각의 테이블 구성</p></li>
+<li><p>All in one 타입(single type) : 일괄 처리하는 트랜잭션에 대해 단일 테이블 구성</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>1:1타입</p></th>
+<th class="head text-center"><p>슈퍼/서브타입</p></th>
+<th class="head text-center"><p>All in One 타입</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>특징</p></td>
+<td class="text-center"><p>개별 테이블 유지</p></td>
+<td class="text-center"><p>슈퍼/서브 타입 테이블 구성</p></td>
+<td class="text-center"><p>단일 테이블 구성</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>트랜잭션 유형</p></td>
+<td class="text-center"><p>개별 처리</p></td>
+<td class="text-center"><p>슈퍼/서브 타입 공통 처리</p></td>
+<td class="text-center"><p>일괄처리</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>확장성</p></td>
+<td class="text-center"><p>좋음(테이블 추가 용이)</p></td>
+<td class="text-center"><p>보통</p></td>
+<td class="text-center"><p>나쁨</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>조인 성능</p></td>
+<td class="text-center"><p>나쁨(조인 많이 필요)</p></td>
+<td class="text-center"><p>나쁨(조인 많이 필요)</p></td>
+<td class="text-center"><p>좋음</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>I/O성능</p></td>
+<td class="text-center"><p>좋음</p></td>
+<td class="text-center"><p>좋음</p></td>
+<td class="text-center"><p>나쁨(항상 전체 데이터 조회)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>관리용이성</p></td>
+<td class="text-center"><p>나쁨</p></td>
+<td class="text-center"><p>나쁨</p></td>
+<td class="text-center"><p>좋음</p></td>
+</tr>
+</tbody>
+</table>
+<p>표와 같이 각 성능이 좋을 수도 나쁠 수도 있기 때문에 변환모델의 선택은 철저하게 DB에 발생되는 트랜잭션의 유형에 따라 선택해야 한다.</p>
+</section>
+<section id="pk-fk">
+<h3>5-2 PK/FK 컬럼 순서 조절을 통한 성능 향상<a class="headerlink" href="#pk-fk" title="Permalink to this heading">#</a></h3>
+<p>등호 조건이나 BETWEEN 조건이 걸리는 컬럼을 앞으로 이동<br />
+여러 조건이 있을 경우 등호 조건이 걸리는 컬럼을 선두로 이동</p>
+</section>
+<section id="pk-fk-db">
+<h3>5-3 인덱스 특성을 고려한 PK/FK DB 성능 향상<a class="headerlink" href="#pk-fk-db" title="Permalink to this heading">#</a></h3>
+<p>물리적인 테이블에 FK 제약을 걸어 인덱스를 생성</p>
+</section>
+</section>
+<section id="id11">
+<h2>6. 분산 DB 데이터에 따른 성능<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>분산 DB<br />
+분산된 DB를 하나의 가상 시스템으로 사용할 수 있도록 한 DB<br />
+물리적 사이트는 분산되어 있으나 논리적으로 동일한 시스템<br />
+과거에는 위치 중심이었으나, 현재는 업무 필요에 따라 분산 설계</p>
+</div></blockquote>
+<p><strong>설계 방식</strong></p>
+<ul class="simple">
+<li><p>상향식 : 지역 스키마 작성 후 전역 스키마 작성</p></li>
+<li><p>하향식 : 전역 스키마 작성 후 지역 사상 스키마 작성</p></li>
+</ul>
+<p><strong>장단점</strong></p>
+<ul class="simple">
+<li><p>장점</p>
+<ol class="arabic simple">
+<li><p>신뢰성 가용성 증가</p></li>
+<li><p>빠른 응답 속도와 통신비용 절감</p></li>
+<li><p>용량 확장 용이</p></li>
+</ol>
+</li>
+<li><p>단점</p>
+<ol class="arabic simple">
+<li><p>관리 및 통제 어려움</p></li>
+<li><p>데이터 무결성 관리 어려움</p></li>
+<li><p>S/W 개발 비용 및 처리 비용 증가</p></li>
+<li><p>불규칙한 응답 속도</p></li>
+</ol>
+</li>
+</ul>
+<section id="id12">
+<h3>6-1 분산 DB 투명성<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>분위지중장병</p>
+</div></blockquote>
+<p>투명성은 사용자 또는 응용 프로그램이 시스템의 내부 동작과 구조에 대해 자세한 지식 없이 DB 시스템을 사용할 수 있는 정도를 나타낸다.
+투명성은 시스템 내부의 복잡한 세부 사항을 알 필요 없이 데이터에 접근하고 조작할 수 있는 능력을 제공한다.
+투명성은 분산 시스템의 복잡성을 감추고 사용자 경험을 향상시키는데 도움을 준다.</p>
+<ol class="arabic simple">
+<li><p><strong>분</strong>할 투명성 : 하나의 논리적 관계가 분할되어 각 단평의 사본이 여러 사이트에 저장됨</p></li>
+<li><p><strong>위</strong>치 투명성 : 사용하려는 데이터 저장 장소가 명시되지 않아도됨</p></li>
+<li><p><strong>지</strong>역사상 투명성 : 지역 DBMS와 물리적 DB 사이에 사상이 보장됨</p></li>
+<li><p><strong>중</strong>복 투명성 : DB 객체 중복 여부를 몰라도됨</p></li>
+<li><p><strong>장</strong>애 투명성 : 구성요소(DBMS, computer)의 장애에 무관하게 트랜잭션의 원자성이 유지됨</p></li>
+<li><p><strong>병</strong>행 투명성 : 다수의 트랜잭션을 동시 수행했을 때 결과의 일관성이 유지됨. 병렬 아님</p></li>
+</ol>
+</section>
+<section id="id13">
+<h3>6-2 분산 DB 적용 기법<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>테이블 위치 분산 : 설계된 테이블의 위치를 분산함</p></li>
+<li><p>테이블 분할 분산(Table Fragmentation) : 테이블을 쪼개서 분산함</p>
+<ol class="arabic simple">
+<li><p>수평분할</p></li>
+<li><p>수직분할</p></li>
+</ol>
+</li>
+<li><p>테이블 복제 분산(Table Replication) : 동일한 테이블을 다른 지역이나 서버에서 동시 생성함, 원격지 조인을 내부 조인으로 변경하여 성능 향상</p>
+<ol class="arabic simple">
+<li><p>부분복제</p></li>
+<li><p>광역복제</p></li>
+</ol>
+</li>
+<li><p>테이블 요약 분산(Table Summarization)</p>
+<ul class="simple">
+<li><p>분석요약 : 사이트 별 요약정보를 본사에서 통합하여 전체 요약정보 산출</p></li>
+<li><p>통합요약 : 사이트 별 정보를 본사에서 통합하여 전체 요약정보 산출</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./scripts\certificate\SQLD"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. 데이터 모델링의 이해</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. SQL 기본</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 성능 데이터 모델링</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">2. 정규화 Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">정규화의 목적</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">정규화의 방법</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-dependency">함수적 종속성 Functional Dependency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">정규화 이론</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">정규화와 성능</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denormalization">3. 반정규화 Denormalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">반정규화 절차</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">반정규화 기법</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4. 대용량 데이터에 따른 성능</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#db">5. DB 구조와 성능</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5-1 슈퍼타입/서브타입 데이터 모델</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pk-fk">5-2 PK/FK 컬럼 순서 조절을 통한 성능 향상</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pk-fk-db">5-3 인덱스 특성을 고려한 PK/FK DB 성능 향상</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6. 분산 DB 데이터에 따른 성능</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6-1 분산 DB 투명성</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6-2 분산 DB 적용 기법</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Surdarla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
