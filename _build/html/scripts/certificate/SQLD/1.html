@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>SQLD - 1 &#8212; My Jupyter Book</title>
+    <title>1. 데이터 모델링의 이해 &#8212; My Jupyter Book</title>
 
 
 
@@ -69,12 +69,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/certificate/SQLD/1';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/certificate/SQLD/1.html" />
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="빅분기 준비과정" href="../Big_data/big_intro.html" />
+    <link rel="next" title="2. 데이터 모델과 성능" href="2.html" />
     <link rel="prev" title="SQLD 준비과정" href="SQL_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/DL_intro.html">Deep learning collection</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/NLP_basics.html">NLP basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/activation_function.html">activation function</a></li>
 </ul>
@@ -214,13 +216,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/2558.html">2558 : A + B - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/3046.html">3046 : R2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/1012.html">1012 : 유기농 배추</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="SQL_intro.html">SQLD 준비과정</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">SQLD - 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. 데이터 모델링의 이해</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. 데이터 모델과 성능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">3. SQL 기본</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -365,7 +371,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
 
     </div>
@@ -376,11 +384,32 @@ document.write(`
 
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQLD - 1</h1>
+    <h1>1. 데이터 모델링의 이해</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
 
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1-1 : 데이터 모델의 이해</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">모델링</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">데이터 모델링</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">데이터 모델링 3단계</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#db-3">DB 3단계 구조</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">데이터 모델링 3요소</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entity-table">Entity 엔터티 (Table)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-column-field">Attribute 속성 (Column, field)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-relation">Relation 관계 (Relation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifier">식별자 identifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erd-entity-relationship-diagram">ERD(Entity Relationship Diagram)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">좋은 모델링의 요건</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -390,9 +419,482 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
 
-  <section class="tex2jax_ignore mathjax_ignore" id="sqld-1">
-<h1>SQLD - 1<a class="headerlink" href="#sqld-1" title="Permalink to this heading">#</a></h1>
-<p>something</p>
+  <figure class="align-default">
+<img alt="https://th.bing.com/th/id/OIP.-KvoMKZ3ekyioo7aFrQgMgHaHH?pid=ImgDet&amp;rs=1" src="https://th.bing.com/th/id/OIP.-KvoMKZ3ekyioo7aFrQgMgHaHH?pid=ImgDet&amp;rs=1" />
+</figure>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>1. 데이터 모델링의 이해<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>1-1 : 데이터 모델의 이해<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>모델링<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>현실세계를 단순화하여 표현하는 것</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>특징</strong></p>
+<ul>
+<li><p>추상화 : 일정한 형식에 맞춰 표현</p></li>
+<li><p>단순화 : 제한된 표기법이나 언어로 표현</p></li>
+<li><p>명확성 : 이해하기 쉽게 표현</p></li>
+</ul>
+</li>
+<li><p><strong>관점</strong></p>
+<ul>
+<li><p>데이터 관점 : 업무와 데이터 및 데이터 사이의 관계</p></li>
+<li><p>프로세스 관점 : 진행되고 있거나 진행되어야 하는 업무</p></li>
+<li><p>상관 관점 : 데이터에 대한 업무 처리 방식의 영향</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h3>데이터 모델링<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>정보 시스템 구축을 위한 데이터 관점의 업무 분석 기법</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>목적</strong></p>
+<ul>
+<li><p>정보에 대한 표기법을 통일하여 업무 분석 정확도 증대</p></li>
+<li><p>데이터 모델을 기초로 DB 생성</p></li>
+</ul>
+</li>
+<li><p><strong>기능</strong></p>
+<ul>
+<li><p>가시화</p></li>
+<li><p>명세화</p></li>
+<li><p>구조화된 틀 제공</p></li>
+<li><p>문서화</p></li>
+<li><p>다양한 관점 제공</p></li>
+<li><p>구체화</p></li>
+</ul>
+</li>
+<li><p><strong>중요성</strong></p>
+<ul>
+<li><p>파급효과(leverage)</p></li>
+<li><p>간결한 표현(Conciseness) : 정보 요구사항과 한계를 간결하게 표현하는 도구</p></li>
+<li><p>데이터 품질</p>
+<ul>
+<li><p>유일성 : 데이터 중복 저장 방지</p></li>
+<li><p>유연성 : 데이터 정의와 데이터 사용 프로세스 분리</p></li>
+<li><p>일관성</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>이해관계자</strong></p>
+<ol class="arabic simple">
+<li><p>개발자</p></li>
+<li><p>DBA</p></li>
+<li><p>모델러</p></li>
+<li><p>현업업무전문가 - 완성된 모델을 정확히 해석가능 해야함</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h3>데이터 모델링 3단계<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>개념적 모델링 : 엔터이와 속성을 도출, ERD작성, 업무 중심적이고 포괄적인 수준</p></li>
+<li><p>논리적 모델링 : 식별자 도출, 속성과 관계 정의, 정규화 수행 <span class="math notranslate nohighlight">\(\to\)</span> 데이터 모델의 독립성 &amp; 재사용성 확보, 논리 데이터 모델은 데이터 모델링 완료 상태</p></li>
+<li><p>물리적 모델링 : DB구축, 성능 및 보안 등 물리적 성격 고려</p></li>
+</ol>
+<ul class="simple">
+<li><p>프로젝트 <strong>생명주기(Life Cycle) 계획</strong></p>
+<ul>
+<li><p>계획 <span class="math notranslate nohighlight">\(\to\)</span> 분석 <span class="math notranslate nohighlight">\(\to\)</span> 설계 <span class="math notranslate nohighlight">\(\to\)</span> 개발 <span class="math notranslate nohighlight">\(\to\)</span> 테스트 <span class="math notranslate nohighlight">\(\to\)</span> 전환/이행 단계로 구성</p></li>
+<li><p>계획과 분석 단계 = 개념적 모델링</p></li>
+<li><p>분석단계 = 논리적 모델링</p></li>
+<li><p>설계 단계 = 물리적 모델링</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="db-3">
+<h3>DB 3단계 구조<a class="headerlink" href="#db-3" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>목표 :  데이터 독립성 확보</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>DB 독립성의 <strong>필요성</strong> : 데이터 중복성 &amp; 데이터 복잡도 증가 <span class="math notranslate nohighlight">\(\to\)</span> 유지보수 비용증가, 요구사항 대응 저하</p></li>
+<li><p><strong>3층 스키마(3-level Schema)</strong></p>
+<ul>
+<li><p>외부스키마 : 각 사용자 단계의 개인적 DB 스키마, 사용자 관점, 응용프로그램이 접근하는 DB를 정의함</p></li>
+<li><p>개념스키마 : 조직 전체의 통합된 DB 스키마, 설계자 관점, <code class="docutils literal notranslate"><span class="pre">데이터</span> <span class="pre">모델링의</span> <span class="pre">지향점</span></code></p></li>
+<li><p>내부스키마 : 물리적으로 데이터가 저장되는 방법을 표현하는 스키마, 개발자 관점, 물리적 저장 구조임</p></li>
+</ul>
+</li>
+</ul>
+<aside class="sidebar">
+<p class="sidebar-title"><strong>스키마 Schema</strong></p>
+<p>여러 분야에서 다양한 의미로 사용됨. 어떤 것의 <code class="docutils literal notranslate"><span class="pre">구조</span></code>,<code class="docutils literal notranslate"><span class="pre">계획</span></code>을 나타내는 일종의 <code class="docutils literal notranslate"><span class="pre">템플리</span> <span class="pre">청사진</span></code></p>
+<p>DB : 데이터베이스의 구조와 조직, 테이블-열-키-관계-인덱스 등의 정의를 포함함.
+스키마는 데이터의 물리적 구성이 아닌 논리적 구조를 나타냄</p>
+</aside>
+<ul class="simple">
+<li><p><strong>데이터 독립성</strong></p>
+<ul>
+<li><p>논리적 독립성 : 외부스키마가 개념스키마의 변화에 무관, 논리적 사상 없음</p></li>
+<li><p>물리적 독립성 : 개념스키마가 내부스키마의 변화에 무관, 물리적 사상 없음</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>데이터 모델링 3요소<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>엔터티</p></li>
+<li><p>관계</p></li>
+<li><p>속성</p></li>
+</ol>
+</section>
+<section id="entity-table">
+<h3>Entity 엔터티 (Table)<a class="headerlink" href="#entity-table" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>업무에서 관리해야하는 데이터의 집합, 명사형, <code class="docutils literal notranslate"><span class="pre">인스턴스의</span> <span class="pre">집합</span></code></p>
+</div></blockquote>
+<p>데이터 모델링 및 소프트웨어 개발 영역에서 주로 사용하는 용어
+실세계의 독립적인 정보 단위나 객체
+DB 설계시, ERD라는 도구를 사용하여 엔터티와 그들의 관계를 표현</p>
+<ul class="simple">
+<li><p><strong>특징</strong></p>
+<ol class="arabic simple">
+<li><p>업무 필요성 : 업무 프로세스에 이용됨</p></li>
+<li><p>고유성 : 고유한 식별자(id, primary key(pk))를 통해 구별</p></li>
+<li><p>2개 이상의 인스턴스를 포함함</p></li>
+<li><p>속성 : 하나 이상의 속성(attribute)을 가질 수 있음</p></li>
+<li><p>독립성 : 그 자체로 존재 가능</p></li>
+<li><p>관계 : 다른 엔터티와 관계를 가짐</p></li>
+</ol>
+</li>
+<li><p><strong>명명 규칙</strong></p>
+<ol class="arabic simple">
+<li><p>현업사용 용어</p></li>
+<li><p>약자 지양</p></li>
+<li><p>단수</p></li>
+<li><p>유일성</p></li>
+<li><p>명확성</p></li>
+</ol>
+</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>분류 기준</p></th>
+<th class="head text-center"><p>종류</p></th>
+<th class="head text-center"><p>설명</p></th>
+<th class="head text-center"><p>예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>유무형</p></td>
+<td class="text-center"><p>유형엔터티</p></td>
+<td class="text-center"><p>물리적 형태를 가지며, 지속적으로 활용되는 엔터티</p></td>
+<td class="text-center"><p>자동차, 건물, 컴퓨터</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>개념엔터티</p></td>
+<td class="text-center"><p>물리적 형태가 없는 엔터티</p></td>
+<td class="text-center"><p>직급, 부서, 국적</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>발생시점</p></td>
+<td class="text-center"><p>기본엔터티 (key entity)</p></td>
+<td class="text-center"><p>독립적으로 생성되는 엔터티</p></td>
+<td class="text-center"><p>사원, 제품, 고객</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>중심엔터티 (main entity)</p></td>
+<td class="text-center"><p>기본엔터티와 행위엔터티의 중간에 존재하는 엔터티</p></td>
+<td class="text-center"><p>주문, 계약</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>행위엔터티 (active entity)</p></td>
+<td class="text-center"><p>2개 이상의 부모엔터티로부터 발생. 비즈니스 프로세스 실행 시 생성되며, 지속적으로 정보가 추가되고 변경됨. 모든 관계에 사용되는 것은 아니며, 추가 정보나 복잡성이 필요할 때만 사용됨</p></td>
+<td class="text-center"><p>주문상세, 회원 포인트 이력</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-column-field">
+<h3>Attribute 속성 (Column, field)<a class="headerlink" href="#attribute-column-field" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>엔터티의 특정 사실이나 상태
+엔터티가 가지는 최소 의미 단위, 인스턴스의 내부 구성 요소, 데이터 필드
+데이터 모델링에서 엔터티를 구성하는 정보의 항목</p>
+</div></blockquote>
+<p><strong>도메인</strong> : 속성이 가질 수 있는 값의 범위</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>분류 기준</p></th>
+<th class="head text-center"><p>종류</p></th>
+<th class="head text-center"><p>설명</p></th>
+<th class="head text-center"><p>예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>특성</strong></p></td>
+<td class="text-center"><p>기본 속성</p></td>
+<td class="text-center"><p>비즈니스 프로세스에서 도출되는 본래의 속성</p></td>
+<td class="text-center"><p>직원 이름</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>설계 속성</p></td>
+<td class="text-center"><p>데이터 모델링 과정에서 업무 규칙화를 위해 발생하는 속성</p></td>
+<td class="text-center"><p>연봉 등급 코드</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>파생 속성</p></td>
+<td class="text-center"><p>다른 속성에 의해 만들어지는 속성</p></td>
+<td class="text-center"><p>연봉 총액</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>(저장 속성)</p></td>
+<td class="text-center"><p>유도 속성을 생성하는데 사용되는 속성</p></td>
+<td class="text-center"><p>기본 연봉</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>분해 가능</strong></p></td>
+<td class="text-center"><p>단일 속성</p></td>
+<td class="text-center"><p>하나의 의미를 가지는 속성</p></td>
+<td class="text-center"><p>전화번호</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>복합 속성</p></td>
+<td class="text-center"><p>여러 의미를 가지며, 단일 속성으로 분해 가능</p></td>
+<td class="text-center"><p>주소(도시, 구, 동)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>단일값 속성</p></td>
+<td class="text-center"><p>하나의 값을 가지는 속성</p></td>
+<td class="text-center"><p>국적</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>다중값 속성</p></td>
+<td class="text-center"><p>여러 값을 가지며, 엔터티로 분해 가능</p></td>
+<td class="text-center"><p>연락처(집, 회사, 핸드폰)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>엔터티 구성방식</strong></p></td>
+<td class="text-center"><p>기본키 속성</p></td>
+<td class="text-center"><p>엔터티를 식별할 수 있는 속성</p></td>
+<td class="text-center"><p>직원 ID</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>외래키 속성</p></td>
+<td class="text-center"><p>다른 엔터티와의 관계에서 포함된 속성</p></td>
+<td class="text-center"><p>부서 코드</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>일반 속성</p></td>
+<td class="text-center"><p>엔터티에 포함되고 PK나 FK 속성이 아닌 속성</p></td>
+<td class="text-center"><p>직원 이메일</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="relation-relation">
+<h3>Relation 관계 (Relation)<a class="headerlink" href="#relation-relation" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>엔터티 간의 논리적인 관련성, 동사형</p>
+</div></blockquote>
+<p>관계 읽기 : 각각 / 기준 엔티티 &gt; 관계차수 &gt; 대상 엔터티 &gt; 관계선택사양 &gt; 관계명
+관계의 패어링 : 인스턴스 간 개별적 관계</p>
+<p>관계 표기법 : 1) 관계명 2) 관계차수 3) 관계선택사양</p>
+<ul class="simple">
+<li><p><strong>관계차수(Cardinality)</strong> : 관게 내 튜플의 전체 개수, 1은 직선, 여러개는 삼발로 표시</p>
+<ul>
+<li><p>M:N 관계 : 관계형 DB에서 M:N 관계의 조인은 카테시안 곱 발생 (이를 해결하기 위해 중간 테이블, 브리지 테이블 사용)</p></li>
+</ul>
+</li>
+<li><p><strong>관계선택사양(Optionality)</strong> : 필수는 |, 선택은 O로 표시</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>분류 기준</p></th>
+<th class="head text-center"><p>종류/표기방법</p></th>
+<th class="head text-center"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>ERD</strong></p></td>
+<td class="text-center"><p>표기 구분 안함</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>존재 관계</p></td>
+<td class="text-center"><p>엔터티 간의 상태</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>행위 관계</p></td>
+<td class="text-center"><p>엔터티 간에 발생하는 행위</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>UML</strong></p></td>
+<td class="text-center"><p>연관 관계 (Association)</p></td>
+<td class="text-center"><p>실선 표기</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>의존 관계 (Dependency)</p></td>
+<td class="text-center"><p>점선 표기</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>식별자</strong></p></td>
+<td class="text-center"><p>식별 관계</p></td>
+<td class="text-center"><p>부모 엔터티의 식별자를 자식 엔터티에서 주식별자로 사용. 약한 엔터티: 부모 엔터티에 종속되어 존재 (↔ 강한 엔터티는 독립적으로 존재함)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>비식별 관계</p></td>
+<td class="text-center"><p>부모 엔터티의 식별자를 자식 엔터티에서 일반 컬럼으로 참조 사용, 약한 종속 관계. 식별 관계만으로 연결되면 주식별자 수가 많아질 수밖에 없음</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>관계 타입</p></th>
+<th class="head text-center"><p>ASCII 아트 표현</p></th>
+<th class="head text-center"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>일대일 (One-to-One)</p></td>
+<td class="text-center"><p>—-ㅣ—</p></td>
+<td class="text-center"><p>양 끝에 선분. 한 쪽 엔터티에서 다른 한 쪽 엔터티로의 연결이 1:1 관계</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>일대다 (One-to-Many)</p></td>
+<td class="text-center"><p>—-&lt;ㅣ—-</p></td>
+<td class="text-center"><p>한쪽 끝에 크라운 모양. 한 쪽 엔터티에서 다른 쪽으로의 연결이 1:다 관계</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>다대다 (Many-to-Many)</p></td>
+<td class="text-center"><p>&lt;—ㅣ—-&gt;</p></td>
+<td class="text-center"><p>양쪽 끝 모두에 크라운 모양. 양쪽 엔터티 간의 연결이 다:다 관계</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>선택적 관계</p></td>
+<td class="text-center"><p>…ㅣ—-</p></td>
+<td class="text-center"><p>점선. 한쪽 엔터티의 참여가 선택적임</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>속성 연결</p></td>
+<td class="text-center"><p>—-O</p></td>
+<td class="text-center"><p>엔터티와 속성(타원)을 연결</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>행위 엔터티 연결</p></td>
+<td class="text-center"><p>—-◇—-</p></td>
+<td class="text-center"><p>엔터티와 행위 엔터티(다이아몬드)를 연결</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><strong>카테시안 곱(Cartesian Product)</strong>, 데카르트 곱, 곱집합</p>
+<p>두 집합의 모든 가능한 조합을 생성하는 연산
+두 집합 A,B의 원소들로 만들어지는 모든 순서쌍 (a,b)의 집합
+표기 : A x B</p>
+</aside>
+</section>
+<section id="identifier">
+<h3>식별자 identifier<a class="headerlink" href="#identifier" title="Permalink to this heading">#</a></h3>
+<p>엔터티를 대표할 수 있는 유일성을 만족하는 속성</p>
+<ul class="simple">
+<li><p><strong>특징</strong></p>
+<ol class="arabic simple">
+<li><p>유일성</p></li>
+<li><p>최소성</p></li>
+<li><p>불변성</p></li>
+<li><p>존재성</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>주식별자 도출기준</strong> : 업무에서 자주 이용되는 속성, 이름 명명 지양, 복합 식별자 지양</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>분류 기준</p></th>
+<th class="head text-center"><p>식별자 유형</p></th>
+<th class="head text-center"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>대표성</strong></p></td>
+<td class="text-center"><p>주식별자</p></td>
+<td class="text-center"><p>대표성을 만족하는 식별자</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>보조 식별자</p></td>
+<td class="text-center"><p>유일성과 최소성만 만족하는 식별자, 참조 관계 연결에 사용할 수 없음</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>DB 키</strong></p></td>
+<td class="text-center"><p>기본키 (PK)</p></td>
+<td class="text-center"><p>엔터티를 대표하는 키, 후보키 중 선정됨</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>후보키</p></td>
+<td class="text-center"><p>유일성과 최소성을 만족하는 키</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>슈퍼키</p></td>
+<td class="text-center"><p>유일성만 만족하는 키</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>대체키</p></td>
+<td class="text-center"><p>기본키를 제외한 나머지 후보키</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>외래키 (FK)</p></td>
+<td class="text-center"><p>여러 테이블의 기본 키 필드, 참조 무결성을 확인하기 위해 사용됨</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>생성</strong></p></td>
+<td class="text-center"><p>내부 식별자</p></td>
+<td class="text-center"><p>자연스럽게 존재하는 식별자</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>외부 식별자</p></td>
+<td class="text-center"><p>다른 엔터티와의 관계를 통해 생성되는 식별자</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>속성 수</strong></p></td>
+<td class="text-center"><p>단일 식별자</p></td>
+<td class="text-center"><p>하나의 속성</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>복합 식별자</p></td>
+<td class="text-center"><p>여러 속성</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>대체 여부</strong></p></td>
+<td class="text-center"><p>본질 식별자</p></td>
+<td class="text-center"><p>대체될 수 없는 식별자</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>인조 식별자</p></td>
+<td class="text-center"><p>인위적으로 만들어지는 대체가능한 식별자. 순서번호(Sequence Number)를 사용하여 생성된 식별자, 후보 식별자로도 사용됨</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="erd-entity-relationship-diagram">
+<h3>ERD(Entity Relationship Diagram)<a class="headerlink" href="#erd-entity-relationship-diagram" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.erdcloud.com/">ERDcloud</a></p></li>
+</ul>
+<p>현실 데이터 표현</p>
+<p><strong>규칙</strong> : 1) 엔터티는 사각형 2) 관계는 마름모 3) 속성은 타원형</p>
+<ul class="simple">
+<li><p>절차</p>
+<ol class="arabic simple">
+<li><p>엔터티 도출</p></li>
+<li><p>엔터티 배치</p></li>
+<li><p>엔터티 간 관계 설정</p></li>
+<li><p>관계명 기술</p></li>
+<li><p>관계차수 표현 : 1:1, 1:N, M:N</p></li>
+<li><p>관계선택사양 표현 : 필수 선택</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h3>좋은 모델링의 요건<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>완전성</p></li>
+<li><p>중복 배제</p></li>
+<li><p>업무 규칙</p></li>
+<li><p>데이터 재사용</p></li>
+<li><p>의사소통</p></li>
+<li><p>통합성</p></li>
+</ol>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -436,11 +938,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Big_data/big_intro.html"
+       href="2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">빅분기 준비과정</p>
+        <p class="prev-next-title">2. 데이터 모델과 성능</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -453,6 +955,33 @@ document.write(`
             </div>
 
 
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1-1 : 데이터 모델의 이해</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">모델링</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">데이터 모델링</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">데이터 모델링 3단계</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#db-3">DB 3단계 구조</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">데이터 모델링 3요소</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entity-table">Entity 엔터티 (Table)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-column-field">Attribute 속성 (Column, field)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-relation">Relation 관계 (Relation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifier">식별자 identifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erd-entity-relationship-diagram">ERD(Entity Relationship Diagram)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">좋은 모델링의 요건</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
 
 
           </div>

@@ -27,7 +27,7 @@ parts:
 
     - file :  scripts/basics/DL_intro
       sections :
-        - file : scripts/basics/NLP_basics
+        - file : scripts/basics/tokenizing
         - file : scripts/basics/EDA
         - file : scripts/basics/activation_function
 
@@ -49,12 +49,16 @@ parts:
       - file : scripts/algorithm/2558.ipynb
       - file : scripts/algorithm/3046.ipynb
       - file : scripts/algorithm/2164.ipynb
+      - file : scripts/algorithm/2525.ipynb
+      - file : scripts/algorithm/1012.ipynb
 
   - caption : Certificate
     chapters :
     - file : scripts/certificate/SQLD/SQL_intro
       sections :
       - file : scripts/certificate/SQLD/1.md
+      - file : scripts/certificate/SQLD/2.md
+      - file : scripts/certificate/SQLD/3.md
 
     - file : scripts/certificate/Big_data/big_intro
       sections :

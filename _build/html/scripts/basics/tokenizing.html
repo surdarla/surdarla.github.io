@@ -1,0 +1,1079 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>컴퓨터의 언어표현 &#8212; My Jupyter Book</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/tokenizing';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/tokenizing.html" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EDA(Exploratory Data Analysis) 탐색적 분석" href="EDA.html" />
+    <link rel="prev" title="Deep learning collection" href="DL_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+
+
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+<a class="navbar-brand logo" href="../../about.html">
+
+
+
+
+
+
+
+
+
+    <img src="../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+
+
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about.html">
+                    Surdarla 입니다
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CS229/2-1.html">practice - torch sklearn numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_in_python.html">Type in python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning collection</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../paper_review/resnet.html">Resnet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../paper_review/DebertaV3.html">Deberta V3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paper_review/DebertaV1.html">DeBERTa</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/1012.html">1012 : 유기농 배추</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/3.html">3. SQL 기본</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/1.html">big_data 1</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main">
+
+
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+
+    </div>
+
+
+    <div class="header-article-items__end">
+
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+
+
+
+      <li><a href="../../_sources/scripts/basics/tokenizing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+
+
+
+
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+
+    </div>
+
+</div>
+</div>
+
+
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>컴퓨터의 언어표현</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-token">1. what is Token</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#token-n-gram-engram">token이 n_gram(engram)일 경우</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization-vs-vectorization-vs-embedding">tokenization vs vectorization vs embedding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word-tokenization">1-1. word tokenization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#white-space-tokenization">White-space tokenization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expression-tokenization">Regular expression tokenization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">토큰화 고려사항</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">한국어에서 토큰화의 어려움</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-tokenization">1-2. Sentence tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morpheme-tokenization">1-3. morpheme tokenization 형태소 토큰화</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorization">Vectorization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">2-1. one-hot encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bow-bag-of-words">2-2. BOW(Bag of Words)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtm-document-term-matrix">2-3. DTM(Document-Term Matrix)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">2-4. TF-IDF</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-embedding">3. Word Embedding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec">3-1. Word2Vec</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>컴퓨터의 언어표현<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>컴퓨터는 0,1밖에 모른다. <code class="docutils literal notranslate"><span class="pre">하지만</span> <span class="pre">빨랐죠</span></code> 만큼 빠르다. 즉 계산능력은 엄청나다. 이러한 컴퓨터에게 언어라는 것을 이해하게 만들 수 있을까? 이해는 하지 못하더라도 이해하는 것 처럼 보이게 만들 수 있을까?</p>
+<p>요즘 핫한 ChatGPT는 그런 것 처럼 보이기 시작했다. 그렇다면 컴퓨터는 언어를 어떻게 이해하는 (것처럼 보이는) 것일까? 그것에 대한 시작으로 컴퓨터에 언어를 어떻게 변환해서 넣는지부터 알아야할 것이다. Token에서부터 시작해보자. Token은 언어 단위를 말한다.</p>
+<section id="what-is-token">
+<h2>1. what is Token<a class="headerlink" href="#what-is-token" title="Permalink to this heading">#</a></h2>
+<p>언어라는 것이 참으로 어려운 것이 결국 언어란 생각, 의미를 전달하는 매체이다. 그렇다면 의미라는 것을 파악하기 위한 가장 작은 단위는 무엇일까? 동시에 컴퓨터에 input으로 넣어주어야한다. 그것을 규정한 것이 token이다. 그전에 앞서 언어학과에서 엄청 많이 듣는 corpus라는 것에 대해서 알아야 할 것이다.</p>
+<p><img alt="token to corpus" src="../../_images/5e880971363eccfc191c6dd51264f581_MD5.png" /></p>
+<p>Corpus는 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">collection</span> <span class="pre">of</span> <span class="pre">text</span> <span class="pre">documents</span></code> 로 정의된다. 예를 들어 news들로 구성된 dataset은 코퍼스라고 할 수 있고, tweet들로 구성된 twitter dataset도 하나의 코퍼스라고 말할 수 있다. 이러한 하나의 코퍼스는 여러 documents로 이루어지고, document는 paragraph(구, 절)로 이루어지고, paragraph는 sentence(문장)으로 이루어지고, 하나의 문장은 token(토큰)으로 이루어진다.</p>
+<p>그러면 뭐를 token이라고 부르는가? token은 word, phrase, engram이 될 수 있다. 문장을 해체할 때 어떤 단위로 쪼갤지에 대해서 고민하고, 이 <code class="docutils literal notranslate"><span class="pre">문장</span> <span class="pre">해체</span> <span class="pre">단위</span></code>를 토큰이라고 말할 수 있다.</p>
+<section id="token-n-gram-engram">
+<h3>token이 n_gram(engram)일 경우<a class="headerlink" href="#token-n-gram-engram" title="Permalink to this heading">#</a></h3>
+<p>engram은 <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">of</span> <span class="pre">n</span> <span class="pre">words</span> <span class="pre">togather</span></code>로 정의되는 단어 뭉치다. 말 그대로 n개의 단어 뭉치를 하나의 토큰으로 보는 것이다.</p>
+<p>예를 들어</p>
+<blockquote>
+<div><p>I love my phone</p>
+</div></blockquote>
+<p>이 문장을 볼 때 uni-gram(n=1)로 보면 I, love, my, phone 의 형태로 token이 4개다. Di-gram(n=2)로 보면, I love, love my, my phone으로 3개의 토큰으로 분간된다.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>gram</p></th>
+<th class="head text-center"><p>content</p></th>
+<th class="head text-center"><p>token count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>n=1(uni-gram)</p></td>
+<td class="text-center"><p>I,love,my,phone</p></td>
+<td class="text-center"><p>4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>n=2(Di-gram)</p></td>
+<td class="text-center"><p>I love, love my, my phone</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="tokenization-vs-vectorization-vs-embedding">
+<h2>tokenization vs vectorization vs embedding<a class="headerlink" href="#tokenization-vs-vectorization-vs-embedding" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>a process of splitting a text object into smaller units which are also called tokens.</p>
+</div></blockquote>
+<p>token에 대해서 알았으니 문장과 구를 우리가 정의한 토큰(words, numbers, engrams or symbols)으로 만드는 것이 tokenization일 것이다. 하지만 tokenization만 한다고 해서 바로 컴퓨터에 때려 넣을 수 있는 것이 아니다. 수치화시켜서 넣어줘야하고 torch를 사용할 경우에는 tensor화 까지 시켜줘야한다. 이렇게 텍스트의 수치화를 vectorization이라고 한다. 전통적인 NLP 파이프라인에서는 토큰화 이후에 벡터화 과정이 일반적으로 이루어졌다. 그런데 뒤에서 설명하겠지만 one-hot encoding, TF-IDF, Count Vectorizer는 단어의 출현횟수에 가중치를 더하고 어쩌고 저쩌고 하지만 결론적으로는 <code class="docutils literal notranslate"><span class="pre">단어</span> <span class="pre">간의</span> <span class="pre">순서나</span> <span class="pre">문맥을</span> <span class="pre">고려하지</span> <span class="pre">못한다</span></code>는 언어적 분석에 있어서 치명적인 한계를 가지고 있었다. 그래서 나온 것이 embedding이다.</p>
+<p>embedding은 token을 저차원의 밀집 벡터로 표현하는 과정이다. 이를 vectorization의 방법 중 하나라고 볼 수 있지만 단순 벡터화라고 볼 수 없는 이유는 token의 의미를 문맥적으로 포착하기 떄문이다. 그 중 현재를 씹어먹고 있는 것이 transformer의 attention기반의 모델들이고, 이는 다양한 embedding으로 token의 특성을 살려서 결론적으로 문맥을 잘 이해하기 때문이다. BERT를 설명하면서 뒤에 embedding 종류에 대해서 더 설명할 것이다.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>Tokenization</p></th>
+<th class="head text-center"><p>Vectorization</p></th>
+<th class="head text-center"><p>Embedding</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>목적</p></td>
+<td class="text-center"><p>텍스트 쪼개기</p></td>
+<td class="text-center"><p>토큰<span class="math notranslate nohighlight">\(\to\)</span>숫자</p></td>
+<td class="text-center"><p>토큰<span class="math notranslate nohighlight">\(\to\)</span>고차원벡터공간</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>설명</p></td>
+<td class="text-center"><p>주어진 텍스트를 단어, 부분 단어, 또는 문자로 나눔</p></td>
+<td class="text-center"><p>텍스트 데이터를 모델이 처리할 수 있는 숫자 형태로 바꾸기 위해 사용. 가장 간단한 방법은 각 토큰에 고유한 인덱스를 부여하기. TF-IDF와 같은 기법들은 각 토큰의 중요도에 따라 가중치를 부여하여 벡터화</p></td>
+<td class="text-center"><p>임베딩은 각 토큰을 고정된 크기의 벡터로 변환. 이 벡터는 해당 토큰의 의미, 문법적 특성, 문맥 관계 등 다양한 정보를 포함.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>output</p></td>
+<td class="text-center"><p>텍스트의 시퀀스 또는 리스트</p></td>
+<td class="text-center"><p>숫자의 시퀀스 또는 행렬</p></td>
+<td class="text-center"><p>각 토큰을 대표하는 고차원의 벡터</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>example</p></td>
+<td class="text-center"><p>word tokening, subword tokening, 문자 tokenizing</p></td>
+<td class="text-center"><p>one-hot encoding, TF-IDF, count Vectorizer</p></td>
+<td class="text-center"><p>Word2Vec, GloVe, FastText, BERT</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>요약</p></td>
+<td class="text-center"><p>텍스트를 처리가능한 단위로 나누기</p></td>
+<td class="text-center"><p>토큰을 숫자로</p></td>
+<td class="text-center"><p>토큰을 의미를 포함한 저차원 벡터(dense vector)로</p></td>
+</tr>
+</tbody>
+</table>
+<section id="word-tokenization">
+<h3>1-1. word tokenization<a class="headerlink" href="#word-tokenization" title="Permalink to this heading">#</a></h3>
+<p>토큰을 단어로 하는 경우, 단어 토큰화라고 한다. 그렇다면 <code class="docutils literal notranslate"><span class="pre">단어(word)</span></code>라는 것에 대한 정의가 먼저 필요할 것이다. 단어는 단어 단위 외에도 단어구, 의미를 갖는 문자열로 간주되기도 하기 때문에 참으로 정의가 애매하다.</p>
+<p>언어학에서 단어는 여러 관점에서 정의될 수 있다. 우선 형태론적 관점에서 단어란 ‘최소 자립 단위’를 말한다. 이는 단어 내의 형태소(Morpheme : 의미 혹은 문법적 기능의 최소 단위)들로 쪼개질 수 있으며 이렇게 단어를 쪼개는 자연어 처리를 형태소 분석이라고 부른다.</p>
+<p>구문론적인 관점에서 단어란 문법적인 역할을 하는 최소단위를 말한다. 품사를 말한다. 의미론적 관점에서 단어(Semantic Word)는 의미를 가지는 최소단위로 간주된다. 형태소와 비슷한 것으로 보이지만 unhappiness를 예시로 보면 다르다. unhappiness는 의미론적으로 불행이라는 의미의 하나의 단어이지만(쪼개면 의미가 깨지니깐), 형태론적으로 보면 un-happy-ness라는 세 개의 구별된 형태소로 이루어져있고, 동시에 happy라는 단어(이면서 형태소)를 가지고 있는 단어라고 볼 수 있다(양자역학인가… ~이면서 ~이다).</p>
+<section id="white-space-tokenization">
+<h4>White-space tokenization<a class="headerlink" href="#white-space-tokenization" title="Permalink to this heading">#</a></h4>
+<p>가장 많이 쓰이는 tokenization 방식이 white-space tokenization방식이다. 그냥 단순하게 띄어쓰기를 기반으로 token을 분간하는 것이다. 영어에서는 의미가 있을 수 있으지 몰라도 한국어에서는 띄어쓰기 만으로는 단어 토큰을 구분하기 어렵다.</p>
+</section>
+<section id="regular-expression-tokenization">
+<h4>Regular expression tokenization<a class="headerlink" href="#regular-expression-tokenization" title="Permalink to this heading">#</a></h4>
+<p>정규표현 토큰화. splitting pattern을 정규식으로 분간할 수 있다. 정규 표현식은 문자열의 패턴을 정의하고 일치하는 부분을 찾는데 사용된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="s1">&#39;Football, Cricket; Golf Tennis&#39;</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;r[;,\s]&#39;</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+<span class="n">Tokens</span> <span class="o">=</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span><span class="s2">&quot;Cricket&quot;</span><span class="p">,</span><span class="s2">&quot;Golf&quot;</span><span class="p">,</span><span class="s2">&quot;Tennis&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>re.split(‘r[;,\s]’, S)</p>
+<blockquote>
+<div><p>; , \s(공백) 문자열 중에 해당 3개와 같은 것으로 분할해라.</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+</section>
+<section id="id2">
+<h3>토큰화 고려사항<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>구두점이나 특수 문자를 단순 제외 NO</p>
+<ul class="simple">
+<li><p>날짜 사이의 /, 구두점 in Ph.D, 소수점</p></li>
+</ul>
+</li>
+<li><p>줄임말과 단어 내에 띄어쓰기가 있는 경우</p>
+<ul class="simple">
+<li><p>rock ‘n’ roll은 하나의 단어이지만 중간에 띄어쓰기가 존재함. 띄어쓰기가 있어도 하나의 token으로 보아야함.</p></li>
+<li><p>(’) apostrophe</p></li>
+</ul>
+</li>
+</ol>
+<p>아래의 표준 토큰화(Penn Treebank Tokenization)에서의 규칙을 살펴보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">TreebankWordTokenizer</span>
+<span class="c1"># nltk.download(&#39;treebank&#39;) # 처음 사용시에는 다운 받아야함</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">TreebankWordTokenizer</span><span class="p">()</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Starting a home-based restaurant may be an ideal. it doesn&#39;t have a food chain or restaurant of their own.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;트리뱅크 워드토크나이저 :&#39;</span><span class="p">,</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>트리뱅크 워드토크나이저 : [&#39;Starting&#39;, &#39;a&#39;, &#39;home-based&#39;, &#39;restaurant&#39;, &#39;may&#39;, &#39;be&#39;, &#39;an&#39;, &#39;ideal.&#39;, &#39;it&#39;, &#39;does&#39;, &quot;n&#39;t&quot;, &#39;have&#39;, &#39;a&#39;, &#39;food&#39;, &#39;chain&#39;, &#39;or&#39;, &#39;restaurant&#39;, &#39;of&#39;, &#39;their&#39;, &#39;own&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>하이픈으로 구성된 단어 ‘home-based’같은 단어는 잘 붙어서 단어취급해 주는 것을 볼 수 있다.
+또한 아포스트로피로 접어가 함께 붙어준 단어는 분리해주는 것도 ‘does - n’t’를 통해서 볼 수 있다.
+마지막으로 구두점도 하나의 단어 취급하는 것을 볼 수 있다.</p>
+</section>
+<section id="id3">
+<h3>한국어에서 토큰화의 어려움<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>교착어의 특성</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">조사(preposition)</span></code>라는 것이 존재. 띄어쓰기 없이 바로 뒤에 붙음. 띄어쓰기 단위로는 처리가 불가.</p></li>
+<li><p>따라서 <strong>형태소 단위</strong>로 단어를 구분해주어야함.</p></li>
+</ul>
+</li>
+<li><p>띄어쓰기가 잘 안 지켜진다.</p>
+<ul class="simple">
+<li><p>띄어쓰기를 안해도 의미적으로 이해는 간다.</p></li>
+<li><p>1933년에 띄어쓰기가 보편화 되었으니 100년도 안되었다.</p></li>
+<li><p>‘모아쓰기’라는 한국어적인 특징이 존재한다.</p></li>
+<li><p>corpus 에서 전반적으로 영어에 비해 띄어쓰기가 잘 안지켜졌을 확률이 높다.</p></li>
+</ul>
+</li>
+<li><p>한국어는 어순이 중요치 않다.</p>
+<ul class="simple">
+<li><p>이건 토큰화보다는 모델링에서의 문제인데, 이전 단어가 주어질때 다음 단어가 나타날 확률을 구할때 어순이 중요치 않다는 것은 어떤 단어는 출현이 가능하다는 뜻이 된다.</p></li>
+<li><p>확률에 기반한 언어 모델이 성능이 제대로 안나올 가능성 크다.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="sentence-tokenization">
+<h3>1-2. Sentence tokenization<a class="headerlink" href="#sentence-tokenization" title="Permalink to this heading">#</a></h3>
+<p>토큰의 문장(sentence)일 수도 있다. 사실 많이 쓰이는 방식은 sentence segmentation 문장 분류 작업에 사용된다. corpus가 주어질 때 문장 단위로 주어지는 것이 아니라 document 단위로 주어지는 경우가 많기 때문에, 문장을 구분해내서 저장하기 위해서 사용되는 경우가 많다.</p>
+<p>이럴 경우에 마침표가 대부분은 문장의 구분자로 사용될 수 있지만, 문제는 가끔 안그럴 경우가 있다는 것이다. ? 혹은 ! 같은 특수 문자들이 문장 split의 기준점이 되기도 하고, 마침표가 명확한 구분자 역할을 하지 못하는 경우도 많기 때문이다. 예를 들면 … 과 같은 경우도 있다. 모든 경우의 수에 대해서 규칙을 설정한다는 것은 쉬운 일이 아니다. 그렇기에 적절하게 해당 언어에 적합한 tokenizer library를 사용해야한다. 한국어일 경우에는 문장 구분으로 <a class="reference external" href="https://github.com/likejazz/korean-sentence-splitter">kss(korean sentence splitter)</a>를 사용한다.</p>
+</section>
+<section id="morpheme-tokenization">
+<h3>1-3. morpheme tokenization 형태소 토큰화<a class="headerlink" href="#morpheme-tokenization" title="Permalink to this heading">#</a></h3>
+<p>: Part-of-speech tagging 품사태깅</p>
+<p>형태소 분석기랑 품사 분석기는 종종 혼용되어 사용되는 용어이다. python library들에서 대부분의 형태소 분석이 품사를 함께 분석해서 output을 주기 때문에 그럴 것 이다. 하지만 품사와 형태소는 언어학적으로 분명한 차이가 있는 용어이다. 형태소는 텍스트를 구성하는 최소 의미 단위를 말하는 것이고, 품사라는 것은 단어나 형태소가 문장 내에서 어떤 역할을 하는지, 어떤 문법적 기능이나 의미적 특성을 가지는지를 기준으로 분류한 범주이다. 이 정의만 보아도 품사를 확인하기 위해서는 형태소 분석이 선행되어야 한다.</p>
+<p>단어의 표기는 같지만 품사에 따라 단어의 의미가 달라지는 것은 만국의 언어에서 공통되는 점이다. ‘못’은 nail이기도 하고 not이기도 하다. 단어가 해당 문장에서 어떤 품사로 사용되었는지를 아는 것은 의미를 파악하는데 중요한 정보가 된다.</p>
+<p>주요 품사들을 표로 나타내고 nltk에서 사용하는 품사 태그를 추가한 것이다. nltk 태그는 Penn Treebank 품사 태그 세트를 기반으로 한다.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title">Penn Treebank?</p>
+<p>Penn Treebank는 자연어 처리 분야에서 널리 사용되는 품사 태깅, 구문 분석, 의존성 분석 등의 어노테이션을 포함하는 텍스트 코퍼스입니다. 이 코퍼스는 펜실베이니아 대학교(University of Pennsylvania)에서 개발되어 그 이름이 “Penn Treebank”으로 지어졌습니다.</p>
+<ul class="simple">
+<li><p>범위: Wall Street Journal (WSJ) 기사, 여러 가지 문체의 텍스트, 전화 통화 텍스트 등을 포함합니다.</p></li>
+<li><p>품사 태깅: Penn Treebank는 특정 품사 태그 세트를 정의하며, 이는 자연어 처리 연구에서 널리 사용됩니다. 예를 들어, ‘NN’은 일반 명사, ‘VB’는 동사 기본형을 나타내는 태그입니다.</p></li>
+<li><p>구문 구조: 문장의 구문 구조를 나타내는 구문 트리도 포함되어 있습니다. 이는 문장 내 단어들 간의 계층적 관계를 표현합니다.</p></li>
+<li><p>활용: Penn Treebank는 품사 태깅, 구문 분석, 통계 기반 언어 모델링 등 다양한 자연어 처리 작업에 사용되는 벤치마크 데이터로 널리 사용됩니다.</p></li>
+</ul>
+<p>Penn Treebank는 상업적인 코퍼스이기 때문에, 연구나 개발 목적 외의 사용을 원하면 라이선스를 구매해야 합니다. 그러나 연구용도로는 일부 서브셋이 무료로 제공되기도 합니다.</p>
+</aside>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>품사</p></th>
+<th class="head"><p>영어명</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>예시</p></th>
+<th class="head"><p>NLTK (Penn Treebank) 태그</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>명사</p></td>
+<td><p>Noun</p></td>
+<td><p>사람, 장소, 사물, 개념 등을 나타내는 단어.</p></td>
+<td><p>학교, 사과, 사랑</p></td>
+<td><p>NN (singular), NNS (plural)</p></td>
+</tr>
+<tr class="row-odd"><td><p>동사</p></td>
+<td><p>Verb</p></td>
+<td><p>행동이나 상태를 나타내는 단어.</p></td>
+<td><p>먹다, 자다, 생각하다</p></td>
+<td><p>VB (base form), VBD (past tense), VBG (gerund), VBN (past participle), VBP (singular present), VBZ (3rd person singular present)</p></td>
+</tr>
+<tr class="row-even"><td><p>형용사</p></td>
+<td><p>Adjective</p></td>
+<td><p>명사나 대명사의 성질, 상태, 특성을 나타내는 단어.</p></td>
+<td><p>예쁘다, 빠르다</p></td>
+<td><p>JJ</p></td>
+</tr>
+<tr class="row-odd"><td><p>부사</p></td>
+<td><p>Adverb</p></td>
+<td><p>동사, 형용사, 다른 부사 또는 전체 문장을 수식하며, 방법, 장소, 시간, 빈도, 정도 등을 나타내는 단어.</p></td>
+<td><p>빨리, 아주, 여기서</p></td>
+<td><p>RB</p></td>
+</tr>
+<tr class="row-even"><td><p>대명사</p></td>
+<td><p>Pronoun</p></td>
+<td><p>다른 명사를 대신해서 쓰이는 단어.</p></td>
+<td><p>그, 나, 우리</p></td>
+<td><p>PRP</p></td>
+</tr>
+<tr class="row-odd"><td><p>전치사/조사</p></td>
+<td><p>Preposition/조사</p></td>
+<td><p>명사 앞에 위치하여 그 명사와 문장 내의 다른 구성성분과의 관계를 나타내는 단어.</p></td>
+<td><p>“in”, “on”, “with”/“의”, “에”, “에서”</p></td>
+<td><p>IN</p></td>
+</tr>
+<tr class="row-even"><td><p>접속사</p></td>
+<td><p>Conjunction</p></td>
+<td><p>두 개 이상의 단어, 구, 문장을 연결하는 단어.</p></td>
+<td><p>그리고, 그러나, 또는</p></td>
+<td><p>CC</p></td>
+</tr>
+<tr class="row-odd"><td><p>감탄사</p></td>
+<td><p>Interjection</p></td>
+<td><p>감정이나 태도를 나타내는 단어.</p></td>
+<td><p>아!, 헉!, 와우!</p></td>
+<td><p>UH</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.tag</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="c1">#nltk.download()</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I am actively looking for Ph.D. students. and you are a Ph.D. student.&quot;</span>
+<span class="n">tokenized_sentence</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;단어 토큰화 :&#39;</span><span class="p">,</span><span class="n">tokenized_sentence</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;품사 태깅 :&#39;</span><span class="p">,</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">tokenized_sentence</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>단어 토큰화 : [&#39;I&#39;, &#39;am&#39;, &#39;actively&#39;, &#39;looking&#39;, &#39;for&#39;, &#39;Ph.D.&#39;, &#39;students&#39;, &#39;.&#39;, &#39;and&#39;, &#39;you&#39;, &#39;are&#39;, &#39;a&#39;, &#39;Ph.D.&#39;, &#39;student&#39;, &#39;.&#39;]
+품사 태깅 : [(&#39;I&#39;, &#39;PRP&#39;), (&#39;am&#39;, &#39;VBP&#39;), (&#39;actively&#39;, &#39;RB&#39;), (&#39;looking&#39;, &#39;VBG&#39;), (&#39;for&#39;, &#39;IN&#39;), (&#39;Ph.D.&#39;, &#39;NNP&#39;), (&#39;students&#39;, &#39;NNS&#39;), (&#39;.&#39;, &#39;.&#39;), (&#39;and&#39;, &#39;CC&#39;), (&#39;you&#39;, &#39;PRP&#39;), (&#39;are&#39;, &#39;VBP&#39;), (&#39;a&#39;, &#39;DT&#39;), (&#39;Ph.D.&#39;, &#39;NNP&#39;), (&#39;student&#39;, &#39;NN&#39;), (&#39;.&#39;, &#39;.&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Okt</span>
+<span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Kkma</span>
+
+<span class="n">okt</span> <span class="o">=</span> <span class="n">Okt</span><span class="p">()</span>
+<span class="n">kkma</span> <span class="o">=</span> <span class="n">Kkma</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OKT 형태소 분석 :&#39;</span><span class="p">,</span><span class="n">okt</span><span class="o">.</span><span class="n">morphs</span><span class="p">(</span><span class="s2">&quot;열심히 코딩한 당신, 연휴에는 여행을 가봐요&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OKT 품사 태깅 :&#39;</span><span class="p">,</span><span class="n">okt</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s2">&quot;열심히 코딩한 당신, 연휴에는 여행을 가봐요&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OKT 명사 추출 :&#39;</span><span class="p">,</span><span class="n">okt</span><span class="o">.</span><span class="n">nouns</span><span class="p">(</span><span class="s2">&quot;열심히 코딩한 당신, 연휴에는 여행을 가봐요&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OKT 형태소 분석 : [&#39;열심히&#39;, &#39;코딩&#39;, &#39;한&#39;, &#39;당신&#39;, &#39;,&#39;, &#39;연휴&#39;, &#39;에는&#39;, &#39;여행&#39;, &#39;을&#39;, &#39;가봐요&#39;]
+OKT 품사 태깅 : [(&#39;열심히&#39;, &#39;Adverb&#39;), (&#39;코딩&#39;, &#39;Noun&#39;), (&#39;한&#39;, &#39;Josa&#39;), (&#39;당신&#39;, &#39;Noun&#39;), (&#39;,&#39;, &#39;Punctuation&#39;), (&#39;연휴&#39;, &#39;Noun&#39;), (&#39;에는&#39;, &#39;Josa&#39;), (&#39;여행&#39;, &#39;Noun&#39;), (&#39;을&#39;, &#39;Josa&#39;), (&#39;가봐요&#39;, &#39;Verb&#39;)]
+OKT 명사 추출 : [&#39;코딩&#39;, &#39;당신&#39;, &#39;연휴&#39;, &#39;여행&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>품사를 뽑을라고 했는데 형태소도 나오는 아주 좋은 라이브러리들이다. 형태소 라이브러리들에 대해서 정리를 해보면 아래와 같다.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>언어</p></th>
+<th class="head text-center"><p>분석기 이름</p></th>
+<th class="head text-center"><p>기능</p></th>
+<th class="head text-center"><p>주요 사용 라이브러리/플랫폼</p></th>
+<th class="head text-center"><p>장점</p></th>
+<th class="head text-center"><p>단점</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>한국어</p></td>
+<td class="text-center"><p>KoNLPy</p></td>
+<td class="text-center"><p>형태소 및 품사 분석</p></td>
+<td class="text-center"><p>Python</p></td>
+<td class="text-center"><p>다양한 한국어 처리 도구 제공</p></td>
+<td class="text-center"><p>성능이 최적화되지 않은 도구도 포함</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>Khaiii</p></td>
+<td class="text-center"><p>형태소 및 품사 분석</p></td>
+<td class="text-center"><p>Python, C++</p></td>
+<td class="text-center"><p>카카오에서 개발하여 높은 성능</p></td>
+<td class="text-center"><p>설치 과정이 다소 복잡</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>ETRI</p></td>
+<td class="text-center"><p>형태소 및 품사 분석, 의존 구문 분석, 개체명 인식 등</p></td>
+<td class="text-center"><p>Web API</p></td>
+<td class="text-center"><p>고품질의 분석 결과</p></td>
+<td class="text-center"><p>유료</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>Mecab</p></td>
+<td class="text-center"><p>형태소 및 품사 분석</p></td>
+<td class="text-center"><p>C++, Python, Java 등</p></td>
+<td class="text-center"><p>빠르고 정확</p></td>
+<td class="text-center"><p>사전 업데이트 및 추가가 필요한 경우가 있음</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>영어</p></td>
+<td class="text-center"><p>NLTK</p></td>
+<td class="text-center"><p>품사 태깅</p></td>
+<td class="text-center"><p>Python</p></td>
+<td class="text-center"><p>교육용으로 널리 사용, 다양한 기능 제공</p></td>
+<td class="text-center"><p>상업용 애플리케이션에는 덜 적합</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>spaCy</p></td>
+<td class="text-center"><p>형태소 및 품사 분석</p></td>
+<td class="text-center"><p>Python</p></td>
+<td class="text-center"><p>빠르고 정확, 쉬운 API 제공</p></td>
+<td class="text-center"><p>언어 모델의 크기가 큼</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>StanfordNLP</p></td>
+<td class="text-center"><p>품사 태깅, 구문 분석, 개체명 인식 등</p></td>
+<td class="text-center"><p>Java, Python</p></td>
+<td class="text-center"><p>다양한 언어 지원, 높은 정확도</p></td>
+<td class="text-center"><p>자바 기반으로 설치 및 실행이 복잡</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>FastText</p></td>
+<td class="text-center"><p>임베딩 및 분류</p></td>
+<td class="text-center"><p>Python, C++</p></td>
+<td class="text-center"><p>사전 학습된 모델 제공, 빠른 학습 속도</p></td>
+<td class="text-center"><p>품사 태깅 기능 없음</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="vectorization">
+<h2>Vectorization<a class="headerlink" href="#vectorization" title="Permalink to this heading">#</a></h2>
+<p>토큰화-벡터화 까지만의 방법의 한계에 대해서 위에서 말했었다. token의 표현에 있어서 문맥적인 정보를 넣어주지 않았음으로 그만큼 분석에 한계가 분명하다고 볼 수 있다. 하지만 이 전에 기법들에 대해 알고 있는 것은 항상 분명하게 도움이 될 수 있다.</p>
+<section id="one-hot-encoding">
+<h3>2-1. one-hot encoding<a class="headerlink" href="#one-hot-encoding" title="Permalink to this heading">#</a></h3>
+<p>sklearn에서 많이 써봤을 법한 것이다. 원-핫 인코딩이라는 것은 각 단어를 유니크한 원-핫 벡터로 변환하는 것을 말한다. 그것이 무슨 말이냐면</p>
+<p>cat, dog, bird가 있다면 이것을 원핫 인코딩하면 이런 테이블이 나온다</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>cat</p></th>
+<th class="head text-center"><p>dot</p></th>
+<th class="head text-center"><p>bird</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>-</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>-</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>-</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>아주 단순하면서 각 단어를 고유한 벡터로 표현한다. 하지만 단어 사이의 의미적 관계나 유사성을 반영하는 표현력은 전혀 없다. 또한 one-hot encoding으로 텍스트 전부를 표현하는 것은 사실상 불가능할 정도로 sparse한 metric이 되어서 메모리 효율이 극도로 낮아진다. 차원의 저주에 걸려버리는 것이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Okt</span>
+<span class="n">okt</span> <span class="o">=</span> <span class="n">Okt</span><span class="p">()</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">okt</span><span class="o">.</span><span class="n">morphs</span><span class="p">(</span><span class="s1">&#39;고양이 개 새&#39;</span><span class="p">)</span>
+<span class="n">word_to_index</span> <span class="o">=</span> <span class="p">{</span><span class="n">word</span><span class="p">:</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tokens</span><span class="p">)}</span>
+
+<span class="k">def</span> <span class="nf">one_hot_encoding</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="n">word_to_index</span><span class="p">):</span>
+    <span class="n">one_hot_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_to_index</span><span class="p">))</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">word_to_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+    <span class="n">one_hot_vector</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">one_hot_vector</span>
+
+<span class="n">one_hot_encoding</span><span class="p">(</span><span class="s1">&#39;고양이&#39;</span><span class="p">,</span> <span class="n">word_to_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bow-bag-of-words">
+<h3>2-2. BOW(Bag of Words)<a class="headerlink" href="#bow-bag-of-words" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="dtm-document-term-matrix">
+<h3>2-3. DTM(Document-Term Matrix)<a class="headerlink" href="#dtm-document-term-matrix" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="tf-idf">
+<h3>2-4. TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="word-embedding">
+<h2>3. Word Embedding<a class="headerlink" href="#word-embedding" title="Permalink to this heading">#</a></h2>
+<blockquote class="epigraph">
+<div><p>word embedding이란 단어를 인공신경망으로 벡터화, 단어를 밀집 표현으로 변환</p>
+</div></blockquote>
+<div class="dropdown admonition">
+<p class="admonition-title">Sparse+Local VS Dense+Continuous Representation of word</p>
+<p>아래는 단어의 표현 방법들에 대해서 정리한 것이다. 결론적으로 저차원에 많은 정보를 실수로 효율적으로 담는 embedding(dense representation)으로 발전한다.</p>
+<p>희소표현(Sparse representation)이란 matrix의 대부분의 값이 0으로 표현되는 방법을 말한다. 원-핫 벡터는 희소 벡터(sparse vector)이다. 이러한 표현의 단점은 단어의 개수가 늘어나면 벡터의 차원이 한도 끝도 없이 커진다. 그렇게 되면 공간적 낭비, 차원의 저주에 걸린다.</p>
+<p>국소표현(Local Discrete representation)은 해당 단어 자체만 보고 주변은 안본다. 보통 vectorization에서 사용했던 count기반의 단어표현이 많이 이러한 표현법에 해당된다. count적인 기법들은 당연하게 차원이 대폭늘어나는 희소표현이 된다.</p>
+<p>밀집표현(Dense representation)는 희소표현의 반대다. dimension이 단어 집합의 크기로 상정하지 않는다. 사용자가 설정한 값으로 모든 단어의 벡터 표현의 차원을 맞춘다. 모델의 input 차원을 128로 했다면 128로 표현되는 것이고 이 차원 안에서 다른 단어들과의 차이를 구성한다. 한정된(dense) 차원에서 표현을 한다고 밀집표현이고 이렇게 생성한 vector를 dense vector라고 한다.</p>
+<p>분산&amp;이산 표현(Distributed Continuous representation)은 하나의 단어를 표현하기 위해서 주변 단어를 참고하는 것을 말한다. 강아지 주변에 귀여운, 사랑스로운 과 같은 형용사가 포진하기 마련임으로 강아지라는 단어를 표현할때는 두 형용사를 참고하고 뉘앙스, 주변의미를 챙겨가는 것이다. 이는 기본적으로 Distributed Hypothesis 분포가설이라는 가정 하에 만들어 진 것이다. ‘비슷한 문맥에서 등장하는 단어들은 비슷한 의미를 가진다’라는 가정이다. 비슷한 문맥이라는 것은 앞서 말한 주변 단어들을 말할 것이다. 이러한 의미를 더하고 차원적으로도 저차원에다 흩뿌리듯 분산하여 표현하기 때문에 분산표현이라는 단어가 기가막힌 것이다.</p>
+</div>
+<p>옆에서 보듯이 단어를 밀집벡터의 형태로 표현하는 것을 워드 임베딩이라고 한다. 한정된 차원내에서 단어를 표현하는 것이다. 그리고 워드 임베딩의 output은 <code class="docutils literal notranslate"><span class="pre">embedding</span> <span class="pre">vector</span></code>일 것이다. 간단하게 표로 차이를 표현하면</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>one-hot vector</p></th>
+<th class="head text-center"><p>embedding vector</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>dimension</p></td>
+<td class="text-center"><p>고차원(단어집합크기만큼)</p></td>
+<td class="text-center"><p>저차원</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>representation</p></td>
+<td class="text-center"><p>sparse vector</p></td>
+<td class="text-center"><p>dense vector</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>method</p></td>
+<td class="text-center"><p>수동</p></td>
+<td class="text-center"><p>train</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>value</p></td>
+<td class="text-center"><p>1,0(Discrete, Sparse)</p></td>
+<td class="text-center"><p>float(Countinuous, Dense, Distributed)</p></td>
+</tr>
+</tbody>
+</table>
+<section id="word2vec">
+<h3>3-1. Word2Vec<a class="headerlink" href="#word2vec" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gensim</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/discussions/general/231146#1265682">Kaggle - Basics of NLP for absolute Beginners</a></p></li>
+<li><p><a class="reference external" href="https://wikidocs.net/21698">WikiDocs - 딥러닝을 이용한 자연어 처리 입문</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./scripts\basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+
+
+
+
+                <footer class="bd-footer-article">
+
+<div class="footer-article-items footer-article__inner">
+
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DL_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Deep learning collection</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="EDA.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EDA(Exploratory Data Analysis) 탐색적 분석</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+
+</div>
+
+                </footer>
+
+            </div>
+
+
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-token">1. what is Token</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#token-n-gram-engram">token이 n_gram(engram)일 경우</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization-vs-vectorization-vs-embedding">tokenization vs vectorization vs embedding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word-tokenization">1-1. word tokenization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#white-space-tokenization">White-space tokenization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-expression-tokenization">Regular expression tokenization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">토큰화 고려사항</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">한국어에서 토큰화의 어려움</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentence-tokenization">1-2. Sentence tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morpheme-tokenization">1-3. morpheme tokenization 형태소 토큰화</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorization">Vectorization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">2-1. one-hot encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bow-bag-of-words">2-2. BOW(Bag of Words)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtm-document-term-matrix">2-3. DTM(Document-Term Matrix)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">2-4. TF-IDF</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-embedding">3. Word Embedding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec">3-1. Word2Vec</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+<div class="bd-footer-content__inner container">
+
+  <div class="footer-item">
+
+<p class="component-author">
+By Surdarla
+</p>
+
+  </div>
+
+  <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2023.
+      <br/>
+
+  </p>
+
+  </div>
+
+  <div class="footer-item">
+
+  </div>
+
+  <div class="footer-item">
+
+  </div>
+
+</div>
+          </footer>
+
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -24,6 +24,9 @@ pre-commit = "^3.3.3"
 ffmpeg = "^1.4"
 ffmpeg-python = "^0.2.0"
 imageio = {extras = ["ffmpeg"], version = "^2.31.1"}
+konlpy = "^0.6.0"
+nltk = "^3.8.1"
+gensim = "^4.3.1"
 
 
 [build-system]
