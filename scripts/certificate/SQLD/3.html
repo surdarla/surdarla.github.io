@@ -393,9 +393,26 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#db">1. 관계형 DB</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddl">2. DDL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddl-cadrt">2. DDL : CADRT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-table">2.1 CREATE TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alter-table">2.2 ALTER TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-table">2.3 RENAME TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-table">2.4 DROP TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truncate-table">2.5 TRUNCATE TABLE</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dml-iuds">3. DML : IUDS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tcl-uid">4. TCL : UID</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">4-1 COMMIT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rollback">4-2 ROLLBACK</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcl">5. DCL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where">6. WHERE 조건절</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6-1 부분 범위 처리</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. 함수</a></li>
 </ul>
             </nav>
         </div>
@@ -454,7 +471,7 @@ DBMS를 이용하여 효율적인 데이터 관리와 데이터 손상 복구 �
 <li><p>INSERT, UPDATE, DELETE: 변형</p></li>
 </ol>
 </li>
-<li><p>DDL(Data Definition Language, 데이터 정의어) CAD</p>
+<li><p>DDL(Data Definition Language, 데이터 정의어) CADRT</p>
 <ol class="arabic simple">
 <li><p>데이터 구조에 관련 명령어</p></li>
 <li><p>CREATE, ALTER, DROP, RENAME</p></li>
@@ -476,17 +493,23 @@ DBMS를 이용하여 효율적인 데이터 관리와 데이터 손상 복구 �
 <p><strong>Table 테이블</strong>
 RDB의 기본단위, 데이터를 저장하는 객체, column-row 2차원 구조<br />
 Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id3">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>그리고 분할된 테이블은 그 칼럼의 값에 의해 연결된다. 이렇게 테이블을 분할하여 데이터의 불필요한 중복을 줄이는 것을 정규화(Normalization)라고 한다. 데이터의 정합성 확보와 데이터 입력/수정/삭제시 발생할 수 있는 이상현상(Anomaly)을 방지하기 위해 정규화는 관계형 데이터베이스 모델링에서 매우 중요한 프로세스이다.</p>
 </div>
 </figcaption>
 </figure>
-<section id="ddl">
-<h3>2. DDL<a class="headerlink" href="#ddl" title="Permalink to this heading">#</a></h3>
+<section id="ddl-cadrt">
+<h3>2. DDL : CADRT<a class="headerlink" href="#ddl-cadrt" title="Permalink to this heading">#</a></h3>
+<figure class="align-default" id="id4">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><strong>데이터 타입</strong>(Oracle,SQL Server 형식, 괄호안은 조건)</p>
 <ul class="simple">
 <li><p>CHAR(L) : 고정 길이 문자열, 할당된 변수 값의 길이가 L 이하 일때 차이는 공백으로 채움</p></li>
@@ -497,9 +520,300 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 </ul>
 </li>
 <li><p>DATE, DATETIME : 날짜형, 데이터 크기 지정이 필요하지 않음</p></li>
-<li></li>
 </ul>
 </section>
+<section id="create-table">
+<h3>2.1 CREATE TABLE<a class="headerlink" href="#create-table" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>테이블 및 컬럼 명명 규칙</p>
+<ul>
+<li><p>알파벳</p></li>
+<li><p>숫자</p></li>
+<li><p>_ 언더바</p></li>
+<li><p>달러 $</p></li>
+<li><p>샵 #</p></li>
+</ul>
+</li>
+<li><p>대소문자 구분하지 않음</p></li>
+<li><p>단수형 권고</p></li>
+</ul>
+<p><strong>제약조건</strong></p>
+<ul class="simple">
+<li><p><strong>PRIMARY KEY</strong></p>
+<ul>
+<li><p>테이블 당 하나의 기본키만 정의 가능</p></li>
+<li><p>기본키 생성시 DBMS가 자동으로 인덱스를 생성</p></li>
+<li><p>NULL 불가</p></li>
+</ul>
+</li>
+<li><p><strong>FOREIGN KEY</strong></p>
+<ul>
+<li><p>으로 다른 테이블의 기본키를 외래키로 지정</p></li>
+<li><p>참조 무결성 제약 옵션 선택가능</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">ADD</span> <span class="pre">CONSTRAINT</span> <span class="pre">컬럼명</span> <span class="pre">FOREIGN</span> <span class="pre">KEY</span> <span class="pre">(컬럼명)</span> <span class="pre">REFERENCES</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>UNIQUE KEY</strong></p>
+<ul>
+<li><p>행 데이터를 식별하기 위해 생성</p></li>
+<li><p>NULL 가능</p></li>
+</ul>
+</li>
+<li><p>DEFAULT</p>
+<ul>
+<li><p>DEFAULT 값으로 기본값 설정</p></li>
+</ul>
+</li>
+<li><p>NOT NULL</p>
+<ul>
+<li><p>NULL : 아직 정의되지 않은 값 또는 현재 데이터를 입력하지 못하는 값 수치연산NULL 비교연산FALSE</p></li>
+</ul>
+</li>
+<li><p>CHECK</p>
+<ul>
+<li><p>입력값의 종류 및 범위 제한</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>DESCRIBE 테이블명</strong> sp_help ‘dbo.테이블명’
+테이블 구조 확인<br />
+DESCRIBE 테이블명 이 ANSI/ISO 표준</p>
+</section>
+<section id="alter-table">
+<h3>2.2 ALTER TABLE<a class="headerlink" href="#alter-table" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>테이블의 컬럼 관련 변경 명령어</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>컬럼 추가</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">ADD</span> <span class="pre">(칼럼명</span> <span class="pre">데이터타입)</span></code></p></li>
+<li><p>마지막 컬럼으로 추가됨</p></li>
+<li><p>컬럼 위치 지정 불가</p></li>
+</ol>
+</li>
+<li><p>컬럼 삭제</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">DROP</span> <span class="pre">COLUMN</span> <span class="pre">칼럼명</span></code></p></li>
+<li><p>삭제 후 복구 불가</p></li>
+</ol>
+</li>
+<li><p>컬럼 설정 변경</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">MODIFY</span> <span class="pre">(칼럼명</span> <span class="pre">데이터타입</span> <span class="pre">제약조건)</span></code></p></li>
+<li><p>NULL만 있거나 행이 없는 경우에만 컬럼 크기 축소 가능</p></li>
+<li><p>NULL만 있을떄 - 데이터 유형도 변경 가능</p></li>
+<li><p>NULL이 없으면 NOT NULL 제약조건 추가 가능</p></li>
+<li><p>기본값 변경 작업 이후 발생하는 데이터에 대해서만 기본값이 변경됨</p></li>
+</ol>
+</li>
+<li><p>컬럼명 변경</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">RENAME</span> <span class="pre">COLUMN</span> <span class="pre">칼럼명</span></code></p></li>
+<li><p>ANSI/ISO 표준에 명시된 기능이 아님</p></li>
+</ol>
+</li>
+<li><p>제약조건 추가</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">ADD</span> <span class="pre">CONSTRAINT</span> <span class="pre">제약조건</span></code></p></li>
+</ol>
+</li>
+<li><p>제약조건 제거</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">DROP</span> <span class="pre">CONSTRAINT</span> <span class="pre">제약조건</span></code></p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="rename-table">
+<h3>2.3 RENAME TABLE<a class="headerlink" href="#rename-table" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">RENAME</span> <span class="pre">TO</span> <span class="pre">테이블명</span></code>도 가능\</p>
+</section>
+<section id="drop-table">
+<h3>2.4 DROP TABLE<a class="headerlink" href="#drop-table" title="Permalink to this heading">#</a></h3>
+<p>테이블의 데이터와 구조 삭제, <strong>복구 불가</strong><br />
+<code class="docutils literal notranslate"><span class="pre">CASCADE</span> <span class="pre">CONSTRAINT</span></code> 옵션으로 관련 테이블의 참조 제약조건도 삭제하여 참조 무결성을 준수할 수 있음. <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE에서</span> <span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span> <span class="pre">옵션으로도</span> <span class="pre">동일</span> <span class="pre">기능</span> <span class="pre">실현</span> <span class="pre">가능</span></code></p>
+</section>
+<section id="truncate-table">
+<h3>2.5 TRUNCATE TABLE<a class="headerlink" href="#truncate-table" title="Permalink to this heading">#</a></h3>
+<p>테이블의 전체 데이터 삭제 &lt;-&gt; DROP TABLE은 테이블 자체를 제거함<br />
+로그를 기록하지 않기 때문에 ROLLBACK 불가</p>
+</section>
+</section>
+<section id="dml-iuds">
+<h2>3. DML : IUDS<a class="headerlink" href="#dml-iuds" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>INSERT</p>
+<ul>
+<li><p>데이터 입력</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">테이블명</span> <span class="pre">(칼럼명,</span> <span class="pre">…)</span> <span class="pre">VALUES</span> <span class="pre">(필드값,</span> <span class="pre">…)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">테이블명</span> <span class="pre">VALUES</span> <span class="pre">(필드값,</span> <span class="pre">…)</span></code></p></li>
+</ul>
+</li>
+<li><p>UPDATE</p>
+<ul>
+<li><p>데이터 수정</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">테이블명</span> <span class="pre">SET</span> <span class="pre">칼럼명=필드값;</span></code></p></li>
+</ul>
+</li>
+<li><p>DELETE</p>
+<ul>
+<li><p>데이터 삭제</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">테이블명</span> <span class="pre">WHERE</span> <span class="pre">조건절</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">테이블명</span></code></p></li>
+<li><p>DELETE로 데이터를 삭제해도 테이블 용량은 초기화되지 않음</p></li>
+<li><p>TRUNCATE로 삭제하면 초기화됨</p></li>
+<li><p>DROP은 객체 삭제 명령어</p></li>
+</ul>
+</li>
+<li><p>SELECT</p>
+<ul>
+<li><p>컬럼별 데이터 선택 : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">칼럼명</span> <span class="pre">FROM</span> <span class="pre">테이블명</span></code></p></li>
+<li><p>데이터 중복 없이 선택 : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span> <span class="pre">칼럼명</span> <span class="pre">FROM</span> <span class="pre">테이블명</span></code></p></li>
+<li><p>전체 컬럼의 데이터 선택 : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">테이블명</span></code></p></li>
+<li><p>ALIAS</p>
+<ul>
+<li><p>SELECT 컬럼명 AS ‘별명’</p></li>
+<li><p>FROM 테이블명 별명 : 쿼리 내에서 사용할 테이블명 설정, 컬럼명이 중복될 경우 SELECT절에서 앨리어스 필수</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>합성 연산자(문자열)</p>
+<ul>
+<li><p>+, CONCAT(ORACLE : ||로도 가능)</p></li>
+</ul>
+</li>
+<li><p>DUAL : 오라클 기본 더미 테이블, 연산 수행을 위해 사용됨</p></li>
+</ul>
+</section>
+<section id="tcl-uid">
+<h2>4. TCL : UID<a class="headerlink" href="#tcl-uid" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>트랜잭션</strong>
+DB의 논리적 연산 단위, 하나 이상의 SQL문을 포함함<br />
+데이터 무결성 보장을 목적으로 함\</p>
+<ol class="arabic simple">
+<li><p>영구 변경 전 확인 + 2) 연관작업 동시 처리 가능<br />
+밀접히 관련되어 분리될 수 없는 한 개 이상의 데이터베이스 조작<br />
+하나의 트랜잭션에는 하나 이상의 SQL 문장이 포함<br />
+분할할 수 없는 최소의 단위
+DB를 정상적으로 종료하면 자동 커밋, 앱 등의 이상으로 DB접속이 단절되면 자동 롤백</p></li>
+</ol>
+</div></blockquote>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_170.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_170.jpg" />
+</figure>
+<section id="commit">
+<h3>4-1 COMMIT<a class="headerlink" href="#commit" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>데이터를 DB에 영구적으로 반영하는 명력어<br />
+커밋 시 트랜잭션이 완료되어 LOCKING이 해제됨<br />
+SQL SERVER는 기본적으로 자동 커밋</p>
+</div></blockquote>
+<p><strong>COMMIT 전</strong></p>
+<ul class="simple">
+<li><p>데이터 변경이 메모리 버퍼에만 영향을 받았기 때문에 복구 가능</p>
+<ul>
+<li><p>NOLOGGING 옵션 사용시 버퍼 캐시의 기록을 생략하여 입력 성능이 향상됨</p></li>
+</ul>
+</li>
+<li><p>사용자는 SELECT 절로 결과를 확인할 수 있으나 다른 사용자는 현재 결과를 볼 수 없음</p></li>
+<li><p>변경된 행에 LOCKING이 설정되어 다른 사용자가 변경할 수 없음</p>
+<ul>
+<li><p>LOCKING이 안 걸린 상태일 때 여러 사용자가 데이터를 변경하면 상관없음</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>COMMIT 후</strong></p>
+<ul class="simple">
+<li><p>변경 사항이 DB에 반영</p></li>
+<li><p>이전 데이터 복구 불가</p></li>
+<li><p>모든 사용자가 결과를 볼 수 있음</p></li>
+<li><p>LOCKING이 해제되어 다른 사용자가 행을 조작할 수 있음</p></li>
+</ul>
+</section>
+<section id="rollback">
+<h3>4-2 ROLLBACK<a class="headerlink" href="#rollback" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>트랜잭션 시작 이전의 상태로 되돌리는 명령어<br />
+COMMIT 이전 상태로 돌려줌<br />
+ROLLBACK 시 LOCKING이 해재됨</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>SAVEPOING : 트랜잭션 일부만 롤백 할 수 있도록 중간상태를 저장하는 명령어</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROLLBACK</span> <span class="pre">TO</span> <span class="pre">저장점명</span></code> : 해당 저장점 상태로 되돌림</p></li>
+<li><p>동일한 저장점명이 있으면 최후 저장점이 유효</p></li>
+</ul>
+</li>
+<li><p>SQL SERVER에서는 <code class="docutils literal notranslate"><span class="pre">BEGINE</span> <span class="pre">TRAN</span></code>으로 명시해야 하능</p></li>
+</ul>
+</section>
+</section>
+<section id="dcl">
+<h2>5. DCL<a class="headerlink" href="#dcl" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>유저를 생성하거나 권한을 제어하는 명령어, 보안을 위해 필요함</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>GRANT : 권한 부여, <code class="docutils literal notranslate"><span class="pre">GRANT</span> <span class="pre">권한</span> <span class="pre">ON</span> <span class="pre">오브젝트</span> <span class="pre">TO</span> <span class="pre">유저명</span></code></p></li>
+<li><p>REVOKE : 권한 제거,  <code class="docutils literal notranslate"><span class="pre">REVOKE</span> <span class="pre">권한</span> <span class="pre">ON</span> <span class="pre">오브젝트</span> <span class="pre">TO</span> <span class="pre">유저명</span></code></p></li>
+</ul>
+<p><strong>권한</strong></p>
+<ul class="simple">
+<li><p>SELECT, INSERT, UPDATE, ALTER, ALL - DML 관련 권한</p></li>
+<li><p>REFERENCES : 지정된 테이블을 참조하는 제약조건을 생성하는 권한</p></li>
+<li><p>INDEX : 지정된 테이블에서 인덱스를 생성하는 권한</p></li>
+</ul>
+<p><strong>ORACLE 유저</strong></p>
+<ul class="simple">
+<li><p>SCOTT :</p></li>
+<li><p>SYS :</p></li>
+<li><p>SYSTEM :</p></li>
+</ul>
+<p><strong>ROLE</strong></p>
+<ul class="simple">
+<li><p>권한의 집합</p></li>
+<li><p>권한을 일일이 부여하지 않고 ROLE로 편리하게 여러 권한을 부여할 수 있음</p></li>
+</ul>
+<figure class="align-default" id="id5">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>CONNCECT ROLE의 권한은 CREATE SESSION 뿐이다. 나머지는 전부 RESOURCE다.</p>
+</section>
+<section id="where">
+<h2>6. WHERE 조건절<a class="headerlink" href="#where" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">[DISTINCT/ALL]</span> <span class="pre">칼럼명</span> <span class="pre">[ALIAS명]</span> <span class="pre">FROM</span> <span class="pre">테이블명</span> <span class="pre">WHERE</span> <span class="pre">조건식</span></code></p>
+<blockquote>
+<div><p>WHERE 절은 FROM 절 다음에 위치하며, 조건식은 아래 내용으로 구성된다<br />
+칼럼(Column)명 (보통 조건식의 좌측에 위치) - 비교 연산자 - 문자, 숫자, 표현식 (보통 조건식의 우측에 위치) - 비교 칼럼명 (JOIN 사용시)</p>
+</div></blockquote>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_172.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_172.jpg" />
+</figure>
+<figure class="align-default" id="id6">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_175.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_175.jpg" />
+</figure>
+<section id="id1">
+<h3>6-1 부분 범위 처리<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>ROWNUM(oracle) : SQL 처리 결과 집합의 각 행에 임시로 부여되는 번호, 조건절 내에서 행의 개수를 제한하는 목적으로 사용함</p></li>
+<li><p>TOP(SQL Server) : 출력 행의 수 제한 함수, TOP (N) 로 n개 행 출력, 개수 대신 비율로도 제한 가능. order by 절이 없으면 rownum과 top의 기능이 같음</p></li>
+</ol>
+</section>
+</section>
+<section id="id2">
+<h2>7. 함수<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -571,9 +885,26 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#db">1. 관계형 DB</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddl">2. DDL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ddl-cadrt">2. DDL : CADRT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-table">2.1 CREATE TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alter-table">2.2 ALTER TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-table">2.3 RENAME TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-table">2.4 DROP TABLE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truncate-table">2.5 TRUNCATE TABLE</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dml-iuds">3. DML : IUDS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tcl-uid">4. TCL : UID</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">4-1 COMMIT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rollback">4-2 ROLLBACK</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcl">5. DCL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where">6. WHERE 조건절</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6-1 부분 범위 처리</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. 함수</a></li>
 </ul>
   </nav></div>
 
