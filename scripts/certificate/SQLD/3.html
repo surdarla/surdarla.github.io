@@ -74,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="빅분기 준비과정" href="../Big_data/big_intro.html" />
+    <link rel="next" title="4. SQL 활용" href="4.html" />
     <link rel="prev" title="2. 데이터 모델과 성능" href="2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -216,6 +216,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/2164.html">2164 : 카드2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/2525.html">2525 : 오븐 시계</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
 </ul>
 </li>
 </ul>
@@ -225,6 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3. SQL 기본</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">4. SQL 활용</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -412,7 +416,18 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6-1 부분 범위 처리</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. 함수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. 함수</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7-1 단일행 함수</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7-2 조건문</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-function">8. 집계 함수 : Aggregate Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by">8-1 GROUP BY</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#having">8-2 HAVING</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by">9. ORDER BY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">10. JOIN</a></li>
 </ul>
             </nav>
         </div>
@@ -493,10 +508,10 @@ DBMS를 이용하여 효율적인 데이터 관리와 데이터 손상 복구 �
 <p><strong>Table 테이블</strong>
 RDB의 기본단위, 데이터를 저장하는 객체, column-row 2차원 구조<br />
 Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id5">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>그리고 분할된 테이블은 그 칼럼의 값에 의해 연결된다. 이렇게 테이블을 분할하여 데이터의 불필요한 중복을 줄이는 것을 정규화(Normalization)라고 한다. 데이터의 정합성 확보와 데이터 입력/수정/삭제시 발생할 수 있는 이상현상(Anomaly)을 방지하기 위해 정규화는 관계형 데이터베이스 모델링에서 매우 중요한 프로세스이다.</p>
 </div>
@@ -504,10 +519,10 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 </figure>
 <section id="ddl-cadrt">
 <h3>2. DDL : CADRT<a class="headerlink" href="#ddl-cadrt" title="Permalink to this heading">#</a></h3>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id6">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>데이터 타입</strong>(Oracle,SQL Server 형식, 괄호안은 조건)</p>
@@ -777,10 +792,10 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <li><p>권한의 집합</p></li>
 <li><p>권한을 일일이 부여하지 않고 ROLE로 편리하게 여러 권한을 부여할 수 있음</p></li>
 </ul>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id7">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>CONNCECT ROLE의 권한은 CREATE SESSION 뿐이다. 나머지는 전부 RESOURCE다.</p>
@@ -795,10 +810,10 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_172.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_172.jpg" />
 </figure>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id8">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default">
@@ -814,6 +829,147 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 </section>
 <section id="id2">
 <h2>7. 함수<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>함수명(컬럼이나 표현식 [,arg1, arg2, …])
+함수3 (함수2 (함수1 (칼럼이나 표현식 [, Arg1]) [, Arg2]) [, Arg3 ])</p>
+</div></blockquote>
+<p>함수는 크게 벤더(oracle, mysql…) 에서 제공하는 내장 함수와 사용자가 정의할 수 있는 함수로 나눌 수 있다. 기본적으로 내장함수는 sql을 더욱 강력하게 해주고, 데이터 값을 간편하게 조작하는데 사용된다. 내장 함수는 또 단일행 값이 입력되는 단일행 함수(single-row function)과 여러 행의 값이 입력되는 다중행 함수(multi-row function)로 나눌 수 있다. 다중행 함수는 다시 집계함수, 그룹함수, 윈도우함수로 나눌 수 있다.</p>
+<p>함수는 아무리 입력되는 값이 많아도 출력은 하나만 되는 <code class="docutils literal notranslate"><span class="pre">m:1</span></code> 관계라는 것이 중요한 특징이다.</p>
+<section id="id3">
+<h3>7-1 단일행 함수<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<figure class="align-default" id="id9">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT,</span> <span class="pre">WHERE,</span> <span class="pre">ORDER</span> <span class="pre">BY</span></code> 절에 사용 가능하다.\</p></li>
+<li><p>각 행(Row)들에 대해 개별적으로 작용하여 데이터 값들을 조작하고, 각각의 행에 대한 조작 결과를 리턴한다.\</p></li>
+<li><p>여러 인자(Argument)를 입력해도 단 하나의 결과만 리턴한다.\</p></li>
+<li><p>함수의 인자(Arguments)로 상수, 변수, 표현식이 사용 가능하고, 하나의 인수를 가지는 경우도 있지만 여러 개의 인수를 가질 수도 있다. \</p></li>
+<li><p>특별한 경우가 아니면 함수의 인자(Arguments)로 함수를 사용하는 함수의 <code class="docutils literal notranslate"><span class="pre">중첩</span></code>이 가능하다.</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_182.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_182.jpg" />
+</figure>
+<figure class="align-default">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_184.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_184.jpg" />
+</figure>
+<figure class="align-default" id="id10">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_192.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_192.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">NVL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
+ISNULL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
+NULLIF (a, b) : return a==b -&gt; NULL, a!=b -&gt; a
+COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
+<h3>7-2 조건문<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>IF-THEN_ELSE</p>
+</div></blockquote>
+<figure class="align-default" id="id13">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>ELSE 생략시 NULL 출력\</p></li>
+<li><p>※ ‘CASE WHEN NULL THEN 출력값 ELSE 기본값’은 조건이 없으므로 모든 행에서 기본값 출력 (일반적으로
+‘WHEN 칼럼 IS NULL’로 수정 필요)</p></li>
+<li><p>DECODE : Oracle 함수, 기준값n이면 출력값n 출력</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="aggregate-function">
+<h2>8. 집계 함수 : Aggregate Function<a class="headerlink" href="#aggregate-function" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>집계 함수명 ( [DISTINCT | ALL] 칼럼이나 표현식 )<br />
+ALL : Default 옵션이므로 생략 가능함<br />
+DISTINCT : 같은 값을 하나의 데이터로 간주할 때 사용하는 옵션임</p>
+</div></blockquote>
+<p>여러 행들의 그룹이 모여서 그룹당 단 하나의 결과를 돌려주는 함수를 말한다. ROLLUP, CUBE, GROUPING SETS같은 함수는 2장 5절에서 WINDOW 함수는 2장 6절에서 더 구체적으로 설명이 들어갈 것이고 여기서는 기본적인 집계 함수들을 우선적으로 다루게 된다.</p>
+<figure class="align-default" id="id14">
+<img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_193.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_193.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">ALL,DISTINCT는 전체를 출력해주고 중복을 제외하고 출력한다.<br />
+COUNT 함수를 제외하고는 전부 NULL값을 제외하고 계산한다.<br />
+COUNT도 표현식이 들어오면 NULL 을 제외하고 연산을 해준다.<br />
+GROUP BY 기준으로 나눠진 각 그룹을 연산하는 역할<br />
+하나 이상의 행을 그룹으로 묶어 연산하기 위한 함수이다.</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="group-by">
+<h3>8-1 GROUP BY<a class="headerlink" href="#group-by" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>SELECT [DISTINCT] 칼럼명 [ALIAS명] FROM 테이블명 [WHERE 조건식] [GROUP BY 칼럼(Column)이나 표현식] [HAVING 그룹조건식] ;</p>
+</div></blockquote>
+<p>pandas에서 많이 사용하던 그룹바이다. 데이터를 특정 컬럼을 기준으로 그룹화시키는 명령어이다. 그룹을 나누고 다시 그 그룹 안에서 세부그룹으로 나눌 수 있다. ALIAS는 사용불가능 하다.</p>
+<p>알아야 할 것은 GROUP BY 구에 있는 컬럼은 반드시 SELECT 절에도 존재해야 한다는 것이다.<br />
+GROUP BY 구에도 다양한 함수가 사용 가능하다. SUBSTR, INSTR 등이 가능ㅎ다ㅏ.</p>
+</section>
+<section id="having">
+<h3>8-2 HAVING<a class="headerlink" href="#having" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>일반적으로 GROUPBY 절에 의한 집계 데이터의 출력 조건을 건다.<br />
+때문에 일반적으로 GROUP BY 뒤에 위치한다.</p>
+</div></blockquote>
+<p>GROUP BY 절에 의한 집계 데이터에 출력 조건을 건다.<br />
+WHERE 절과 헷갈리지 않게 조심해야한다.<br />
+처음부터 테이블 자체에 조건을 걸고 싶으면 WHERE를 사용하고<br />
+그룹별로 묶인 컬럶에 조건을 걸고 싶다면 HAVING을 사용해야한다.</p>
+</section>
+</section>
+<section id="order-by">
+<h2>9. ORDER BY<a class="headerlink" href="#order-by" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>SELECT 칼럼명 [ALIAS명] <br />
+FROM 테이블명 <br />
+[WHERE 조건식] <br />
+[GROUP BY 칼럼(Column)이나 표현식] <br />
+[HAVING 그룹조건식]<br />
+[ORDER BY 칼럼(Column)이나 표현식 [ASC 또는 DESC]] ;</p>
+</div></blockquote>
+<p>위의 SELECT문은 기본적으로 <code class="docutils literal notranslate"><span class="pre">테이블에서</span> <span class="pre">출력</span> <span class="pre">대상이</span> <span class="pre">아닌</span> <span class="pre">것은</span> <span class="pre">제거하고</span> <span class="pre">그룹핑해서</span> <span class="pre">그룹핑된</span> <span class="pre">값이</span> <span class="pre">조건에</span> <span class="pre">맞는</span> <span class="pre">데이터를</span> <span class="pre">계산</span> <span class="pre">및</span> <span class="pre">출력하고</span> <span class="pre">정렬한다...</span></code> 라는 것이고 선택적으로 []에 있는 것들은 사용하지 않아도 가능하다.</p>
+<p>특정 컬럼을 기준으로 정렬하는 명령문이다. 기본 정렬은 오름차순이다.<br />
+컬럼명 대신 SELECT 절에서 사용한 ALIAS명이나 순서를 나타내는 정수로 사용 가능하다.<br />
+문장의 제일 마지막에 위치한다.</p>
+<p>oracle은 null을 가장 큰 값으로 취급하며, 반대로 SQL Server에서는 반대로 가장 작은 값으로 취급한다.</p>
+</section>
+<section id="join">
+<h2>10. JOIN<a class="headerlink" href="#join" title="Permalink to this heading">#</a></h2>
+<p>앞에서 배운 정규화를 통해서 우리는 불필요한 데이터의 정합성을 확보하고, 이상현상의 발생을 피하기 위해 테이블을 분할하여 생성했다. 사실 데이터웨어하우스 모델처럼 하나의 테이블에 모든 데이터를 집중시켜놓고 그 테이블로부터 필요한 데이터를 조회할 수 있다. 하지만 이렇게 됐을 겨우, 가장 주요한 데이터의 정합성에 더 큰 비용을 지불해야하며, 데이터 추가-삭제-수정 작업에도 더 많은 품이 든다. 조회도 속도면에서 장점이 있기는 힘들다. 이러한 상황에서 특정 요구조건을 만족하는 분할된 테이블들을 모으는 것이 join의 역할이다.</p>
+<p>여러 테이블을 연결 또는 결합하여 데이터 출력<br />
+일반적으로 PK, FK의 연관성에 의해 성립된다</p>
+<ul class="simple">
+<li><p>등가조인(EQUI JOIN) : 두 테이블의 컬럼 값이 정확하게 일치하는 경우, 대부분 PK,FK 관계를 기반으로 함</p>
+<ul>
+<li><p><code class="docutils literal notranslate"> <span class="pre">SELECT</span> <span class="pre">칼럼s</span> <span class="pre">FROM</span> <span class="pre">테이블1</span> <span class="pre">A,</span> <span class="pre">테이블2</span> <span class="pre">B</span> <span class="pre">WHERE</span> <span class="pre">A.칼럼명=B.칼럼명;</span></code></p></li>
+<li><p>SELECT 대상 컬럼이 두 테이블 모두에 있는 경우 ALIAS를 지정해야함(양쪽 다해도됨)</p></li>
+</ul>
+</li>
+<li><p>비등가조인(Non EQUI JOIN) : 두 테이블의 컬럼 값이 정확하게 일치하지 않는 경우, 부등호나 BETWEEN 연산자를 통해 조인</p></li>
+</ul>
 </section>
 </section>
 
@@ -858,11 +1014,11 @@ ROLLBACK 시 LOCKING이 해재됨</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Big_data/big_intro.html"
+       href="4.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">빅분기 준비과정</p>
+        <p class="prev-next-title">4. SQL 활용</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -904,7 +1060,18 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6-1 부분 범위 처리</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. 함수</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7. 함수</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7-1 단일행 함수</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7-2 조건문</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-function">8. 집계 함수 : Aggregate Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-by">8-1 GROUP BY</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#having">8-2 HAVING</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#order-by">9. ORDER BY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join">10. JOIN</a></li>
 </ul>
   </nav></div>
 
