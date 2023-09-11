@@ -51,6 +51,9 @@ parts:
       - file : scripts/algorithm/2164.ipynb
       - file : scripts/algorithm/2525.ipynb
       - file : scripts/algorithm/1012.ipynb
+      - file : scripts/algorithm/옹알이(1).ipynb
+      - file : scripts/algorithm/같은숫자는싫어.ipynb
+      - file : scripts/algorithm/안전지대.ipynb
 
   - caption : Certificate
     chapters :
@@ -59,6 +62,7 @@ parts:
       - file : scripts/certificate/SQLD/1.md
       - file : scripts/certificate/SQLD/2.md
       - file : scripts/certificate/SQLD/3.md
+      - file : scripts/certificate/SQLD/4.md
 
     - file : scripts/certificate/Big_data/big_intro
       sections :
