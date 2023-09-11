@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>activation function &#8212; My Jupyter Book</title>
+    <title>공던지기 &#8212; My Jupyter Book</title>
 
 
 
@@ -69,15 +69,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/activation_function';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/activation_function.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/algorithm/공던지기';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/algorithm/공던지기.html" />
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="vision" href="../paper_review/vision.html" />
-    <link rel="prev" title="EDA(Exploratory Data Analysis) 탐색적 분석" href="EDA.html" />
+    <link rel="next" title="SQLD 준비과정" href="../certificate/SQLD/SQL_intro.html" />
+    <link rel="prev" title="안전지대" href="%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,21 +178,21 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/information-value.html">Feature selection</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="type_in_python.html">Type in python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/type_in_python.html">Type in python</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning collection</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">activation function</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/DL_intro.html">Deep learning collection</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/activation_function.html">activation function</a></li>
 </ul>
 </li>
 </ul>
@@ -211,19 +209,19 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2558.html">2558 : A + B - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2530.html">2530 : 인공지능 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2117.html">2117 : 원형 댄스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/3046.html">3046 : R2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2164.html">2164 : 카드2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2525.html">2525 : 오븐 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/1012.html">1012 : 유기농 배추</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">공던지기</a></li>
 </ul>
 </li>
 </ul>
@@ -309,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-      <li><a href="../../_sources/scripts/basics/activation_function.ipynb" target="_blank"
+      <li><a href="../../_sources/scripts/algorithm/공던지기.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +389,7 @@ document.write(`
 
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>activation function</h1>
+    <h1>공던지기</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -401,11 +399,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigmoid-function">sigmoid function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#katex">katex</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">numpy로 그래프 그려보기</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-coding">short coding</a></li>
 </ul>
             </nav>
         </div>
@@ -417,72 +411,80 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
 
-  <section class="tex2jax_ignore mathjax_ignore" id="activation-function">
-<h1>activation function<a class="headerlink" href="#activation-function" title="Permalink to this heading">#</a></h1>
-<p>설명 필요, linearity, non linearity</p>
-<section id="sigmoid-function">
-<span id="id1"></span><h2>sigmoid function<a class="headerlink" href="#sigmoid-function" title="Permalink to this heading">#</a></h2>
-<p>대충 설명</p>
-<section id="katex">
-<h3>katex<a class="headerlink" href="#katex" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-h(x) = \frac {1} {1+e^{-x}}
-\]</div>
-<p>chain rule을 통해서 기본식에서 derivative 식까지 이해해보기</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{equation}
-\begin{split}
-h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
-    &amp;= \frac {\partial} {\partial x} \Big[ \frac {1} {1+e^{-x}} \Big]=\frac {\partial} {\partial x} (1+e^{-x})^{-1}\\
-    &amp;= -1 *(1+e^{-x})^{-2}(-e^{-x})\\
-    &amp;= \frac {-e^{-x}} {-(1+e^{-x})^2} =  \frac {e^{-x}} {(1+e^{-x})^2}\\
-    &amp;= \frac {1} {1+e^{-x}} \frac {e^{-x}} {1+e^{-x}}\\
-    &amp;= \frac {1} {1+e^{-x}} \frac {1+e^{-x}-1} {1+e^{-x}}\\
-    &amp;= \frac {1} {1+e^{-x}} \Big[ \frac {(1+e^{-x})} {1+e^{-x}} - \frac {1} {1+e^{-x}}  \Big]\\
-    &amp;= \frac {1} {1+e^{-x}} \Big[ 1 - \frac {1} {1+e^{-x}}  \Big]\\
-    &amp;=h(x)(1 - h(x)) \\
-\end{split}
-\end{equation}
-\end{split}\]</div>
-</section>
-<section id="numpy">
-<h3>numpy로 그래프 그려보기<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>공던지기<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>프로그래머스<br />
+정답률: 81%<br />
+영역:수학<br />
+나의 예상 정답률:63.8%<br />
+상승률:1.5%</p>
+<p><strong>문제 설명</strong></p>
+<p>머쓱이는 친구들과 동그랗게 서서 공 던지기 게임을 하고 있습니다. 공은 1번부터 던지며 오른쪽으로 한 명을 건너뛰고 그다음 사람에게만 던질 수 있습니다. 친구들의 번호가 들어있는 정수 배열 numbers와 정수 K가 주어질 때, k번째로 공을 던지는 사람의 번호는 무엇인지 return 하도록 solution 함수를 완성해보세요.</p>
+<p><strong>제한사항</strong></p>
+<p>2 &lt; numbers의 길이 &lt; 100<br />
+0 &lt; k &lt; 1,000<br />
+numbers의 첫 번째와 마지막 번호는 실제로 바로 옆에 있습니다.<br />
+numbers는 1부터 시작하며 번호는 순서대로 올라갑니다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input setting</span>
+<span class="n">problem_num</span> <span class="o">=</span> <span class="s1">&#39;공던지기&#39;</span>
 
-<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">sigmoid_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">step</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">step</span><span class="p">)</span> <span class="o">-</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">step</span>
-
-<span class="k">def</span> <span class="nf">other_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="p">))))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">y</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-
-<span class="n">y1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">sigmoid_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0000000000001</span><span class="p">)</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="n">other_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;derivative&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;other derivative&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s1">&#39;</span>  <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)))</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">dq</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">solution</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c016f7faf50779880fd31ac0861d6a4b3f36fa297f33c6ab345d7a4d5eb7513b.png" src="../../_images/c016f7faf50779880fd31ac0861d6a4b3f36fa297f33c6ab345d7a4d5eb7513b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
 </div>
 </div>
-</section>
+</div>
+<p>약간 원 관련 문제는 보통 queue와 관련이 있을 확률이 크고, queue는 선입선출의 개념으로 들어간것을 똥꾸멍에 다시 넣는 식으로 활용된다. 먼저 들어온 놈은 먼저 나가면서 동시에 뒤로 들어가는 것. rotate n=-2를 사용하면 편할 것으로 보인다.</p>
+<section id="short-coding">
+<h2>short coding<a class="headerlink" href="#short-coding" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>나는 O(k)의 시간복잡도를 가진 반면, 이 아주 단촐해보이는 함수는 O(1)의 시간복잡도를 가진다.
+쫀다쫀다. 가독성은 내 코드가 좋지만 위의 코드 자체를 이해해보는 것도 중요할 것으로 보인다.</p>
+<p>위에서는 k-1 * 2 % len(numbers) 라는 index를 찾는 방식으로 문제를 해결하는데,
+2는 2칸씩 움직이는 것이고 원형에서 회전하면서 움직이는 것이기 떄문에 마지막에 길이로 나눠서 나머지를 취하는 것이다. 이는 원형 회전의 특성을 간결한 인덱스 연산으로 표현하여 문제를 해결한 것으로 좋은 풀이라고 보여진다. 특히나 계산 효율성이 대다나다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0
+1 1
+2 2
+3 3
+4 4
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -499,7 +501,7 @@ h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts\basics"
+            path: "./scripts\algorithm"
         },
         predefinedOutput: true
     }
@@ -518,20 +520,20 @@ h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="EDA.html"
+       href="%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">EDA(Exploratory Data Analysis) 탐색적 분석</p>
+        <p class="prev-next-title">안전지대</p>
       </div>
     </a>
     <a class="right-next"
-       href="../paper_review/vision.html"
+       href="../certificate/SQLD/SQL_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">vision</p>
+        <p class="prev-next-title">SQLD 준비과정</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -553,11 +555,7 @@ h'(x) &amp;= \frac {\partial} {\partial x} h(x) \\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigmoid-function">sigmoid function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#katex">katex</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">numpy로 그래프 그려보기</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-coding">short coding</a></li>
 </ul>
   </nav></div>
 

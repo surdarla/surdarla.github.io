@@ -47,6 +47,8 @@ parts:
     - file : scripts/algorithm/intro
       sections :
       - file : scripts/algorithm/2558.ipynb
+      - file : scripts/algorithm/2530.ipynb
+      - file : scripts/algorithm/2117.ipynb
       - file : scripts/algorithm/3046.ipynb
       - file : scripts/algorithm/2164.ipynb
       - file : scripts/algorithm/2525.ipynb
@@ -54,6 +56,7 @@ parts:
       - file : scripts/algorithm/옹알이(1).ipynb
       - file : scripts/algorithm/같은숫자는싫어.ipynb
       - file : scripts/algorithm/안전지대.ipynb
+      - file : scripts/algorithm/공던지기.ipynb
 
   - caption : Certificate
     chapters :
