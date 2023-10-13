@@ -91,7 +91,7 @@ poetry remove your-package-name
 poetry show --tree
 
 # poetry.lock 파일과 pyproject.toml 파일의 종속성이 동일한지 확인
-poetry check 
+poetry check
 ```
 
 가상환경 사용

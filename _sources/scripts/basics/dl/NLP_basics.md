@@ -1,7 +1,5 @@
 
-
-
-## 3. Normalization 정규화
+# 3. Normalization 정규화
 
 ![morpheme](/images/9b29442026783ce1e7672cbd8ce504d9_MD5.png)
 
@@ -13,7 +11,7 @@
 2. removing the variations of a word in the text
 3. removing redundant information
 
-### 3.1 stemming 어간 추출
+## 3.1 stemming 어간 추출
 
 laughing, laughed, laughs, laugh → laugh
 단점 : 가끔 사전에 없는 단어를 만들 수도 있다. 그래서 좋은 normalization은 아닐 수 있다. 또한 winning 같은 경우 원래의 stem은 win인데 winn으로 만들 수 있다.
@@ -28,11 +26,11 @@ lemmatizer = WordNetLemmatizer()
 
 보통 어간 추출 속도가 표제어 추출보다 빠르다.
 
-### 3.2 lemmatization 표제어 추출
+## 3.2 lemmatization 표제어 추출
 
 Lemma 표제어는 '기본 사전형 단어' 정도의 의미를 가지고 있다. 표제어 추출을 위해서는 기본적으로 POS(part of speech)가 필요하다. 형태학적 파싱(morphological parsing)을 하게되면 어간(stem)과 접사(affix)로 단어를 쪼개게 된다. 이러한 과정을 통해서 더 이상 쪼갤 수 없는 단위로 의미를 쪼개는 것이다. 이런 과정을 위해서 품사 정보를 고려하여 단어의 원형을 추출하는 것이 의미적으로 정확하고 일관된 결과를 얻는데 도움이 된다.
 
-### 3.3 POS(part of speech tags)
+## 3.3 POS(part of speech tags)
 
 [KoNLPy 한국어 처리 패키지](https://datascienceschool.net/03%20machine%20learning/03.01.02%20KoNLPy%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B2%98%EB%A6%AC%20%ED%8C%A8%ED%82%A4%EC%A7%80.html)
 
