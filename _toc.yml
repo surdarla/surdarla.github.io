@@ -15,28 +15,30 @@ parts:
 
   - caption : Basics
     chapters :
-    - file : scripts/basics/math_intro
+    - file : scripts/basics/anal/anal_intro
       sections :
-        - file : scripts/basics/linear_algebra
-        - file : scripts/basics/information-value
-
-    - file :  scripts/basics/python_intro
+        - file : scripts/basics/anal/linear_algebra
+        - file : scripts/basics/anal/information-value
+        - file : scripts/basics/anal/EDA
+    - file :  scripts/basics/python/python_intro
       sections :
-        - file : scripts/basics/poetry
-        - file : scripts/basics/type_in_python
-
-    - file :  scripts/basics/DL_intro
+        - file : scripts/basics/python/poetry
+        - file : scripts/basics/python/numpy
+        - file : scripts/basics/python/pandas
+    - file :  scripts/basics/dl/DL_intro
       sections :
-        - file : scripts/basics/tokenizing
-        - file : scripts/basics/EDA
-        - file : scripts/basics/activation_function
+        - file : scripts/basics/dl/tokenizing
+        - file : scripts/basics/dl/activation_function
+        - file : scripts/basics/dl/NLP_basics
+    - file :  scripts/basics/js/JS
+      sections :
+        - file : scripts/basics/js/VUE
 
   - caption : Paper Review
     chapters :
     - file : scripts/paper_review/vision
       sections :
       - file : scripts/paper_review/resnet
-
     - file : scripts/paper_review/nlp
       sections :
       - file : scripts/paper_review/DebertaV3
@@ -44,29 +46,37 @@ parts:
 
   - caption : Algorithm
     chapters :
-    - file : scripts/algorithm/intro
+    - file : scripts/algorithm/problem-solving
       sections :
-      - file : scripts/algorithm/2558.ipynb
-      - file : scripts/algorithm/2530.ipynb
-      - file : scripts/algorithm/2117.ipynb
-      - file : scripts/algorithm/3046.ipynb
-      - file : scripts/algorithm/2164.ipynb
-      - file : scripts/algorithm/2525.ipynb
-      - file : scripts/algorithm/1012.ipynb
-      - file : scripts/algorithm/옹알이(1).ipynb
-      - file : scripts/algorithm/같은숫자는싫어.ipynb
-      - file : scripts/algorithm/안전지대.ipynb
-      - file : scripts/algorithm/공던지기.ipynb
+      - file : scripts/algorithm/problem/2558.ipynb
+      - file : scripts/algorithm/problem/2530.ipynb
+      - file : scripts/algorithm/problem/2117.ipynb
+      - file : scripts/algorithm/problem/3046.ipynb
+      - file : scripts/algorithm/problem/2164.ipynb
+      - file : scripts/algorithm/problem/2525.ipynb
+      - file : scripts/algorithm/problem/1012.ipynb
+      - file : scripts/algorithm/problem/옹알이(1).ipynb
+      - file : scripts/algorithm/problem/같은숫자는싫어.ipynb
+      - file : scripts/algorithm/problem/안전지대.ipynb
+      - file : scripts/algorithm/problem/공던지기.ipynb
+      - file : scripts/algorithm/problem/하노이의 탑.ipynb
+      - file : scripts/algorithm/problem/의상.ipynb
+    - file  : scripts/algorithm/data_structure
+      sections :
+      - file : scripts/algorithm/자료구조
+      - file : scripts/algorithm/type_in_python
+      - file : scripts/algorithm/최소비용경로
 
   - caption : Certificate
     chapters :
     - file : scripts/certificate/SQLD/SQL_intro
       sections :
-      - file : scripts/certificate/SQLD/1.md
-      - file : scripts/certificate/SQLD/2.md
-      - file : scripts/certificate/SQLD/3.md
-      - file : scripts/certificate/SQLD/4.md
+      - file : scripts/certificate/SQLD/1
+      - file : scripts/certificate/SQLD/2
+      - file : scripts/certificate/SQLD/3
+      - file : scripts/certificate/SQLD/4
 
     - file : scripts/certificate/Big_data/big_intro
       sections :
-      - file : scripts/certificate/Big_data/1.md
+      - file : scripts/certificate/Big_data/1
+      - file : scripts/certificate/Big_data/2

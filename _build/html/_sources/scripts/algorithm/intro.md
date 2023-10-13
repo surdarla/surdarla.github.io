@@ -2,7 +2,10 @@
 
 하나하나 하루에 하나씩 천천히 오래 가늘고 길게 풀기
 
-현재는 [백준 python 배우기 1~50](https://www.acmicpc.net/workbook/view/459) 하는 중
+- 프로그래머스 AI 추천 문제
+- 백준 기본 문제들
 
 ```{tableofcontents}
 ```
+
+- [ ] something for nothing

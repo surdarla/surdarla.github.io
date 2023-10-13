@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>big_data 1 &#8212; My Jupyter Book</title>
+    <title>1. 빅데이터 분석 기획 &#8212; My Jupyter Book</title>
 
 
 
@@ -19,12 +19,12 @@
   </script>
 
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
 
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -69,11 +70,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/certificate/Big_data/1';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/certificate/Big_data/1.html" />
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2. 빅데이터 탐색" href="2.html" />
     <link rel="prev" title="빅분기 준비과정" href="big_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -85,6 +89,15 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
 
   <input type="checkbox"
           class="sidebar-toggle"
@@ -178,30 +191,39 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/linear_algebra.html">Linear algebra summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/information-value.html">Feature selection</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/type_in_python.html">Type in python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/numpy.html">argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/pandas.html">join merge</a></li>
+
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/DL_intro.html">Deep learning collection</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/activation_function.html">activation function</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/activation_function.html">activation function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/js/VUE.html">vue</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/resnet.html">Resnet</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV3.html">Deberta V3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV1.html">DeBERTa</a></li>
 </ul>
@@ -209,32 +231,41 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2558.html">2558 : A + B - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2530.html">2530 : 인공지능 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2117.html">2117 : 원형 댄스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/3046.html">3046 : R2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2164.html">2164 : 카드2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/2525.html">2525 : 오븐 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/1012.html">1012 : 유기농 배추</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../SQLD/1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SQLD/4.html">4. SQL 활용</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="big_intro.html">빅분기 준비과정</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">big_data 1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="big_intro.html">빅분기 준비과정</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. 빅데이터 분석 기획</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">2. 빅데이터 탐색</a></li>
 </ul>
 </li>
 </ul>
@@ -360,10 +391,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -371,11 +402,13 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
 
     </div>
@@ -386,11 +419,21 @@ document.write(`
 
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>big_data 1</h1>
+    <h1>1. 빅데이터 분석 기획</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
 
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">분산데이터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">개인정보</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">데이터 수집 및 저장 계획</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -400,9 +443,172 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
 
-  <section class="tex2jax_ignore mathjax_ignore" id="big-data-1">
-<h1>big_data 1<a class="headerlink" href="#big-data-1" title="Permalink to this heading">#</a></h1>
-<p>somehting</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>1. 빅데이터 분석 기획<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>참조</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ohaengsa.tistory.com/entry/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B8%B0%EC%82%AC-%ED%95%84%EA%B8%B0-1%EA%B3%BC%EB%AA%A9-%EC%9A%94%EC%95%BD%EC%A0%95%EB%A6%AC">ministory 빅데이터분석기사 필기 요약정리</a></p></li>
+</ul>
+<p><strong>DB 특징</strong></p>
+<ol class="arabic simple">
+<li><p>정보의 축적 및 전달 측면 : 기계가독성, 검색가능성, 원격조작성</p></li>
+<li><p>정보 이용 측면 : 정보요구에 따라 신속 획득, 정확하고 경제적으로 검색 가능</p></li>
+<li><p>정보 관리 측면 : 쳬계적 축적, 새 데이터 추가 갱신 용이</p></li>
+<li><p>정보기술발전 측면 : 정보처리, 검색-관리 소프트웨어, 관련 하드웨어, 정보 전송을 위한 네트워크 기술등의 발전을 견인할 수 있다.</p></li>
+<li><p>경제 산업적 측면 : 인프라의 특성을 가지고 있어, 경제 산업 사회 활동의 효율성을 제고하고, 국민의 편의를 증진하는 수단으로써의 의미를 가짐.</p></li>
+</ol>
+<p><strong>빅데이터 특징 - 3V 4V</strong></p>
+<ol class="arabic simple">
+<li><p>Volumne 크기 : 대량의 데이터 증가 발생으로 기존 데이터 수집, 관리 한계</p></li>
+<li><p>Variety 다양성 : 비정형 데이터의 발생으로 다양한 데이터 형식 증가</p></li>
+<li><p>Velocity 속도 : 실시간 정보 발생으로 데이터의 유입, 처리 속도 요구</p></li>
+<li><p>Value 가치 : 데이터 전체를 파악하고 패턴을 발견하기가 어렵게 되면서 가치의 중요성 강조</p></li>
+<li><p>Veracity 정확성 : 빅데이터 기반의 예측 분석 결과에 대한 신뢰성이 중요하게 됨</p></li>
+</ol>
+<p><strong>빅데이터로 인한 변화</strong></p>
+<ol class="arabic simple">
+<li><p>사후처리 : 데이터를 사전처리하지 않고, 가능한 많은 데이터를 모으고 다양한 방식으로 조합하여 숨은 인사이트 발굴</p></li>
+<li><p>전수조사 : IoT Cloud 기술의 발전으로 데이터 처리비용 감소 <span class="math notranslate nohighlight">\(\to\)</span> 전수조사로 변화</p></li>
+<li><p>질보다 양 : 수집 데이터의 양이 증가할수록 정확도가 높아짐 <span class="math notranslate nohighlight">\(\to\)</span> 양질의 분석 결과 산출에 긍정적 영향</p></li>
+<li><p>상관관계 : 인과관계 보다는 상관관계를 통해서 특정 현상의 발생 가능성을 포착.</p></li>
+</ol>
+<p><strong>7 빅데이터 기본 테크닉</strong></p>
+<ol class="arabic simple">
+<li><p>연관규칙 학습(Association rule learning) : 변인간의 상관관계 찾아내기</p></li>
+<li><p>유형 분석(Classification tree analysis) : 새로운 데이터의 범주 찾아주기 - segmentation</p></li>
+<li><p>유전 알고리즘(Genetic algorithm) : 최적화가 필요한 문제의 해결책을 자연 선택, 돌연변이 … 점진적 진화</p></li>
+<li><p>기계학습(Machine learning)</p></li>
+<li><p>회귀분석(Regression analysis)</p></li>
+<li><p>감정분석(Sentiment analysis)</p></li>
+<li><p>소셜 네트워크 분석(Social network analysis)</p></li>
+</ol>
+<p><strong>데이터 거버넌스</strong></p>
+<ul class="simple">
+<li><p>기업에서 사용하는 데이터의 가용성, 유용성, 통합성을 관리하기 위한 정책과 프로세스를 다루며 프라이버시, 보안성, 데이터 품질, 관리규정준수를 강조하는 모델을 말한다.</p></li>
+<li><p>구성요소 : 원칙, 조직, 프로세스</p></li>
+<li><p>체계 : 데이터 표준화, 데이터 관리체계, 데이터 저장소 관리, 표준화 활동</p></li>
+</ul>
+<section id="id2">
+<h2>분산데이터<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><strong>MapReduce - 분산데이터 처리</strong></p>
+<p>구글 검색을 위해 개발된 분산환경에서의 병렬 데이터 처리 기법을 말한다. 비공유 구조의 여러노트 pc를 대량으로 병렬처리가 가능하게 하는 기법이다. 모든 데이터는 key-value쌍으로 존재한다.</p>
+<ul class="simple">
+<li><p>Map 단계 : GFS 구글파일시스템에서 전달된 청크 단위의 데이터를 key-value 형태의 파일들로 데이터에 기록</p></li>
+<li><p>Shuffle 단계 : map 단계의 출력 데이터를 키를 기준으로 정렬하고, 동일한 키를 가진 데이터를 같은 reduce 테스크로 전송하는 과정. 동일한 키를 가진 중간 결과들을 같은 reducer로 보내기위한 <code class="docutils literal notranslate"><span class="pre">Sorting</span> <span class="pre">and</span> <span class="pre">Grouping</span></code></p>
+<ul>
+<li><p>apple이라는 단어가 여러 문장에서 출현했다면, 모든 apple키와 관련된 값들을 같은 위치로 모아준다.</p></li>
+</ul>
+</li>
+<li><p>Reduce 단계 : shuffle 단계를 거친 중간 키와 키의 모든 값들을 받아서 원하는 연산을 수행한다.</p></li>
+</ul>
+<p><strong>HBase - 분산 데이터베이스</strong></p>
+<p>HDFS의 칼럼 기반 데이터베이스를 말한다. 구글의 BigTable 논문을 기반으로 개발된 것으로, 실시간 랜덤 조회 및 업데이트 가능하며, 각각의 프로세스들은 개인의 데이터를 비동기적으로 업데이트할 수 있다. 단 MapReduce는 일괄처리 방식으로 수행된다.</p>
+<p>분산파일시스템은 분산된 서버에 파일을 저장하고 저장된 데이터를 빠르게 처리할 수 있도록 만든 시스템을 말한다. DB를 분산하여 저정하는 것이다. x86서버의 cpu, ram 등을 사용하므로 장비 증가에 따른 성능향상에 용이하다. 네트워크를 통한 여러 파일을 관리 저장하는 개념이라고 볼 수 있다.</p>
+<p><strong>GFS - 구글파일시스템</strong></p>
+<p>구글의 대규모 클러스터 서비스 플랫폼의 기반이 되는 파일 시스템. 구성은 client, master, chunk server로 구성된다. chunk는 구글파일시스템에서 파일을 나누는 조각 한 단위 1개를 말하고, 하나의 청크는 64mb의 고정된 크기로 분할되어 저장된다. 마스터는 단일 단위로 파일의 메타 정보를 저장한다. 하트비스 메세지로 청크서버와 연결된다. 청크서버는 청크를 저장하고, 파일을 처리하고, 하트비트 메세지를 마스터에게 전달한다. 클라이언트는 마스터에 청크 인덱스를 요청하고 청크단위로 읽고 쓰기를 하는 주체이다.</p>
+<figure class="align-default" id="id5">
+<img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/GoogleFileSystemGFS.svg/300px-GoogleFileSystemGFS.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/GoogleFileSystemGFS.svg/300px-GoogleFileSystemGFS.svg.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Google File System is designed for system-to-system interaction, and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">for</span> <span class="pre">user-to-system</span></code> interaction. The chunk servers replicate the data automatically.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>HDFS - 하둡파일시스템</strong></p>
+<p>대용량 파일을 분산된 서버에 저장하고, 저장된 데이터를 빠르게 처리할 수 있게하는 하둡 분산 파일 시스템(Hadoop File System)을 말한다. 하둡이 실행되는 파일을 관리해주는 시스템이라고 볼 수 있다. 크게 4가지의 특징이 있다. 기본적으로 스트리밍 방식으로 데이터에 접근하기 때문에 배치 작업과 높은 데이터 처리량에 잘 대응할 수 있다. NameNode에서는 메타데이터를 메모리에서 관리한다. 보조네임노드, 데이터 노드</p>
+<p>스트리밍은 네트워크를 통해 오디오,비디오 등의 미디어 데이터를 실시간으로 수집하는 기술을 말한다.</p>
+<p>데이터를 복제해서 여러 서버에 저장하며, 복제횟수는 기본적으로 3번이고 복제 횟수를 설정하는 것도 가능하다. GFS와 유사한 소스코드이다.</p>
+<figure class="align-default">
+<img alt="https://blog.kakaocdn.net/dn/bNtyTE/btrc7O872Sa/iohONNse4K7WG4UNnNPrhk/img.png" src="https://blog.kakaocdn.net/dn/bNtyTE/btrc7O872Sa/iohONNse4K7WG4UNnNPrhk/img.png" />
+</figure>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>목적</p></th>
+<th class="head text-center"><p>용어</p></th>
+<th class="head text-center"><p>특징</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>데이터 가공</p></td>
+<td class="text-center"><p>Pig(Pig Latin)</p></td>
+<td class="text-center"><p>복잡한 mapreduce 프로그래밍을 대체하기 위해 자체 언어 제공, API 단순화</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>데이터 가공</p></td>
+<td class="text-center"><p>HIVE</p></td>
+<td class="text-center"><p>하둡기반 데이터 웨어하우징용 솔루변, Facebook에서 만든 opensource</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>데이터 마이닝</p></td>
+<td class="text-center"><p>Mahout</p></td>
+<td class="text-center"><p>하둡기반 데이터 마이닝 알고리즘 오픈소스</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>실시간 sql 질의</p></td>
+<td class="text-center"><p>Impala</p></td>
+<td class="text-center"><p>HBase연동 하둡 기반 실시간 sql 질의 시스템</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>인메모리 처리</p></td>
+<td class="text-center"><p>Spark</p></td>
+<td class="text-center"><p>대용량 처리 위한 인메모리 기반 분산데이터 처리 엔진</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>워크플로우 관리</p></td>
+<td class="text-center"><p>Oozie</p></td>
+<td class="text-center"><p>하둡 작업 관리 워크플로우 &amp; 코디네이터 시스템</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>분산 코디네이션</p></td>
+<td class="text-center"><p>Zookeeper</p></td>
+<td class="text-center"><p>서버 상호조정 서비스. 하나에 몰리지 않게 해줌 및 동기화하여 데이터 안정성 확보</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li><p>장애복구</p></li>
+<li><p>스트리밍 방식의 데이터 접근</p></li>
+<li><p>대용량 데이터 저장</p></li>
+<li><p>데이터 무결성</p></li>
+</ol>
+</section>
+<section id="id3">
+<h2>개인정보<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p><strong>개인정보 수집시 동의를 얻지 않아도 되는 경우</strong></p>
+<ul class="simple">
+<li><p>사전동의를 받을 수 없는 경우로서 명백히 주체 또는 제 3자의 긴급한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우</p></li>
+<li><p>정보 주체와의 계약의 체결을 위하여 불가피하게 필요한 경우</p></li>
+<li><p>요금 부과를 위해 회사가 사용자의 정보를 조회하는 경우</p></li>
+<li><p>법령상 의무를 준수하기 위하여 불가피한 경우</p></li>
+</ul>
+<p><strong>프라이버시모델 추론방지기술</strong></p>
+<ul class="simple">
+<li><p>k-익명성 : 일정 확률 수준 이상 비식별조치</p></li>
+<li><p>l-다양성 : 민감한 정보의 다양성을 높임</p></li>
+<li><p>t-근접성 : 민감한 정보의 분포를 낮춤</p></li>
+<li><p>m-유일성 : 재식별 가능성 위험을 낮춤</p></li>
+</ul>
+<p><strong>개인정보 익명 처리 기법</strong></p>
+<ul class="simple">
+<li><p>가명 : 개인 식별이 가능한 데이터에 대해 직접 식별할 수 없는 다른 값으로 대체</p></li>
+<li><p>일반화 : 숫자 데이터의 경우 구간으로 정의하고 범주화된 속성은 트리의 계층적 구조에 의해 대체하는 기법</p></li>
+<li><p>섭동 : 동일한 확률적 정보를 가지는 변형된 값에 대하여 원래 데이터를 대체하는 기법</p></li>
+<li><p>치환 : 속성 값을 수정하지 않고 레코드 간에 속성값의 위치를 바꾸는 기법</p></li>
+</ul>
+<p><strong>개인정보차등보호</strong> : 개인정보에 노이즈를 추가해서 개인정보보호와 데이터분석을 모두 진행할 수 있다.</p>
+<p><strong>비식별화</strong></p>
+<p>데이터 비식별화는 특정 개인을 식별할 수 없도록 개인정보의 일부 또는 전부를 변환하는 방법
+데이터를 안전하게 활용하기 위해서는 수집된 데이터의 개인정보 일부 또는 전부를 삭제하거나, 다른 정보로 대체함으로써, 다른 정보와 결합하여도 특정 개인을 식별하기 어렵게 해야한다.</p>
+<ul class="simple">
+<li><p>가명처리 : 변경</p></li>
+<li><p>총계처리 : 총합값으로 처리</p></li>
+<li><p>데이터삭제 : 중요값 삭제</p></li>
+<li><p>범주화 : 범주값으로 변경</p></li>
+<li><p>마스킹 : 대체값</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>데이터 수집 및 저장 계획<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>ETL : 데이터 수집 - 분석을 위한 데이터를 저장소인 DW,DM으로 이동시키기 위해 다양한 소스 시스템으로부터 필요한 원본 데이터를 추출하고 변환하여 적재하는 작업 및 기술</p>
+<p><strong>FTP</strong></p>
+<p>TCM/IP 프로토콜을 기반으로 서버-클라이언트 상에서 파일 송수신을 하기 위한 프로토콜을 말한다.</p>
+<ul class="simple">
+<li><p>Active FTP : 클라이언트가 데이터를 수신받을 포트를 서버에 알려주면, 서버가 자신의 20번 포트를 통해 클라이언트의 임의의 포트로 데이터를 전송해주는 방식</p></li>
+<li><p>Passive FTP : 서버가 데이터를 송수신해줄 임의의 포트를 클라이언트에 알려주면 클라이언트가 서버의 임의의 포트로 접속해서 데이터를 가져가는 방식</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -430,11 +636,10 @@ document.write(`
 
 
 
-                <footer class="bd-footer-article">
 
-<div class="footer-article-items footer-article__inner">
 
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="big_intro.html"
@@ -445,15 +650,37 @@ document.write(`
         <p class="prev-next-title">빅분기 준비과정</p>
       </div>
     </a>
-</div></div>
-
+    <a class="right-next"
+       href="2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. 빅데이터 탐색</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-
                 </footer>
 
             </div>
 
 
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">분산데이터</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">개인정보</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">데이터 수집 및 저장 계획</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
 
 
           </div>
@@ -497,8 +724,8 @@ By Surdarla
   </div>
 
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
