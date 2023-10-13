@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -88,6 +89,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -181,30 +191,39 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/math_intro.html">math collection</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../basics/linear_algebra.html">Linear algebra summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/information-value.html">Feature selection</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/anal/linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python_intro.html">python collection</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../basics/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/type_in_python.html">Type in python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/python/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/python/numpy.html">argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/python/pandas.html">join merge</a></li>
+
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/DL_intro.html">Deep learning collection</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../basics/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/activation_function.html">activation function</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/activation_function.html">activation function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/js/VUE.html">vue</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="vision.html">vision</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="vision.html">vision</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Resnet</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="DebertaV3.html">Deberta V3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DebertaV1.html">DeBERTa</a></li>
 </ul>
@@ -212,32 +231,41 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2558.html">2558 : A + B - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2530.html">2530 : 인공지능 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2117.html">2117 : 원형 댄스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/3046.html">3046 : R2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2164.html">2164 : 카드2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/2525.html">2525 : 오븐 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/1012.html">1012 : 유기농 배추</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/type_in_python.html">Type in python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/4.html">4. SQL 활용</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/1.html">big_data 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/1.html">1. 빅데이터 분석 기획</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/2.html">2. 빅데이터 탐색</a></li>
 </ul>
 </li>
 </ul>
@@ -363,10 +391,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -374,7 +402,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -452,7 +480,7 @@ document.write(`
 <div><p>Is learning better networks as easy as stacking more layers?</p>
 <p class="attribution">—bro. of course not!</p>
 </div></blockquote>
-<p>첫번째 문제는 gradient가 소실되거나 폭발해버리는 문제다. layer가 몇 층 되지 않는 shallow한 network에서는 이러한 문제가 나타나지 않거나 걱정이 필요없을 정도 이지만, network가 깊어지면 gradient(경사도)가 <code class="docutils literal notranslate"><span class="pre">too</span> <span class="pre">small</span> <span class="pre">or</span> <span class="pre">big</span> <span class="pre">for</span> <span class="pre">training</span> <span class="pre">to</span> <span class="pre">work</span> <span class="pre">effectively</span></code>하게 되고 이 문제가 vanishing exploding gradient 문제다. <a class="reference internal" href="../basics/activation_function.html#sigmoid-function"><span class="std std-ref">sigmoid function</span></a> 함수를 생각하면 문제에 대해 이애하기 쉽다.</p>
+<p>첫번째 문제는 gradient가 소실되거나 폭발해버리는 문제다. layer가 몇 층 되지 않는 shallow한 network에서는 이러한 문제가 나타나지 않거나 걱정이 필요없을 정도 이지만, network가 깊어지면 gradient(경사도)가 <code class="docutils literal notranslate"><span class="pre">too</span> <span class="pre">small</span> <span class="pre">or</span> <span class="pre">big</span> <span class="pre">for</span> <span class="pre">training</span> <span class="pre">to</span> <span class="pre">work</span> <span class="pre">effectively</span></code>하게 되고 이 문제가 vanishing exploding gradient 문제다. <a class="reference internal" href="../basics/dl/activation_function.html#sigmoid-function"><span class="std std-ref">sigmoid function</span></a> 함수를 생각하면 문제에 대해 이애하기 쉽다.</p>
 <blockquote>
 <div><p>when n hidden layers use an activation like the sigmoid function, n small derivatives are multiplied together. Thus, the gradient decreases exponentially as we propagate down to the initial layers.</p>
 </div></blockquote>
@@ -465,7 +493,7 @@ document.write(`
 <figure class="align-default" id="resnet-fig1">
 <a class="reference internal image-reference" href="../../_images/resnet_1.png"><img alt="../../_images/resnet_1.png" src="../../_images/resnet_1.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">56 layer network가 20 layer network보다 error율이 높은 것을 확인할 수 있다. 성능이 더 잘 안나온 것이다.</span><a class="headerlink" href="#resnet-fig1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">56 layer network가 20 layer network보다 error율이 높은 것을 확인할 수 있다. 성능이 더 잘 안나온 것이다.</span><a class="headerlink" href="#resnet-fig1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>deeper is better를 하나의 요소만 넣으면 가능하게 하는 것, 즉 degradation problem을 해결하는 것 - 이 논문에서는 <code class="docutils literal notranslate"><span class="pre">Redisual</span> <span class="pre">mapping</span></code>이다.</p>
@@ -483,7 +511,7 @@ document.write(`
 <figure class="align-default" id="resnet-fig2">
 <a class="reference internal image-reference" href="../../_images/resnet_2.png"><img alt="../../_images/resnet_2.png" src="../../_images/resnet_2.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">obsidian으로 내맘대로 그려본 fig2</span><a class="headerlink" href="#resnet-fig2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">obsidian으로 내맘대로 그려본 fig2</span><a class="headerlink" href="#resnet-fig2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>기존의 vgg에서의 mapping block을 <span class="math notranslate nohighlight">\(H(\text{x})\)</span>이라고 한다면, 이런 block이 18개정도 이어져 붙어있는 형태였다. block 내부에는 cnn layer + relu layer + cnn layer + relu layer 로 구성되어 있다.</p>
@@ -618,7 +646,7 @@ document.write(`
 <figure class="align-default" id="resnet-fig3">
 <a class="reference internal image-reference" href="../../_images/resnet_3.png"><img alt="../../_images/resnet_3.png" src="../../_images/resnet_3.png" style="height: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">vgg19(19.6B FLOPs) - plain 34 layers(3.6B FLOPs) - with shortcut 34 layers(3.6B FLOPs). dotted line이 dimension이 늘어나는 부분이고 이 부분은 equ2 <span class="math notranslate nohighlight">\(W_s\)</span> 1x1 convolutions로 맞춰주었다고 한다.</span><a class="headerlink" href="#resnet-fig3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">vgg19(19.6B FLOPs) - plain 34 layers(3.6B FLOPs) - with shortcut 34 layers(3.6B FLOPs). dotted line이 dimension이 늘어나는 부분이고 이 부분은 equ2 <span class="math notranslate nohighlight">\(W_s\)</span> 1x1 convolutions로 맞춰주었다고 한다.</span><a class="headerlink" href="#resnet-fig3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>in training</p>
@@ -660,13 +688,13 @@ document.write(`
 <figure class="align-default" id="resnet-fig5">
 <a class="reference internal image-reference" href="../../_images/resnet_bottleneck.png"><img alt="../../_images/resnet_bottleneck.png" src="../../_images/resnet_bottleneck.png" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Bottlenect desingn for deeper network architecture</span><a class="headerlink" href="#resnet-fig5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Bottlenect desingn for deeper network architecture</span><a class="headerlink" href="#resnet-fig5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="resnet-fig6">
 <a class="reference internal image-reference" href="../../_images/resnet_50.png"><img alt="../../_images/resnet_50.png" src="../../_images/resnet_50.png" style="height: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">The architecture of ResNet-50-vd. (a) Stem block; (b) Stage1-Block1; © Stage1-Block2; (d) FC-Block.</span><a class="headerlink" href="#resnet-fig6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The architecture of ResNet-50-vd. (a) Stem block; (b) Stage1-Block1; © Stage1-Block2; (d) FC-Block.</span><a class="headerlink" href="#resnet-fig6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>18, 34 layers에서는 3x3,3x3로 2개의 conv layer들을 쌓아서 만들었었다면, 더 나아가서 50,101,152 layers를 위해서 1x1,3x3,1x1 를 하나의 블록으로 사용한다. 이것을 bottleneck block 이라고 부른다.</p>
@@ -980,7 +1008,7 @@ Estimated Total Size (MB): 5211.49
 </div>
 <figure class="align-default" id="id2">
 <img alt="../../_images/onnx_test.svg" src="../../_images/onnx_test.svg" /><figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">onnx로 그려보고 svg로 저장한 resnet18.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">onnx로 그려보고 svg로 저장한 resnet18.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>여기서 W는 weight를 나타내고 <feature x input channel x height x width> 순으로 표시된다. 그리고 B는 bias이다.</p>
@@ -993,7 +1021,7 @@ Estimated Total Size (MB): 5211.49
 <figure class="align-default" id="resnet-fig7">
 <a class="reference internal image-reference" href="../../_images/resnet_imagenet.png"><img alt="../../_images/resnet_imagenet.png" src="../../_images/resnet_imagenet.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">“ImageNet Large Scale Visual Recognition Challenge” ILSVRC는 2010년부터 2017년까지 매년 개최된 이미지 인식 대회</span><a class="headerlink" href="#resnet-fig7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">“ImageNet Large Scale Visual Recognition Challenge” ILSVRC는 2010년부터 2017년까지 매년 개최된 이미지 인식 대회</span><a class="headerlink" href="#resnet-fig7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -1046,11 +1074,10 @@ Estimated Total Size (MB): 5211.49
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="vision.html"
@@ -1070,10 +1097,7 @@ Estimated Total Size (MB): 5211.49
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1157,8 +1181,8 @@ By Surdarla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

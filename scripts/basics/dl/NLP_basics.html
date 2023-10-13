@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Normalization 정규화 &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/dl/NLP_basics';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/dl/NLP_basics.html" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Javascript" href="../js/JS.html" />
+    <link rel="prev" title="activation function" href="activation_function.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../about.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../about.html">
+                    Surdarla 입니다
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../CS229/2-1.html">practice - torch sklearn numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anal/linear_algebra.html">Linear algebra summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numpy.html">argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">join merge</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Normalization 정규화</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../js/VUE.html">vue</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/resnet.html">Resnet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV3.html">Deberta V3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV1.html">DeBERTa</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/3.html">3. SQL 기본</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/4.html">4. SQL 활용</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/Big_data/1.html">1. 빅데이터 분석 기획</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/Big_data/2.html">2. 빅데이터 탐색</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/scripts/basics/dl/NLP_basics.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3. Normalization 정규화</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Normalization 정규화</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">3.1 stemming 어간 추출</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">3.2 lemmatization 표제어 추출</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-part-of-speech-tags">3.3 POS(part of speech tags)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="normalization">
+<h1>3. Normalization 정규화<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h1>
+<p><img alt="morpheme" src="../../../_images/9b29442026783ce1e7672cbd8ce504d9_MD5.png" /></p>
+<p>우리가 익히 알고 있는 정규화는 curr - min / max - min이다. 언어학과 자연어 처리에서 <code class="docutils literal notranslate"><span class="pre">morpheme(형태소</span> <span class="pre">:</span> <span class="pre">의미를</span> <span class="pre">가진</span> <span class="pre">가장</span> <span class="pre">작은</span> <span class="pre">단위)</span></code>라는 것이 단어의 기반으로 정의된다. 보통 token이라는 것은 두 개 이상의 morpheme의 합으로 구성된다. 접두사(prefix) 접미사(suffix)가 단어의 형태에 따라 변형되어 붙는다.</p>
+<p>정규화는 ‘converting a token into its base form’하는 과정이다. inflection form → base form.</p>
+<ol class="arabic simple">
+<li><p>reducing the # of unique tokens present in the text</p></li>
+<li><p>removing the variations of a word in the text</p></li>
+<li><p>removing redundant information</p></li>
+</ol>
+<section id="stemming">
+<h2>3.1 stemming 어간 추출<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h2>
+<p>laughing, laughed, laughs, laugh → laugh
+단점 : 가끔 사전에 없는 단어를 만들 수도 있다. 그래서 좋은 normalization은 아닐 수 있다. 또한 winning 같은 경우 원래의 stem은 win인데 winn으로 만들 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PosterStemmer</span><span class="p">,</span> <span class="n">LancasterStemmer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>보통 어간 추출 속도가 표제어 추출보다 빠르다.</p>
+</section>
+<section id="lemmatization">
+<h2>3.2 lemmatization 표제어 추출<a class="headerlink" href="#lemmatization" title="Permalink to this heading">#</a></h2>
+<p>Lemma 표제어는 ‘기본 사전형 단어’ 정도의 의미를 가지고 있다. 표제어 추출을 위해서는 기본적으로 POS(part of speech)가 필요하다. 형태학적 파싱(morphological parsing)을 하게되면 어간(stem)과 접사(affix)로 단어를 쪼개게 된다. 이러한 과정을 통해서 더 이상 쪼갤 수 없는 단위로 의미를 쪼개는 것이다. 이런 과정을 위해서 품사 정보를 고려하여 단어의 원형을 추출하는 것이 의미적으로 정확하고 일관된 결과를 얻는데 도움이 된다.</p>
+</section>
+<section id="pos-part-of-speech-tags">
+<h2>3.3 POS(part of speech tags)<a class="headerlink" href="#pos-part-of-speech-tags" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://datascienceschool.net/03%20machine%20learning/03.01.02%20KoNLPy%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B2%98%EB%A6%AC%20%ED%8C%A8%ED%82%A4%EC%A7%80.html">KoNLPy 한국어 처리 패키지</a></p>
+<p>품사란 문장내 단어의 문맥, 기능 그리고 활용을 정의하는 것이다. 품사는 문장 내의 다른 단어들 과의 관계로 정의된다. 머신러닝 모델이나 rule-based 모델들은 단어의 품사를 알아야 적용이 가능하다.</p>
+</section>
+</section>
+<section id="grammer">
+<h1>4. 문법 Grammer<a class="headerlink" href="#grammer" title="Permalink to this heading">#</a></h1>
+<section id="constituency-grammar">
+<h2>4.1 Constituency Grammar<a class="headerlink" href="#constituency-grammar" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="dependency-grammar">
+<h2>4.2 Dependency Grammar<a class="headerlink" href="#dependency-grammar" title="Permalink to this heading">#</a></h2>
+<p>words of a sentence are dependent upon other words of the sentence</p>
+</section>
+</section>
+<section id="subword-tokenizer">
+<h1>5. Subword Tokenizer 알고리즘<a class="headerlink" href="#subword-tokenizer" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>Birthplace = Birth + Place</p>
+</div></blockquote>
+<p>아무리 많이 학습시켜도 모르는 단어가 학습과정에서 나오기 마련이다. 이를 OOV(out-of-vocabulary), UNK(unknown token)이라고 말한다. OOV문제를 일으키는 단어는 보통 더 작은 단위로 쪼개면 아는 2개로 해석될 수 있는 합성어, 희귀 단어 혹은 신조어 인 경우가 많기 때문에 단어를 더 쪼개갰다는 의미이다.</p>
+<section id="byte-pair-encoding-bpe-1994">
+<h2>5.1 Byte-Pair Encoding(BPE) 1994<a class="headerlink" href="#byte-pair-encoding-bpe-1994" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://huggingface.co/learn/nlp-course/chapter6/5?fw=pt">huggingface_DOC</a></p>
+<blockquote>
+<div><p>aaabdaaabac → (aa → Z) ZabdZabac → (ab → Y) ZYdZYac → (ZY → X) XdXac</p>
+</div></blockquote>
+<p>데이터 압축 알고리즘이다. 기본적으로 연속적으로 가장 많이 등장한 글자의 쌍을 찾아서 하나의 글자로 병합하는 방식.</p>
+<p>자연어 처리에서 BPE는 곧 subword segmentation 알고리즘을 말한다. 글자 단위에서 점차적으로 단어 집합을 만들어내는 bottom up 방식의 접근을 한다. 우선 훈련 데이터에 있는 단어들을 모든 글자 또는 유니코드 단위로 단어 집합을 만들고, 가장 많이 등장하는 유니그램을 하나의 유니그램으로 통합한다. 정리하자면 가장 빈번하게 등장하는 문자 혹은 subword의 쌍을 재귀적으로 합치며, 텍스트를 분할하는 방식이라고 볼 수 있다. 문제는 letter 수준에서 작동하기 때문에 단어 내의 내부 구조나 의미를 고려하진 않는다.</p>
+</section>
+<section id="wordpiece-tokenizer-for-bert">
+<h2>5.2 wordpiece tokenizer → for BERT<a class="headerlink" href="#wordpiece-tokenizer-for-bert" title="Permalink to this heading">#</a></h2>
+<p>bpe가 빈도수에 기반하여 가장 많이 등장한 쌍을 병합하는 것 과는 달리, 병합되었을 때 코퍼스의 우도 likelihood를 가장 높이는 쌍으로 구성. 모든 단어 앞에 <em>를 붙이고 기존에 없던 띄어쓰기 추가. 되돌릴때는 띄어쓰기 모두 없애고</em> 를 띄어쓰기화 하면 된다.
+BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BPE가 letter → token(subword) bottom up 방식이었다면, wordpiece는 word → token(subword) topdown 방식이라고 볼 수 있다. 또한 차이점은 단어 경계를 표시하는 특수 토큰[CLS],[SEP]등을 사용하여 서브워드를 생성할 수 있다는 것이다.</p>
+</section>
+<section id="sentencepiece">
+<h2>5.3 SentencePiece<a class="headerlink" href="#sentencepiece" title="Permalink to this heading">#</a></h2>
+<p>사전 토큰화 작업(pretokenization) 없이 전처리를 하지 않은 데이터(raw data)에 바로 단어 분리 토크나이저를 사용할 수 있음. 단어 분리 토큰화 수행 → 어떤 언어에도 바로 적용 가능.</p>
+</section>
+<section id="libraries">
+<h2>6. Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>spacy</p></li>
+</ol>
+<ul class="simple">
+<li><p>c 기반, 빠름</p></li>
+<li><p>그냥 이거 써라</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>nltk</p></li>
+</ol>
+<ul class="simple">
+<li><p>쓸데없이 선택지 많음</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./scripts\basics\dl"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="activation_function.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">activation function</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../js/JS.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Javascript</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Normalization 정규화</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">3.1 stemming 어간 추출</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">3.2 lemmatization 표제어 추출</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-part-of-speech-tags">3.3 POS(part of speech tags)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Surdarla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
