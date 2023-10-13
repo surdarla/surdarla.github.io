@@ -206,8 +206,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Normalization 정규화</a></li>
-
-
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -427,26 +425,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Normalization 정규화</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">3.1 stemming 어간 추출</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">3.2 lemmatization 표제어 추출</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-part-of-speech-tags">3.3 POS(part of speech tags)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -457,7 +451,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
 
-  <section id="normalization">
+  <section class="tex2jax_ignore mathjax_ignore" id="normalization">
 <h1>3. Normalization 정규화<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h1>
 <p><img alt="morpheme" src="../../../_images/9b29442026783ce1e7672cbd8ce504d9_MD5.png" /></p>
 <p>우리가 익히 알고 있는 정규화는 curr - min / max - min이다. 언어학과 자연어 처리에서 <code class="docutils literal notranslate"><span class="pre">morpheme(형태소</span> <span class="pre">:</span> <span class="pre">의미를</span> <span class="pre">가진</span> <span class="pre">가장</span> <span class="pre">작은</span> <span class="pre">단위)</span></code>라는 것이 단어의 기반으로 정의된다. 보통 token이라는 것은 두 개 이상의 morpheme의 합으로 구성된다. 접두사(prefix) 접미사(suffix)가 단어의 형태에 따라 변형되어 붙는다.</p>
@@ -489,25 +483,24 @@ document.write(`
 <p><a class="reference external" href="https://datascienceschool.net/03%20machine%20learning/03.01.02%20KoNLPy%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B2%98%EB%A6%AC%20%ED%8C%A8%ED%82%A4%EC%A7%80.html">KoNLPy 한국어 처리 패키지</a></p>
 <p>품사란 문장내 단어의 문맥, 기능 그리고 활용을 정의하는 것이다. 품사는 문장 내의 다른 단어들 과의 관계로 정의된다. 머신러닝 모델이나 rule-based 모델들은 단어의 품사를 알아야 적용이 가능하다.</p>
 </section>
-</section>
 <section id="grammer">
-<h1>4. 문법 Grammer<a class="headerlink" href="#grammer" title="Permalink to this heading">#</a></h1>
+<h2>4. 문법 Grammer<a class="headerlink" href="#grammer" title="Permalink to this heading">#</a></h2>
 <section id="constituency-grammar">
-<h2>4.1 Constituency Grammar<a class="headerlink" href="#constituency-grammar" title="Permalink to this heading">#</a></h2>
+<h3>4.1 Constituency Grammar<a class="headerlink" href="#constituency-grammar" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="dependency-grammar">
-<h2>4.2 Dependency Grammar<a class="headerlink" href="#dependency-grammar" title="Permalink to this heading">#</a></h2>
+<h3>4.2 Dependency Grammar<a class="headerlink" href="#dependency-grammar" title="Permalink to this heading">#</a></h3>
 <p>words of a sentence are dependent upon other words of the sentence</p>
 </section>
 </section>
 <section id="subword-tokenizer">
-<h1>5. Subword Tokenizer 알고리즘<a class="headerlink" href="#subword-tokenizer" title="Permalink to this heading">#</a></h1>
+<h2>5. Subword Tokenizer 알고리즘<a class="headerlink" href="#subword-tokenizer" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p>Birthplace = Birth + Place</p>
 </div></blockquote>
 <p>아무리 많이 학습시켜도 모르는 단어가 학습과정에서 나오기 마련이다. 이를 OOV(out-of-vocabulary), UNK(unknown token)이라고 말한다. OOV문제를 일으키는 단어는 보통 더 작은 단위로 쪼개면 아는 2개로 해석될 수 있는 합성어, 희귀 단어 혹은 신조어 인 경우가 많기 때문에 단어를 더 쪼개갰다는 의미이다.</p>
 <section id="byte-pair-encoding-bpe-1994">
-<h2>5.1 Byte-Pair Encoding(BPE) 1994<a class="headerlink" href="#byte-pair-encoding-bpe-1994" title="Permalink to this heading">#</a></h2>
+<h3>5.1 Byte-Pair Encoding(BPE) 1994<a class="headerlink" href="#byte-pair-encoding-bpe-1994" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://huggingface.co/learn/nlp-course/chapter6/5?fw=pt">huggingface_DOC</a></p>
 <blockquote>
 <div><p>aaabdaaabac → (aa → Z) ZabdZabac → (ab → Y) ZYdZYac → (ZY → X) XdXac</p>
@@ -516,16 +509,16 @@ document.write(`
 <p>자연어 처리에서 BPE는 곧 subword segmentation 알고리즘을 말한다. 글자 단위에서 점차적으로 단어 집합을 만들어내는 bottom up 방식의 접근을 한다. 우선 훈련 데이터에 있는 단어들을 모든 글자 또는 유니코드 단위로 단어 집합을 만들고, 가장 많이 등장하는 유니그램을 하나의 유니그램으로 통합한다. 정리하자면 가장 빈번하게 등장하는 문자 혹은 subword의 쌍을 재귀적으로 합치며, 텍스트를 분할하는 방식이라고 볼 수 있다. 문제는 letter 수준에서 작동하기 때문에 단어 내의 내부 구조나 의미를 고려하진 않는다.</p>
 </section>
 <section id="wordpiece-tokenizer-for-bert">
-<h2>5.2 wordpiece tokenizer → for BERT<a class="headerlink" href="#wordpiece-tokenizer-for-bert" title="Permalink to this heading">#</a></h2>
+<h3>5.2 wordpiece tokenizer → for BERT<a class="headerlink" href="#wordpiece-tokenizer-for-bert" title="Permalink to this heading">#</a></h3>
 <p>bpe가 빈도수에 기반하여 가장 많이 등장한 쌍을 병합하는 것 과는 달리, 병합되었을 때 코퍼스의 우도 likelihood를 가장 높이는 쌍으로 구성. 모든 단어 앞에 <em>를 붙이고 기존에 없던 띄어쓰기 추가. 되돌릴때는 띄어쓰기 모두 없애고</em> 를 띄어쓰기화 하면 된다.
 BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BPE가 letter → token(subword) bottom up 방식이었다면, wordpiece는 word → token(subword) topdown 방식이라고 볼 수 있다. 또한 차이점은 단어 경계를 표시하는 특수 토큰[CLS],[SEP]등을 사용하여 서브워드를 생성할 수 있다는 것이다.</p>
 </section>
 <section id="sentencepiece">
-<h2>5.3 SentencePiece<a class="headerlink" href="#sentencepiece" title="Permalink to this heading">#</a></h2>
+<h3>5.3 SentencePiece<a class="headerlink" href="#sentencepiece" title="Permalink to this heading">#</a></h3>
 <p>사전 토큰화 작업(pretokenization) 없이 전처리를 하지 않은 데이터(raw data)에 바로 단어 분리 토크나이저를 사용할 수 있음. 단어 분리 토큰화 수행 → 어떤 언어에도 바로 적용 가능.</p>
 </section>
 <section id="libraries">
-<h2>6. Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h2>
+<h3>6. Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>spacy</p></li>
 </ol>
@@ -539,6 +532,7 @@ BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BP
 <ul class="simple">
 <li><p>쓸데없이 선택지 많음</p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -605,26 +599,22 @@ BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BP
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Normalization 정규화</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">3.1 stemming 어간 추출</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmatization">3.2 lemmatization 표제어 추출</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pos-part-of-speech-tags">3.3 POS(part of speech tags)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grammer">4. 문법 Grammer</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constituency-grammar">4.1 Constituency Grammar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-grammar">4.2 Dependency Grammar</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subword-tokenizer">5. Subword Tokenizer 알고리즘</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#byte-pair-encoding-bpe-1994">5.1 Byte-Pair Encoding(BPE) 1994</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wordpiece-tokenizer-for-bert">5.2 wordpiece tokenizer → for BERT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencepiece">5.3 SentencePiece</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">6. Libraries</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
