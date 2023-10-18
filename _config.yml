@@ -64,8 +64,8 @@ html:
   comments:
     hypothesis              : false
     utterances              :
-      repo : "surdarla/surdarla.github.io"
-  announcement              : "" # A banner announcement at the top of the site.
+      repo: "surdarla/surdarla.github.io"
+  announcement              : "Refactoing Ongoing ..." # A banner announcement at the top of the site.
 
 #######################################################################################
 # LaTeX-specific settings
@@ -76,7 +76,7 @@ latex:
 #######################################################################################
 # Launch button settings
 launch_buttons:
-  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
+  notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url             : ""  # The URL of the BinderHub (e.g., https://mybinder.org)
   jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
   thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
