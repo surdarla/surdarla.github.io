@@ -1273,6 +1273,22 @@ docs = ["readthedocs-sphinx-ext", "sphinx", "sphinx-rtd-theme"]
 tests = ["pytest"]
 
 [[package]]
+name = "js2py"
+version = "0.74"
+description = "JavaScript to Python Translator & JavaScript interpreter written in 100% pure Python."
+optional = false
+python-versions = "*"
+files = [
+    {file = "Js2Py-0.74-py3-none-any.whl", hash = "sha256:40a508a79e2f8d624e3f2e604f90a1e6f46ac75b416d7f4745939ff4a2e95e09"},
+    {file = "Js2Py-0.74.tar.gz", hash = "sha256:39f3a6aa8469180efba3c8677271df27c31332fd1b471df1af2af58b87b8972f"},
+]
+
+[package.dependencies]
+pyjsparser = ">=2.5.1"
+six = ">=1.10"
+tzlocal = ">=1.2"
+
+[[package]]
 name = "jsonschema"
 version = "4.19.1"
 description = "An implementation of JSON Schema validation for Python"
@@ -2748,6 +2764,17 @@ files = [
 plugins = ["importlib-metadata"]
 
 [[package]]
+name = "pyjsparser"
+version = "2.7.1"
+description = "Fast javascript parser (based on esprima.js)"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyjsparser-2.7.1-py2-none-any.whl", hash = "sha256:2b12842df98d83f65934e0772fa4a5d8b123b3bc79f1af1789172ac70265dd21"},
+    {file = "pyjsparser-2.7.1.tar.gz", hash = "sha256:be60da6b778cc5a5296a69d8e7d614f1f870faf94e1b1b6ac591f2ad5d729579"},
+]
+
+[[package]]
 name = "pyobjc-core"
 version = "10.0"
 description = "Python<->ObjC Interoperability Module"
@@ -4185,6 +4212,23 @@ files = [
 ]
 
 [[package]]
+name = "tzlocal"
+version = "5.1"
+description = "tzinfo object for the local timezone"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tzlocal-5.1-py3-none-any.whl", hash = "sha256:2938498395d5f6a898ab8009555cb37a4d360913ad375d4747ef16826b03ef23"},
+    {file = "tzlocal-5.1.tar.gz", hash = "sha256:a5ccb2365b295ed964e0a98ad076fe10c495591e75505d34f154d60a7f1ed722"},
+]
+
+[package.dependencies]
+tzdata = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+devenv = ["black", "check-manifest", "flake8", "pyroma", "pytest (>=4.3)", "pytest-cov", "pytest-mock (>=3.3)", "zest.releaser"]
+
+[[package]]
 name = "uc-micro-py"
 version = "1.0.2"
 description = "Micro subset of unicode data files for linkify-it-py projects."
@@ -4318,4 +4362,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "ccb72823c3fb195d80e3e605a0e3a96f69605bf0ac3f0f7d27d9f684b15f94fe"
+content-hash = "d7590e5c13a97168d1dac2c400dd0b6d05ded84258d44dea8d5ad2d25cc0700f"

@@ -30,6 +30,7 @@ parts:
         - file : scripts/basics/dl/tokenizing
         - file : scripts/basics/dl/activation_function
         - file : scripts/basics/dl/NLP_basics
+        - file : scripts/basics/dl/perceptron
     - file :  scripts/basics/js/JS
       sections :
         - file : scripts/basics/js/VUE

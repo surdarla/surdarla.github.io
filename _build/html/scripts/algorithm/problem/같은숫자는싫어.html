@@ -55,6 +55,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "surdarla/surdarla.github.io");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
@@ -197,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/python/numpy.html">argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/numpy.html">Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/pandas.html">join merge</a></li>
 
 </ul>
@@ -206,8 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/perceptron.html">Perceptron</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -404,7 +437,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
 
     </div>
@@ -420,6 +455,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
 
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">JavaScript</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -446,14 +490,17 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.<br />
 <p>제한사항<br />
 배열 arr의 크기 : 1,000,000 이하의 자연수<br />
 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수</p>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input setting</span>
-<span class="n">problem_num</span> <span class="o">=</span> <span class="s1">&#39;같은숫자는싫어&#39;</span>
+<span class="n">problem_num</span> <span class="o">=</span> <span class="s2">&quot;같은숫자는싫어&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s1">&#39;</span>  <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)))</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -489,6 +536,39 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.<br />
 <p>어려울 것이 없음
 리스트에 맞는 것을 넣어주면서 리스트 마지막 요소와 비교해주면서 계속 넣어주면 됨
 경우의 수 체크하기</p>
+</section>
+<section id="javascript">
+<h2>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># js2py로 자바스크립트 코드 확인</span>
+<span class="kn">import</span> <span class="nn">js2py</span>
+
+<span class="n">js_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">function solution(arr){</span>
+<span class="s2">    var answer = [];</span>
+<span class="s2">    for(var i = 0;i&lt;arr.length;i++){</span>
+<span class="s2">        if(answer.slice(-1)[0]!=arr[i]){</span>
+<span class="s2">            answer.push(arr[i]);</span>
+<span class="s2">        }</span>
+<span class="s2">    }</span>
+<span class="s2">    return answer;</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">my_code</span> <span class="o">=</span> <span class="n">js2py</span><span class="o">.</span><span class="n">eval_js</span><span class="p">(</span><span class="n">js_code</span><span class="p">)</span>
+<span class="n">my_code</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stack queue에 있는 문제이다. array answer를 사용해서 for 문을 돌아준다. answer의 마지막에 있는 것과 들어갈 것을 비교해서 같은 경우에는 넣지않고 else로 빠져나가고 맞는 경우에만 answer에 push(append python list)를 해준다. 어려울게 없다.</p>
+<p>다만 여기서 하나의 python jupyter notebook에서 js까지 확인해보기 위해서 <code class="docutils literal notranslate"><span class="pre">js2py</span></code>라는 라이브러리를 poetry add를 통해서 넣어주고 돌려봤다. 역시 파이썬에는 없는 것이 없다. 히히</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -545,6 +625,21 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.<br />
             </div>
 
 
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">JavaScript</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
 
 
           </div>

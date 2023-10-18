@@ -61,7 +61,8 @@ html:
 
   comments:
     hypothesis              : false
-    utterances              : false
+    utterances              :
+      repo : "surdarla/surdarla.github.io"
   announcement              : "" # A banner announcement at the top of the site.
 
 #######################################################################################
