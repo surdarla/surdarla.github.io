@@ -95,6 +95,7 @@ sphinx:
     sitemap_url_scheme : "{link}"
     sitemap_locales : [None]
   extra_extensions          :
+    - sphinx_comments
     - sphinx_proof
     - 'sphinx.ext.autodoc'
     - sphinx_sitemap   # A list of extra extensions to load by Sphinx (added to those already used by JB).
