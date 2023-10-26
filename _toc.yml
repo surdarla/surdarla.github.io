@@ -17,7 +17,7 @@ parts:
     chapters :
     - file : scripts/basics/anal/anal_intro
       sections :
-        - file : scripts/basics/anal/linear_algebra
+        - file : scripts/basics/anal/linearity
         - file : scripts/basics/anal/information-value
         - file : scripts/basics/anal/EDA
     - file :  scripts/basics/python/python_intro

@@ -25,7 +25,7 @@ name: data_type_fig1
 -- modern javascript deep dive
 ```
 
-변수(variable)은 `값(value) = 데이터(data)`의 메모리 상의 위치,주소(memory address)를 기억하는 저장소이다. 그러니깐 우리는 값을 저장하고 다시 불러올 때 컴퓨터처럼 모든 메모리 주소를 기억할 수 없으니, 인간이 이해하기 쉬운 `identifier 식별자 = variable 변수`로 들락날락 하는 것이다. 객체 지향 프로그래밍 할 때 처음 나오는 것이 서로 다른 객체라는 것은 메모리에서 서로 다른 공간(다른 주소)에 저장되었다는 것을 의미한다고 하며 '=='로 속성값은 같을지라고 'is'로 id값 주소값을 비교하면 다를 수 있다고 말한다. 즉 값은 같아도 주소는 다르면 그것은 변수가 다른 것이고, 객체로는 다른 객체로 볼 수 있다. 파이썬에서 주소값을 확인하려면 `id(object)` 함수를 사용하면 된다.
+변수(variable)은 `값(value) = 데이터(data)`의 메모리 상의 위치,주소(memory address)를 기억하는 저장소이다. 그러니깐 우리는 값을 저장하고 다시 불러올 때 컴퓨터처럼 모든 메모리 주소를 기억할 수 없으니, 인간이 이해하기 쉬운 `identifier 식별자 = variable 변수`로 들락날락 하는 것이다. 객체 지향 프로그래밍 할 때 처음 나오는 것이 서로 다른 객체라는 것은 메모리에서 서로 다른 공간(다른 주소)에 저장되었다는 것을 의미한다고 하며 '== '로 속성값은 같을지라고 'is'로 id값 주소값을 비교하면 다를 수 있다고 말한다. 즉 값은 같아도 주소는 다르면 그것은 변수가 다른 것이고, 객체로는 다른 객체로 볼 수 있다. 파이썬에서 주소값을 확인하려면 `id(object)` 함수를 사용하면 된다.
 
 > id(object)
 >> Return the “identity” of an object. This is an integer which is guaranteed to be unique and constant for this object during its lifetime. Two objects with non-overlapping lifetimes may have the same id() value.

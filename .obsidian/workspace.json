@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "4dd8fc14efbfa70f",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f6225fa9e926702",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca2f013011df4dc8",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9d297017892804af",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f84553c92fecb96",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66003f4bc589ec94",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "00b26d6dc0e58c97",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "271f90115afa0271",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "30549a29677e8edf",
+    "type": "split",
+    "children": [
+      {
+        "id": "75d807b2049e53f7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a15d44ab4e31be69",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b90f6dc0aecae6e0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0800676ff5b269f9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c57c7d611bb60654",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "8fa32ee64c77cbdf",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "ca2f013011df4dc8",
+  "lastOpenFiles": [
+    "scripts/basics/anal/linearity.md",
+    "_build/html/_sources/scripts/CS229/1.md",
+    "_build/html/searchindex.js.tmp",
+    "_build/html/_sources/scripts/basics/anal/linearity.md",
+    "_build/html/scripts/basics/anal/linearity.html",
+    "scripts/basics/anal/Untitled.md",
+    "scripts/CS229/1.md",
+    "scripts/basics/dl/perceptron.md",
+    "scripts/basics/dl/NLP_basics.md",
+    "scripts/basics/dl/DL_intro.md",
+    "scripts/basics/dl/deeplearning.md",
+    "scripts/basics/dl/attention.md",
+    "scripts/basics/anal/information-value.md",
+    "scripts/basics/anal/EDA.md",
+    "scripts/basics/anal/anal_intro.md",
+    "scripts/algorithm/data_structure.md",
+    "scripts/algorithm/hash.md",
+    "scripts/algorithm/problem-solving.md",
+    "scripts/algorithm/type_in_python.md",
+    "about.md",
+    "scripts/paper_review/vision.md",
+    "scripts/paper_review/draft.md",
+    "scripts/paper_review/DebertaV3.md",
+    "scripts/paper_review/nlp.md",
+    "scripts/paper_review/onnx_test.svg",
+    "scripts/paper_review/tranformer.md",
+    "Untitled.canvas",
+    "2023-10-26.md",
+    "scripts/CS229/intro.md",
+    "Untitled 1.canvas",
+    "scripts/certificate/SQLD/sqld 이론/1.jpg",
+    "scripts/certificate/SQLD/sqld 이론/[정리] SQLD.pdf"
+  ]
+}

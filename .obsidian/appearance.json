@@ -1,0 +1,10 @@
+{
+  "accentColor": "#3b56c4",
+  "theme": "system",
+  "cssTheme": "Minimal",
+  "textFontFamily": "Noto Sans CJK KR",
+  "monospaceFontFamily": "D2Coding ligature",
+  "interfaceFontFamily": "Spoqa Han Sans Neo",
+  "baseFontSize": 16,
+  "translucency": false
+}
