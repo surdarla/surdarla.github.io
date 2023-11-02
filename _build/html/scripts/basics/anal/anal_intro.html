@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="linearity.html" />
+    <link rel="next" title="linearity" href="linearity.html" />
     <link rel="prev" title="practice - torch sklearn numpy" href="../../CS229/2-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -230,13 +230,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/numpy.html">Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">join merge</a></li>
 
 </ul>
@@ -246,6 +246,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../dl/activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dl/NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dl/perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/attention.html">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/softmax.html">softmax</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -281,12 +283,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/10825.html">10825 : 국영수</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/BFS.html">BFS</a></li>
 </ul>
 </li>
 </ul>
@@ -505,6 +510,7 @@ document.write(`
 수학적 개념과 통계를 통해서 데이터 분석의 기본을 모아보기</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="linearity.html">linearity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="information-value.html">Feature selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
@@ -555,7 +561,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">linearity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

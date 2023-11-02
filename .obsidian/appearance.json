@@ -1,8 +1,8 @@
 {
-  "accentColor": "#3b56c4",
-  "theme": "system",
+  "accentColor": "#857dbf",
+  "theme": "moonstone",
   "cssTheme": "Minimal",
-  "textFontFamily": "Noto Sans CJK KR",
+  "textFontFamily": "Spoqa Han Sans Neo",
   "monospaceFontFamily": "D2Coding ligature",
   "interfaceFontFamily": "Spoqa Han Sans Neo",
   "baseFontSize": 16,

@@ -230,13 +230,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/anal/information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/python/numpy.html">Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/pandas.html">join merge</a></li>
 
 </ul>
@@ -246,6 +246,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/attention.html">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/softmax.html">softmax</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -281,12 +283,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/10825.html">10825 : 국영수</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/BFS.html">BFS</a></li>
 </ul>
 </li>
 </ul>
@@ -612,7 +617,7 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 <figure class="align-default" id="id5">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>그리고 분할된 테이블은 그 칼럼의 값에 의해 연결된다. 이렇게 테이블을 분할하여 데이터의 불필요한 중복을 줄이는 것을 정규화(Normalization)라고 한다. 데이터의 정합성 확보와 데이터 입력/수정/삭제시 발생할 수 있는 이상현상(Anomaly)을 방지하기 위해 정규화는 관계형 데이터베이스 모델링에서 매우 중요한 프로세스이다.</p>
 </div>
@@ -623,7 +628,7 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 <figure class="align-default" id="id6">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>데이터 타입</strong>(Oracle,SQL Server 형식, 괄호안은 조건)</p>
@@ -896,7 +901,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id7">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>CONNCECT ROLE의 권한은 CREATE SESSION 뿐이다. 나머지는 전부 RESOURCE다.</p>
@@ -914,7 +919,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id8">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default">
@@ -941,7 +946,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id9">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 <div class="legend">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SELECT,</span> <span class="pre">WHERE,</span> <span class="pre">ORDER</span> <span class="pre">BY</span></code> 절에 사용 가능하다.\</p></li>
@@ -962,19 +967,19 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id10">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id11">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id12">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_192.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_192.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">NVL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">NVL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
 ISNULL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
 NULLIF (a, b) : return a==b -&gt; NULL, a!=b -&gt; a
 COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
@@ -989,7 +994,7 @@ COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="hea
 <figure class="align-default" id="id13">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 <div class="legend">
 <ul class="simple">
 <li><p>ELSE 생략시 NULL 출력\</p></li>
@@ -1013,7 +1018,7 @@ DISTINCT : 같은 값을 하나의 데이터로 간주할 때 사용하는 옵�
 <figure class="align-default" id="id14">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_193.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_193.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">ALL,DISTINCT는 전체를 출력해주고 중복을 제외하고 출력한다.<br />
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">ALL,DISTINCT는 전체를 출력해주고 중복을 제외하고 출력한다.<br />
 COUNT 함수를 제외하고는 전부 NULL값을 제외하고 계산한다.<br />
 COUNT도 표현식이 들어오면 NULL 을 제외하고 연산을 해준다.<br />
 GROUP BY 기준으로 나눠진 각 그룹을 연산하는 역할<br />

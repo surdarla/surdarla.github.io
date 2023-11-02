@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "8f6225fa9e926702",
+        "id": "7a311449da6d7ead",
         "type": "tabs",
         "children": [
           {
-            "id": "ca2f013011df4dc8",
+            "id": "38cdf2291f614e84",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "scripts/basics/dl/attention.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "30549a29677e8edf",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "scripts/basics/dl/attention.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "scripts/basics/dl/attention.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "scripts/basics/dl/attention.md"
+              }
             }
           },
           {
@@ -133,33 +142,42 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 386.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ca2f013011df4dc8",
+  "active": "38cdf2291f614e84",
   "lastOpenFiles": [
-    "scripts/basics/anal/linearity.md",
-    "_build/html/_sources/scripts/CS229/1.md",
+    "scripts/basics/dl/softmax.md",
+    "scripts/basics/dl/Logistic.md",
+    "scripts/basics/dl/attention.md",
     "_build/html/searchindex.js.tmp",
+    "_build/html/_sources/scripts/basics/dl/attention.md",
+    "_build/html/scripts/basics/dl/attention.html",
+    "_build/html/reports/scripts/basics/dl/tokenizing.err.log",
+    "_build/html/reports/scripts/basics/dl",
+    "_build/html/reports/scripts/algorithm/problem/같은숫자는싫어.err.log",
+    "_build/html/_sources/scripts/basics/js/JS.md",
+    "scripts/basics/anal/linearity.md",
+    "scripts/CS229/1.md",
+    "scripts/paper_review/tranformer.md",
+    "images/9b29442026783ce1e7672cbd8ce504d9_MD5.png",
+    "scripts/basics/dl/NLP_basics.md",
+    "scripts/basics/dl/DL_intro.md",
+    "_build/html/_sources/scripts/CS229/1.md",
     "_build/html/_sources/scripts/basics/anal/linearity.md",
     "_build/html/scripts/basics/anal/linearity.html",
     "scripts/basics/anal/Untitled.md",
-    "scripts/CS229/1.md",
     "scripts/basics/dl/perceptron.md",
-    "scripts/basics/dl/NLP_basics.md",
-    "scripts/basics/dl/DL_intro.md",
     "scripts/basics/dl/deeplearning.md",
-    "scripts/basics/dl/attention.md",
     "scripts/basics/anal/information-value.md",
     "scripts/basics/anal/EDA.md",
     "scripts/basics/anal/anal_intro.md",
@@ -171,12 +189,8 @@
     "scripts/paper_review/vision.md",
     "scripts/paper_review/draft.md",
     "scripts/paper_review/DebertaV3.md",
-    "scripts/paper_review/nlp.md",
     "scripts/paper_review/onnx_test.svg",
-    "scripts/paper_review/tranformer.md",
     "Untitled.canvas",
-    "2023-10-26.md",
-    "scripts/CS229/intro.md",
     "Untitled 1.canvas",
     "scripts/certificate/SQLD/sqld 이론/1.jpg",
     "scripts/certificate/SQLD/sqld 이론/[정리] SQLD.pdf"

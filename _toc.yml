@@ -23,7 +23,6 @@ parts:
     - file :  scripts/basics/python/python_intro
       sections :
         - file : scripts/basics/python/poetry
-        - file : scripts/basics/python/numpy
         - file : scripts/basics/python/pandas
     - file :  scripts/basics/dl/DL_intro
       sections :
@@ -31,6 +30,9 @@ parts:
         - file : scripts/basics/dl/activation_function
         - file : scripts/basics/dl/NLP_basics
         - file : scripts/basics/dl/perceptron
+        - file : scripts/basics/dl/attention
+        - file : scripts/basics/dl/softmax
+
     - file :  scripts/basics/js/JS
       sections :
         - file : scripts/basics/js/VUE
@@ -62,11 +64,16 @@ parts:
       - file : scripts/algorithm/problem/공던지기.ipynb
       - file : scripts/algorithm/problem/하노이의 탑.ipynb
       - file : scripts/algorithm/problem/의상.ipynb
+      - file : scripts/algorithm/problem/10825.ipynb
     - file  : scripts/algorithm/data_structure
       sections :
       - file : scripts/algorithm/자료구조
       - file : scripts/algorithm/type_in_python
       - file : scripts/algorithm/최소비용경로
+      - file : scripts/algorithm/최대유량
+      - file : scripts/algorithm/BFS
+
+
 
   - caption : Certificate
     chapters :
