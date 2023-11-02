@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Analysis</title>
+    <title>Attention</title>
   
   
   
@@ -104,13 +104,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/anal/anal_intro';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/anal/anal_intro.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/dl/attention';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/dl/attention.html" />
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="linearity" href="linearity.html" />
-    <link rel="prev" title="practice - torch sklearn numpy" href="../../CS229/2-1.html" />
+    <link rel="next" title="softmax" href="softmax.html" />
+    <link rel="prev" title="Perceptron" href="perceptron.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -229,10 +231,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anal/linearity.html">linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -241,13 +243,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dl/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/activation_function.html">activation function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/NLP_basics.html">3. Normalization 정규화</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/perceptron.html">Perceptron</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/attention.html">Attention</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/softmax.html">softmax</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">3. Normalization 정규화</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="softmax.html">softmax</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -380,7 +382,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/anal/anal_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/dl/attention.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +412,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/scripts/basics/anal/anal_intro.md" target="_blank"
+      <li><a href="../../../_sources/scripts/basics/dl/attention.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -479,7 +481,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -490,11 +494,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analysis</h1>
+    <h1>Attention</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-attention">why attention?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut">Shortcut</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#softmax"><span class="xref myst">softmax</span></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -504,17 +519,90 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analysis">
-<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h1>
-<p>linaer algebra, calculus, probability, statistics, optimization, etc.
-수학적 개념과 통계를 통해서 데이터 분석의 기본을 모아보기</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="linearity.html">linearity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="information-value.html">Feature selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="attention">
+<span id="id1"></span><h1>Attention<a class="headerlink" href="#attention" title="Permalink to this heading">#</a></h1>
+<p>#transformer, #attention</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attention
+<strong>a vector of importance weights</strong></p>
+<p>in order to predict or infer one element, such as pixel in an image or a word in a sentence.</p>
 </div>
+<p>how strongly it is correlated with(or attends to) other elements and take the sum of their values weighted by the attention vector as the approximation of the target</p>
+<p>이미지와 텍스트 상에서 하나의 원소는 pixel, word일 것이다. 이에 대해서 attention은 다른 것들과 연관성이 얼마나 강한 지를 표현하는 역할을 해준다. 그런데 이에 대해서는 그동안 seq2seq가 동일한 역할을 했었지만 long-term problem 때문에 멀리 있는 요소에 대한 기억력 감소로 attention 사용하게 된다. seq2seq는 2014년에 attention은 2015년에 transformer는 2016년에 각각 나왔다.</p>
+<blockquote>
+<div><p>the secret sauce invented by attention is to create <strong>shortcuts between the context vector and the entire source input</strong>. The weights of these shortcut connections are customizable for each output element.</p>
+</div></blockquote>
+<section id="why-attention">
+<h2>why attention?<a class="headerlink" href="#why-attention" title="Permalink to this heading">#</a></h2>
+<p>애초에 attention은 기계 번역 작업에서 대안으로 나왔던 알고리즘이다. 기계 번역 작업의 목표는 A 언어 문장을 B 언어로 자동으로 번역하는 것이다. 초기 기계 번역 모델에서는 전체 소스 문장을 하나의 고정된 context 벡터로 요약하려고 시도했다. 그러니 이 방식은 긴 문장 처리와 번역 품질에 한계가 존재했다.</p>
+<p>Attention Mechanism은 인코더의 마지막 숨겨진 상태 하나(last hidden state)로부터 단일 context 벡터를 만드는(seq2seq방식) 대신, 소스 입력 전체와 context 벡터 사이에 지름길 연결을 만드는 것이다. Attention은 이러한 shortcut connection weight를 각 출력 요소(번역의 각 위치에 대한 토큰)에 대해서 커스터마이징 할 수 있도록 한다. 이는 모델이 출력 생성 중에 어떤 부분에 더 집중 해야 하는지를 학습할 수 있게 한다.</p>
+<p>context 벡터는 전체 소스 입력 시퀀스에 대해서 접근할 수 있다. 따라서 긴 소스 문장을 처리하는데 있어서 문제가 없으며, 모델은 소스와 대상 간의 정렬을 학습하고 제어한다. 여기서 정렬을 학습한다는 것은 단어 간 상응 관계를 학습한다는 것을 의미한다. 언어마다 문법에 따라 어순과 목적어가 와야 할 위치가 다를 것인데, 언어는 달라도 의미가 같은 문장에서는 요소들이 위치가 다를 수 있다. 그에 대한 학습을 한다는 것이다. 이러한 것에 대한 학습을 하는 과정이 곧 언어를 기계가 학습하는 것으로 볼 수 있다. context 벡터는 여러 정보 소스를 결합하여 출력을 생성하게 된다. context 벡터는 출력 요소마다 업데이트되며, 각 요소에 대한 번역에 대한 정보를 제공한다.</p>
+<ol class="arabic simple">
+<li><p>Encoder hidden state : 기존 정보</p></li>
+<li><p>Decoder hidden state : 이전 출력 정보</p></li>
+<li><p>소스와 대상 간의 정렬 정보</p></li>
+</ol>
+<p><img alt="" src="https://lilianweng.github.io/posts/2018-06-24-attention/encoder-decoder-attention.png" /></p>
+</section>
+<section id="shortcut">
+<h2>Shortcut<a class="headerlink" href="#shortcut" title="Permalink to this heading">#</a></h2>
+<p>shortcut connection은 듣는 순간 떠오르는 논문이 있다. 바로 resnet이다. resnet에서는 deep nn에서 발생하는 gradient lossing 문제를 해결하기 위해 나온 architecture로 굉장히 센세이셔널 했던 구조이다. 지금까지도 많은 architecture들의 backbone으로 사용되기도 할 만큼 그 architecture가 가지는 구조적 강점이 크다. 그 중에서도 중요했던 것이 이 shorcut이다.</p>
+<p>Resnet에서의 shortcut은 <code class="docutils literal notranslate"><span class="pre">Residual</span> <span class="pre">connection</span></code>이라고도 불린다. 이는 네트워크 레이어를 건너뛰고 입력과 출력을 직접 연결함으로써 gradient가 원활하게 흐를 수 있도록 도왔다.</p>
+<p>Attention에서의 shortcut은 인코더와 디코더 사이의 연결을 말한다. 각 출력 요소가 소스 입력의 모든 요소에 대한 sum of weight를 계산하고 이를 사용하여 출력을 생성하는 메커니즘을 설명한다. 이는 모델이 입력과 출력 간에 관계를 학습하는데 사용한다는 점에서 다르다.</p>
+</section>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\mathbf{x}\)</span>는 source sequnece를 나타내고, <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>는 target sequence를 나타낸다. 각각 n,m의 길이를 가진다. bold체 처리된 것은 vector를 나타낸다는 것을 항상 기억하자.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{x} = [x_1,x_2,...,x_n]\\
+\mathbf{y} = [y_1,y_2,...,y_m]
+\end{split}\]</div>
+<p><strong>encoder</strong>는 bidirectional rnn이다. forward hidden state는 <span class="math notranslate nohighlight">\(\overrightarrow{h_i}\)</span>이고, backward hidden state는 <span class="math notranslate nohighlight">\(\overleftarrow{h_i}\)</span>이다. <span class="math notranslate nohighlight">\(i\)</span>는 1~n의 범위를 가지는 시간 변수를 나타낸다. encoder는 결국 해당 두 변수를 concatenation한 값이라고 볼 수 있다. (약간의 transpose를 하고…)</p>
+<div class="math notranslate nohighlight">
+\[
+\tag{encoder value}h_i = [\overrightarrow{h_i^\intercal}, \overleftarrow{h_i}]^\intercal
+\]</div>
+<p><strong>decoder</strong>는 hidden state 값으로 <span class="math notranslate nohighlight">\(s_t=f(s_{t-1},y_{t-1},c)\)</span>를 가진다. t 시점에서의 context vector c를 넣어주고, 바로 전 시점(t-1)에서의 output word값과 실제 타겟 값 y(t-1)를 넣어준다. 그렇게 함으로써 t시점의 hidden state <span class="math notranslate nohighlight">\(s_t\)</span>를 계산한다.</p>
+<p>기존의 방법론은 모든 hidden state를 계산할 때 동일한 context vector를 사용하는 반면, Bahdanau et al.(2014)은 hidden state를 계산할 때마다 새롭게 만들어진 context vector를 사용하게 된다. 이를 위해 alignment model(score function) <span class="math notranslate nohighlight">\(a\)</span>를 사용한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+c_t =&amp; ~ \displaystyle\sum_{t=1}^n a_{t,i}h_i &amp;\text{Context vector for output y at t}\\
+e_{t-1,j} =&amp; ~ a(s_{t-1},h_j) &amp;\text{compare it and attention score calculate}\\
+a_{t,i} =&amp; ~ \text{align}(y_t,x_i) &amp;\text{How well two words yt,xi are aligned}\\
+=&amp; ~ \frac{\exp(score(s_{t-1},h_i))}{\sum_{i`=1}^n \exp(score(s_{t-1},h_{i`}))} &amp;\text{Softmax of some predefined alignment score}
+\end{align}
+\end{split}\]</div>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span>를 이용하여 <span class="math notranslate nohighlight">\(s_{t-1}, h_j\)</span>가 얼마나 유사한지를 나타내는 attention score <span class="math notranslate nohighlight">\(e_{t-1,j}\)</span>를 계산한다. 이때 다양한 a의 유형이 사용될 수 있으며 Bahdanau et al.(2014)에서 사용한 것은 아래와 같다</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather}
+a(s_{t-1},h_j) = v_a^T(tanh(W_a[s_{t-1};h_j]))\\
+\text{where }v_a, W_a\text{ are learnable parameters}
+\end{gather}
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><a class="reference internal" href="softmax.html#softmax"><span class="std std-ref">softmax</span></a>를 이용해서 attention score를 attention weight(alignment vector) <span class="math notranslate nohighlight">\(a_{t-1,j}\)</span>로 변환</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+a_{t-1,j} = \frac{\exp(e_{t-1,j})}{\sum_{k=1}^{T_x}\exp(e_{t-1,j})}
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>계산된 attention weight와 encoder 부분의 hidden state <span class="math notranslate nohighlight">\(h_j\)</span>를 가중평균 하여 t시점에 사용될 context vector를 계산한다.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+c_t = \displaystyle\sum_{j=1}^{T_x} a_{t-1,j},h_j
+\]</div>
+</section>
+<section id="softmax">
+<h2><a class="reference internal" href="softmax.html#softmax"><span class="std std-ref">softmax</span></a><a class="headerlink" href="#softmax" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -530,7 +618,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts\basics\anal"
+            path: "./scripts\basics\dl"
         },
         predefinedOutput: true
     }
@@ -548,20 +636,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../CS229/2-1.html"
+       href="perceptron.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">practice - torch sklearn numpy</p>
+        <p class="prev-next-title">Perceptron</p>
       </div>
     </a>
     <a class="right-next"
-       href="linearity.html"
+       href="softmax.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">linearity</p>
+        <p class="prev-next-title">softmax</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -571,6 +659,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-attention">why attention?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut">Shortcut</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#softmax"><span class="xref myst">softmax</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

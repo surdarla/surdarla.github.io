@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Analysis</title>
+    <title>softmax</title>
   
   
   
@@ -104,13 +104,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/anal/anal_intro';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/anal/anal_intro.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/dl/softmax';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/dl/softmax.html" />
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="linearity" href="linearity.html" />
-    <link rel="prev" title="practice - torch sklearn numpy" href="../../CS229/2-1.html" />
+    <link rel="next" title="Javascript" href="../js/JS.html" />
+    <link rel="prev" title="Attention" href="attention.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -229,10 +231,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anal/linearity.html">linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -241,13 +243,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dl/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/activation_function.html">activation function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/NLP_basics.html">3. Normalization 정규화</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/perceptron.html">Perceptron</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/attention.html">Attention</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dl/softmax.html">softmax</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">3. Normalization 정규화</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attention.html">Attention</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">softmax</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -380,7 +382,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/anal/anal_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/dl/softmax.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +412,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/scripts/basics/anal/anal_intro.md" target="_blank"
+      <li><a href="../../../_sources/scripts/basics/dl/softmax.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -479,7 +481,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -490,11 +494,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analysis</h1>
+    <h1>softmax</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">reference</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -504,17 +516,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analysis">
-<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h1>
-<p>linaer algebra, calculus, probability, statistics, optimization, etc.
-수학적 개념과 통계를 통해서 데이터 분석의 기본을 모아보기</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="linearity.html">linearity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="information-value.html">Feature selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="softmax">
+<span id="id1"></span><h1>softmax<a class="headerlink" href="#softmax" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>k개의 실수로 이루어진 벡터를 k개의 가능한 결과에 대한 확률 분포로 변환하는 함수</p>
+</div></blockquote>
+<p>로지스틱 함수(<span class="xref myst">Logistic function</span>)의 다차원 확장이며, 다항 로지스틱 회귀나 인공신경망에서 사용된다.</p>
+<p>소프트맥스 함수는 주로 다중 클래스 분류 문제에 사용되는 활성화 함수 중 하나다. 소프트맥스는 input을 확률로 변환하며, 각 클래스에 대한 확률 분포를 생성한다. 주로 다음과 같은 상황에서 사용된다. 이진 분류와 비교해서 생각해보면 좀 더 용이하다. sigmoid는 yes or no 만을 위해 사용되었다면, 여러 등급이나 클래스로 나누는 경우에 softmax를 사용하는 것이라고 보면 된다.</p>
+<p><img alt="" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQGFKh%2FbtqPQtew8NG%2FP5e54TRwt9fZqmXi55866k%2Fimg.jpg" /></p>
+<ol class="arabic simple">
+<li><p><strong>다중 클래스 분류</strong> : 주어진 입력에 대해 여러 클래스 중 하나를 선택하는 문제(이미지 분류, 자연어 처리 언어 모델)</p></li>
+<li><p><strong>확률 분포 생성</strong> : 각 클래스에 속할 확률을 계산하고, 가장 확률이 높은 클래스를 선택하는데 사용됨</p></li>
+</ol>
+<p>softmax function을 통과한 모든 output값들의 합은 1이 된다. 이를 다시 말하면 <code class="docutils literal notranslate"><span class="pre">확률(Probability)</span></code>가 되는 것이다. sigmoid가 output layer값을 보고 threshold(보통 0.5)보다 크면 1, 작으면 0으로 이진분류 밖에 못하는데, softmax output layer는 나오는 모든 값들을 normalizing 해버리고, 각각에 대한 확률을 구해낸다.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^Ke^{z_j}}
+\]</div>
+<p>input vector z에 대해서 output은 i번째 클래스에 대한 확률을 말한다. <span class="math notranslate nohighlight">\(e^{z_i}\)</span>는 i번째 입력 요소의 지수 함수를 나타낸다.</p>
+<figure class="align-default" id="id2">
+<img alt="https://velog.velcdn.com/images%2Fguide333%2Fpost%2F05653beb-0e79-48d8-90d9-3744253421d5%2FScreenshot%20from%202021-05-17%2011-10-04.png" src="https://velog.velcdn.com/images%2Fguide333%2Fpost%2F05653beb-0e79-48d8-90d9-3744253421d5%2FScreenshot%20from%202021-05-17%2011-10-04.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">softmax function</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+	<span class="n">e_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">#오버플러우 방지를 위해 입력값 중 최대값을 빼줌</span>
+	<span class="k">return</span> <span class="n">e_x</span> <span class="o">/</span> <span class="n">e_x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># [0.2,0.2,0.6]</span>
+</pre></div>
 </div>
+<section id="reference">
+<h2>reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://limitsinx.tistory.com/36">노마드공학자 - softmax regression</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -530,7 +570,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts\basics\anal"
+            path: "./scripts\basics\dl"
         },
         predefinedOutput: true
     }
@@ -548,20 +588,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../CS229/2-1.html"
+       href="attention.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">practice - torch sklearn numpy</p>
+        <p class="prev-next-title">Attention</p>
       </div>
     </a>
     <a class="right-next"
-       href="linearity.html"
+       href="../js/JS.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">linearity</p>
+        <p class="prev-next-title">Javascript</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -571,6 +611,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

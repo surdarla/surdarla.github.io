@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="SQLD 준비과정" href="../certificate/SQLD/SQL_intro.html" />
+    <link rel="next" title="Network Flow" href="%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html" />
     <link rel="prev" title="Type in python" href="type_in_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -232,13 +232,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basics/anal/linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/python/numpy.html">Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/pandas.html">join merge</a></li>
 
 </ul>
@@ -248,6 +248,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/attention.html">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/softmax.html">softmax</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -283,12 +285,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/10825.html">10825 : 국영수</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="data_structure.html">data_structure</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="type_in_python.html">Type in python</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">최소비용경로 문제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFS.html">BFS</a></li>
 </ul>
 </li>
 </ul>
@@ -666,7 +671,7 @@ document.write(`
 <figure class="align-default" id="id2">
 <img alt="https://www.google.com/url?sa=i&amp;url=http%3A%2F%2Fusers.cecs.anu.edu.au%2F~Alistair.Rendell%2FTeaching%2Fapac_comp3600%2Fmodule2%2Fbinary_heaps.xhtml&amp;psig=AOvVaw00Rg2ZGCQKDjISdRG_sMTI&amp;ust=1694761123929000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBAQjRxqFwoTCKii_afDqYEDFQAAAAAdAAAAABAQ" src="https://www.google.com/url?sa=i&amp;url=http%3A%2F%2Fusers.cecs.anu.edu.au%2F~Alistair.Rendell%2FTeaching%2Fapac_comp3600%2Fmodule2%2Fbinary_heaps.xhtml&amp;psig=AOvVaw00Rg2ZGCQKDjISdRG_sMTI&amp;ust=1694761123929000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBAQjRxqFwoTCKii_afDqYEDFQAAAAAdAAAAABAQ" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">heap에 대한 설명</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">heap에 대한 설명</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -815,11 +820,11 @@ heap[k] &lt;= heap[2*k+2]\\
       </div>
     </a>
     <a class="right-next"
-       href="../certificate/SQLD/SQL_intro.html"
+       href="%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SQLD 준비과정</p>
+        <p class="prev-next-title">Network Flow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
