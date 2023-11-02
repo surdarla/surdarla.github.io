@@ -27,11 +27,11 @@ parts:
     - file :  scripts/basics/dl/DL_intro
       sections :
         - file : scripts/basics/dl/tokenizing
-        - file : scripts/basics/dl/activation_function
         - file : scripts/basics/dl/NLP_basics
         - file : scripts/basics/dl/perceptron
         - file : scripts/basics/dl/attention
         - file : scripts/basics/dl/softmax
+        - file : scripts/basics/dl/Logistic
 
     - file :  scripts/basics/js/JS
       sections :

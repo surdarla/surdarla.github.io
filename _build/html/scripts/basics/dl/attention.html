@@ -245,11 +245,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Attention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="softmax.html">softmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logistic.html">Logistic</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -507,7 +507,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-attention">why attention?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut">Shortcut</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#softmax"><span class="xref myst">softmax</span></a></li>
 </ul>
             </nav>
         </div>
@@ -600,9 +599,6 @@ a_{t-1,j} = \frac{\exp(e_{t-1,j})}{\sum_{k=1}^{T_x}\exp(e_{t-1,j})}
 c_t = \displaystyle\sum_{j=1}^{T_x} a_{t-1,j},h_j
 \]</div>
 </section>
-<section id="softmax">
-<h2><a class="reference internal" href="softmax.html#softmax"><span class="std std-ref">softmax</span></a><a class="headerlink" href="#softmax" title="Permalink to this heading">#</a></h2>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -671,7 +667,6 @@ c_t = \displaystyle\sum_{j=1}^{T_x} a_{t-1,j},h_j
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-attention">why attention?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut">Shortcut</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#softmax"><span class="xref myst">softmax</span></a></li>
 </ul>
   </nav></div>
 

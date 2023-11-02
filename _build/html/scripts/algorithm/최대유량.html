@@ -245,11 +245,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/dl/activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/perceptron.html">Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/attention.html">Attention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/softmax.html">softmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/Logistic.html">Logistic</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -523,31 +523,31 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="network-flow">
 <h1>Network Flow<a class="headerlink" href="#network-flow" title="Permalink to this heading">#</a></h1>
 <blockquote>
-<div><p>그래프 두 노드 사이에 얼마나 많은 유량을 보낼 수 있는지 계산하는 알고리즘<br />
+<div><p>그래프 두 노드 사이에 얼마나 많은 유량을 보낼 수 있는지 계산하는 알고리즘
 network flow, maximum flow 라고 불린다</p>
 </div></blockquote>
 <p>출발점에서 목적지까지 물을 흘려보낼때, 가장 많은 양의 물을 흘려보내는 방법 찾기 알고리즘이다. 최소 경로 문제는 그동안 많이 접할 수 있어서 익숙할 수 있지만, 여기에 <strong>용량</strong>이라는 개념이 추가된다. <span class="math notranslate nohighlight">\(\text{capacity &gt;= flow}\)</span>로 최대 용량 만큼 흘려보낼 수 있다. 다른 것들은 비슷하다. 다르게 표현하면 <span class="math notranslate nohighlight">\(c(u,v) &gt;= f(u,v)\)</span>이다.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>wordpool</p>
-<p><strong>Node</strong> : 정점
+<p><strong>Node</strong> : 정점<br />
 하나의 지점</p>
-<p><strong>Capacity</strong> : 용량 c
+<p><strong>Capacity</strong> : 용량 c<br />
 노드 u에서 v로 가는 간선의 용량(가중치)
 <span class="math notranslate nohighlight">\(c(u,v)\)</span></p>
-<p><strong>Flow</strong> : 유량 f
+<p><strong>Flow</strong> : 유량 f<br />
 정점 u에서 v로의 간선에 실제로 흐르는 유량
 <span class="math notranslate nohighlight">\(f(u,v)\)</span></p>
-<p><strong>Residual capacity</strong> : 잔여 용량 r
+<p><strong>Residual capacity</strong> : 잔여 용량 r<br />
 간선의 용량과 유량의 차이, 간선에 추가적으로 흘려 보낼 수 있는 유량
 <span class="math notranslate nohighlight">\(r(u,v) = c(u,v) - f(u,v)\)</span></p>
-<p><strong>Source <span class="math notranslate nohighlight">\(s\)</span>, Sink <span class="math notranslate nohighlight">\(t\)</span></strong>
+<p><strong>Source <span class="math notranslate nohighlight">\(s\)</span>, Sink <span class="math notranslate nohighlight">\(t\)</span></strong><br />
 유량이 시작되는 지점, 유량이 도착하는 지점
 유량은 소스에서부터 싱크로 흐르게 되는 구조</p>
 </div>
 <section id="ford-fulkerson">
 <h2>Ford-Fulkerson<a class="headerlink" href="#ford-fulkerson" title="Permalink to this heading">#</a></h2>
-<p>[최소 컷(minimum cut)](minimum cut) 문제</p>
+<p><a class="reference internal" href="#minimum-cut"><span class="std std-ref">최소컷</span></a></p>
 <div class="math notranslate nohighlight">
 \[
 \tag{유량의 대칭성}
@@ -561,9 +561,9 @@ f(u,v) = -f(v,u)
 <li><p>경로상 모든 간선에 <span class="math notranslate nohighlight">\(r\)</span>만큼의 유량을 추가한다. 따라서 경로상 모든 간선에 대해서 <span class="math notranslate nohighlight">\(f(u,v)+=r\)</span>이 되고, 위의 대칭성을 이용해서 <span class="math notranslate nohighlight">\(f(v,u)-=F\)</span>도 해줘야한다.</p></li>
 </ol>
 <p>위의 3 단계를 더이상 증가 경로가 없을 때 까지 반복한다. 증가 경로를 찾고, 찾은 경로에 대해 가능한 한 많은 유량을 흘려보내는 것의 반복이다.</p>
-<p>(minimum cut) =</p>
+<p>보통 <a class="reference internal" href="BFS.html#id1"><span class="std std-ref">BFS 너비우선탐색</span></a>으로 많이 푼다.</p>
 <section id="minimum-cut">
-<h3>minimum cut<a class="headerlink" href="#minimum-cut" title="Permalink to this heading">#</a></h3>
+<span id="id1"></span><h3>minimum cut<a class="headerlink" href="#minimum-cut" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>그래프에서 두 개의 정점 집합을 구분하는 가장 짧은 경로를 찾는 문제</p>
 </div></blockquote>

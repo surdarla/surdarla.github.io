@@ -245,11 +245,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basics/dl/activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/perceptron.html">Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/attention.html">Attention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/softmax.html">softmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/dl/Logistic.html">Logistic</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -508,7 +508,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deque">deque</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priority-queue">Priority Queue 우선순위 큐</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heapq">Heapq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heapsort">heapsort</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dijkstra">dijkstra 다익스트라</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referances">referances</a></li>
 </ul>
             </nav>
         </div>
@@ -523,8 +525,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>최소비용경로 문제<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="queue">
-<h2><a class="reference external" href="https://docs.python.org/ko/3/library/queue.html?highlight=queue#module-queue">Queue 큐</a><a class="headerlink" href="#queue" title="Permalink to this heading">#</a></h2>
-<p>기본적으로 Queue라는 것은 선입선출(FIFO)의 구조를 가지는 자료형을 말한다. 어떤 조건이 없을때는 먼저 들어온 순서대로 마치 <code class="docutils literal notranslate"><span class="pre">줄을</span> <span class="pre">서는</span> <span class="pre">것</span> <span class="pre">처럼</span></code> 대기열(queue)에 들어가고, 들어간 순서대로 나오는 것을 말한다. 큐를 사용하면 위와 같은 특징으로 인해서 비동기 메세징, 스트리밍, 너비우선탐색(BFS:breath first search) 등의 소프트웨어 개발에서 널리 사용되고 있다. 파이썬 doc에서는 정보가 여러 스레드 간에 안전하게 교환되어야 할 때 스레드 프로그래밍에 특히 유용하다고 말한다.</p>
+<span id="id2"></span><h2><a class="reference external" href="https://docs.python.org/ko/3/library/queue.html?highlight=queue#module-queue">Queue 큐</a><a class="headerlink" href="#queue" title="Permalink to this heading">#</a></h2>
+<p>기본적으로 Queue라는 것은 선입선출(FIFO)의 구조를 가지는 자료형을 말한다. 어떤 조건이 없을때는 먼저 들어온 순서대로 마치 <code class="docutils literal notranslate"><span class="pre">줄을</span> <span class="pre">서는</span> <span class="pre">것</span> <span class="pre">처럼</span></code> 대기열(queue)에 들어가고, 들어간 순서대로 나오는 것을 말한다. 큐를 사용하면 위와 같은 특징으로 인해서 비동기 메세징, 스트리밍, 너비우선탐색(<a class="reference internal" href="BFS.html#id1"><span class="std std-ref">BFS:breath first search</span></a>) 등의 소프트웨어 개발에서 널리 사용되고 있다. 파이썬 doc에서는 정보가 여러 스레드 간에 안전하게 교환되어야 할 때 스레드 프로그래밍에 특히 유용하다고 말한다.</p>
 <p>파이썬에서 제공하는 queue모듈은 thread-safe하게 설계되어있다. 이는 여러 스레드에서 동시에 접근해도 안전하게 데이터를 처리하도록 설계되어있다는 것을 의미한다. 그러나 이러한 thread-safe한 특성 때문에 오버헤드가 있을 수 있다. 단일 스레드에서만 작동하는 경우, 순수한 성능 최적화를 원한다면 다른 방법을 사용하는 것이 추천된다.</p>
 <p>파이썬에서는 3개의 queue를 기본적으로 class로 구현해놓고 있다.</p>
 <ol class="arabic simple">
@@ -576,7 +578,7 @@ document.write(`
 </table>
 </section>
 <section id="deque">
-<h2><a class="reference external" href="https://docs.python.org/ko/3/library/collections.html?highlight=deque#deque-objects">deque</a><a class="headerlink" href="#deque" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><h2><a class="reference external" href="https://docs.python.org/ko/3/library/collections.html?highlight=deque#deque-objects">deque</a><a class="headerlink" href="#deque" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p>from collections import deque</p>
 </div></blockquote>
@@ -663,15 +665,15 @@ document.write(`
 </table>
 </section>
 <section id="priority-queue">
-<h2>Priority Queue 우선순위 큐<a class="headerlink" href="#priority-queue" title="Permalink to this heading">#</a></h2>
+<span id="id4"></span><h2>Priority Queue 우선순위 큐<a class="headerlink" href="#priority-queue" title="Permalink to this heading">#</a></h2>
 <p>우선순위 큐는 들어간 순서와는 상관없이 우선순위가 높은 데이터가 먼저 나오는 것을 말한다. First in 보다는 First Priority가 중요한 것이다.</p>
 <p>우선순위 큐는 heap이라는 자료구조를 가지고 구현할 수 있기 때문에 둘은 밀접한 관계를 가지고 항상 같이 언급되곤 한다. 그렇기 때문에 밑에서는 heap에 대한 설명을 하고 나서 우선순위 큐에 대한 설명을 이어나가겠다.</p>
 <p>우선순위큐는 각 요소가 우선순위를 가진 데이터의 집합을 말한다. 이 집합에서 가장 높은 우선순위를 가진 요소를 꺼내올 수 있으며, 이는 문제의 경우가 데이터를 enqueue,dequeue할때 우선순위에 따라 결정되어야할 경우일 때 효율적이다. 배열 연결리스트 힙등으로 다양한 방법으로 구현될 수 있지만 가장 이상적인 방법은 heap을 이용하는 방법이다.</p>
 <p>그렇다면 heap은 무엇인가? 힙이란 <code class="docutils literal notranslate"><span class="pre">완전</span> <span class="pre">이진</span> <span class="pre">트리</span> <span class="pre">형태로</span> <span class="pre">특정한</span> <span class="pre">규칙(최대,최소)을</span> <span class="pre">만족하는</span> <span class="pre">배열</span></code>을 말한다.</p>
-<figure class="align-default" id="id2">
-<img alt="https://www.google.com/url?sa=i&amp;url=http%3A%2F%2Fusers.cecs.anu.edu.au%2F~Alistair.Rendell%2FTeaching%2Fapac_comp3600%2Fmodule2%2Fbinary_heaps.xhtml&amp;psig=AOvVaw00Rg2ZGCQKDjISdRG_sMTI&amp;ust=1694761123929000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBAQjRxqFwoTCKii_afDqYEDFQAAAAAdAAAAABAQ" src="https://www.google.com/url?sa=i&amp;url=http%3A%2F%2Fusers.cecs.anu.edu.au%2F~Alistair.Rendell%2FTeaching%2Fapac_comp3600%2Fmodule2%2Fbinary_heaps.xhtml&amp;psig=AOvVaw00Rg2ZGCQKDjISdRG_sMTI&amp;ust=1694761123929000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBAQjRxqFwoTCKii_afDqYEDFQAAAAAdAAAAABAQ" />
+<figure class="align-default" id="id5">
+<img alt="https://users.cecs.anu.edu.au/~Alistair.Rendell/Teaching/apac_comp3600/module2/images/Heaps_HeapStructure.png" src="https://users.cecs.anu.edu.au/~Alistair.Rendell/Teaching/apac_comp3600/module2/images/Heaps_HeapStructure.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">heap에 대한 설명</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">heap에 대한 설명</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -733,7 +735,9 @@ heap[k] &lt;= heap[2*k+2]\\
 </tr>
 </tbody>
 </table>
-<p><strong>heapsort</strong></p>
+</section>
+<section id="heapsort">
+<h2>heapsort<a class="headerlink" href="#heapsort" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">heapsort</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
     <span class="n">h</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
@@ -747,14 +751,16 @@ heap[k] &lt;= heap[2*k+2]\\
 </div>
 <div class="admonition- admonition">
 <p class="admonition-title">안정적인 정렬?</p>
-<p>stable sort
-정렬이 안정적이라는 것은, 입력 데이터 내에서 동일한 값들 사이에 원래 순서가 정렬 후에도 보존된다는 것을 말한다.</p>
+<p>안정적인 정렬이란</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>입력 데이터 내에서 동일한 값들 사이에 원래 순서가 정렬 후에도 보존된다는 것
+</pre></div>
+</div>
 <p>하나의 키값(나이)로 정렬된 상태의 데이터를 새로운 키값(성)으로 정렬을 수행했을 때, 나이에 대한 정렬이 유지될 수 있어야 안정된 정렬이라고 말할 수 있다.</p>
 <p>heapsort는 그렇게 하지 못하고 sorted는 그럴수 있다고 말한다.</p>
-<p>sorted는 2002년 Tim Peters에 의해 개발된 merge sort + insertion sort 식의 하이브리드 정렬 알고리즘으로 1) 이미 부분정렬에 대해서는 더 빠르게 동작하고 2) 같은 키값의 정렬에 대해서는 순서를 보존하는 3) O(n logn)(최악에도)의 시간복잡도를 가지는 정렬이다.</p>
+<p>sorted는 2002년 Tim Peters에 의해 개발된 merge sort + insertion sort 식의 하이브리드 정렬 알고리즘으로 1) 이미 부분정렬에 대해서는 더 빠르게 동작하고 2) 같은 키값의 정렬에 대해서는 순서를 보존하는 3) <span class="math notranslate nohighlight">\(O(n logn)\)</span>(최악일 경우에도)의 시간복잡도를 가지는 정렬이다.</p>
 <ol class="arabic simple">
-<li><p>리스트를 작은 부분으로 나누고\</p></li>
-<li><p>각 부분 리스트를 삽입 정렬한다.\</p></li>
+<li><p>리스트를 작은 부분으로 나누고</p></li>
+<li><p>각 부분 리스트를 삽입 정렬한다.</p></li>
 <li><p>이후 병합 정렬로 하나의 리스트로 만든다.</p></li>
 </ol>
 <p>이러한 특성으로 안정적이면서도 부분적으로 정렬된 경우에는 효율적인 정렬로서 기본 정렬로 파이썬이 사용하는 거이다.</p>
@@ -777,6 +783,12 @@ heap[k] &lt;= heap[2*k+2]\\
 <li><p>모든 정점을 확인하면 종료</p></li>
 </ol>
 <p>다익스트라 알고리즘에는 우선순위큐가 사용된다. 가장 짧은 거리를 가진 정점을 업데이트 해야하기 때문에 최소값을 가진 것이 위로 도출되는 것이 편하기 때문에 해당 자료구조를 사용하는 것이다. 우선순위큐를 사용하기 위해 heappop, heappush를 사용한다.</p>
+</section>
+<section id="referances">
+<h2>referances<a class="headerlink" href="#referances" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://users.cecs.anu.edu.au/~Alistair.Rendell/Teaching/apac_comp3600/module2/binary_heaps.xhtml">anu_edu - Binary Heaps</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -847,7 +859,9 @@ heap[k] &lt;= heap[2*k+2]\\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deque">deque</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priority-queue">Priority Queue 우선순위 큐</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heapq">Heapq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heapsort">heapsort</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dijkstra">dijkstra 다익스트라</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referances">referances</a></li>
 </ul>
   </nav></div>
 

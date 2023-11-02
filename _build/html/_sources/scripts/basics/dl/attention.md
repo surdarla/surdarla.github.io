@@ -87,5 +87,3 @@ $$
 $$
 c_t = \displaystyle\sum_{j=1}^{T_x} a_{t-1,j},h_j
 $$
-
-## [softmax](softmax)
