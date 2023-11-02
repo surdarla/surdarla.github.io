@@ -17,7 +17,7 @@ how strongly it is correlated with(or attends to) other elements and take the su
 
 ## why attention?
 
-애초에 attention은 기계 번역 작업에서 대안으로 나왔던 알고리즘이다. 기계 번역 작업의 목표는 A 언어 문장을 B 언어로 자동으로 번역하는 것이다. 초기 기계 번역 모델에서는 전체 소스 문장을 하나의 고정된 context 벡터로 요약하려고 시도했다. 그러니 이 방식은 긴 문장 처리와 번역 품질에 한계가 존재했다. 
+애초에 attention은 기계 번역 작업에서 대안으로 나왔던 알고리즘이다. 기계 번역 작업의 목표는 A 언어 문장을 B 언어로 자동으로 번역하는 것이다. 초기 기계 번역 모델에서는 전체 소스 문장을 하나의 고정된 context 벡터로 요약하려고 시도했다. 그러니 이 방식은 긴 문장 처리와 번역 품질에 한계가 존재했다.
 
 Attention Mechanism은 인코더의 마지막 숨겨진 상태 하나(last hidden state)로부터 단일 context 벡터를 만드는(seq2seq방식) 대신, 소스 입력 전체와 context 벡터 사이에 지름길 연결을 만드는 것이다. Attention은 이러한 shortcut connection weight를 각 출력 요소(번역의 각 위치에 대한 토큰)에 대해서 커스터마이징 할 수 있도록 한다. 이는 모델이 출력 생성 중에 어떤 부분에 더 집중 해야 하는지를 학습할 수 있게 한다.
 
@@ -87,6 +87,3 @@ $$
 $$
 c_t = \displaystyle\sum_{j=1}^{T_x} a_{t-1,j},h_j
 $$
- 
-## [softmax](softmax)
-

@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Javascript" href="../js/JS.html" />
+    <link rel="next" title="Logistic" href="Logistic.html" />
     <link rel="prev" title="Attention" href="attention.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -245,11 +245,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activation_function.html">activation function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">3. Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="attention.html">Attention</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">softmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logistic.html">Logistic</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -504,6 +504,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">softmax 구현</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">reference</a></li>
 </ul>
             </nav>
@@ -521,9 +522,14 @@ document.write(`
 <blockquote>
 <div><p>k개의 실수로 이루어진 벡터를 k개의 가능한 결과에 대한 확률 분포로 변환하는 함수</p>
 </div></blockquote>
-<p>로지스틱 함수(<span class="xref myst">Logistic function</span>)의 다차원 확장이며, 다항 로지스틱 회귀나 인공신경망에서 사용된다.</p>
-<p>소프트맥스 함수는 주로 다중 클래스 분류 문제에 사용되는 활성화 함수 중 하나다. 소프트맥스는 input을 확률로 변환하며, 각 클래스에 대한 확률 분포를 생성한다. 주로 다음과 같은 상황에서 사용된다. 이진 분류와 비교해서 생각해보면 좀 더 용이하다. sigmoid는 yes or no 만을 위해 사용되었다면, 여러 등급이나 클래스로 나누는 경우에 softmax를 사용하는 것이라고 보면 된다.</p>
-<p><img alt="" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQGFKh%2FbtqPQtew8NG%2FP5e54TRwt9fZqmXi55866k%2Fimg.jpg" /></p>
+<p>로지스틱 함수(<a class="reference internal" href="Logistic.html#sigmoid"><span class="std std-ref">Logistic function</span></a>)의 다차원 확장이며, 다항 로지스틱 회귀나 인공신경망에서 사용된다.</p>
+<p>소프트맥스 함수는 주로 다중 클래스 분류 문제에 사용되는 활성화 함수 중 하나다. 소프트맥스는 input을 확률로 변환하며, 각 클래스에 대한 확률 분포를 생성한다. 주로 다음과 같은 상황에서 사용된다. 이진 분류와 비교해서 생각해보면 좀 더 용이하다. <a class="reference internal" href="Logistic.html#sigmoid"><span class="std std-ref">sigmoid</span></a>는 yes or no 만을 위해 사용되었다면, 여러 등급이나 클래스로 나누는 경우에 softmax를 사용하는 것이라고 보면 된다.</p>
+<figure class="align-default" id="id3">
+<img alt="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQGFKh%2FbtqPQtew8NG%2FP5e54TRwt9fZqmXi55866k%2Fimg.jpg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQGFKh%2FbtqPQtew8NG%2FP5e54TRwt9fZqmXi55866k%2Fimg.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">softmax activation function 개요</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p><strong>다중 클래스 분류</strong> : 주어진 입력에 대해 여러 클래스 중 하나를 선택하는 문제(이미지 분류, 자연어 처리 언어 모델)</p></li>
 <li><p><strong>확률 분포 생성</strong> : 각 클래스에 속할 확률을 계산하고, 가장 확률이 높은 클래스를 선택하는데 사용됨</p></li>
@@ -534,21 +540,24 @@ document.write(`
 \text{Softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^Ke^{z_j}}
 \]</div>
 <p>input vector z에 대해서 output은 i번째 클래스에 대한 확률을 말한다. <span class="math notranslate nohighlight">\(e^{z_i}\)</span>는 i번째 입력 요소의 지수 함수를 나타낸다.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id4">
 <img alt="https://velog.velcdn.com/images%2Fguide333%2Fpost%2F05653beb-0e79-48d8-90d9-3744253421d5%2FScreenshot%20from%202021-05-17%2011-10-04.png" src="https://velog.velcdn.com/images%2Fguide333%2Fpost%2F05653beb-0e79-48d8-90d9-3744253421d5%2FScreenshot%20from%202021-05-17%2011-10-04.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">softmax function</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">softmax function</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<section id="id2">
+<h2>softmax 구현<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-	<span class="n">e_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">#오버플러우 방지를 위해 입력값 중 최대값을 빼줌</span>
-	<span class="k">return</span> <span class="n">e_x</span> <span class="o">/</span> <span class="n">e_x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">e_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">#오버플러우 방지를 위해 입력값 중 최대값을 빼줌</span>
+    <span class="k">return</span> <span class="n">e_x</span> <span class="o">/</span> <span class="n">e_x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># [0.2,0.2,0.6]</span>
 </pre></div>
 </div>
+</section>
 <section id="reference">
 <h2>reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -597,11 +606,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../js/JS.html"
+       href="Logistic.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Javascript</p>
+        <p class="prev-next-title">Logistic</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -620,6 +629,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">softmax 구현</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">reference</a></li>
 </ul>
   </nav></div>
