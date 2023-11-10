@@ -50,9 +50,6 @@ class Octagon:
             
         outer_list = [Space(i, "out") for i in outer_list]
         self.result = 0
-    
-
-Octagon(til_n, from_n)
         
 ------------------
 
