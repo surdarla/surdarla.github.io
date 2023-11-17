@@ -36,6 +36,11 @@ parts:
     - file :  scripts/basics/js/JS
       sections :
         - file : scripts/basics/js/VUE
+        - file : scripts/basics/js/DOM
+
+    - file : scripts/basics/tips/tips_intro
+      sections :
+        - file : scripts/basics/tips/markdownlint
 
   - caption : Paper Review
     chapters :
@@ -65,6 +70,17 @@ parts:
       - file : scripts/algorithm/problem/하노이의 탑.ipynb
       - file : scripts/algorithm/problem/의상.ipynb
       - file : scripts/algorithm/problem/10825.ipynb
+      - file : scripts/algorithm/problem/23300.ipynb
+      - file : scripts/algorithm/problem/올바른괄호.ipynb
+      - file : scripts/algorithm/problem/10816.ipynb
+      - file : scripts/algorithm/problem/21921.ipynb
+      - file : scripts/algorithm/problem/1535.ipynb
+      - file : scripts/algorithm/problem/9663.ipynb
+      - file : scripts/algorithm/problem/1006.ipynb
+      - file : scripts/algorithm/problem/24465.ipynb
+      - file : scripts/algorithm/problem/1065.ipynb
+
+
     - file  : scripts/algorithm/data_structure
       sections :
       - file : scripts/algorithm/자료구조
@@ -72,6 +88,7 @@ parts:
       - file : scripts/algorithm/최소비용경로
       - file : scripts/algorithm/최대유량
       - file : scripts/algorithm/BFS
+      - file : scripts/algorithm/DP
 
 
 

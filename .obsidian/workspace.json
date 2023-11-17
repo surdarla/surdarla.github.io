@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "scripts/basics/dl/attention.md",
+                "file": "scripts/algorithm/DP.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "scripts/basics/dl/attention.md",
+                "file": "scripts/algorithm/DP.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "scripts/basics/dl/attention.md",
+                "file": "scripts/algorithm/DP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "scripts/basics/dl/attention.md"
+                "file": "scripts/algorithm/DP.md"
               }
             }
           },
@@ -156,9 +156,9 @@
   },
   "active": "38cdf2291f614e84",
   "lastOpenFiles": [
+    "scripts/basics/dl/attention.md",
     "scripts/basics/dl/softmax.md",
     "scripts/basics/dl/Logistic.md",
-    "scripts/basics/dl/attention.md",
     "_build/html/searchindex.js.tmp",
     "_build/html/_sources/scripts/basics/dl/attention.md",
     "_build/html/scripts/basics/dl/attention.html",

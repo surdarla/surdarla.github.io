@@ -108,3 +108,23 @@ poetry env info --path
 poetry env list
 poetry env remove
 ```
+
+## requirements.txt -> pyproject.toml
+
+기존의 requirements.txt를 사용해서 poetry add를 일괄적으로 하는 방법도 존재한다. 그래도 꼴에 예전부터 사용하던 것이기 때문에 requirements.txt도 여전히 많이 사용되고 있다.
+
+맥에서는 이렇게 해주면되고
+
+```linux
+cat requirements.txt | xargs poetry add
+```
+
+윈도우 powershell에서는 아래처럼 해주면 된다.
+
+```powershell
+Get-Content requirements.txt | ForEach-Object { poetry add $_ }
+```
+
+리눅스 명령어들이 바로 파워쉘에서는 사용되지 않기 때문에 조금 명령어가 다를 수 있다. `xargs`는 입력을 받아서 각각의 입력에 대해 특정 명령어를 실행하는 역할을 한다. 여기서는 js에서 처럼 foreach를 사용하는 모습을 보인다.
+
+만약 스크립트 실행 권한이 비활성화 되어있으면 `Set-ExecutionPolicy remoteSigned`를 쳐준다.
