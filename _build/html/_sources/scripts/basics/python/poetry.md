@@ -128,3 +128,17 @@ Get-Content requirements.txt | ForEach-Object { poetry add $_ }
 리눅스 명령어들이 바로 파워쉘에서는 사용되지 않기 때문에 조금 명령어가 다를 수 있다. `xargs`는 입력을 받아서 각각의 입력에 대해 특정 명령어를 실행하는 역할을 한다. 여기서는 js에서 처럼 foreach를 사용하는 모습을 보인다.
 
 만약 스크립트 실행 권한이 비활성화 되어있으면 `Set-ExecutionPolicy remoteSigned`를 쳐준다.
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

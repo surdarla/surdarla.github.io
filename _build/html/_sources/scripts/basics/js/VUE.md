@@ -47,3 +47,17 @@ DOM의 내용
 4. 이벤트 처리 - 이벤트 감지 및 처리(클릭, 호버, 키보드입력)
 5. 크로스브라주어 호환성 - JS를 통해 동일한 방식으로 조작 및 처리 표준 제공
 6. 문서 구조 변경 - 문서 구조를 동적으로 변경 가능
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

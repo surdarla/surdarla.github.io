@@ -72,3 +72,16 @@ def knapsack(n,k,items):
 ## referances
 
 - [메시에 - dynamic programming:배낭채우기 문제(knapsack problem)](https://gsmesie692.tistory.com/113)
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

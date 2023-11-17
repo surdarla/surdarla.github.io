@@ -39,3 +39,17 @@ LangChain은 API에 기반하여 LLM에 연결하는 기능이 기본적으로 �
 
 ```{figure}https://velog.velcdn.com/images/jjlee6496/post/f5c069d7-04f0-4a33-a117-ba6709d7fe64/image.png
 ```
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

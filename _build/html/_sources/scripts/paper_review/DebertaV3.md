@@ -200,3 +200,16 @@ $$
 1. [kpmg notion - Deberta Review](https://kpmgkr.notion.site/DeBERTa-421579f197f840f48cc920f09cbbb70b)
 2. [HF - lighthouse/mdeberta-v3-base-kor-further](https://huggingface.co/lighthouse/mdeberta-v3-base-kor-further)
 3. [github - microsoft/DeBERTa](https://github.com/microsoft/DeBERTa)
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

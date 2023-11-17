@@ -1,5 +1,5 @@
 
-# 3. Normalization 정규화
+# Normalization 정규화
 
 ![morpheme](/images/9b29442026783ce1e7672cbd8ce504d9_MD5.png)
 
@@ -79,3 +79,17 @@ BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BP
 2. nltk
 
 - 쓸데없이 선택지 많음
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

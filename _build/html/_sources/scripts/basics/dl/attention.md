@@ -29,7 +29,6 @@ context 벡터는 전체 소스 입력 시퀀스에 대해서 접근할 수 있�
 
 ![](https://lilianweng.github.io/posts/2018-06-24-attention/encoder-decoder-attention.png)
 
-
 ## Shortcut
 
 shortcut connection은 듣는 순간 떠오르는 논문이 있다. 바로 resnet이다. resnet에서는 deep nn에서 발생하는 gradient lossing 문제를 해결하기 위해 나온 architecture로 굉장히 센세이셔널 했던 구조이다. 지금까지도 많은 architecture들의 backbone으로 사용되기도 할 만큼 그 architecture가 가지는 구조적 강점이 크다. 그 중에서도 중요했던 것이 이 shorcut이다.
@@ -37,7 +36,6 @@ shortcut connection은 듣는 순간 떠오르는 논문이 있다. 바로 resne
 Resnet에서의 shortcut은 `Residual connection`이라고도 불린다. 이는 네트워크 레이어를 건너뛰고 입력과 출력을 직접 연결함으로써 gradient가 원활하게 흐를 수 있도록 도왔다.
 
 Attention에서의 shortcut은 인코더와 디코더 사이의 연결을 말한다. 각 출력 요소가 소스 입력의 모든 요소에 대한 sum of weight를 계산하고 이를 사용하여 출력을 생성하는 메커니즘을 설명한다. 이는 모델이 입력과 출력 간에 관계를 학습하는데 사용한다는 점에서 다르다.
-
 
 ## Definition
 
@@ -87,3 +85,16 @@ $$
 $$
 c_t = \displaystyle\sum_{j=1}^{T_x} a_{t-1,j},h_j
 $$
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

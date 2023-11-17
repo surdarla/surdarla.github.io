@@ -8,3 +8,16 @@ Transformer라는 모델을 처음으로 보인 논문으로 2017년에 나와�
 : dropdown
 
 ```
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

@@ -21,3 +21,16 @@ $$
 ## Reference
 
 - 밑바닥부터 시작하는 딥러닝 : 사이토 고키
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

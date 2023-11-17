@@ -1,5 +1,3 @@
-# Hash 해시
-
 ```{raw} html
 <script
    type="text/javascript"

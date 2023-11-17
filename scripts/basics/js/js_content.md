@@ -107,3 +107,17 @@ JS가 중요한 지점이 나온다. 우리가 마주하는 html은 말그대로
 html은 정적인 리소스이다. 사용자에게 표시할 화면은 처음 html로 만들고 나면은 그걸로 변경하는 것은 불가능하다. html로 변경은 불가능하지만 js로는 가능하기에 사용하는 것이다. 더 나아가 server와 통신하여 복잡한 처리를 하거나, server-client 사이에서 주고받는 과정은 html을 통해서 이루어 지는 것이 아니라  js를 통해서 이루어진다.
 
 ## class 바꾸기
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

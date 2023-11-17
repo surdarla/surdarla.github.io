@@ -244,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">3. Normalization 정규화</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/perceptron.html">Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/attention.html">Attention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/softmax.html">softmax</a></li>
@@ -530,10 +530,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input setting</span>
-<span class="n">problem_num</span> <span class="o">=</span> <span class="s1">&#39;하노이의 탑&#39;</span>
+<span class="n">problem_num</span> <span class="o">=</span> <span class="s2">&quot;하노이의 탑&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s1">&#39;</span>  <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
 </pre></div>
@@ -544,25 +545,27 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">to</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">start</span><span class="p">,</span><span class="n">to</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">]</span>
+
 
 <span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">via</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">to</span><span class="p">))</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">via</span><span class="p">,</span><span class="n">to</span><span class="p">)</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">to</span><span class="p">))</span>
-        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">via</span><span class="p">,</span><span class="n">to</span><span class="p">,</span><span class="n">start</span><span class="p">)</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">result</span>
 
+
 <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">start</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">via</span><span class="p">,</span><span class="n">to</span><span class="p">)</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">answer</span>
-
 </pre></div>
 </div>
 </div>
@@ -593,7 +596,16 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/></section>
 
     <script type="text/x-thebe-config">
     {
