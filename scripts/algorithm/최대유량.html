@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -198,13 +198,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/surdarla-logo.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/surdarla-logo.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
@@ -298,6 +299,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="problem/1535.html">1535 : 안녕</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/9663.html">9663 : N-Queen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/1006.html">1006 : 습격자 초라기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/24465.html">24465 : 데뷔의 꿈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/1065.html">1065 : 한수</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="data_structure.html">data_structure</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -561,12 +564,12 @@ network flow, maximum flow 라고 불린다</p>
 <span id="id1"></span><h2>Ford-Fulkerson<a class="headerlink" href="#ford-fulkerson" title="Permalink to this heading">#</a></h2>
 <p><a class="reference internal" href="#minimum-cut"><span class="std std-ref">최소컷</span></a></p>
 <div class="math notranslate nohighlight" id="equation">
-<span class="eqno">(2)<a class="headerlink" href="#equation" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation" title="Permalink to this equation">#</a></span>\[
     \tag{유량의 대칭성}
     f(u,v) = -f(v,u)
 \]</div>
 <p>간선 (u,v) 방향으로 flow가 존재한다면(f(u,v)&gt;0), 역방향으로는 음의 유량이 그만큼 흐르고 있는 것으로 취급한다는 의미를 유량의 대칭성이라고 말한다. 간선 (u,v)가 존재한다면 c(u,v)가 양수고, c(v,u)는 0으로 취급된다. 따라서 그래프에서는 없는 간선이지만 가상으로는 있는 역방향 간선에 대한 성질로 접근하는 것이 해당 알고리즘의 포인트다. 역방향 간선으로 흘려보낸다는 의미는 곧 <code class="docutils literal notranslate"><span class="pre">다른</span> <span class="pre">간선으로</span> <span class="pre">대신</span> <span class="pre">흘려보낸다</span></code>는 의미와 동등하다.</p>
-<p>폴트포커슨에서 중요한 것은 위의 <a class="reference internal" href="#equation">(2)</a>을 사용한다는 것이다. 원래는 없는 간선일지라도 해당 성질을 이용하면 숨어있는 간선의 잔여유량을 찾을 수 있다.</p>
+<p>폴트포커슨에서 중요한 것은 위의 <a class="reference internal" href="#equation">(1)</a>을 사용한다는 것이다. 원래는 없는 간선일지라도 해당 성질을 이용하면 숨어있는 간선의 잔여유량을 찾을 수 있다.</p>
 <ol class="arabic simple">
 <li><p>s <span class="math notranslate nohighlight">\(\to\)</span> t로 가는 경로 아무거나 하나 찾는다. 이때 경로는 단순 경로이고, 경로상의 모든 간선에 아직 여유 용량이 남아있다. 즉 <span class="math notranslate nohighlight">\(c(u,v)-f(u,v) &gt; 0\)</span></p></li>
 <li><p>차단 간선을 찾는다. 이 간선은 경로상에서 <span class="math notranslate nohighlight">\(c(u,v)-f(u,v)\)</span>의 값이 최소인 간선이다. 많아봐야 이만큼의 유량을 더 보낼 수 있다. 이는 잔여용량 <span class="math notranslate nohighlight">\(r\)</span> 이다. 잔여용량이 0이면 더이상 해당 간선에는 유량을 보낼 수 없다.</p></li>
@@ -708,8 +711,8 @@ By Surdarla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

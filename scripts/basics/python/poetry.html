@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -196,13 +196,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../../../_static/surdarla-logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/surdarla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/surdarla-logo.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../../_static/surdarla-logo.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
@@ -296,6 +297,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1535.html">1535 : 안녕</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/9663.html">9663 : N-Queen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1006.html">1006 : 습격자 초라기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/24465.html">24465 : 데뷔의 꿈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1065.html">1065 : 한수</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -516,6 +519,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-functions">main functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-txt-pyproject-toml">requirements.txt -&gt; pyproject.toml</a></li>
 </ul>
             </nav>
         </div>
@@ -632,6 +636,20 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="requirements-txt-pyproject-toml">
+<h2>requirements.txt -&gt; pyproject.toml<a class="headerlink" href="#requirements-txt-pyproject-toml" title="Permalink to this heading">#</a></h2>
+<p>기존의 requirements.txt를 사용해서 poetry add를 일괄적으로 하는 방법도 존재한다. 그래도 꼴에 예전부터 사용하던 것이기 때문에 requirements.txt도 여전히 많이 사용되고 있다.</p>
+<p>맥에서는 이렇게 해주면되고</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>cat requirements.txt | xargs poetry add
+</pre></div>
+</div>
+<p>윈도우 powershell에서는 아래처럼 해주면 된다.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-Content</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">poetry</span> <span class="n">add</span> <span class="nv">$_</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>리눅스 명령어들이 바로 파워쉘에서는 사용되지 않기 때문에 조금 명령어가 다를 수 있다. <code class="docutils literal notranslate"><span class="pre">xargs</span></code>는 입력을 받아서 각각의 입력에 대해 특정 명령어를 실행하는 역할을 한다. 여기서는 js에서 처럼 foreach를 사용하는 모습을 보인다.</p>
+<p>만약 스크립트 실행 권한이 비활성화 되어있으면 <code class="docutils literal notranslate"><span class="pre">Set-ExecutionPolicy</span> <span class="pre">remoteSigned</span></code>를 쳐준다.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -698,6 +716,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-functions">main functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-txt-pyproject-toml">requirements.txt -&gt; pyproject.toml</a></li>
 </ul>
   </nav></div>
 
@@ -745,8 +764,8 @@ By Surdarla
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
