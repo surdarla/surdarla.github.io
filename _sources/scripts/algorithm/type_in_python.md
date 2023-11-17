@@ -82,3 +82,17 @@ def my_function(*args: ParamSpec, **kwargs: ParamSpec) -> Tuple[ParamSpec, Param
 - [모던자바스크립트 deep dive - data type & variable](https://poiemaweb.com/js-data-type-variable)
 - [TechNote.kr - Python - id(), object의 unique 값(memory address)를 보여주는 함수](https://technote.kr/289)
 - something for nothing
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```

@@ -42,3 +42,16 @@ print(y) # [0.2,0.2,0.6]
 ## reference
 
 - [노마드공학자 - softmax regression](https://limitsinx.tistory.com/36)
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```
