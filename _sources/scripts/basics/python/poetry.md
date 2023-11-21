@@ -115,7 +115,7 @@ poetry env remove
 
 맥에서는 이렇게 해주면되고
 
-```linux
+```bash
 cat requirements.txt | xargs poetry add
 ```
 

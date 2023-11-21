@@ -25,3 +25,17 @@ obsidian이나 jupyter-book을 사용하다보면
 ## referance
 
 - [vscode markdownlit - md009 해제하기](https://frhyme.github.io/vs-code/vscode_markdownlint_md009_disabled/)
+
+
+```{raw} html
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/>
+```
