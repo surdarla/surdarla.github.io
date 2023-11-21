@@ -194,8 +194,6 @@ $$
 
 한 벡터나 공간을 다른 공간으로 mapping하는 것을 도우는 matrix
 
-
-
 ```{raw} html
 <script
    type="text/javascript"

@@ -41,6 +41,11 @@ parts:
     - file : scripts/basics/tips/tips_intro
       sections :
         - file : scripts/basics/tips/markdownlint
+        - file : scripts/basics/tips/snippet_create
+
+    - file : scripts/basics/java/java_intro
+      sections :
+        - file : scripts/basics/java/java
 
   - caption : Paper Review
     chapters :
