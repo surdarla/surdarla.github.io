@@ -84,22 +84,7 @@ json안에서 또 편하게 쓰기 위해서 해당 snippet안에서 사용할 s
 2. `${2:something}`으로 된 것은 something이 기본적으로 표기된다.
 3. tab키를 사용해서 1,2,3... 순으로 이동하면서 수정이 가능하고
 4. `$0`은 맨 마지막 순서를 규정한다. 0에서 한 번더 tab키를 누르면 해당 snippet 수정을 탈출한다.
-
-## test
-
-```{code-block} python
-:name: test
-:caption: test
-:emphasize-lines: 2,3
-:lineno-start: 1
-
-a = 1
-b = 2
-c = 3
-d = b+c
-print(d)
-```
-
+5. ``
 
 ## reference
 
