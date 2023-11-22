@@ -627,17 +627,22 @@ document.write(`
 <li><p>익명 블록(Anonymous block) - instance initialization block, static initial block</p></li>
 </ol>
 <p>위와 같은 여러 블록이 java에서 존재한다. 블록은 <code class="docutils literal notranslate"><span class="pre">코드의</span> <span class="pre">구조화</span></code>, <code class="docutils literal notranslate"><span class="pre">조건</span> <span class="pre">및</span> <span class="pre">반복</span> <span class="pre">제어</span></code>, <code class="docutils literal notranslate"><span class="pre">변수의</span> <span class="pre">범위</span> <span class="pre">제한</span></code> 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.</p>
-<p>java 소스코드는 하나의 class이고 <code class="docutils literal notranslate"><span class="pre">{eval-rst}\</span> <span class="pre">:guilabel:`class</span> <span class="pre">block`\</span> </code> 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.</p>
-<p>클래스 블럭 안에 highlight된 부분이 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`method</span> <span class="pre">block`</span> </code>이다.</p>
+<p>java 소스코드는 하나의 class이고 <span class="guilabel">class block</span> 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.</p>
+<p>클래스 블럭 안에 highlight된 부분이 :guilabel:<a href="#id1"><span class="problematic" id="id2">`</span></a>method block`이다.</p>
 <dl class="simple myst">
-<dt>public|default|private|protected - 접근제어자(access modifier)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:menuselection:`private</span> <span class="pre">--&gt;</span> <span class="pre">defautl</span> <span class="pre">--&gt;</span> <span class="pre">protected</span> <span class="pre">--&gt;</span> <span class="pre">public`</span> </code> 순으로 많은 접근을 혀용한다.</p>
+<dt>public|default|private|protected</dt><dd><ul class="simple">
+<li><p>접근제어자(access modifier)</p></li>
+</ul>
+</dd>
+</dl>
 <ul class="simple">
+<li><p>private –&gt; defautl –&gt; protected –&gt; public</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">private</span></code> : 해당 클래스 안에서만 접근 가능</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">protected</span></code> : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">public</span></code> : 어떤 클래스에서도 접근 가능</p></li>
 </ul>
-</dd>
+<dl class="simple myst">
 <dt>static</dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.</p>
 </dd>
@@ -781,7 +786,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-22 14:29:31
+  based on jupyter-book, last updated: 2023-11-22 14:32:30
 </div>
   </div>
   

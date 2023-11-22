@@ -76,16 +76,19 @@ alt : block image
 
 위와 같은 여러 블록이 java에서 존재한다. 블록은 `코드의 구조화`, `조건 및 반복 제어`, `변수의 범위 제한` 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
 
-java 소스코드는 하나의 class이고 ```{eval-rst}\ :guilabel:`class block`\ ``` 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
+```{eval-rst}
+java 소스코드는 하나의 class이고 :guilabel:`class block` 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
 
-클래스 블럭 안에 highlight된 부분이 ```{eval-rst} :guilabel:`method block` ```이다.
+클래스 블럭 안에 highlight된 부분이 :guilabel:`method block`이다.
+```
 % definition list
-public|default|private|protected - 접근제어자(access modifier)
-: ```{eval-rst} :menuselection:`private --> defautl --> protected --> public` ``` 순으로 많은 접근을 혀용한다.
-  - `private` : 해당 클래스 안에서만 접근 가능
-  - `default` : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능
-  - `protected` : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능
-  - `public` : 어떤 클래스에서도 접근 가능
+public|default|private|protected
+: - 접근제어자(access modifier)
+- private --> defautl --> protected --> public
+- `private` : 해당 클래스 안에서만 접근 가능
+- `default` : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능
+- `protected` : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능
+- `public` : 어떤 클래스에서도 접근 가능
 
 static
 : 아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.\
