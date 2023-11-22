@@ -101,7 +101,7 @@ static
 
 메서드 블럭 안에 이제
 ```{eval-rst}
-:guilabel:`Statement 명령문`
+.. :guilabel:`Statement 명령문`
 ```
 이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. `;`가 문장이 끝난 것임은 javascript와 비슷하다.
 
