@@ -76,12 +76,33 @@ alt : block image
 위와 같은 여러 블록이 java에서 존재한다. 블록은 코드의 구조, 조건 및 반복 제어, 변수의 범위 제한 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
 
 ::::{grid} 3
-:::{grid-item-card}  class block
-클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
+:gutter: 1
+
+:::{grid-item-card} class block
+```java
+/* 클래스 블록 */
+public class 클래스명 {
+}
+```
+^^^
+클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java).
++++
+public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
 :::
 
-:::{grid-item-card}  method block
+:::
+:::{grid-item-card} method block
+```java
+    /* 메서드 블록 */
+    [public|private|protected] [static] (리턴자료형|void) 메서드명1(입력자료형 매개변수, ...) {
+        명령문(statement);
+        ...
+    }
+```
+^^^
 클래스 블럭 안에 highlight된 부분이 method block 이다.
++++
+main method가 해당 클래스 프로그램의 시작점이 된다.
 :::
 
 :::{grid-item-card} statement
@@ -89,7 +110,7 @@ alt : block image
 명령문(statement);
 ```
 ^^^
-메서드 블럭 안에 이제 `Statement 명령문` 이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. 
+메서드 블럭 안에 이제 `Statement 명령문` 이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다.
 +++
 `;`가 문장이 끝난 것임은 javascript와 비슷하다.
 :::
@@ -113,8 +134,6 @@ static method
 
 메서드명1(입력자료형 매개변수, ...)
 : 여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다. `String[] args` : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. 자료형 + 변수명
-
-
 
 - 클래스는 필드와 메소드를 가질 수 있다.
   - `System.out.println` : 마치 자동차.엔진.시동해 처럼 `class.field.method`
