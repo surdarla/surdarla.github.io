@@ -32,7 +32,6 @@ figclass : margin
   - 해서 **플랫폼 독립적**이라고 한다.
 
 ## 코드 구조
----
 
 ```{code-block} java
 :name: java_intro_code
@@ -74,17 +73,15 @@ alt : block image
 4. 반복문 블록(Loop Blocks)
 5. 익명 블록(Anonymous block) - instance initialization block, static initial block
 
-위와 같은 여러 블록이 java에서 존재한다. 블록은 `코드의 구조화`, `조건 및 반복 제어`, `변수의 범위 제한` 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
+위와 같은 여러 블록이 java에서 존재한다. 블록은 코드의 구조, 조건 및 반복 제어, 변수의 범위 제한 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
 
-```{eval-rst}
-java 소스코드는 하나의 class이고 :guilabel:`class block` 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
+java 소스코드는 하나의 class이고 __class block__ 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
 
-클래스 블럭 안에 highlight된 부분이 :guilabel:`method block`이다.
-```
+클래스 블럭 안에 highlight된 부분이 `method block`이다.
+
 % definition list
 public|default|private|protected
-: - 접근제어자(access modifier)
-- private --> defautl --> protected --> public
+: 접근제어자(access modifier), private $\to$ defautl $\to$ protected $\to$ public 순으로 접근가능 범위가 넓어진다.
 - `private` : 해당 클래스 안에서만 접근 가능
 - `default` : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능
 - `protected` : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능
@@ -95,14 +92,12 @@ static
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.
 
 (리턴자료형|void)
-: 메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 `compile error`가 발생한다.
+: 메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 compile error가 발생한다.
 
 메서드명1(입력자료형 매개변수, ...)
-: 여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다.`String[] args` : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. `자료형 + 변수명`
+: 여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다. `String[] args` : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. 자료형 + 변수명
 
-```{eval-rst}
-메서드 블럭 안에 이제 :guilabel:`Statement 명령문` 이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. `;`가 문장이 끝난 것임은 javascript와 비슷하다.
-```
+메서드 블럭 안에 이제 `Statement 명령문` 이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. `;`가 문장이 끝난 것임은 javascript와 비슷하다.
 
 - 클래스는 필드와 메소드를 가질 수 있다.
   - `System.out.println` : 마치 자동차.엔진.시동해 처럼 `class.field.method`
