@@ -632,7 +632,7 @@ document.write(`
 <p>java 소스코드는 하나의 class이고 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`class</span> <span class="pre">block`</span> </code> 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.</p>
 <p>클래스 블럭 안에 highlight된 부분이 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`method</span> <span class="pre">block`</span> </code>이다.</p>
 <dl class="simple myst">
-<dt><code class="docutils literal notranslate"><span class="pre">public|default|private|protected</span></code> - 접근제어자(access modifier)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:menuselection:`private</span> <span class="pre">--&gt;</span> <span class="pre">defautl</span> <span class="pre">--&gt;</span> <span class="pre">protected</span> <span class="pre">--&gt;</span> <span class="pre">public`</span> </code> 순으로 많은 접근을 혀용한다.</p>
+<dt>public|default|private|protected - 접근제어자(access modifier)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:menuselection:`private</span> <span class="pre">--&gt;</span> <span class="pre">defautl</span> <span class="pre">--&gt;</span> <span class="pre">protected</span> <span class="pre">--&gt;</span> <span class="pre">public`</span> </code> 순으로 많은 접근을 혀용한다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">private</span></code> : 해당 클래스 안에서만 접근 가능</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능</p></li>
@@ -640,15 +640,15 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">public</span></code> : 어떤 클래스에서도 접근 가능</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">static</span></code></dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
+<dt>static</dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">(리턴자료형|void)</span></code></dt><dd><p>메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 <code class="docutils literal notranslate"><span class="pre">compile</span> <span class="pre">error</span></code>가 발생한다.</p>
+<dt>(리턴자료형|void)</dt><dd><p>메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 <code class="docutils literal notranslate"><span class="pre">compile</span> <span class="pre">error</span></code>가 발생한다.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">메서드명1(입력자료형</span> <span class="pre">매개변수,</span> <span class="pre">...)</span></code></dt><dd><p>여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다.<code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">args</span></code> : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. <code class="docutils literal notranslate"><span class="pre">자료형</span> <span class="pre">+</span> <span class="pre">변수명</span></code></p>
+<dt>메서드명1(입력자료형 매개변수, …)</dt><dd><p>여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다.<code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">args</span></code> : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. <code class="docutils literal notranslate"><span class="pre">자료형</span> <span class="pre">+</span> <span class="pre">변수명</span></code></p>
 </dd>
 </dl>
-<p>메서드 블럭 안에 이제 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`Statement</span> <span class="pre">명령문`</span> </code>이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. <code class="docutils literal notranslate"><span class="pre">;</span></code>가 문장이 끝난 것임은 javascript와 비슷하다.</p>
+<p>메서드 블럭 안에 이제 ```{eval-rst} :guilabel:<code class="docutils literal notranslate"><span class="pre">Statement</span> <span class="pre">명령문````이</span> <span class="pre">있다.</span> <span class="pre">이제</span> <span class="pre">실제로</span> <span class="pre">컴퓨터가</span> <span class="pre">동작해야하는</span> <span class="pre">부분에</span> <span class="pre">대한</span> <span class="pre">규정이</span> <span class="pre">들어가</span> <span class="pre">있다.</span> </code>;`가 문장이 끝난 것임은 javascript와 비슷하다.</p>
 <ul class="simple">
 <li><p>클래스는 필드와 메소드를 가질 수 있다.</p>
 <ul>
@@ -783,7 +783,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-22 14:03:35
+  based on jupyter-book, last updated: 2023-11-22 14:12:32
 </div>
   </div>
   

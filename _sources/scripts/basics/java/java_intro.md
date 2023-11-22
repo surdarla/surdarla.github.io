@@ -82,24 +82,24 @@ java 소스코드는 하나의 class이고 ```{eval-rst} :guilabel:`class block`
 
 클래스 블럭 안에 highlight된 부분이 ```{eval-rst} :guilabel:`method block` ```이다.
 % definition list
-`public|default|private|protected` - 접근제어자(access modifier)
+public|default|private|protected - 접근제어자(access modifier)
 : ```{eval-rst} :menuselection:`private --> defautl --> protected --> public` ``` 순으로 많은 접근을 혀용한다.
   - `private` : 해당 클래스 안에서만 접근 가능
   - `default` : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능
   - `protected` : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능
   - `public` : 어떤 클래스에서도 접근 가능
 
-`static`
+static
 : 아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.\
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.
 
-`(리턴자료형|void)`
+(리턴자료형|void)
 : 메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 `compile error`가 발생한다.
 
-`메서드명1(입력자료형 매개변수, ...)`
+메서드명1(입력자료형 매개변수, ...)
 : 여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다.`String[] args` : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. `자료형 + 변수명`
 
-메서드 블럭 안에 이제 ```{eval-rst} :guilabel:`Statement 명령문` ```이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. `;`가 문장이 끝난 것임은 javascript와 비슷하다.
+메서드 블럭 안에 이제 ```{eval-rst} :guilabel:`Statement 명령문````이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. `;`가 문장이 끝난 것임은 javascript와 비슷하다.
 
 - 클래스는 필드와 메소드를 가질 수 있다.
   - `System.out.println` : 마치 자동차.엔진.시동해 처럼 `class.field.method`
