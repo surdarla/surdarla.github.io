@@ -13,11 +13,13 @@ html::-webkit-scrollbar {
 }
 
 .sidebar {
+    scrollbar-width: none;
     overflow-y: scroll;
 }
 
 .sidebar::-webkit-scrollbar {
     display: none;
 }
+
 /* 
 https://stackoverflow.com/questions/19967352/how-can-i-add-a-scroll-bar-to-a-fixed-sidebar-that-only-appears-on-hover */
