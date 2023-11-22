@@ -10,10 +10,10 @@ html {
     border-radius: 12px 12px 12px 12px;
 }
 
-html::-webkit-scrollbar {
+/* html::-webkit-scrollbar {
     display: none;
-    /* for Chrome, Safari, and Opera */
-}
+    /* for Chrome, Safari, and Opera 
+}*/
 
 .bd-sidebar-primary {
     overflow-y: auto;
