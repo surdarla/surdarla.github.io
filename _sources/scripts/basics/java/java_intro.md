@@ -90,7 +90,6 @@ public class 클래스명 {
 public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
 :::
 
-:::
 :::{grid-item-card} method block
 ```java
     /* 메서드 블록 */
