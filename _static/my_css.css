@@ -1,0 +1,61 @@
+/* Vertical Scrollbar (RIGHT SIDE) */
+::-webkit-scrollbar-track:vertical {
+    background: -webkit-linear-gradient(180deg, #fff, #fff, #fff, #fff, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5), #fff, #fff, #fff);
+    border-radius: 10px;
+}
+
+/* Horizontal Scrollbar (BOTTOM SIDE) */
+::-webkit-scrollbar-track:horizontal {
+    background: -webkit-linear-gradient(90deg, #fff, #fff, #fff, #fff, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5), #fff, #fff, #fff);
+    border-radius: 10px;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+    background: rgba(112, 178, 243, 0.75);
+    border-radius: 2em;
+}
+
+/* Horiontal Scrollbar button (TOP-RIGHT aKa START) */
+::-webkit-scrollbar-button:horizontal:single-button:start {
+    position: absolute;
+    content: '';
+    border-bottom: 20px solid transparent;
+    border-right: 42px solid #7082f3;
+    border-left: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+/* Vertical Scrollbar button (BOTTOM-LEFT aKa START) */
+::-webkit-scrollbar-button:vertical:single-button:start {
+    position: absolute;
+    content: '';
+    border-right: 20px solid transparent;
+    border-bottom: 62px solid #7082f3;
+    border-left: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+/* Horiontal Scrollbar button (BOTTOM-RIGHT aKa END) */
+::-webkit-scrollbar-button:horizontal:single-button:end {
+    position: absolute;
+    overflow: hidden;
+    content: '';
+    border-bottom: 20px solid transparent;
+    border-left: 42px solid #7082f3;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+/* Vertical Scrollbar button (BOTTOM-RIGHT aKa END) */
+::-webkit-scrollbar-button:vertical:single-button:end {
+    position: absolute;
+    overflow: hidden;
+    content: '';
+    border-bottom: 20px solid transparent;
+    border-top: 62px solid #7082f3;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+출처: https: //inpa.tistory.com/entry/CSS-🌟-스크롤-바Scrollbar-꾸미기-속성-총정리 [Inpa Dev 👨‍💻:티스토리]
