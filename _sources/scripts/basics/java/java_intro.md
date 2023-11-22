@@ -77,6 +77,7 @@ alt : block image
 
 ::::{grid} 3
 :gutter: 1
+
 :::{grid-item-card} 1
 1
 :::
