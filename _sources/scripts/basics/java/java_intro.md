@@ -76,20 +76,14 @@ alt : block image
 위와 같은 여러 블록이 java에서 존재한다. 블록은 코드의 구조, 조건 및 반복 제어, 변수의 범위 제한 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
 
 ::::{grid} 3
-:gutter: 1
+:::{grid-item-card}  class block
+클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
+:::
 
-:::{grid-item-card} 1
-1
+:::{grid-item-card}  method block
+클래스 블럭 안에 highlight된 부분이 method block 이다.
 :::
-:::{grid-item-card} 2
-2
-:::
-:::{grid-item-card} 3
-3
-:::
-:::{grid-item-card} 4
-4
-:::
+
 ::::
 
 % definition list
