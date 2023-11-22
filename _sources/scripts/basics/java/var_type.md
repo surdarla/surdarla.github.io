@@ -26,7 +26,7 @@
 
 ::::{grid} 2
 :gutter: 1
-:class: full-width, dropdown
+:class-container: full-width, dropdown
 
 char with new and literal
 
