@@ -610,6 +610,25 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* 클래스 블록 */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">클래스명</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
+<span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명1</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
+<span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명2</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <section id="block">
 <h3>block<a class="headerlink" href="#block" title="Permalink to this heading">#</a></h3>
 <figure class="align-center" id="blocks">
@@ -626,8 +645,8 @@ document.write(`
 <li><p>익명 블록(Anonymous block) - instance initialization block, static initial block</p></li>
 </ol>
 <p>위와 같은 여러 블록이 java에서 존재한다. 블록은 코드의 구조, 조건 및 반복 제어, 변수의 범위 제한 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.</p>
-<p>java 소스코드는 하나의 class이고 <strong>class block</strong> 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.</p>
-<p>클래스 블럭 안에 highlight된 부분이 <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">block</span></code>이다.</p>
+<p>java 소스코드는 하나의 class이고 class block 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.</p>
+<p>클래스 블럭 안에 highlight된 부분이 method block 이다.</p>
 <dl class="simple myst">
 <dt>public|default|private|protected</dt><dd><p>접근제어자(access modifier), private <span class="math notranslate nohighlight">\(\to\)</span> defautl <span class="math notranslate nohighlight">\(\to\)</span> protected <span class="math notranslate nohighlight">\(\to\)</span> public 순으로 접근가능 범위가 넓어진다.</p>
 </dd>
@@ -639,7 +658,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">public</span></code> : 어떤 클래스에서도 접근 가능</p></li>
 </ul>
 <dl class="simple myst">
-<dt>static</dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
+<dt>static method</dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.</p>
 </dd>
 <dt>(리턴자료형|void)</dt><dd><p>메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 compile error가 발생한다.</p>
@@ -782,7 +801,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-22 14:53:41
+  based on jupyter-book, last updated: 2023-11-22 15:01:14
 </div>
   </div>
   

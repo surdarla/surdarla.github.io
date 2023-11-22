@@ -56,6 +56,26 @@ public class 클래스명 {
 }
 ```
 
+```java
+/* 클래스 블록 */
+public class 클래스명 {
+
+    /* 메서드 블록 */
+    [public|private|protected] [static] (리턴자료형|void) 메서드명1(입력자료형 매개변수, ...) {
+        명령문(statement);
+        ...
+    }
+
+    /* 메서드 블록 */
+    [public|private|protected] [static] (리턴자료형|void) 메서드명2(입력자료형 매개변수, ...) {
+        명령문(statement);
+        ...
+    }
+
+    ...
+}
+```
+
 ### block
 
 ```{figure} https://wikidocs.net/images/page/278/02-1_statement.png
@@ -75,9 +95,9 @@ alt : block image
 
 위와 같은 여러 블록이 java에서 존재한다. 블록은 코드의 구조, 조건 및 반복 제어, 변수의 범위 제한 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
 
-java 소스코드는 하나의 class이고 __class block__ 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
+java 소스코드는 하나의 class이고 class block 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.
 
-클래스 블럭 안에 highlight된 부분이 `method block`이다.
+클래스 블럭 안에 highlight된 부분이 method block 이다.
 
 % definition list
 public|default|private|protected
@@ -87,7 +107,7 @@ public|default|private|protected
 - `protected` : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능
 - `public` : 어떤 클래스에서도 접근 가능
 
-static
+static method
 : 아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.\
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.
 
