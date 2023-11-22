@@ -32,6 +32,7 @@ figclass : margin
   - 해서 **플랫폼 독립적**이라고 한다.
 
 ## 코드 구조
+---
 
 ```{code-block} java
 :name: java_intro_code
