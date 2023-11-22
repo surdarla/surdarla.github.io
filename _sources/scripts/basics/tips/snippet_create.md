@@ -91,11 +91,6 @@ json안에서 또 편하게 쓰기 위해서 해당 snippet안에서 사용할 s
 - [nJo2 - Visual Studio Code에서 코드조각(Snippets)을 슬기롭게 사용하는 방법](https://ux.stories.pe.kr/290)
 - [Snippets in Visual Studio Code document](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets)
 
-```{eval-rst}
-:kbd:`MMB`, :kbd:`⌘+⇧+M` and :kbd:`Shift-MMB`
-:menuselection:`My --> Software --> Some menu --> Some sub menu 1 --> Some sub menu 2 --> Some sub menu 3`
-```
-
 ```{raw} html
 <script
    type="text/javascript"
@@ -107,3 +102,4 @@ json안에서 또 편하게 쓰기 위해서 해당 snippet안에서 사용할 s
    label="💬 comment"
    crossorigin="anonymous"
 />
+```

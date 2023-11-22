@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Analysis &#8212; surdarla-book</title>
+    <title>변수 &#8212; surdarla-book</title>
   
   
   
@@ -104,14 +104,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/anal/anal_intro';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/anal/anal_intro.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/java/var_type';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/java/var_type.html" />
     <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="linearity" href="linearity.html" />
-    <link rel="prev" title="practice - torch sklearn numpy" href="../../CS229/2-1.html" />
+    <link rel="next" title="vision" href="../../paper_review/vision.html" />
+    <link rel="prev" title="Java" href="java_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -231,10 +231,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-value.html">Feature selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anal/linearity.html">linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -263,8 +263,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../tips/snippet_create.html">vscode snippet 만들기</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../java/var_type.html">변수</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="java_intro.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">변수</a></li>
 </ul>
 </li>
 </ul>
@@ -404,7 +404,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/anal/anal_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/java/var_type.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,7 +434,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/scripts/basics/anal/anal_intro.md" target="_blank"
+      <li><a href="../../../_sources/scripts/basics/java/var_type.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -503,7 +503,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -514,11 +516,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analysis</h1>
+    <h1>변수</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referance">referance</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -528,17 +539,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analysis">
-<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h1>
-<p>linaer algebra, calculus, probability, statistics, optimization, etc.
-수학적 개념과 통계를 통해서 데이터 분석의 기본을 모아보기</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="linearity.html">linearity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="information-value.html">Feature selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>변수<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="referance">
+<h2>referance<a class="headerlink" href="#referance" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ko.javascript.info/dom-nodes">DOM 트리</a></p></li>
 </ul>
-</div>
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -554,7 +574,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts\basics\anal"
+            path: "./scripts\basics\java"
         },
         predefinedOutput: true
     }
@@ -572,20 +592,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../CS229/2-1.html"
+       href="java_intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">practice - torch sklearn numpy</p>
+        <p class="prev-next-title">Java</p>
       </div>
     </a>
     <a class="right-next"
-       href="linearity.html"
+       href="../../paper_review/vision.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">linearity</p>
+        <p class="prev-next-title">vision</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -595,6 +615,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referance">referance</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

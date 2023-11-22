@@ -104,13 +104,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/java/java_intro';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/basics/java/java_intro.html" />
     <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="java란 무엇인가" href="java.html" />
+    <link rel="next" title="변수" href="var_type.html" />
     <link rel="prev" title="vscode snippet 만들기" href="../tips/snippet_create.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,6 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../python/poetry.html">Poetry 사용하기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">join merge</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../python/OOP.html">객체 지향 프로그래</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -263,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="java.html">java란 무엇인가</a></li>
+<li class="toctree-l2"><a class="reference internal" href="var_type.html">변수</a></li>
 </ul>
 </li>
 </ul>
@@ -305,6 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1006.html">1006 : 습격자 초라기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/24465.html">24465 : 데뷔의 꿈</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1065.html">1065 : 한수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/17952.html">17952 : 과제는 끝나지 않아!</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -501,7 +505,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -517,6 +523,21 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">언어 자체에 대한 정보</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">프로그램 실행 순서</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">코드 구조</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block">block</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -528,18 +549,117 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="java">
 <h1>Java<a class="headerlink" href="#java" title="Permalink to this heading">#</a></h1>
-<figure class="align-default" id="java-logo">
-<img alt="https://i.namu.wiki/i/zQ09oXQUxhmIJDQmQNV38Zr0_Mot9Ey-RF6fTTonYvyUYHHG-W0oDQ4cHUqfC1KVyuTiE3mOWYLnOi4n3LQ28qp1sWAq40oHOrae5PpHdn2knPQmaoXjv8RVXMteV_3WKKG8Ts893bAzcjlQqotQQA.svg" src="https://i.namu.wiki/i/zQ09oXQUxhmIJDQmQNV38Zr0_Mot9Ey-RF6fTTonYvyUYHHG-W0oDQ4cHUqfC1KVyuTiE3mOWYLnOi4n3LQ28qp1sWAq40oHOrae5PpHdn2knPQmaoXjv8RVXMteV_3WKKG8Ts893bAzcjlQqotQQA.svg" /></figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
-<span class="w">	</span><span class="kd">static</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="o">[]</span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<figure class="margin align-center" id="java-logo">
+<a class="reference internal image-reference" href="https://i.namu.wiki/i/zQ09oXQUxhmIJDQmQNV38Zr0_Mot9Ey-RF6fTTonYvyUYHHG-W0oDQ4cHUqfC1KVyuTiE3mOWYLnOi4n3LQ28qp1sWAq40oHOrae5PpHdn2knPQmaoXjv8RVXMteV_3WKKG8Ts893bAzcjlQqotQQA.svg"><img alt="java_logo" src="https://i.namu.wiki/i/zQ09oXQUxhmIJDQmQNV38Zr0_Mot9Ey-RF6fTTonYvyUYHHG-W0oDQ4cHUqfC1KVyuTiE3mOWYLnOi4n3LQ28qp1sWAq40oHOrae5PpHdn2knPQmaoXjv8RVXMteV_3WKKG8Ts893bAzcjlQqotQQA.svg" width="40%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">제임스 고슬링이 만들었는데 자바 커피를 좋아해서 이름지었다고 한다.</span><a class="headerlink" href="#java-logo" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h2>언어 자체에 대한 정보<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>썬 마이크로즈 시스템즈에서 1995년 개발</p></li>
+<li><p>현재는 오라클이 인수해서 Java의 저작권은 오라클에 있다.</p></li>
+<li><p>C#과 문법적 성향이 굉장히 비슷하다</p></li>
+<li><p>Java SE(Standard), Jakarta EE(Enterprise Server), Java ME(Embedded system)</p></li>
+<li><p><a class="reference internal" href="../python/OOP.html#oop"><span class="std std-ref">OOP(객체 지향 프로그래밍 언어)</span></a></p>
+<ul>
+<li><p>객체 지향이긴 하나 원시 타입은 객체 취급 하지 않는다.</p></li>
+</ul>
+</li>
+<li><p>프로젝트 관리 도구</p>
+<ul>
+<li><p>Maven(라이브러리 관리, 프로젝트 결과물 배포 관리 도구)</p></li>
+<li><p>Gradle - 안드로이드 프로젝트 기본 프로젝트 관리 도구</p></li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h3>프로그램 실행 순서<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>JDK(java dev kit, ~.java) <span class="math notranslate nohighlight">\(\to\)</span> javac(compiler, ~.class) <span class="math notranslate nohighlight">\(\to\)</span> JVM(java vm) <span class="math notranslate nohighlight">\(\to\)</span> cpu</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>c는 기계어로 직접 컴파일 하지만, java는 바이트코드(.class)로 컴파일한다는 점이 다르다.</p>
+<ul>
+<li><p>플랫폼에 맞는 JVM만 설치하면 어디서든 같은 코드로 동작이 가능하다는 장점이 있다.</p></li>
+<li><p>해서 <strong>플랫폼 독립적</strong>이라고 한다.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>코드 구조<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="literal-block-wrapper docutils container" id="java-intro-code">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">java_intro_code</span><a class="headerlink" href="#java-intro-code" title="Permalink to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/* 클래스 블록 */</span>
+<span class="hll"><span class="linenos"> 2</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">클래스명</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
+<span class="hll"><span class="linenos"> 5</span><span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명1</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos"> 6</span><span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="p">...</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
+<span class="linenos">11</span><span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명2</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">        </span><span class="p">...</span>
+<span class="linenos">14</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">    </span><span class="p">...</span>
+<span class="linenos">17</span><span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<section id="block">
+<h3>block<a class="headerlink" href="#block" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="blocks">
+<img alt="block image" src="https://wikidocs.net/images/page/278/02-1_statement.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">중괄호 <code class="docutils literal notranslate"><span class="pre">{}</span></code>로 둘러싸인 코드의 집합</span><a class="headerlink" href="#blocks" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>클래스 블럭</p></li>
+<li><p>메소드 블록(Method Blocks)</p></li>
+<li><p>조건문 블록(Conditional Blocks)</p></li>
+<li><p>반복문 블록(Loop Blocks)</p></li>
+<li><p>익명 블록(Anonymous block) - instance initialization block, static initial block</p></li>
+</ol>
+<p>위와 같은 여러 블록이 java에서 존재한다. 블록은 <code class="docutils literal notranslate"><span class="pre">코드의</span> <span class="pre">구조화</span></code>, <code class="docutils literal notranslate"><span class="pre">조건</span> <span class="pre">및</span> <span class="pre">반복</span> <span class="pre">제어</span></code>, <code class="docutils literal notranslate"><span class="pre">변수의</span> <span class="pre">범위</span> <span class="pre">제한</span></code> 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.</p>
+<p>java 소스코드는 하나의 class이고 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`class</span> <span class="pre">block`</span> </code> 이라고 부른다. 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java). public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할 수 있음을 말한다.</p>
+<p>클래스 블럭 안에 highlight된 부분이 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`method</span> <span class="pre">block`</span> </code>이다.</p>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">public|default|private|protected</span></code> - 접근제어자(access modifier)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:menuselection:`private</span> <span class="pre">--&gt;</span> <span class="pre">defautl</span> <span class="pre">--&gt;</span> <span class="pre">protected</span> <span class="pre">--&gt;</span> <span class="pre">public`</span> </code> 순으로 많은 접근을 혀용한다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">private</span></code> : 해당 클래스 안에서만 접근 가능</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">protected</span></code> : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span></code> : 어떤 클래스에서도 접근 가능</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">static</span></code></dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
+반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">(리턴자료형|void)</span></code></dt><dd><p>메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 <code class="docutils literal notranslate"><span class="pre">compile</span> <span class="pre">error</span></code>가 발생한다.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">메서드명1(입력자료형</span> <span class="pre">매개변수,</span> <span class="pre">...)</span></code></dt><dd><p>여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다.<code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">args</span></code> : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. <code class="docutils literal notranslate"><span class="pre">자료형</span> <span class="pre">+</span> <span class="pre">변수명</span></code></p>
+</dd>
+</dl>
+<p>메서드 블럭 안에 이제 <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span> <span class="pre">:guilabel:`Statement</span> <span class="pre">명령문`</span> </code>이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다. <code class="docutils literal notranslate"><span class="pre">;</span></code>가 문장이 끝난 것임은 javascript와 비슷하다.</p>
+<ul class="simple">
+<li><p>클래스는 필드와 메소드를 가질 수 있다.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">System.out.println</span></code> : 마치 자동차.엔진.시동해 처럼 <code class="docutils literal notranslate"><span class="pre">class.field.method</span></code></p></li>
+<li><p>그리고 이 긴 것을 명령문(statement)라고 한다.</p></li>
+</ul>
+</li>
+</ul>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="java.html">java란 무엇인가</a></li>
+<li class="toctree-l1"><a class="reference internal" href="var_type.html">변수</a></li>
 </ul>
 </div>
 <script
@@ -552,6 +672,8 @@ document.write(`
    label="💬 comment"
    crossorigin="anonymous"
 /></section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -593,11 +715,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="java.html"
+       href="var_type.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">java란 무엇인가</p>
+        <p class="prev-next-title">변수</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -607,6 +729,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">언어 자체에 대한 정보</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">프로그램 실행 순서</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">코드 구조</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block">block</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -640,7 +783,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-21 17:00:04
+  based on jupyter-book, last updated: 2023-11-22 14:03:35
 </div>
   </div>
   
