@@ -28,7 +28,6 @@
 :gutter: 1
 :class-container: full-width, dropdown
 
-char with new and literal
 
 :::{grid-item-card} object
 `String a = new String("something")`{l=java}
