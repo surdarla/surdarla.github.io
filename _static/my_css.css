@@ -1,19 +1,5 @@
 /* hide scrollbar but allow scrolling */
 
-body::-webkit-scrollbar {
-    /* display:none; */
-    width: thin;
-}
-
-body::-webkit-scrollbar-button {
-    display: none;
-}
-
-body::-webkit-scrollbar-thumb {
-    border: 2px solid;
-    border-radius: 12px 12px 12px 12px;
-}
-
 .bd-sidebar-primary::-webkit-scrollbar {
     display: none;
 }
