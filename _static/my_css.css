@@ -12,7 +12,7 @@ html::-webkit-scrollbar {
     /* for Chrome, Safari, and Opera */
 }
 
-div.sphinxsidebar {
+div.sidebar {
     overflow-y: auto;
     /* 세로 스크롤바만 사용 */
     scrollbar-width: none;
@@ -20,7 +20,7 @@ div.sphinxsidebar {
 }
 
 /* Chrome, Safari, Opera를 위한 설정 */
-div.sphinxsidebar::-webkit-scrollbar {
+div.sidebar::-webkit-scrollbar {
     display: none;
 }
 
