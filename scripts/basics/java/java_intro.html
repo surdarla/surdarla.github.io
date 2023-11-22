@@ -591,27 +591,24 @@ document.write(`
 </section>
 <section id="id3">
 <h2>코드 구조<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<div class="literal-block-wrapper docutils container" id="java-intro-code">
-<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">java_intro_code</span><a class="headerlink" href="#java-intro-code" title="Permalink to this code">#</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/* 클래스 블록 */</span>
-<span class="hll"><span class="linenos"> 2</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">클래스명</span><span class="w"> </span><span class="p">{</span>
-</span><span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
-<span class="hll"><span class="linenos"> 5</span><span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명1</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="linenos"> 6</span><span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
-<span class="linenos"> 7</span><span class="w">        </span><span class="p">...</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
-<span class="linenos">11</span><span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명2</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">12</span><span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
-<span class="linenos">13</span><span class="w">        </span><span class="p">...</span>
-<span class="linenos">14</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="w">    </span><span class="p">...</span>
-<span class="linenos">17</span><span class="p">}</span>
+<div class="highlight-java notranslate" id="java-intro-code"><div class="highlight"><pre><span></span><span class="cm">/* 클래스 블록 */</span>
+<span class="hll"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">클래스명</span><span class="w"> </span><span class="p">{</span>
+</span>
+<span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
+<span class="hll"><span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명1</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/* 메서드 블록 */</span>
+<span class="w">    </span><span class="o">[</span><span class="kd">public</span><span class="o">|</span><span class="kd">private</span><span class="o">|</span><span class="kd">protected</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="n">리턴자료형</span><span class="o">|</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">메서드명2</span><span class="p">(</span><span class="n">입력자료형</span><span class="w"> </span><span class="n">매개변수</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">명령문</span><span class="p">(</span><span class="n">statement</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
-</div>
 </div>
 <section id="block">
 <h3>block<a class="headerlink" href="#block" title="Permalink to this heading">#</a></h3>
@@ -783,7 +780,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-22 14:25:08
+  based on jupyter-book, last updated: 2023-11-22 14:26:11
 </div>
   </div>
   

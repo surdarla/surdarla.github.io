@@ -35,9 +35,7 @@ figclass : margin
 
 ```{code-block} java
 :name: java_intro_code
-:caption: java_intro_code
 :emphasize-lines: 2,5
-:lineno-start: 1
 
 /* 클래스 블록 */
 public class 클래스명 {
