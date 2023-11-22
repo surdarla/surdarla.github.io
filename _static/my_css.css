@@ -2,9 +2,12 @@
 html {
     -ms-overflow-style: none;
     /* for Internet Explorer, Edge */
-    scrollbar-width: none;
+    scrollbar-width: thin;
     /* for Firefox */
     overflow-y: scroll;
+    border: 2px solid;
+    /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
 }
 
 html::-webkit-scrollbar {
