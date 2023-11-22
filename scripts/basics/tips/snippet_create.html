@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/tips/snippet_create';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/basics/tips/snippet_create.html" />
-    <link rel="shortcut icon" href="../../../_static/favi.jpeg"/>
+    <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -576,11 +576,11 @@ document.write(`
 <p>사용자 코드 조각. 즉 나만의 snippet을 만드는 것에 대해서 알아보자. 사용자 코드조각은 <code class="docutils literal notranslate"><span class="pre">~.json</span></code> 파일로 생성되고 관리된다. 기본적으로 text 형태의 객체를 만들고 이를 불러오는 형식으로 json만한게 없기 때문인 것으로 보인다. 그리고 vscode는 기본적으로 <code class="docutils literal notranslate"><span class="pre">settings.json</span></code>으로 설정도 관리하는 것을 보면 json에 대해서 알아놓으면 나쁠 것이 없다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">F1</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Snippets:Configure</span> <span class="pre">User</span> <span class="pre">Snippets</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> new global snippet로 들어가준다. 만약 markdown이나 특정 언어에 특화된 snippet이 필요하면 그걸 만들어 주면 된다.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">	</span><span class="c1">// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and </span>
-<span class="w">	</span><span class="c1">// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope </span>
-<span class="w">	</span><span class="c1">// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is </span>
-<span class="w">	</span><span class="c1">// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: </span>
-<span class="w">	</span><span class="c1">// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. </span>
+<span class="w">	</span><span class="c1">// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and</span>
+<span class="w">	</span><span class="c1">// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope</span>
+<span class="w">	</span><span class="c1">// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is</span>
+<span class="w">	</span><span class="c1">// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</span>
+<span class="w">	</span><span class="c1">// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.</span>
 <span class="w">	</span><span class="c1">// Placeholders with the same ids are connected.</span>
 <span class="w">	</span><span class="c1">// Example:</span>
 <span class="w">	</span><span class="c1">// &quot;Print to console&quot;: {</span>
@@ -636,6 +636,8 @@ document.write(`
 <li><p><a class="reference external" href="https://ux.stories.pe.kr/290">nJo2 - Visual Studio Code에서 코드조각(Snippets)을 슬기롭게 사용하는 방법</a></p></li>
 <li><p><a class="reference external" href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets">Snippets in Visual Studio Code document</a></p></li>
 </ul>
+<p><kbd class="kbd docutils literal notranslate">MMB</kbd>, <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">⌘</kbd>+<kbd class="kbd docutils literal notranslate">⇧</kbd>+<kbd class="kbd docutils literal notranslate">M</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">MMB</kbd></kbd>
+<span class="menuselection">My ‣ Software ‣ Some menu ‣ Some sub menu 1 ‣ Some sub menu 2 ‣ Some sub menu 3</span></p>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"

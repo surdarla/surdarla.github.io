@@ -31,11 +31,11 @@ vscode를 사용하다보면 snippet이 기본적으로 제공되고 market에�
 
 ```json
 {
-	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
 	// Placeholders with the same ids are connected.
 	// Example:
 	// "Print to console": {
@@ -90,6 +90,11 @@ json안에서 또 편하게 쓰기 위해서 해당 snippet안에서 사용할 s
 
 - [nJo2 - Visual Studio Code에서 코드조각(Snippets)을 슬기롭게 사용하는 방법](https://ux.stories.pe.kr/290)
 - [Snippets in Visual Studio Code document](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets)
+
+```{eval-rst}
+:kbd:`MMB`, :kbd:`⌘+⇧+M` and :kbd:`Shift-MMB`
+:menuselection:`My --> Software --> Some menu --> Some sub menu 1 --> Some sub menu 2 --> Some sub menu 3`
+```
 
 ```{raw} html
 <script
