@@ -28,9 +28,10 @@
 :gutter: 1
 :class-container: full-width, dropdown
 
-
 :::{grid-item-card} object
-`String a = new String("something")`{l=java}
+```java
+String a = new String("something")
+```
 ^^^
 이렇게 `new`를 사용하는 방식은 항상 새로운 String object를 만든다. 객체를 만드는 것은 메모리를 차지하고, 자체가 새로 상성된 자료형과 같은 것이다. 컴파일 최적화에도 도움이 되지 않는다.
 +++
@@ -38,7 +39,9 @@
 :::
 
 :::{grid-item-card} literal
-`String a = "something"`{l=java}
+```java
+String a = "something"
+```
 ^^^
 앞과 다르게 객체를 생성하지 않고 문자열을 그대로 넣는 방식을 `literal`이라고 한다. 이러한 방식은 가독성도 높고, compile 최적화에도 도움이 된다.
 +++
