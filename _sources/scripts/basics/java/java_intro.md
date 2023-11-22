@@ -77,6 +77,7 @@ alt : block image
 
 ::::{grid} 3
 :gutter: 1
+:class-container: full-width
 
 :::{grid-item-card} class block
 ```java

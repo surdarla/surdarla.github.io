@@ -26,7 +26,7 @@
 
 ::::{grid} 2
 :gutter: 1
-:class-container: full-width, dropdown
+:class-container: full-width
 
 :::{grid-item-card} object
 ```java
@@ -48,6 +48,26 @@ String a = "something"
 왠만하면 문자열 선언은 이러한 방식으로 하자.
 :::
 ::::
+
+`new`
+: 객체를 만들 때 사용
+
+`equals`
+: 문자열의 값을 비교할 때. type비교도 아니고 "==" 와 같은 논리연산도 아니다. value만 비교한다.
+
+`indexOf(str)`
+: 문자열에서 특정 문자가 시작되는 위치,index return
+
+`substring(start, end)`
+: 문자열에서 특정 부분을 뽑아내기. 해당 args로 위치 특정
+
+`replaceAll(str, substitute str)`
+: 문자열에서 특정 문자열 대체 문자로 바꾸기. 근데 나오는 것마다 모두
+
+`toUpperCase`, `toLowerCase`
+: 설명안함.
+
+
 
 ## naming rule
 
