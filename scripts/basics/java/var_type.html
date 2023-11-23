@@ -529,7 +529,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable">변수 variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">자료형 type</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">char 더 알아보기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">1. char</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">char 내장 메서드</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
@@ -553,6 +557,7 @@ document.write(`
 </section>
 <section id="type">
 <h2>자료형 type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<p>아래의 자료형들은 원시형(primitive) 자료형이다. 이러한 원시 자료형은 new 키워드로 값을 생성할 수 없다. 오직 literal 표기 방식으로만 생성이 가능하다. 특이한 것은 String은 리터럴 표기 방식으로 표기할 수 있지만 원시 자료형에는 포함되지 않는다. 특별우대 해주는 자료형이기 때문에 원시 자료형이라고 착각하면 안된다. 원시 자료형은 char이다.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>자료형</p></th>
@@ -627,7 +632,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">String</span></code>은 기본 자료형이 아니라, 참조 자료형(Reference type)이다. 내부적으로 문자의 배열로 구현되어 있다. 불변성, 클래스(<code class="docutils literal notranslate"><span class="pre">java.lang.String</span></code>)에 의해 제공된다.</p>
 </div>
 <section id="char">
-<h3>char 더 알아보기<a class="headerlink" href="#char" title="Permalink to this heading">#</a></h3>
+<h3>1. char<a class="headerlink" href="#char" title="Permalink to this heading">#</a></h3>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -666,6 +671,8 @@ literal</div>
 </div>
 </div>
 </div>
+<section id="id2">
+<h4>char 내장 메서드<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">new</span></code></dt><dd><p>객체를 만들 때 사용</p>
 </dd>
@@ -679,7 +686,27 @@ literal</div>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">toUpperCase</span></code>, <code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code></dt><dd><p>설명안함.</p>
 </dd>
+<dt><code class="docutils literal notranslate"><span class="pre">String.format(&quot;...</span> <span class="pre">%d</span> <span class="pre">...&quot;)</span></code></dt><dd><p>파이썬 f-string처럼 이용하는 것이다.<br />
+| 코드 | 설명                     |
+| :— | :———————– |
+| %s   | 문자열(String)           |
+| %c   | 문자 1개(character)      |
+| %d   | 정수(Integer)            |
+| %f   | 부동소수(floating-point) |
+| %o   | 8진수                    |
+| %x   | 16진수                   |
+| %%   | Literal % (문자 % 자체)  |
+좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.</p>
+</dd>
 </dl>
+</section>
+</section>
+<section id="number">
+<h3>2. number<a class="headerlink" href="#number" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>정수(int, long), 실수(float, double) 4가지가 있다.</p></li>
+<li><p>기본형은 32bit이고 긴 것은 이의 두 배인 64bit이다.</p></li>
+</ul>
 </section>
 </section>
 <section id="naming-rule">
@@ -781,7 +808,11 @@ int, class, return 과 같은 built-in keyword는 변수명으로 사용 불가<
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable">변수 variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">자료형 type</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">char 더 알아보기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">1. char</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">char 내장 메서드</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
@@ -823,7 +854,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-22 18:27:13
+  based on jupyter-book, last updated: 2023-11-23 11:45:36
 </div>
   </div>
   
