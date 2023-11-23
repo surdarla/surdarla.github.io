@@ -538,6 +538,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array">3. Array</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">4. List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map">5. Map</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
@@ -804,6 +805,9 @@ Java의 List 인터페이스</div>
 <li><p class="sd-card-text">타입 안정성이 보장되며, 컴파일 시간에 타입 체크가 이루어집니다.</p></li>
 </ul>
 </div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.util.ArrayList</span></code>는 package를 현재 코드에서 사용하기 위한 선언문이다. Java.util은 기본 패키지이다.</p>
+</div>
 <a class="sd-stretched-link reference external" href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html"></a></div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
@@ -880,8 +884,95 @@ Python의 리스트</div>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;(list)</span></code></p></td>
 <td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code></p></td>
 </tr>
+<tr class="row-even"><td class="text-center"><p>리스트 정렬</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list.sort(Comparator.naturalOrder())</span></code></p></td>
+<td class="text-center"><p>list.sort</p></td>
+</tr>
 </tbody>
 </table>
+</section>
+<section id="map">
+<h3>5. Map<a class="headerlink" href="#map" title="Permalink to this heading">#</a></h3>
+<p>Map은 python 딕셔너리랑 비슷한 것이라고 보면 된다. <code class="docutils literal notranslate"><span class="pre">key-value</span></code> pair로 구성된다. 다른 언어를 통합해서 보면 <span class="xref myst">hash, associate array</span>이다. 배열처럼 index로 순차적으로 찾는 것이 아니라, key를 이용해서 한 번에 value값에 접근할 수 있는 장점이 있다. 이것이 곧 hash의 장점이기도 하다.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Map은 인터페이스이며, HashMap, TreeMap, LinkedHashMap 등 다양한 구현을 가지고 있습니다.</p></li>
+<li><p class="sd-card-text">Map은 키와 값을 Object 타입으로 저장합니다. 따라서 모든 종류의 객체를 키 또는 값으로 사용할 수 있습니다.</p></li>
+<li><p class="sd-card-text">키는 고유해야 하며, 각 키는 하나의 값을 매핑합니다.</p></li>
+</ul>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Java의 Map</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ageMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+
+<span class="w">      </span><span class="c1">//   System.out.println(&quot;Bob&#39;s age: &quot; + ageMap.get(&quot;Bob&quot;)); // Bob의 나이 출력</span>
+
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Charlie&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Charlie 항목 삭제</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ageMap</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-footer docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Java에서는 사용자 정의 객체를 키로 사용할 때 hashCode()와 equals() 메소드를 적절히 오버라이드해야 합니다. 이는 객체의 해시 코드를 생성하고 객체의 동등성을 비교하는 데 사용됩니다.</p></li>
+<li><p class="sd-card-text">Java의 HashMap은 순서를 유지하지 않습니다. 순서가 중요한 경우 Java에서는 LinkedHashMap을 사용할 수 있습니다.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Python의 딕셔너리는 내장 타입으로, 해시 테이블을 기반으로 구현되어 있습니다.</p></li>
+<li><p class="sd-card-text">키는 불변(immutable) 타입이어야 하며, 여러 타입의 값을 저장할 수 있습니다.</p></li>
+<li><p class="sd-card-text">Python 3.7+부터는 딕셔너리가 삽입 순서를 유지합니다.</p></li>
+</ul>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Python의 dict</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s2">&quot;Charlie&quot;</span><span class="p">:</span> <span class="mi">35</span>
+<span class="p">}</span>
+
+<span class="c1"># print(f&quot;Bob&#39;s age: {age_map[&#39;Bob&#39;]}&quot;) # Bob의 나이 출력</span>
+
+<span class="k">del</span> <span class="n">age_map</span><span class="p">[</span><span class="s2">&quot;Charlie&quot;</span><span class="p">]</span> <span class="c1"># Charlie 항목 삭제</span>
+
+<span class="c1"># for name, age in age_map.items():</span>
+<span class="c1">#     print(f&quot;{name}: {age}&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며, 내부적으로 <strong>hash</strong>()와 <strong>eq</strong>() 메소드를 사용하여 해시 코드를 생성하고 동등성을 비교합니다. Python 딕셔너리는 삽입 순서를 유지</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="naming-rule">
@@ -991,6 +1082,7 @@ int, class, return 과 같은 built-in keyword는 변수명으로 사용 불가<
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array">3. Array</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">4. List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map">5. Map</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
@@ -1032,7 +1124,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-23 16:30:32
+  based on jupyter-book, last updated: 2023-11-23 16:50:12
 </div>
   </div>
   

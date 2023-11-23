@@ -150,6 +150,8 @@ public class Main {
 - Java의 List는 제네릭을 사용하여 다양한 타입의 객체를 저장할 수 있습니다.
 - 주로 ArrayList, LinkedList 등의 구현 클래스를 통해 사용됩니다.
 - 타입 안정성이 보장되며, 컴파일 시간에 타입 체크가 이루어집니다.
++++
+`import java.util.ArrayList`는 package를 현재 코드에서 사용하기 위한 선언문이다. Java.util은 기본 패키지이다.
 :::
 
 :::{grid-item-card} Python의 리스트
@@ -175,20 +177,88 @@ fruits.remove("Banana")
 :width: 80%
 :align: center
 
-|          기능           | Java (List 인터페이스)  |    Python (리스트)    |
-| :---------------------: | :---------------------: | :-------------------: |
-|        요소 추가        |     `add(element)`      |   `append(element)`   |
-| 특정 인덱스에 요소 추가 |  `add(index, element)`  |           -           |
-|        요소 제거        |    `remove(element)`    |   `remove(element)`   |
-|   인덱스로 요소 제거    |     `remove(index)`     |     `pop(index)`      |
-|       리스트 크기       |        `size()`         |      `len(list)`      |
-|     특정 요소 검색      |      `get(index)`       |     `list[index]`     |
-|   요소 존재 여부 확인   |   `contains(element)`   |   `element in list`   |
-|      리스트 비우기      |        `clear()`        |       `clear()`       |
-| 특정 인덱스의 요소 변경 |  `set(index, element)`  | `list[index] = value` |
-|       리스트 복사       | `new ArrayList<>(list)` |     `list.copy()`     |
-
+|          기능           |         Java (List 인터페이스)         |    Python (리스트)    |
+| :---------------------: | :------------------------------------: | :-------------------: |
+|        요소 추가        |             `add(element)`             |   `append(element)`   |
+| 특정 인덱스에 요소 추가 |         `add(index, element)`          |           -           |
+|        요소 제거        |           `remove(element)`            |   `remove(element)`   |
+|   인덱스로 요소 제거    |            `remove(index)`             |     `pop(index)`      |
+|       리스트 크기       |                `size()`                |      `len(list)`      |
+|     특정 요소 검색      |              `get(index)`              |     `list[index]`     |
+|   요소 존재 여부 확인   |          `contains(element)`           |   `element in list`   |
+|      리스트 비우기      |               `clear()`                |       `clear()`       |
+| 특정 인덱스의 요소 변경 |         `set(index, element)`          | `list[index] = value` |
+|       리스트 복사       |        `new ArrayList<>(list)`         |     `list.copy()`     |
+|       리스트 정렬       | `list.sort(Comparator.naturalOrder())` |       list.sort       |
 :::
+
+### 5. Map
+
+Map은 python 딕셔너리랑 비슷한 것이라고 보면 된다. `key-value` pair로 구성된다. 다른 언어를 통합해서 보면 [hash, associate array](hash)이다. 배열처럼 index로 순차적으로 찾는 것이 아니라, key를 이용해서 한 번에 value값에 접근할 수 있는 장점이 있다. 이것이 곧 hash의 장점이기도 하다.
+
+::::{grid} 2
+:gutter: 2
+:class-container: full-width
+
+:::{grid-item-card} Java의 Map
+:columns: 6
+
+- Map은 인터페이스이며, HashMap, TreeMap, LinkedHashMap 등 다양한 구현을 가지고 있습니다.
+- Map은 키와 값을 Object 타입으로 저장합니다. 따라서 모든 종류의 객체를 키 또는 값으로 사용할 수 있습니다.
+- 키는 고유해야 하며, 각 키는 하나의 값을 매핑합니다.
+^^^
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<String, Integer> ageMap = new HashMap<>();
+
+        ageMap.put("Alice", 30);
+        ageMap.put("Bob", 25);
+        ageMap.put("Charlie", 35);
+
+      //   System.out.println("Bob's age: " + ageMap.get("Bob")); // Bob의 나이 출력
+
+        ageMap.remove("Charlie"); // Charlie 항목 삭제
+
+        for (Map.Entry<String, Integer> entry : ageMap.entrySet()) {
+            // System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
+```
++++
+- Java에서는 사용자 정의 객체를 키로 사용할 때 hashCode()와 equals() 메소드를 적절히 오버라이드해야 합니다. 이는 객체의 해시 코드를 생성하고 객체의 동등성을 비교하는 데 사용됩니다.
+-  Java의 HashMap은 순서를 유지하지 않습니다. 순서가 중요한 경우 Java에서는 LinkedHashMap을 사용할 수 있습니다.
+:::
+
+:::{grid-item-card} Python의 dict
+:columns: 6
+
+- Python의 딕셔너리는 내장 타입으로, 해시 테이블을 기반으로 구현되어 있습니다.
+- 키는 불변(immutable) 타입이어야 하며, 여러 타입의 값을 저장할 수 있습니다.
+- Python 3.7+부터는 딕셔너리가 삽입 순서를 유지합니다.
+^^^
+```python
+age_map = {
+    "Alice": 30,
+    "Bob": 25,
+    "Charlie": 35
+}
+
+# print(f"Bob's age: {age_map['Bob']}") # Bob의 나이 출력
+
+del age_map["Charlie"] # Charlie 항목 삭제
+
+# for name, age in age_map.items():
+#     print(f"{name}: {age}")
+```
++++
+Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며, 내부적으로 __hash__()와 __eq__() 메소드를 사용하여 해시 코드를 생성하고 동등성을 비교합니다. Python 딕셔너리는 삽입 순서를 유지
+:::
+::::
 
 ## naming rule
 
