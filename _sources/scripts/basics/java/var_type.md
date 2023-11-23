@@ -86,7 +86,7 @@ String a = "something"
 : 파이썬 f-string처럼 이용하는 것이다.
 
 ````{admonition} String.format
-:class : note, margin
+:class: note, margin
 :::{table} String.format %s
 :width: 60%
 :align: center
