@@ -579,7 +579,7 @@ network flow, maximum flow 라고 불린다</p>
     f(u,v) = -f(v,u)
 \]</div>
 <p>간선 (u,v) 방향으로 flow가 존재한다면(f(u,v)&gt;0), 역방향으로는 음의 유량이 그만큼 흐르고 있는 것으로 취급한다는 의미를 유량의 대칭성이라고 말한다. 간선 (u,v)가 존재한다면 c(u,v)가 양수고, c(v,u)는 0으로 취급된다. 따라서 그래프에서는 없는 간선이지만 가상으로는 있는 역방향 간선에 대한 성질로 접근하는 것이 해당 알고리즘의 포인트다. 역방향 간선으로 흘려보낸다는 의미는 곧 <code class="docutils literal notranslate"><span class="pre">다른</span> <span class="pre">간선으로</span> <span class="pre">대신</span> <span class="pre">흘려보낸다</span></code>는 의미와 동등하다.</p>
-<p>폴트포커슨에서 중요한 것은 위의 <a class="reference internal" href="#equation">(1)</a>을 사용한다는 것이다. 원래는 없는 간선일지라도 해당 성질을 이용하면 숨어있는 간선의 잔여유량을 찾을 수 있다.</p>
+<p>폴트포커슨에서 중요한 것은 위의 유량의_대칭성을 사용한다는 것이다. 원래는 없는 간선일지라도 해당 성질을 이용하면 숨어있는 간선의 잔여유량을 찾을 수 있다.</p>
 <ol class="arabic simple">
 <li><p>s <span class="math notranslate nohighlight">\(\to\)</span> t로 가는 경로 아무거나 하나 찾는다. 이때 경로는 단순 경로이고, 경로상의 모든 간선에 아직 여유 용량이 남아있다. 즉 <span class="math notranslate nohighlight">\(c(u,v)-f(u,v) &gt; 0\)</span></p></li>
 <li><p>차단 간선을 찾는다. 이 간선은 경로상에서 <span class="math notranslate nohighlight">\(c(u,v)-f(u,v)\)</span>의 값이 최소인 간선이다. 많아봐야 이만큼의 유량을 더 보낼 수 있다. 이는 잔여용량 <span class="math notranslate nohighlight">\(r\)</span> 이다. 잔여용량이 0이면 더이상 해당 간선에는 유량을 보낼 수 없다.</p></li>
@@ -720,7 +720,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-23 14:21:58
+  based on jupyter-book, last updated: 2023-11-23 16:20:31
 </div>
   </div>
   

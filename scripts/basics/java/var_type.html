@@ -534,7 +534,10 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">char 내장 메서드</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringbuffer">1-1. StringBuffer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array">3. Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">4. List</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
@@ -745,12 +748,81 @@ literal</div>
 </table>
 </section>
 </section>
+<section id="stringbuffer">
+<h3>1-1. StringBuffer<a class="headerlink" href="#stringbuffer" title="Permalink to this heading">#</a></h3>
+<p>StringBuffer는 문자열을 추가하거나 변경할 때 주로 사용하는 자료형이다. String을 사용하면 객체를 하나 만드는 것이다. 하나의 String에 추가나거나 하려면 다른 하나를 또 만들고 그 뒤에 붙이던가 해야한다. 하지만 StringBuffer는 그럴 필요가 없다. 객체를 하나만 만들고 가지고 놀면된다. 물론 그만큼 기본 String에 비해서 무거운 자료형이다. 때문에 경우에 잘 맞게 사용하는 버릇을 들이자.</p>
+</section>
 <section id="number">
 <h3>2. number<a class="headerlink" href="#number" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>정수(int, long), 실수(float, double) 4가지가 있다.</p></li>
 <li><p>기본형은 32bit이고 긴 것은 이의 두 배인 64bit이다.</p></li>
 </ul>
+</section>
+<section id="array">
+<h3>3. Array<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h3>
+<p>다른 언어들과 마찬가지로 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로 하되, <code class="docutils literal notranslate"><span class="pre">int[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">{1,2,3,4}</span></code>, <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=-</span> <span class="pre">{'a','b'...}</span></code> 이런 식으로 표현한다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">String[7]</span></code> 이런 식으로 배열의 길이를 먼저 정할 수 있다.</p></li>
+<li><p>index로 접근하는 방식은 동일하다 <code class="docutils literal notranslate"><span class="pre">array_name[1]</span></code></p></li>
+<li><p>배열의 길이를 구하는 방식은 javascript와 비슷하다. <code class="docutils literal notranslate"><span class="pre">array_name.length</span></code></p></li>
+<li><p>python의 IndexError는 자바에서는 <code class="docutils literal notranslate"><span class="pre">ArrayIndexOutOfBoundsException</span></code>으로 표기된다.</p></li>
+</ul>
+</section>
+<section id="list">
+<h3>4. List<a class="headerlink" href="#list" title="Permalink to this heading">#</a></h3>
+<p>우리가 맨날 python의 list는 사실 이것이다. 배열이지만 <strong>배열의 크기가 지정되어 있지 않은</strong> 특징을 가지는 배열을 말한다.</p>
+<table class="table table-center" id="id4" style="width: 80%">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">java_list vs python_list</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>기능</p></th>
+<th class="head text-center"><p>Java (List 인터페이스)</p></th>
+<th class="head text-center"><p>Python (리스트)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>요소 추가</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">add(element)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">append(element)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>특정 인덱스에 요소 추가</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">add(index,</span> <span class="pre">element)</span></code></p></td>
+<td class="text-center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>요소 제거</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>인덱스로 요소 제거</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">remove(index)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>리스트 크기</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>특정 요소 검색</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">get(index)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>요소 존재 여부 확인</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">contains(element)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">list</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>리스트 비우기</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>특정 인덱스의 요소 변경</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">element)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>리스트 복사</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;(list)</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="naming-rule">
@@ -856,7 +928,10 @@ int, class, return 과 같은 built-in keyword는 변수명으로 사용 불가<
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">char 내장 메서드</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringbuffer">1-1. StringBuffer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array">3. Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">4. List</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
@@ -898,7 +973,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-23 14:21:58
+  based on jupyter-book, last updated: 2023-11-23 16:20:31
 </div>
   </div>
   

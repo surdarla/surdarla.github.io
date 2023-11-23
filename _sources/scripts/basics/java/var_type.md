@@ -100,12 +100,112 @@ String a = "something"
 | %%   | Literal % (문자 % 자체)  |
 :::
 
+### 1-1. StringBuffer
+
+StringBuffer는 문자열을 추가하거나 변경할 때 주로 사용하는 자료형이다. String을 사용하면 객체를 하나 만드는 것이다. 하나의 String에 추가나거나 하려면 다른 하나를 또 만들고 그 뒤에 붙이던가 해야한다. 하지만 StringBuffer는 그럴 필요가 없다. 객체를 하나만 만들고 가지고 놀면된다. 물론 그만큼 기본 String에 비해서 무거운 자료형이다. 때문에 경우에 잘 맞게 사용하는 버릇을 들이자.
 
 ### 2. number
 
 - 정수(int, long), 실수(float, double) 4가지가 있다.
 - 기본형은 32bit이고 긴 것은 이의 두 배인 64bit이다.
 
+### 3. Array
+
+다른 언어들과 마찬가지로 `[]`로 하되, `int[] array_name = {1,2,3,4}`, `String[] array_name =- {'a','b'...}` 이런 식으로 표현한다.
+
+- `String[] array_name = new String[7]` 이런 식으로 배열의 길이를 먼저 정할 수 있다.
+- index로 접근하는 방식은 동일하다 `array_name[1]`
+- 배열의 길이를 구하는 방식은 javascript와 비슷하다. `array_name.length`
+- python의 IndexError는 자바에서는 `ArrayIndexOutOfBoundsException`으로 표기된다.
+
+### 4. List
+
+우리가 맨날 python의 list는 사실 이것이다. 배열이지만 **배열의 크기가 지정되어 있지 않은** 특징을 가지는 배열을 말한다.
+
+::::{grid} 2
+:gutter: 2
+:class-container:
+
+:::{grid-item-card} Java의 List 인터페이스
+---
+:link: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html
+:link-type: url
+---
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> fruits = new ArrayList<>();
+
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+
+        System.out.println(fruits.get(1)); // Banana 출력
+
+        fruits.remove("Banana");
+
+        for(String fruit : fruits) {
+            System.out.println(fruit);
+        }
+    }
+}
+```
+^^^
+- List는 Java 컬렉션 프레임워크의 일부입니다.
+- 크기가 동적으로 변할 수 있는 배열과 같은 객체의 집합을 나타냅니다.
+- Java의 List는 제네릭을 사용하여 다양한 타입의 객체를 저장할 수 있습니다.
+- 주로 ArrayList, LinkedList 등의 구현 클래스를 통해 사용됩니다.
+- 타입 안정성이 보장되며, 컴파일 시간에 타입 체크가 이루어집니다.
+:::
+
+:::{grid-item-card} Python의 리스트
+---
+:link: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
+:link-type: url
+---
+
+```python
+fruits = ["Apple", "Banana", "Cherry"]
+
+print(fruits[1])  # Banana 출력
+
+fruits.remove("Banana")
+
+for fruit in fruits:
+    print(fruit)
+```
+^^^
+- Python의 내장 데이터 타입 중 하나입니다.
+- 여러 다른 타입의 요소를 단일 리스트에 저장할 수 있습니다.
+- 동적 배열 구현으로, 크기가 자동으로 조정됩니다.
+- 내장된 다양한 메소드를 통해 리스트를 쉽게 조작할 수 있습니다.
+- 타입이 동적이며, 런타임에 타입이 결정됩니다.
+:::
+
+::::
+
+:::{table} java_list vs python_list
+:width: 80%
+:align: center
+
+|          기능           | Java (List 인터페이스)  |    Python (리스트)    |
+| :---------------------: | :---------------------: | :-------------------: |
+|        요소 추가        |     `add(element)`      |   `append(element)`   |
+| 특정 인덱스에 요소 추가 |  `add(index, element)`  |           -           |
+|        요소 제거        |    `remove(element)`    |   `remove(element)`   |
+|   인덱스로 요소 제거    |     `remove(index)`     |     `pop(index)`      |
+|       리스트 크기       |        `size()`         |      `len(list)`      |
+|     특정 요소 검색      |      `get(index)`       |     `list[index]`     |
+|   요소 존재 여부 확인   |   `contains(element)`   |   `element in list`   |
+|      리스트 비우기      |        `clear()`        |       `clear()`       |
+| 특정 인덱스의 요소 변경 |  `set(index, element)`  | `list[index] = value` |
+|       리스트 복사       | `new ArrayList<>(list)` |     `list.copy()`     |
+
+:::
 
 ## naming rule
 
