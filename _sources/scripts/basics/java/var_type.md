@@ -85,11 +85,9 @@ String a = "something"
 `String.format("... %d ...")`
 : 파이썬 f-string처럼 이용하는 것이다. 좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.
 
-::::{margin}
-:::{table} String.format %s
+:::{table} String.format 정리
 :width: 60%
 :align: center
-:class: margin
 
 | 코드 | 설명                     |
 | :--- | :----------------------- |
@@ -101,7 +99,7 @@ String a = "something"
 | %x   | 16진수                   |
 | %%   | Literal % (문자 % 자체)  |
 :::
-::::
+
 
 ### 2. number
 

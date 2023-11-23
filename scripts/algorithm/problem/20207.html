@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Perceptron &#8212; surdarla-book</title>
+    <title>20207 : 달력 &#8212; surdarla-book</title>
   
   
   
@@ -105,16 +105,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/dl/perceptron';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/dl/perceptron.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/algorithm/problem/20207';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/algorithm/problem/20207.html" />
     <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Attention" href="attention.html" />
-    <link rel="prev" title="Normalization 정규화" href="NLP_basics.html" />
+    <link rel="next" title="data_structure" href="../data_structure.html" />
+    <link rel="prev" title="17952 : 과제는 끝나지 않아!" href="17952.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -233,41 +231,41 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../anal/linearity.html">linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/linearity.html">linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../python/poetry.html">Poetry 사용하기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">join merge</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/pandas.html">join merge</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../python/OOP.html">객체 지향 프로그래</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/OOP.html">객체 지향 프로그래</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
-<li class="toctree-l2"><a class="reference internal" href="NLP_basics.html">Normalization 정규화</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Perceptron</a></li>
-<li class="toctree-l2"><a class="reference internal" href="attention.html">Attention</a></li>
-<li class="toctree-l2"><a class="reference internal" href="softmax.html">softmax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Logistic.html">Logistic</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">Normalization 정규화</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/attention.html">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/softmax.html">softmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/dl/Logistic.html">Logistic</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../js/VUE.html">vue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../js/DOM.html">DOM</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/js/VUE.html">vue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/js/DOM.html">DOM</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tips/snippet_create.html">vscode snippet 만들기</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/tips/snippet_create.html">vscode snippet 만들기</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../java/var_type.html">변수와 자료형</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/java/var_type.html">변수와 자료형</a></li>
 </ul>
 </li>
 </ul>
@@ -284,42 +282,42 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/3046.html">3046 : R2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2164.html">2164 : 카드2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2525.html">2525 : 오븐 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1012.html">1012 : 유기농 배추</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/10825.html">10825 : 국영수</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/23300.html">23300 : 웹 브라우저 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%98%AC%EB%B0%94%EB%A5%B8%EA%B4%84%ED%98%B8.html">올바른 괄호</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/10816.html">10816 : 숫자 카드 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/21921.html">21921 : 블로그</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1535.html">1535 : 안녕</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/9663.html">9663 : N-Queen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1006.html">1006 : 습격자 초라기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/24465.html">24465 : 데뷔의 꿈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1065.html">1065 : 한수</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/17952.html">17952 : 과제는 끝나지 않아!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/20207.html">20207 : 달력</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../problem-solving.html">problem-solving</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%9D%98%EC%83%81.html">의상</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10825.html">10825 : 국영수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23300.html">23300 : 웹 브라우저 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%98%AC%EB%B0%94%EB%A5%B8%EA%B4%84%ED%98%B8.html">올바른 괄호</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10816.html">10816 : 숫자 카드 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21921.html">21921 : 블로그</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1535.html">1535 : 안녕</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9663.html">9663 : N-Queen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1006.html">1006 : 습격자 초라기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24465.html">24465 : 데뷔의 꿈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1065.html">1065 : 한수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17952.html">17952 : 과제는 끝나지 않아!</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">20207 : 달력</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/BFS.html">BFS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../algorithm/DP.html">Dynamic Programming</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type_in_python.html">Type in python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BFS.html">BFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DP.html">Dynamic Programming</a></li>
 </ul>
 </li>
 </ul>
@@ -408,7 +406,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/dl/perceptron.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/algorithm/problem/20207.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -438,7 +436,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/scripts/basics/dl/perceptron.md" target="_blank"
+      <li><a href="../../../_sources/scripts/algorithm/problem/20207.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -448,7 +446,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -520,7 +518,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Perceptron</h1>
+    <h1>20207 : 달력</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -530,7 +528,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#think">think</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">python</a></li>
 </ul>
             </nav>
         </div>
@@ -542,29 +544,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="perceptron">
-<span id="id1"></span><h1>Perceptron<a class="headerlink" href="#perceptron" title="Permalink to this heading">#</a></h1>
-<p>1957년 프랑크 로젠블라트가 고안한 알고리즘이다. 신경망의 기원이 되는 알고리즘이다. 퍼셉트론은 다수의 신호를 입력으로 받아 하나의 신호를 출력한다. 신호는 전류나 강물처럼 흐름이 있는 것으로 생각하면 편하다. 1은 true로 흐르고, 0은 false로 안흐른다를 표현하다.</p>
-<p>신호의 출발점이 두 개라고 생각해보자. 해당 출발점 두 개를 <code class="docutils literal notranslate"><span class="pre">neuron,</span> <span class="pre">node</span></code>라고 부른다. 신호가 출발하면 각각 고유한 가중치 <span class="math notranslate nohighlight">\(w\)</span>를 곱해주게 된다. 이 가중치를 곱한 것들의 합이 정해진 한계를 넘어가면 1을 출력한다. 이러한 경우에 <code class="docutils literal notranslate"><span class="pre">뉴런이</span> <span class="pre">활성화된다</span></code>라고 한다. 그 값을 임계값<code class="docutils literal notranslate"><span class="pre">threshold</span></code>라고 하며 <span class="math notranslate nohighlight">\(\theta\)</span>로 나타낸다. 수식으로 나타내면 아래와 같다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-y = \begin{cases}
-    0(w_1x_1 + w_2x_2 &lt;= 0)\\
-    1(w_1x_1 + w_2x_2 &gt; 0)
-    \end{cases}
-\end{split}\]</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>20207 : 달력<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<a class="reference external image-reference" href="https://surdarla.github.io"><img alt="supposed to be surdarla logo" class="sd-avatar-sm sd-outline-muted" src="../../../_images/my_favi.png" /></a>
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0">Surdarla</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-calendar" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg></span>Nov 23 Thu 13:42, 2023</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>1 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <ul class="simple">
-<li><p>퍼셉트론은 입출력을 갖춘 알고리즘이다. 입력을 주면 정해진 규칙에 따른 값을 출력</p></li>
-<li><p>가중치, 편향을 매개변수로 설정한다.</p></li>
-<li><p>AND,OR 게이트 논리회로를 표현할 수 있으나, 단층 퍼셉트론으론 XOR는 표현이 불가능하다.</p></li>
-<li><p>2층으로 쌓으면 표현이 가능하다. 이는 비선형적인 표현이 가능해 지기 때문이다.</p></li>
-<li><p>다층 퍼셉트론은 컴퓨터를 표현할 수 있다</p></li>
+<li><p><a class="reference internal" href="https://d2gd6pc034wcta.cloudfront.net/tier/11.svg"><img alt="https://d2gd6pc034wcta.cloudfront.net/tier/11.svg" height="15" src="https://d2gd6pc034wcta.cloudfront.net/tier/11.svg" width="15" /></a> 골드 5</p></li>
 </ul>
-<section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>시간제한</p></th>
+<th class="head text-center"><p>메모리제한</p></th>
+<th class="head text-center"><p>정답비율</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1초</p></td>
+<td class="text-center"><p>512MB</p></td>
+<td class="text-center"><p>42%</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id2">
+<h2>문제<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>수현이는 일년의 날짜가 1일부터 365일로 표시되어있는 달력을 가지고있다. 수현이는 너무나도 계획적인 사람이라 올 해 일정을 모두 계획해서 달력에 표시해놨다.</p>
+<p>여름이 거의 끝나가자 장마가 시작되었고, 습기로 인해 달력에 표시한 일정이 지워지려고 한다. 지워지는 것을 막고자 수현이는 일정이 있는 곳에만 코팅지를 달력에 붙이려고 한다. 하지만 너무 귀찮았던 나머지, 다음과 같은 규칙을 따르기로 한다.</p>
 <ul class="simple">
-<li><p>밑바닥부터 시작하는 딥러닝 : 사이토 고키</p></li>
+<li><p>연속된 두 일자에 각각 일정이 1개 이상 있다면 이를 일정이 연속되었다고 표현한다.</p></li>
+<li><p>연속된 모든 일정은 하나의 직사각형에 포함되어야 한다.</p></li>
+<li><p>연속된 일정을 모두 감싸는 가장 작은 직사각형의 크기만큼 코팅지를 오린다.</p></li>
 </ul>
+<p>달력은 다음과 같은 규칙을 따른다.</p>
+<ul class="simple">
+<li><p>일정은 시작날짜와 종료날짜를 포함한다.</p></li>
+<li><p>시작일이 가장 앞선 일정부터 차례대로 채워진다.</p></li>
+<li><p>시작일이 같을 경우 일정의 기간이 긴 것이 먼저 채워진다.</p></li>
+<li><p>일정은 가능한 최 상단에 배치된다.</p></li>
+<li><p>일정 하나의 세로의 길이는 1이다.</p></li>
+<li><p>하루의 폭은 1이다.</p></li>
+</ul>
+</section>
+<section id="input">
+<h2>input<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h2>
+<p>첫째 줄에 일정의 개수 N이 주어진다. (1 ≤ N ≤ 1000)</p>
+<p>둘째 줄부터 일정의 개수만큼 시작 날짜 S와 종료 날짜 E가 주어진다. (1 ≤ S ≤ E ≤ 365)</p>
+</section>
+<section id="output">
+<h2>output<a class="headerlink" href="#output" title="Permalink to this heading">#</a></h2>
+<p><strong>코팅지의 면적을 출력한다.</strong></p>
+</section>
+<section id="think">
+<h2>think<a class="headerlink" href="#think" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="python">
+<h2>python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="n">problem_num</span> <span class="o">=</span> <span class="s2">&quot;20207&quot;</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"
@@ -590,7 +665,7 @@ y = \begin{cases}
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts\basics\dl"
+            path: "./scripts\algorithm\problem"
         },
         predefinedOutput: true
     }
@@ -608,20 +683,20 @@ y = \begin{cases}
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="NLP_basics.html"
+       href="17952.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Normalization 정규화</p>
+        <p class="prev-next-title">17952 : 과제는 끝나지 않아!</p>
       </div>
     </a>
     <a class="right-next"
-       href="attention.html"
+       href="../data_structure.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Attention</p>
+        <p class="prev-next-title">data_structure</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -640,7 +715,11 @@ y = \begin{cases}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#think">think</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">python</a></li>
 </ul>
   </nav></div>
 
