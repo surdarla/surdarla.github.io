@@ -87,6 +87,7 @@ String a = "something"
 
 ````{admonition} String.format
 :class: note, margin
+
 :::{table} String.format %s
 :width: 60%
 :align: center
@@ -103,9 +104,6 @@ String a = "something"
 
 좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.
 ````
-
-
-
 
 ### 2. number
 
