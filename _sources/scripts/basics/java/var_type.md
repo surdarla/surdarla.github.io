@@ -127,10 +127,7 @@ StringBuffer는 문자열을 추가하거나 변경할 때 주로 사용하는 �
 :class-container: full-width
 
 :::{grid-item-card} Java의 List 인터페이스
----
 :link: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html
-:link-type: url
----
 
 ```java
 import java.util.ArrayList;
@@ -156,10 +153,7 @@ public class Main {
 :::
 
 :::{grid-item-card} Python의 리스트
----
 :link: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
-:link-type: url
----
 
 ```python
 fruits = ["Apple", "Banana", "Cherry"]
