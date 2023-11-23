@@ -139,18 +139,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<String> fruits = new ArrayList<>();
-
         fruits.add("Apple");
         fruits.add("Banana");
         fruits.add("Cherry");
-
-        System.out.println(fruits.get(1)); // Banana 출력
-
         fruits.remove("Banana");
 
-        for(String fruit : fruits) {
-            System.out.println(fruit);
-        }
     }
 }
 ```
@@ -171,12 +164,8 @@ public class Main {
 ```python
 fruits = ["Apple", "Banana", "Cherry"]
 
-print(fruits[1])  # Banana 출력
-
 fruits.remove("Banana")
 
-for fruit in fruits:
-    print(fruit)
 ```
 ^^^
 - Python의 내장 데이터 타입 중 하나입니다.
