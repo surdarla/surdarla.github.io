@@ -82,18 +82,14 @@ String a = "something"
 `toUpperCase`, `toLowerCase`
 : 설명안함.
 
-
-
-````{admonition} String.format
-:class: note, full-width
-
 `String.format("... %d ...")`
-: 파이썬 f-string처럼 이용하는 것이다.
+: 파이썬 f-string처럼 이용하는 것이다. 좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.
 
 :::{table} String.format %s
 :width: 60%
 :align: center
 :class: margin
+
 | 코드 | 설명                     |
 | :--- | :----------------------- |
 | %s   | 문자열(String)           |
@@ -104,9 +100,6 @@ String a = "something"
 | %x   | 16진수                   |
 | %%   | Literal % (문자 % 자체)  |
 :::
-
-좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.
-````
 
 ### 2. number
 
