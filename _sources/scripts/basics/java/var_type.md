@@ -1,5 +1,16 @@
 # 변수와 자료형
 
+```{article-info}
+:avatar: /images/logos/my_favi.png
+:avatar-alt: supposed to be surdarla logo
+:avatar-link: https://surdarla.github.io
+:avatar-outline: muted
+:author: Surdarla
+:date: Nov 23 Thu 13:17, 2023
+:read-time: "{sub-ref}`wordcount-minutes` min read"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
+
 ## 변수 variable
 
 변수란 하나의 값을 저장하기 위한 메모리 공간을 말한다. 변수는 자료형을 어떤 것을 사용하느냐에 따라서 필요한 메모리 공간(bit)가 달라짐으로 필요에 따라 그 자료형을 맞게 사용해줘야한다.
@@ -74,6 +85,9 @@ String a = "something"
 `String.format("... %d ...")`
 : 파이썬 f-string처럼 이용하는 것이다.   
 
+:::{table} String.format %s
+:width: 60%
+:align: center
 | 코드 | 설명                     |
 | :--- | :----------------------- |
 | %s   | 문자열(String)           |
@@ -83,6 +97,7 @@ String a = "something"
 | %o   | 8진수                    |
 | %x   | 16진수                   |
 | %%   | Literal % (문자 % 자체)  |
+:::
 
 좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.
 
