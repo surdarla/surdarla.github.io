@@ -82,15 +82,18 @@ String a = "something"
 `toUpperCase`, `toLowerCase`
 : 설명안함.
 
-`String.format("... %d ...")`
-: 파이썬 f-string처럼 이용하는 것이다.
+
 
 ````{admonition} String.format
-:class: note, margin
+:class: note, full-width
+
+`String.format("... %d ...")`
+: 파이썬 f-string처럼 이용하는 것이다.
 
 :::{table} String.format %s
 :width: 60%
 :align: center
+:class: margin
 | 코드 | 설명                     |
 | :--- | :----------------------- |
 | %s   | 문자열(String)           |
