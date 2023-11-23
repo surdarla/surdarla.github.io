@@ -124,7 +124,7 @@ StringBuffer는 문자열을 추가하거나 변경할 때 주로 사용하는 �
 
 ::::{grid} 2
 :gutter: 2
-:class-container:
+:class-container: full-width
 
 :::{grid-item-card} Java의 List 인터페이스
 ---
