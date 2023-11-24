@@ -26,7 +26,7 @@
 
 ### test
 
-::::{div} sd-rounded-3 sd-border-1 sd-shadow-sm
+::::{div} sd-rounded-3 sd-border-1 sd-shadow-sm sd-p-5 sd-m-5
 
 자율적인 객체란 스스로 정한 원칙에 따라 판단하고 스스로의 의지를 기반으로 행동하는 객체다. 객체가 어떤 행동을 하는 유일한 이유는 다른 객체로부터 요청을 수신했기 때문이다. 요청을 처리하기 위해 객체가 수행하는 행동을 책임이라고 한다.
 
