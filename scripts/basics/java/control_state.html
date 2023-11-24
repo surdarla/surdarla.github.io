@@ -532,6 +532,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-case">switch/case</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for">for</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label">라벨 label</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each">for each</a></li>
 </ul>
 </li>
@@ -563,7 +564,7 @@ document.write(`
 <p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-calendar" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg></span>Nov 23 Thu 17:10, 2023</p>
 </div>
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
-<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>1 min read</p>
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>2 min read</p>
 </div>
 </div>
 </div>
@@ -621,16 +622,29 @@ document.write(`
 </div>
 <p>javascript할때 주구장창 봤던 구조이다.</p>
 <p>for + if(continue)를 하면 조건반복문을 할 수 있다.</p>
-<section id="for-each">
-<h3>for each<a class="headerlink" href="#for-each" title="Permalink to this heading">#</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="s">&quot;three&quot;</span><span class="p">};</span>
-<span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">number</span><span class="p">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">){</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LabelExam1</span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
+
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<section id="label">
+<h3>라벨 label<a class="headerlink" href="#label" title="Permalink to this heading">#</a></h3>
+<p>Java에서는 loop, block에 이름을 붙여서 사용하는 라벨이란 것이 있다. 이것은 중첩된 루프를 다룰 때 유용하다. 라벨을 사용하면 중첩된 루프 중 특정 루프로 직접 이동하거나, 그 루프를 종료할 수 있다. 이는 복잡한 루프 구조에서 특정 루프를 제어할 때 도움을 준다. 특이 중첩된 루프의 어떤 부분이 제어되고 있는지 명확하게 파악을 할 수 있어서 코드의 가독성의 측면에서도 좋다.</p>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">break</span></code></dt><dd><p>지정된 라벨이 붙은 루프를 종료</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">continue</span></code></dt><dd><p>지정된 라벨이 붙은 루프의 다음 반복으로 skip</p>
+</dd>
+</dl>
+<p>라벨과 위의 두 개의 명령어를 사용해서 다중 반복문에서 연산을 명확하게 하는 것이 가능하다.</p>
+</section>
+<section id="for-each">
+<h3>for each<a class="headerlink" href="#for-each" title="Permalink to this heading">#</a></h3>
+<p>이 부분은 사실은 크게 다른 점이 없긴 하지만, javascript의 forEach와 다른 언어들을 비교하기 위해서 조금 정리를 해보았다. 크게 다른 점은 없지만 javascript에서는 당장에 요소와 반응해야하는 반응형 언어이기 때문에 요소에 바로 함수를 적용하는 모습을 보이고, 새로운 배열을 return 하는 것이 아니라 기존의 배열을 변경하는 모습을 보인다.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header docutils">
@@ -647,7 +661,6 @@ java</div>
 <li><p class="sd-card-text">Java에서 for-each 루프는 배열이나 컬렉션의 각 요소를 순회하기 위한 간단한 방법을 제공합니다.</p></li>
 <li><p class="sd-card-text">이 루프는 내부적으로 Iterator를 사용하여 컬렉션의 요소를 순회합니다.</p></li>
 <li><p class="sd-card-text">루프 변수는 읽기 전용이며, 컬렉션의 요소를 수정할 수는 없습니다.</p></li>
-<li><p class="sd-card-text">문법: <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">(Type</span> <span class="pre">item</span> <span class="pre">:</span> <span class="pre">collection)</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span></code></p></li>
 </ul>
 </div>
 <div class="sd-card-footer docutils">
@@ -675,8 +688,11 @@ JavaScript의 forEach() 메소드</div>
 </ul>
 </div>
 <div class="sd-card-footer docutils">
-<p class="sd-card-text">JavaScript의 forEach()는 콜백 함수를 사용하는 추가 유연성을 제공합니다. 원본 배열을 수정할 수 있습니다.<br />
-javascript는 기본적으로 “지금” 함수의 행동 자체가 중요한 언어이다 보니 뭔가를 return하지 않고 function을 지금 수행하는 이런게 만들어 졋나 싶다.</p>
+<ul class="simple">
+<li><p class="sd-card-text">JavaScript의 forEach()는 콜백 함수를 사용하는 추가 유연성을 제공합니다.</p></li>
+<li><p class="sd-card-text">원본 배열을 수정할 수 있습니다.</p></li>
+<li><p class="sd-card-text">javascript는 기본적으로 “지금” 함수의 행동 자체가 중요한 언어이다 보니 뭔가를 return하지 않고 function을 지금 수행하는 이런게 만들어 졋나 싶다.</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -695,7 +711,6 @@ Python의 for 루프</div>
 <li><p class="sd-card-text">Python의 for 루프는 시퀀스(리스트, 튜플, 문자열 등)를 순회하는 데 사용됩니다.</p></li>
 <li><p class="sd-card-text">Python의 루프는 간결하고 직관적이며, 루프 변수를 통해 각 요소에 접근할 수 있습니다.</p></li>
 <li><p class="sd-card-text">루프 내에서 시퀀스의 요소를 수정하는 것이 가능하지만, 일반적으로 시퀀스 자체를 변경하는 것은 권장되지 않습니다.</p></li>
-<li><p class="sd-card-text">문법: for item in sequence: …</p></li>
 </ul>
 </div>
 <div class="sd-card-footer docutils">
@@ -775,6 +790,7 @@ Python의 for 루프</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-case">switch/case</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for">for</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label">라벨 label</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each">for each</a></li>
 </ul>
 </li>
@@ -815,7 +831,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-24 11:24:35
+  based on jupyter-book, last updated: 2023-11-24 15:46:32
 </div>
   </div>
   

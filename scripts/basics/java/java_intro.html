@@ -704,6 +704,16 @@ statement</div>
 <dt>static method</dt><dd><p>아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.<br />
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.</p>
 </dd>
+</dl>
+<div class="topic dropdown margin admonition">
+<p class="admonition-title">Heap memory</p>
+<p>여기서 메모리라고 하는 부분은 <a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html#heap"><span class="std std-ref">heap</span></a>을 말한다. heap은 자료구조의 하나로써 max,min을 찾아내는 연산을 빠르게 하기 한 완전 이진트리를 말한다. 일정한 특징을 가지는 구조의 자료를 말하는 것이다. 파이썬의 heapq는 이러한 특징을 built-in으로 구현해 놓은 것이다.</p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">class.static</p>
+<p>static method는 클래스 명 다음에 사용해준다. 이게 프로그래머 간의 관례이며, 가독성이 높고 코드유지보수에도 도움이 된다. 참조변수.static 이런 식으로 사용하진 말라는 이야기이다.</p>
+</div>
+<dl class="simple myst">
 <dt>(리턴자료형|void)</dt><dd><p>메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 compile error가 발생한다.</p>
 </dd>
 <dt>메서드명1(입력자료형 매개변수, …)</dt><dd><p>여기서 부터 프로그램이 시작된다. 그래서 프로그램 시작점이라고 불린다. <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">args</span></code> : str list가 변수로 들어와야 하고 밑에서는 args로 사용한다. 자료형 + 변수명</p>
@@ -844,7 +854,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-24 11:24:35
+  based on jupyter-book, last updated: 2023-11-24 15:46:32
 </div>
   </div>
   

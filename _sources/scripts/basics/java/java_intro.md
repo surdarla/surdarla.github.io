@@ -80,11 +80,13 @@ alt : block image
 :class-container: full-width
 
 :::{grid-item-card} class block
+
 ```java
 /* 클래스 블록 */
 public class 클래스명 {
 }
 ```
+
 ^^^
 클래스의 이름은 Main이 일반적이지만 다른 것일 수도 있다. 하지만 클래스 이름은 파일의 이름과 같아야한다(className.java).
 +++
@@ -92,6 +94,7 @@ public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할
 :::
 
 :::{grid-item-card} method block
+
 ```java
     /* 메서드 블록 */
     [public|private|protected] [static] (리턴자료형|void) 메서드명1(입력자료형 매개변수, ...) {
@@ -99,6 +102,7 @@ public은 자바의 접근 제어자로, 어디서든 이 클래스에 접근할
         ...
     }
 ```
+
 ^^^
 클래스 블럭 안에 highlight된 부분이 method block 이다.
 +++
@@ -106,9 +110,11 @@ main method가 해당 클래스 프로그램의 시작점이 된다.
 :::
 
 :::{grid-item-card} statement
+
 ```java
 명령문(statement);
 ```
+
 ^^^
 메서드 블럭 안에 이제 `Statement 명령문` 이 있다. 이제 실제로 컴퓨터가 동작해야하는 부분에 대한 규정이 들어가 있다.
 +++
@@ -120,6 +126,7 @@ main method가 해당 클래스 프로그램의 시작점이 된다.
 % definition list
 public|default|private|protected
 : 접근제어자(access modifier), private $\to$ defautl $\to$ protected $\to$ public 순으로 접근가능 범위가 넓어진다.
+
 - `private` : 해당 클래스 안에서만 접근 가능
 - `default` : 별도 지정안되면 이거다. 동일한 package(folder) 안에서만 접근 가능
 - `protected` : 동일 package의 클래스 또는 해당 클래스를 상속받은 클래스에서만 접근 가능
@@ -128,6 +135,18 @@ public|default|private|protected
 static method
 : 아무것도 없으면 instance initialization block이며, 이럴 경우에는 instance를 만들 때마다 실행된다. 즉 instance마다 초기화 값을 다르게 만들어주고 싶을때 사용하면 된다.\
 반면 static일 경우에는 static initial block이라고 해서 클래스가 처음 JVM에 로드될 때 한 번만 실행된다. 주로 클래스 변수 초기화에 사용된다. 모든 instance가 같은 값으로 초기화되기를 원할 때 사용한다. 진정한 초기화 느낌스? 인스턴스 생성없이 실행될 수 있으며 그 이유는 static을 사용한 변수는 클래스가 메모리에 올라갈 때 자동으로 하나 생성되기 때문이다.
+
+```{admonition} Heap memory
+:class : topic, dropdown, margin
+
+여기서 메모리라고 하는 부분은 [heap](heap)을 말한다. heap은 자료구조의 하나로써 max,min을 찾아내는 연산을 빠르게 하기 한 완전 이진트리를 말한다. 일정한 특징을 가지는 구조의 자료를 말하는 것이다. 파이썬의 heapq는 이러한 특징을 built-in으로 구현해 놓은 것이다.
+```
+
+```{admonition} class.static
+:class : caution,  
+
+static method는 클래스 명 다음에 사용해준다. 이게 프로그래머 간의 관례이며, 가독성이 높고 코드유지보수에도 도움이 된다. 참조변수.static 이런 식으로 사용하진 말라는 이야기이다.
+```
 
 (리턴자료형|void)
 : 메서드의 리턴 자료형을 규정하는 부분이다. void일 경우는 리턴값이 없음을 의미한다. null도 아니라 아예 반환하는게 없기 때문에 변수에 할당하려면 compile error가 발생한다.
