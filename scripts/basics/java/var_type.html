@@ -571,7 +571,7 @@ document.write(`
 <p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-calendar" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg></span>Nov 23 Thu 13:17, 2023</p>
 </div>
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
-<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>3 min read</p>
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>4 min read</p>
 </div>
 </div>
 </div>
@@ -764,9 +764,9 @@ literal</div>
 <h3>3. Array<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h3>
 <p>다른 언어들과 마찬가지로 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로 하되, <code class="docutils literal notranslate"><span class="pre">int[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">{1,2,3,4}</span></code>, <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=-</span> <span class="pre">{'a','b'...}</span></code> 이런 식으로 표현한다.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">String[7]</span></code> 이런 식으로 배열의 길이를 먼저 정할 수 있다.</p></li>
-<li><p>index로 접근하는 방식은 동일하다 <code class="docutils literal notranslate"><span class="pre">array_name[1]</span></code></p></li>
-<li><p>배열의 길이를 구하는 방식은 javascript와 비슷하다. <code class="docutils literal notranslate"><span class="pre">array_name.length</span></code></p></li>
+<li><p><strong>고정된 크기</strong> : <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">String[7]</span></code> 이런 식으로 배열의 길이를 먼저 정할 수 있다.</p></li>
+<li><p><strong>인덱스 접근</strong> : index로 접근하는 방식은 동일하다 <code class="docutils literal notranslate"><span class="pre">array_name[1]</span></code></p></li>
+<li><p><strong>배열의 크기</strong> : 배열의 길이를 구하는 방식은 javascript와 비슷하다. <code class="docutils literal notranslate"><span class="pre">array_name.length</span></code> – 이거가 주의해야 할 것이 배열말고 list, map 같은 다른 경우들은 <code class="docutils literal notranslate"><span class="pre">size()</span></code>로 구하는 차이가 있다.</p></li>
 <li><p>python의 IndexError는 자바에서는 <code class="docutils literal notranslate"><span class="pre">ArrayIndexOutOfBoundsException</span></code>으로 표기된다.</p></li>
 </ul>
 </section>
@@ -838,55 +838,55 @@ Python의 리스트</div>
 <table class="table table-center" id="id4" style="width: 80%">
 <caption><span class="caption-number">Table 2 </span><span class="caption-text">java_list vs python_list</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>기능</p></th>
-<th class="head text-center"><p>Java (List 인터페이스)</p></th>
-<th class="head text-center"><p>Python (리스트)</p></th>
+<tr class="row-odd"><th class="head text-left"><p>기능</p></th>
+<th class="head text-left"><p>Java (List 인터페이스)</p></th>
+<th class="head text-left"><p>Python (리스트)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>요소 추가</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">add(element)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">append(element)</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p>요소 추가</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">add(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">append(element)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>특정 인덱스에 요소 추가</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">add(index,</span> <span class="pre">element)</span></code></p></td>
-<td class="text-center"><p>-</p></td>
+<tr class="row-odd"><td class="text-left"><p>특정 인덱스에 요소 추가</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">add(index,</span> <span class="pre">element)</span></code></p></td>
+<td class="text-left"><p>-</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>요소 제거</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p>요소 제거</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>인덱스로 요소 제거</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">remove(index)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p>인덱스로 요소 제거</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(index)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>리스트 크기</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p>리스트 크기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>특정 요소 검색</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">get(index)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p>특정 요소 검색</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">get(index)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>요소 존재 여부 확인</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">contains(element)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">list</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p>요소 존재 여부 확인</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">contains(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">list</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>리스트 비우기</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p>리스트 비우기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>특정 인덱스의 요소 변경</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">element)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p>특정 인덱스의 요소 변경</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>리스트 복사</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;(list)</span></code></p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p>리스트 복사</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;(list)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>리스트 정렬</p></td>
-<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">list.sort(Comparator.naturalOrder())</span></code></p></td>
-<td class="text-center"><p>list.sort</p></td>
+<tr class="row-even"><td class="text-left"><p>리스트 정렬</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.sort(Comparator.naturalOrder())</span></code></p></td>
+<td class="text-left"><p>list.sort</p></td>
 </tr>
 </tbody>
 </table>
@@ -894,20 +894,12 @@ Python의 리스트</div>
 <section id="map">
 <h3>5. Map<a class="headerlink" href="#map" title="Permalink to this heading">#</a></h3>
 <p>Map은 python 딕셔너리랑 비슷한 것이라고 보면 된다. <code class="docutils literal notranslate"><span class="pre">key-value</span></code> pair로 구성된다. 다른 언어를 통합해서 보면 <span class="xref myst">hash, associate array</span>이다. 배열처럼 index로 순차적으로 찾는 것이 아니라, key를 이용해서 한 번에 value값에 접근할 수 있는 장점이 있다. 이것이 곧 hash의 장점이기도 하다.</p>
+<p>기본적으로 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.util.~Map</span></code> 식으로 패키지를 가져와야하고, HashMap, LinkedHashMap, TreeMap등이 있다.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header docutils">
-<ul class="simple">
-<li><p class="sd-card-text">Map은 인터페이스이며, HashMap, TreeMap, LinkedHashMap 등 다양한 구현을 가지고 있습니다.</p></li>
-<li><p class="sd-card-text">Map은 키와 값을 Object 타입으로 저장합니다. 따라서 모든 종류의 객체를 키 또는 값으로 사용할 수 있습니다.</p></li>
-<li><p class="sd-card-text">키는 고유해야 하며, 각 키는 하나의 값을 매핑합니다.</p></li>
-</ul>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Java의 Map</div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
 
@@ -931,6 +923,15 @@ Java의 Map</div>
 </pre></div>
 </div>
 </div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Java의 Map</div>
+<ul class="simple">
+<li><p class="sd-card-text">Map은 인터페이스이며, HashMap, TreeMap, LinkedHashMap 등 다양한 구현을 가지고 있습니다.</p></li>
+<li><p class="sd-card-text">Map은 키와 값을 Object 타입으로 저장합니다. 따라서 모든 종류의 객체를 키 또는 값으로 사용할 수 있습니다.</p></li>
+<li><p class="sd-card-text">키는 고유해야 하며, 각 키는 하나의 값을 매핑합니다.</p></li>
+</ul>
+</div>
 <div class="sd-card-footer docutils">
 <ul class="simple">
 <li><p class="sd-card-text">Java에서는 사용자 정의 객체를 키로 사용할 때 hashCode()와 equals() 메소드를 적절히 오버라이드해야 합니다. 이는 객체의 해시 코드를 생성하고 객체의 동등성을 비교하는 데 사용됩니다.</p></li>
@@ -942,15 +943,6 @@ Java의 Map</div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-header docutils">
-<ul class="simple">
-<li><p class="sd-card-text">Python의 딕셔너리는 내장 타입으로, 해시 테이블을 기반으로 구현되어 있습니다.</p></li>
-<li><p class="sd-card-text">키는 불변(immutable) 타입이어야 하며, 여러 타입의 값을 저장할 수 있습니다.</p></li>
-<li><p class="sd-card-text">Python 3.7+부터는 딕셔너리가 삽입 순서를 유지합니다.</p></li>
-</ul>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Python의 dict</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
     <span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
@@ -966,12 +958,40 @@ Python의 dict</div>
 </pre></div>
 </div>
 </div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Python의 dict</div>
+<ul class="simple">
+<li><p class="sd-card-text">Python의 딕셔너리는 내장 타입으로, 해시 테이블을 기반으로 구현되어 있습니다.</p></li>
+<li><p class="sd-card-text">키는 불변(immutable) 타입이어야 하며, 여러 타입의 값을 저장할 수 있습니다.</p></li>
+<li><p class="sd-card-text">Python 3.7+부터는 딕셔너리가 삽입 순서를 유지합니다.</p></li>
+</ul>
+</div>
 <div class="sd-card-footer docutils">
-<p class="sd-card-text">Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며, 내부적으로 <strong>hash</strong>()와 <strong>eq</strong>() 메소드를 사용하여 해시 코드를 생성하고 동등성을 비교합니다. Python 딕셔너리는 삽입 순서를 유지</p>
+<p class="sd-card-text">Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며, 내부적으로 <code class="docutils literal notranslate"><span class="pre">__hash__()</span></code>와 <code class="docutils literal notranslate"><span class="pre">__eq__()</span></code>메소드를 사용하여 해시 코드를 생성하고 동등성을 비교합니다. Python 딕셔너리는 삽입 순서를 유지</p>
 </div>
 </div>
 </div>
 </div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+:::{table} Java Map vs Python dict
+:width: 80%
+:align: center
+
+| 기능              | Java (Map)             | Python (dict)            |
+| :---------------- | :--------------------- | :----------------------- |
+| 요소 추가         | `put(key, value)`      | `dict[key] = value`      |
+| 요소 접근         | `get(key)`             | `dict[key]`              |
+| 요소 제거         | `remove(key)`          | `del dict[key]`          |
+| 크기 확인         | `size()`               | `len(dict)`              |
+| 키 존재 여부      | `containsKey(key)`     | `key in dict`            |
+| 값 존재 여부      | `containsValue(value)` | `value in dict.values()` |
+| 키 목록 가져오기  | `keySet()`             | `dict.keys()`            |
+| 값 목록 가져오기  | `values()`             | `dict.values()`          |
+| 키-값 쌍 가져오기 | `entrySet()`           | `dict.items()`           |
+| 모든 요소 제거    | `clear()`              | `dict.clear()`           |
+</pre></div>
 </div>
 </section>
 </section>
@@ -1124,7 +1144,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-23 16:50:12
+  based on jupyter-book, last updated: 2023-11-24 09:39:39
 </div>
   </div>
   
