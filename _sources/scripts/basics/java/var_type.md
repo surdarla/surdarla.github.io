@@ -42,9 +42,11 @@
 :class-container: full-width
 
 :::{grid-item-card} object
+
 ```java
 String a = new String("something")
 ```
+
 ^^^
 이렇게 `new`를 사용하는 방식은 항상 새로운 String object를 만든다. 객체를 만드는 것은 메모리를 차지하고, 자체가 새로 상성된 자료형과 같은 것이다. 컴파일 최적화에도 도움이 되지 않는다.
 +++
@@ -52,9 +54,11 @@ String a = new String("something")
 :::
 
 :::{grid-item-card} literal
+
 ```java
 String a = "something"
 ```
+
 ^^^
 앞과 다르게 객체를 생성하지 않고 문자열을 그대로 넣는 방식을 `literal`이라고 한다. 이러한 방식은 가독성도 높고, compile 최적화에도 도움이 된다.
 +++
@@ -84,7 +88,6 @@ String a = "something"
 
 `String.format("... %d ...")`
 : 파이썬 f-string처럼 이용하는 것이다. 좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.
-
 
 :::{table} String.format 정리
 :width: 60%
@@ -146,7 +149,9 @@ public class Main {
     }
 }
 ```
+
 ^^^
+
 - List는 Java 컬렉션 프레임워크의 일부입니다.
 - 크기가 동적으로 변할 수 있는 배열과 같은 객체의 집합을 나타냅니다.
 - Java의 List는 제네릭을 사용하여 다양한 타입의 객체를 저장할 수 있습니다.
@@ -165,7 +170,9 @@ fruits = ["Apple", "Banana", "Cherry"]
 fruits.remove("Banana")
 
 ```
+
 ^^^
+
 - Python의 내장 데이터 타입 중 하나입니다.
 - 여러 다른 타입의 요소를 단일 리스트에 저장할 수 있습니다.
 - 동적 배열 구현으로, 크기가 자동으로 조정됩니다.
@@ -229,7 +236,9 @@ public class Main {
     }
 }
 ```
+
 ^^^
+
 - Map은 인터페이스이며, HashMap, TreeMap, LinkedHashMap 등 다양한 구현을 가지고 있습니다.
 - Map은 키와 값을 Object 타입으로 저장합니다. 따라서 모든 종류의 객체를 키 또는 값으로 사용할 수 있습니다.
 - 키는 고유해야 하며, 각 키는 하나의 값을 매핑합니다.
@@ -255,7 +264,9 @@ del age_map["Charlie"] # Charlie 항목 삭제
 # for name, age in age_map.items():
 #     print(f"{name}: {age}")
 ```
+
 ^^^
+
 - Python의 딕셔너리는 내장 타입으로, 해시 테이블을 기반으로 구현되어 있습니다.
 - 키는 불변(immutable) 타입이어야 하며, 여러 타입의 값을 저장할 수 있습니다.
 - Python 3.7+부터는 딕셔너리가 삽입 순서를 유지합니다.
@@ -264,7 +275,6 @@ Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며,
 :::
 ::::
 
-:::
 :::{table} Java Map vs Python dict
 :width: 80%
 :align: center
