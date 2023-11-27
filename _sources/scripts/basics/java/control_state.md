@@ -80,7 +80,6 @@ public class LabelExam1{
 
 ```{code-block} java labe
 ---
-:name: java label
 :caption: java for loop with label
 :lineno-start: 1
 ---
