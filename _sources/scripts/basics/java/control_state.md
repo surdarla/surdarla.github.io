@@ -78,7 +78,7 @@ public class LabelExam1{
 
 ### 라벨 label
 
-```{code-block} java labe
+```{code-block} java
 ---
 :caption: java for loop with label
 :lineno-start: 1
