@@ -79,10 +79,8 @@ public class LabelExam1{
 ### 라벨 label
 
 ```{code-block} java
----
 :caption: java for loop with label
 :lineno-start: 1
----
 
 outer: for (int i = 0; i < 5; i++) {
     inner: for (int j = 0; j < 5; j++) {

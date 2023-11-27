@@ -631,6 +631,17 @@ document.write(`
 </div>
 <section id="label">
 <h3>라벨 label<a class="headerlink" href="#label" title="Permalink to this heading">#</a></h3>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">java for loop with label</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nl">outer</span><span class="p">:</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">    </span><span class="n">inner</span><span class="p">:</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">3</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="n">outer</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;outer&#39; 라벨의 루프를 종료</span>
+<span class="linenos">4</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;i = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, j = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+<span class="linenos">5</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <p>Java에서는 loop, block에 이름을 붙여서 사용하는 라벨이란 것이 있다. 이것은 중첩된 루프를 다룰 때 유용하다. 라벨을 사용하면 중첩된 루프 중 특정 루프로 직접 이동하거나, 그 루프를 종료할 수 있다. 이는 복잡한 루프 구조에서 특정 루프를 제어할 때 도움을 준다. 특이 중첩된 루프의 어떤 부분이 제어되고 있는지 명확하게 파악을 할 수 있어서 코드의 가독성의 측면에서도 좋다.</p>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">break</span></code></dt><dd><p>지정된 라벨이 붙은 루프를 종료</p>
@@ -831,7 +842,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-27 14:12:25
+  based on jupyter-book, last updated: 2023-11-27 14:12:53
 </div>
   </div>
   
