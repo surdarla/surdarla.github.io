@@ -31,6 +31,14 @@ figclass : margin
   - 플랫폼에 맞는 JVM만 설치하면 어디서든 같은 코드로 동작이 가능하다는 장점이 있다.
   - 해서 **플랫폼 독립적**이라고 한다.
 
+- JVM은 클래스를 어디서 찾습니까?
+  - CLASSPATH(현재는 .)에서 찾아서 .class 바이너리 파일을 실행시킨다.
+  - 현재 경로라고 말하면 어지러워진다(면접끝)
+  - 동일한 파일명을 가진 .class 바이트파일을 classpath에서 찾아서 읽어드린 클래스 정보를 heap에 올린다.
+  - 인스턴스가 아니라는 점을 주의하자.
+  - static method, instance method에 대한 정보를 이제 모두 안다.
+  - 가장 먼저 main method를 찾고 실행한다.
+
 ## 코드 구조
 
 ```{code-block} java
@@ -157,6 +165,25 @@ static method는 클래스 명 다음에 사용해준다. 이게 프로그래머
 - 클래스는 필드와 메소드를 가질 수 있다.
   - `System.out.println` : 마치 자동차.엔진.시동해 처럼 `class.field.method`
   - 그리고 이 긴 것을 명령문(statement)라고 한다.
+
+## Field
+
+- 클래스가 가지는 속성을 java에서 Field라고 말한다.
+- 다른 언어에서는 멤버변수라고 말하기도 한다.
+- 필드는 어떤 키워드와 함께 사용하느냐에 따라서 사용방법이 달라진다.
+- 종류
+  - Class Field : static
+  - Instance Field : ❌ static
+- 필드는 첫번째 글짜는 소문자로 시작하는 것이 관례이다.
+
+```zsh
+[접근제한자 : public|default|private|protected] [static] [final] type fieldName [=default_value|false|null];
+```
+
+
+
+
+## 앞으로 진행될 내용
 
 ```{tableofcontents}
 ```
