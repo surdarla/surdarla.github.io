@@ -31,7 +31,7 @@
 | boolean | 불리언형 | -           | -                          | -                         | false    |
 
 ```{admonition} String은 뭐노?
-:class : attention,  
+:class : attention,
 `String`은 기본 자료형이 아니라, 참조 자료형(Reference type)이다. 내부적으로 문자의 배열로 구현되어 있다. 불변성, 클래스(`java.lang.String`)에 의해 제공된다.
 ```
 

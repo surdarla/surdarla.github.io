@@ -151,7 +151,7 @@ static method
 ```
 
 ```{admonition} class.static
-:class : caution,  
+:class : caution,
 
 static method는 클래스 명 다음에 사용해준다. 이게 프로그래머 간의 관례이며, 가독성이 높고 코드유지보수에도 도움이 된다. 참조변수.static 이런 식으로 사용하진 말라는 이야기이다.
 ```
