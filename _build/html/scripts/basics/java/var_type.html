@@ -1,0 +1,1221 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>변수와 자료형 &#8212; surdarla-book</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "surdarla/surdarla.github.io");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/java/var_type';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/basics/java/var_type.html" />
+    <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="제어문" href="control_state.html" />
+    <link rel="prev" title="Java" href="java_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+
+
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
+  </div>
+
+
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+<a class="navbar-brand logo" href="../../../about.html">
+
+
+
+
+
+
+
+
+
+
+    <img src="../../../_static/surdarla-logo_old.png" class="logo__image only-light" alt="surdarla-book - Home"/>
+    <script>document.write(`<img src="../../../_static/surdarla-logo_old.png" class="logo__image only-dark" alt="surdarla-book - Home"/>`);</script>
+
+
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../about.html">
+                    Surdarla 입니다
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../CS229/2-1.html">practice - torch sklearn numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anal/linearity.html">linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/poetry.html">Poetry 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">join merge</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../python/OOP.html">객체 지향 프로그래밍</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dl/tokenizing.html">컴퓨터의 언어표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/NLP_basics.html">Normalization 정규화</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/perceptron.html">Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/attention.html">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/softmax.html">softmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dl/Logistic.html">Logistic</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../js/VUE.html">vue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js/DOM.html">DOM</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tips/snippet_create.html">vscode snippet 만들기</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="java_intro.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">변수와 자료형</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_state.html">제어문</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/resnet.html">Resnet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV3.html">Deberta V3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV1.html">DeBERTa</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/10825.html">10825 : 국영수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/23300.html">23300 : 웹 브라우저 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/%EC%98%AC%EB%B0%94%EB%A5%B8%EA%B4%84%ED%98%B8.html">올바른 괄호</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/10816.html">10816 : 숫자 카드 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/21921.html">21921 : 블로그</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1535.html">1535 : 안녕</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/9663.html">9663 : N-Queen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1006.html">1006 : 습격자 초라기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/24465.html">24465 : 데뷔의 꿈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1065.html">1065 : 한수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/17952.html">17952 : 과제는 끝나지 않아!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/20207.html">20207 : 달력</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/BFS.html">BFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/DP.html">Dynamic Programming</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/3.html">3. SQL 기본</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/4.html">4. SQL 활용</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/Big_data/1.html">1. 빅데이터 분석 기획</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/Big_data/2.html">2. 빅데이터 탐색</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main">
+
+
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+
+    </div>
+
+
+    <div class="header-article-items__end">
+
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+
+
+
+      <li><a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+
+
+
+
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/java/var_type.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+
+
+
+      <li><a href="../../../_sources/scripts/basics/java/var_type.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+
+
+
+
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+
+    </div>
+
+</div>
+</div>
+
+
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>변수와 자료형</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable">변수 variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">자료형 type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">1. char</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">char 내장 메서드</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringbuffer">1-1. StringBuffer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array">3. Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">4. List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map">5. Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static">static</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">디자인 패턴</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referance">referance</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>변수와 자료형<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<a class="reference external image-reference" href="https://surdarla.github.io"><img alt="supposed to be surdarla logo" class="sd-avatar-sm sd-outline-muted" src="../../../_images/my_favi.png" /></a>
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0">Surdarla</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-calendar" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg></span>Nov 23 Thu 13:17, 2023</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>4 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="variable">
+<h2>변수 variable<a class="headerlink" href="#variable" title="Permalink to this heading">#</a></h2>
+<p>변수란 하나의 값을 저장하기 위한 메모리 공간을 말한다. 변수는 자료형을 어떤 것을 사용하느냐에 따라서 필요한 메모리 공간(bit)가 달라짐으로 필요에 따라 그 자료형을 맞게 사용해줘야한다.</p>
+</section>
+<section id="type">
+<h2>자료형 type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<p>아래의 자료형들은 원시형(primitive) 자료형이다. 이러한 원시 자료형은 new 키워드로 값을 생성할 수 없다. 오직 literal 표기 방식으로만 생성이 가능하다. 특이한 것은 String은 리터럴 표기 방식으로 표기할 수 있지만 원시 자료형에는 포함되지 않는다. 특별우대 해주는 자료형이기 때문에 원시 자료형이라고 착각하면 안된다. 원시 자료형은 char이다.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>자료형</p></th>
+<th class="head text-left"><p>카테고리</p></th>
+<th class="head text-left"><p>크기 (비트)</p></th>
+<th class="head text-left"><p>최소값</p></th>
+<th class="head text-left"><p>최대값</p></th>
+<th class="head text-left"><p>기본값</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>byte</p></td>
+<td class="text-left"><p>정수형</p></td>
+<td class="text-left"><p>8</p></td>
+<td class="text-left"><p>-128</p></td>
+<td class="text-left"><p>127</p></td>
+<td class="text-left"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>short</p></td>
+<td class="text-left"><p>정수형</p></td>
+<td class="text-left"><p>16</p></td>
+<td class="text-left"><p>-32,768</p></td>
+<td class="text-left"><p>32,767</p></td>
+<td class="text-left"><p>0</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>int</p></td>
+<td class="text-left"><p>정수형</p></td>
+<td class="text-left"><p>32</p></td>
+<td class="text-left"><p>-2,147,483,648</p></td>
+<td class="text-left"><p>2,147,483,647</p></td>
+<td class="text-left"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>long</p></td>
+<td class="text-left"><p>정수형</p></td>
+<td class="text-left"><p>64</p></td>
+<td class="text-left"><p>-9,223,372,036,854,775,808</p></td>
+<td class="text-left"><p>9,223,372,036,854,775,807</p></td>
+<td class="text-left"><p>0L</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>float</p></td>
+<td class="text-left"><p>실수형</p></td>
+<td class="text-left"><p>32</p></td>
+<td class="text-left"><p>1.4E-45</p></td>
+<td class="text-left"><p>3.4028235E38</p></td>
+<td class="text-left"><p>0.0f</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>double</p></td>
+<td class="text-left"><p>실수형</p></td>
+<td class="text-left"><p>64</p></td>
+<td class="text-left"><p>4.9E-324</p></td>
+<td class="text-left"><p>1.7976931348623157E308</p></td>
+<td class="text-left"><p>0.0d</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>char</p></td>
+<td class="text-left"><p>문자형</p></td>
+<td class="text-left"><p>16</p></td>
+<td class="text-left"><p>‘\u0000’ (0)</p></td>
+<td class="text-left"><p>‘\uffff’ (65,535)</p></td>
+<td class="text-left"><p>‘\u0000’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>불리언형</p></td>
+<td class="text-left"><p>-</p></td>
+<td class="text-left"><p>-</p></td>
+<td class="text-left"><p>-</p></td>
+<td class="text-left"><p>false</p></td>
+</tr>
+</tbody>
+</table>
+<div class="attention admonition">
+<p class="admonition-title">String은 뭐노?</p>
+<p><code class="docutils literal notranslate"><span class="pre">String</span></code>은 기본 자료형이 아니라, 참조 자료형(Reference type)이다. 내부적으로 문자의 배열로 구현되어 있다. 불변성, 클래스(<code class="docutils literal notranslate"><span class="pre">java.lang.String</span></code>)에 의해 제공된다.</p>
+</div>
+<section id="char">
+<h3>1. char<a class="headerlink" href="#char" title="Permalink to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;something&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+object</div>
+<p class="sd-card-text">이렇게 <code class="docutils literal notranslate"><span class="pre">new</span></code>를 사용하는 방식은 항상 새로운 String object를 만든다. 객체를 만드는 것은 메모리를 차지하고, 자체가 새로 상성된 자료형과 같은 것이다. 컴파일 최적화에도 도움이 되지 않는다.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">이러한 방식보다는 …</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;something&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+literal</div>
+<p class="sd-card-text">앞과 다르게 객체를 생성하지 않고 문자열을 그대로 넣는 방식을 <code class="docutils literal notranslate"><span class="pre">literal</span></code>이라고 한다. 이러한 방식은 가독성도 높고, compile 최적화에도 도움이 된다.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">문자열은 <code class="docutils literal notranslate"><span class="pre">new</span></code>를 사용하지 않고 인스턴스 생성하는 방식이 선호된다. java creator들의 문자열에 대한 배려라고 보면 된다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h4>char 내장 메서드<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">new</span></code></dt><dd><p>객체를 만들 때 사용</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">equals</span></code></dt><dd><p>문자열의 값을 비교할 때. type비교도 아니고 “==” 와 같은 논리연산도 아니다. value만 비교한다.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">indexOf(str)</span></code></dt><dd><p>문자열에서 특정 문자가 시작되는 위치,index return</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">substring(start,</span> <span class="pre">end)</span></code></dt><dd><p>문자열에서 특정 부분을 뽑아내기. 해당 args로 위치 특정</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">replaceAll(str,</span> <span class="pre">substitute</span> <span class="pre">str)</span></code></dt><dd><p>문자열에서 특정 문자열 대체 문자로 바꾸기. 근데 나오는 것마다 모두</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">toUpperCase</span></code>, <code class="docutils literal notranslate"><span class="pre">toLowerCase</span></code></dt><dd><p>설명안함.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">String.format(&quot;...</span> <span class="pre">%d</span> <span class="pre">...&quot;)</span></code></dt><dd><p>파이썬 f-string처럼 이용하는 것이다. 좋은 것은 %s를 사용하면 자동으로 파라미터 값을 문자열로 바꾸어 사용해서 편하다.</p>
+</dd>
+</dl>
+<table class="table table-center" id="id4" style="width: 60%">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">String.format 정리</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>코드</p></th>
+<th class="head text-left"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>%s</p></td>
+<td class="text-left"><p>문자열(String)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>%c</p></td>
+<td class="text-left"><p>문자 1개(character)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>%d</p></td>
+<td class="text-left"><p>정수(Integer)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>%f</p></td>
+<td class="text-left"><p>부동소수(floating-point)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>%o</p></td>
+<td class="text-left"><p>8진수</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>%x</p></td>
+<td class="text-left"><p>16진수</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>%%</p></td>
+<td class="text-left"><p>Literal % (문자 % 자체)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="stringbuffer">
+<h3>1-1. StringBuffer<a class="headerlink" href="#stringbuffer" title="Permalink to this heading">#</a></h3>
+<p>StringBuffer는 문자열을 추가하거나 변경할 때 주로 사용하는 자료형이다. String을 사용하면 객체를 하나 만드는 것이다. 하나의 String에 추가나거나 하려면 다른 하나를 또 만들고 그 뒤에 붙이던가 해야한다. 하지만 StringBuffer는 그럴 필요가 없다. 객체를 하나만 만들고 가지고 놀면된다. 물론 그만큼 기본 String에 비해서 무거운 자료형이다. 때문에 경우에 잘 맞게 사용하는 버릇을 들이자.</p>
+</section>
+<section id="number">
+<h3>2. number<a class="headerlink" href="#number" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>정수(int, long), 실수(float, double) 4가지가 있다.</p></li>
+<li><p>기본형은 32bit이고 긴 것은 이의 두 배인 64bit이다.</p></li>
+</ul>
+</section>
+<section id="array">
+<h3>3. Array<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h3>
+<p>다른 언어들과 마찬가지로 <code class="docutils literal notranslate"><span class="pre">[]</span></code>로 하되, <code class="docutils literal notranslate"><span class="pre">int[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">{1,2,3,4}</span></code>, <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=-</span> <span class="pre">{'a','b'...}</span></code> 이런 식으로 표현한다.</p>
+<ul class="simple">
+<li><p><strong>고정된 크기</strong> : <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">array_name</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">String[7]</span></code> 이런 식으로 배열의 길이를 먼저 정할 수 있다.</p></li>
+<li><p><strong>인덱스 접근</strong> : index로 접근하는 방식은 동일하다 <code class="docutils literal notranslate"><span class="pre">array_name[1]</span></code></p></li>
+<li><p><strong>배열의 크기</strong> : 배열의 길이를 구하는 방식은 javascript와 비슷하다. <code class="docutils literal notranslate"><span class="pre">array_name.length</span></code> – 이거가 주의해야 할 것이 배열말고 list, map 같은 다른 경우들은 <code class="docutils literal notranslate"><span class="pre">size()</span></code>로 구하는 차이가 있다.</p></li>
+<li><p>python의 IndexError는 자바에서는 <code class="docutils literal notranslate"><span class="pre">ArrayIndexOutOfBoundsException</span></code>으로 표기된다.</p></li>
+</ul>
+</section>
+<section id="list">
+<h3>4. List<a class="headerlink" href="#list" title="Permalink to this heading">#</a></h3>
+<p>우리가 맨날 python의 list는 사실 이것이다. 배열이지만 <strong>배열의 크기가 지정되어 있지 않은</strong> 특징을 가지는 배열을 말한다.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Cherry&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Java의 List 인터페이스</div>
+<ul class="simple">
+<li><p class="sd-card-text">List는 Java 컬렉션 프레임워크의 일부입니다.</p></li>
+<li><p class="sd-card-text">크기가 동적으로 변할 수 있는 배열과 같은 객체의 집합을 나타냅니다.</p></li>
+<li><p class="sd-card-text">Java의 List는 제네릭을 사용하여 다양한 타입의 객체를 저장할 수 있습니다.</p></li>
+<li><p class="sd-card-text">주로 ArrayList, LinkedList 등의 구현 클래스를 통해 사용됩니다.</p></li>
+<li><p class="sd-card-text">타입 안정성이 보장되며, 컴파일 시간에 타입 체크가 이루어집니다.</p></li>
+</ul>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.util.ArrayList</span></code>는 package를 현재 코드에서 사용하기 위한 선언문이다. Java.util은 기본 패키지이다.</p>
+</div>
+<a class="sd-stretched-link reference external" href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="s2">&quot;Banana&quot;</span><span class="p">,</span> <span class="s2">&quot;Cherry&quot;</span><span class="p">]</span>
+
+<span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Banana&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Python의 리스트</div>
+<ul class="simple">
+<li><p class="sd-card-text">Python의 내장 데이터 타입 중 하나입니다.</p></li>
+<li><p class="sd-card-text">여러 다른 타입의 요소를 단일 리스트에 저장할 수 있습니다.</p></li>
+<li><p class="sd-card-text">동적 배열 구현으로, 크기가 자동으로 조정됩니다.</p></li>
+<li><p class="sd-card-text">내장된 다양한 메소드를 통해 리스트를 쉽게 조작할 수 있습니다.</p></li>
+<li><p class="sd-card-text">타입이 동적이며, 런타임에 타입이 결정됩니다.</p></li>
+</ul>
+</div>
+<a class="sd-stretched-link reference external" href="https://docs.python.org/3/library/stdtypes.html?highlight=list#list"></a></div>
+</div>
+</div>
+</div>
+<table class="table table-center" id="id5" style="width: 80%">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">java_list vs python_list</span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>기능</p></th>
+<th class="head text-left"><p>Java (List 인터페이스)</p></th>
+<th class="head text-left"><p>Python (리스트)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>요소 추가</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">add(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">append(element)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>특정 인덱스에 요소 추가</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">add(index,</span> <span class="pre">element)</span></code></p></td>
+<td class="text-left"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>요소 제거</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>인덱스로 요소 제거</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(index)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>리스트 크기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>특정 요소 검색</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">get(index)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>요소 존재 여부 확인</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">contains(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">list</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>리스트 비우기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>특정 인덱스의 요소 변경</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>리스트 복사</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;(list)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>리스트 정렬</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.sort(Comparator.naturalOrder())</span></code></p></td>
+<td class="text-left"><p>list.sort</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="map">
+<h3>5. Map<a class="headerlink" href="#map" title="Permalink to this heading">#</a></h3>
+<p>Map은 python 딕셔너리랑 비슷한 것이라고 보면 된다. <code class="docutils literal notranslate"><span class="pre">key-value</span></code> pair로 구성된다. 다른 언어를 통합해서 보면 <span class="xref myst">hash, associate array</span>이다. 배열처럼 index로 순차적으로 찾는 것이 아니라, key를 이용해서 한 번에 value값에 접근할 수 있는 장점이 있다. 이것이 곧 hash의 장점이기도 하다.</p>
+<p>기본적으로 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.util.~Map</span></code> 식으로 패키지를 가져와야하고, HashMap, LinkedHashMap, TreeMap등이 있다.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 full-width docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ageMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+
+<span class="w">      </span><span class="c1">//   System.out.println(&quot;Bob&#39;s age: &quot; + ageMap.get(&quot;Bob&quot;)); // Bob의 나이 출력</span>
+
+<span class="w">        </span><span class="n">ageMap</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Charlie&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Charlie 항목 삭제</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ageMap</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Java의 Map</div>
+<ul class="simple">
+<li><p class="sd-card-text">Map은 인터페이스이며, HashMap, TreeMap, LinkedHashMap 등 다양한 구현을 가지고 있습니다.</p></li>
+<li><p class="sd-card-text">Map은 키와 값을 Object 타입으로 저장합니다. 따라서 모든 종류의 객체를 키 또는 값으로 사용할 수 있습니다.</p></li>
+<li><p class="sd-card-text">키는 고유해야 하며, 각 키는 하나의 값을 매핑합니다.</p></li>
+</ul>
+</div>
+<div class="sd-card-footer docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Java에서는 사용자 정의 객체를 키로 사용할 때 hashCode()와 equals() 메소드를 적절히 오버라이드해야 합니다. 이는 객체의 해시 코드를 생성하고 객체의 동등성을 비교하는 데 사용됩니다.</p></li>
+<li><p class="sd-card-text">Java의 HashMap은 순서를 유지하지 않습니다. 순서가 중요한 경우 Java에서는 LinkedHashMap을 사용할 수 있습니다.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;Bob&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s2">&quot;Charlie&quot;</span><span class="p">:</span> <span class="mi">35</span>
+<span class="p">}</span>
+
+<span class="c1"># print(f&quot;Bob&#39;s age: {age_map[&#39;Bob&#39;]}&quot;) # Bob의 나이 출력</span>
+
+<span class="k">del</span> <span class="n">age_map</span><span class="p">[</span><span class="s2">&quot;Charlie&quot;</span><span class="p">]</span> <span class="c1"># Charlie 항목 삭제</span>
+
+<span class="c1"># for name, age in age_map.items():</span>
+<span class="c1">#     print(f&quot;{name}: {age}&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Python의 dict</div>
+<ul class="simple">
+<li><p class="sd-card-text">Python의 딕셔너리는 내장 타입으로, 해시 테이블을 기반으로 구현되어 있습니다.</p></li>
+<li><p class="sd-card-text">키는 불변(immutable) 타입이어야 하며, 여러 타입의 값을 저장할 수 있습니다.</p></li>
+<li><p class="sd-card-text">Python 3.7+부터는 딕셔너리가 삽입 순서를 유지합니다.</p></li>
+</ul>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며, 내부적으로 <code class="docutils literal notranslate"><span class="pre">__hash__()</span></code>와 <code class="docutils literal notranslate"><span class="pre">__eq__()</span></code>메소드를 사용하여 해시 코드를 생성하고 동등성을 비교합니다. Python 딕셔너리는 삽입 순서를 유지</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<table class="table table-center" id="id6" style="width: 80%">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Java Map vs Python dict</span><a class="headerlink" href="#id6" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>기능</p></th>
+<th class="head text-left"><p>Java (Map)</p></th>
+<th class="head text-left"><p>Python (dict)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>요소 추가</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">put(key,</span> <span class="pre">value)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict[key]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>요소 접근</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">get(key)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict[key]</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>요소 제거</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(key)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">dict[key]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>크기 확인</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len(dict)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>키 존재 여부</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">containsKey(key)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">in</span> <span class="pre">dict</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>값 존재 여부</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">containsValue(value)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">in</span> <span class="pre">dict.values()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>키 목록 가져오기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">keySet()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>값 목록 가져오기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">values()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>키-값 쌍 가져오기</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">entrySet()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>모든 요소 제거</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="static">
+<h2>static<a class="headerlink" href="#static" title="Permalink to this heading">#</a></h2>
+<p>public static void classname() 뭐 이런 식으로 해당 클래스의 메인 메소드를 많이 만들어서 사용하곤 하는데 여기서 static이 무슨 의미인지를 알아야한다. static method는 인스턴스를 생성하지 않아도 메모리에 올라가 있다는 것을 말한다. 프로그래밍에 있어서 사용가능 하다는 것은 메모리에 올라가 있다는 것을 의미한다. 폰노이만의 프로그램 내장방식이란 모든 프로그램은 메모리에 올라가야지만 실행될 수 있다는 개념을 말한다. 보통은 new연산자를 사용하면 메모리에 올라가서 인스턴스화 되고 이를 객체 혹은 인스턴스라고 부른다. static은 인스턴스화 하지 않아도 사용가능하다는 의미가 위의 개념들을 합치면 조금 더 이해하기 편할 것이다.</p>
+<dl class="simple myst">
+<dt>인스턴스를 만드는 3가지 방법</dt><dd><ol class="arabic simple">
+<li><p>new 연산자와 생성자를 이용하여 만들기\ 2. 클래스 로더를 이용하여 만드는 방법\ 3. 메모리에 있는 인스턴스를 복제하여 만드는 방법</p></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>디자인 패턴<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>객체 지향 프로그램이라는 것은 객체를 만드는 방법을 고민하는게 아니라 객체 그 자체에 대해서 고민해야한다.</p>
+<dl class="simple myst">
+<dt>인스턴스 생성 방법</dt><dd><p>필요한 개수만큼 만들어야 한다.</p>
+</dd>
+</dl>
+</section>
+<section id="naming-rule">
+<h2>naming rule<a class="headerlink" href="#naming-rule" title="Permalink to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>클래스 이름</dt><dd><p>클래스 명은 명사로 한다.<br />
+대문자로 시작한다(javascript는 소문자로 시작하는 것과는 다르다).<br />
+이 다른 것을 <code class="docutils literal notranslate"><span class="pre">pascal</span> <span class="pre">case</span></code>라고 한다.</p>
+</dd>
+<dt>메서드 이름</dt><dd><p>메서드 명은 동사로 한다.<br />
+소문자로 시작한다.<br />
+javascript처럼 하는 것을 <code class="docutils literal notranslate"><span class="pre">camel</span> <span class="pre">case</span></code>라고 한다.</p>
+</dd>
+<dt>변수 이름</dt><dd><p>변수는 숫자로 시작할 수 없다.<br />
+_, $ 만 사용가능<br />
+int, class, return 과 같은 built-in keyword는 변수명으로 사용 불가</p>
+</dd>
+</dl>
+</section>
+<section id="referance">
+<h2>referance<a class="headerlink" href="#referance" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wikidocs.net/1936">wikidocs java</a></p></li>
+</ul>
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="surdarla/surdarla.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./scripts\basics\java"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+
+
+
+
+
+
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="java_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Java</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="control_state.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">제어문</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+
+            </div>
+
+
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable">변수 variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">자료형 type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#char">1. char</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">char 내장 메서드</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringbuffer">1-1. StringBuffer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number">2. number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array">3. Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">4. List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map">5. Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static">static</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">디자인 패턴</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-rule">naming rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referance">referance</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+<div class="bd-footer-content__inner container">
+
+  <div class="footer-item">
+
+<p class="component-author">
+By Surdarla
+</p>
+
+  </div>
+
+  <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2023, Surdarla.
+      <br/>
+
+  </p>
+
+  </div>
+
+  <div class="footer-item">
+
+  </div>
+
+  <div class="footer-item">
+
+<div class="extra_footer">
+  based on jupyter-book, last updated: 2023-11-27 14:12:53
+</div>
+  </div>
+
+</div>
+          </footer>
+
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

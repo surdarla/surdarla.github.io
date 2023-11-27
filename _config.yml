@@ -24,8 +24,8 @@ html:
     hypothesis: false
     utterances:
       repo: surdarla/surdarla.github.io
-  extra_footer: 'based on jupyter-book, last updated: 2023-11-21 17:00:04'
-  favicon: ./images/logos/favi.jpeg
+  extra_footer: 'based on jupyter-book, last updated: 2023-11-27 14:12:53'
+  favicon: ./images/logos/my_favi.png
   google_analytics_id: G-BMRNT7D57Q
   home_page_in_navbar: true
   use_edit_page_button: false

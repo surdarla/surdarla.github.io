@@ -24,6 +24,8 @@ parts:
       sections :
         - file : scripts/basics/python/poetry
         - file : scripts/basics/python/pandas
+        - file : scripts/basics/python/OOP
+
     - file :  scripts/basics/dl/DL_intro
       sections :
         - file : scripts/basics/dl/tokenizing
@@ -45,7 +47,8 @@ parts:
 
     - file : scripts/basics/java/java_intro
       sections :
-        - file : scripts/basics/java/java
+        - file : scripts/basics/java/var_type
+        - file : scripts/basics/java/control_state
 
   - caption : Paper Review
     chapters :
@@ -84,6 +87,8 @@ parts:
       - file : scripts/algorithm/problem/1006.ipynb
       - file : scripts/algorithm/problem/24465.ipynb
       - file : scripts/algorithm/problem/1065.ipynb
+      - file : scripts/algorithm/problem/17952.ipynb
+      - file : scripts/algorithm/problem/20207.ipynb
 
 
     - file  : scripts/algorithm/data_structure

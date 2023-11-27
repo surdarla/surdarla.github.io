@@ -1,0 +1,5 @@
+/* hide scrollbar but allow scrolling */
+
+.bd-sidebar-primary::-webkit-scrollbar {
+    display: none;
+}

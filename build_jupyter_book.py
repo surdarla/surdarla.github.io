@@ -31,18 +31,18 @@ def build_publish_jupyter_book():
     subprocess.run(["ghp-import", "-n", "-p", "-f", "./_build/html"])
 
 
-def git_commit_push_and_merge(main_branch_name="main"):
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    commit_message = f"Update at {current_time}"
+# def git_commit_push_and_merge(main_branch_name="main"):
+#     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#     commit_message = f"Update at {current_time}"
 
-    # 현재 브랜치에서 변경사항을 커밋합니다.
-    subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", commit_message])
+#     # 현재 브랜치에서 변경사항을 커밋합니다.
+#     subprocess.run(["git", "add", "."])
+#     subprocess.run(["git", "commit", "-m", commit_message])
 
-    # main 브랜치로 체크아웃합니다.
-    subprocess.run(["git", "checkout", main_branch_name])
-    # 변경사항을 원격 저장소에 푸시합니다.
-    subprocess.run(["git", "push", "origin", main_branch_name])
+#     # main 브랜치로 체크아웃합니다.
+#     subprocess.run(["git", "checkout", main_branch_name])
+#     # 변경사항을 원격 저장소에 푸시합니다.
+#     subprocess.run(["git", "push", "origin", main_branch_name])
 
 
 if __name__ == "__main__":
@@ -50,4 +50,3 @@ if __name__ == "__main__":
     yaml_file_path = "_config.yml"
     update_yaml(yaml_file_path)
     build_publish_jupyter_book()
-    git_commit_push_and_merge()

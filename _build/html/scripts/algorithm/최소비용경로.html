@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/my_css.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -108,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/algorithm/최소비용경로';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/algorithm/최소비용경로.html" />
-    <link rel="shortcut icon" href="../../_static/favi.jpeg"/>
+    <link rel="shortcut icon" href="../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -243,6 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/poetry.html">Poetry 사용하기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/pandas.html">join merge</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../basics/python/OOP.html">객체 지향 프로그래밍</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -265,7 +267,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../basics/java/java.html">java란 무엇인가</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/java/var_type.html">변수와 자료형</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/java/control_state.html">제어문</a></li>
 </ul>
 </li>
 </ul>
@@ -307,6 +310,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="problem/1006.html">1006 : 습격자 초라기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/24465.html">24465 : 데뷔의 꿈</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/1065.html">1065 : 한수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/17952.html">17952 : 과제는 끝나지 않아!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/20207.html">20207 : 달력</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="data_structure.html">data_structure</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -695,7 +700,7 @@ document.write(`
 <figure class="align-default" id="id5">
 <img alt="https://users.cecs.anu.edu.au/~Alistair.Rendell/Teaching/apac_comp3600/module2/images/Heaps_HeapStructure.png" src="https://users.cecs.anu.edu.au/~Alistair.Rendell/Teaching/apac_comp3600/module2/images/Heaps_HeapStructure.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">heap에 대한 설명</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">heap에 대한 설명</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -708,7 +713,7 @@ heap[k] &lt;= heap[2*k+2]\\
 <p>최대힙의 경우에는 부모노드의 키 값이 자식 노드의 키 값보다 항상 크거나 같고, 최소힙의 경우에는 부모노드의 키 값이 항상 자식노드의 키보다 작거나 같은 것을 말한다. 그렇기 때문에 수치적으로 우선순위를 부여하는데 최적화 된 자료구조라고 볼 수 있다.</p>
 </section>
 <section id="heapq">
-<h2><a class="reference external" href="https://docs.python.org/ko/3/library/heapq.html?highlight=heap#module-heapq">Heapq</a><a class="headerlink" href="#heapq" title="Permalink to this heading">#</a></h2>
+<span id="heap"></span><h2><a class="reference external" href="https://docs.python.org/ko/3/library/heapq.html?highlight=heap#module-heapq">Heapq</a><a class="headerlink" href="#heapq" title="Permalink to this heading">#</a></h2>
 <p>heapq는 표준라이브러리 중 하나로 heap 연산을 위한 함수들을 제공한다. 리스트를 힙처럼(heapify) 다룰 수 있다. 주로 min-heap을 지원하며 이를 통해서 우선순위 큐를 효율적으로 구현할 수 있다.</p>
 <p>여기서 제공하는 api는 두 가지 측면에서 교과서 힙 알고리즘과 다르다고 한다.</p>
 <ol class="arabic simple">
@@ -930,7 +935,7 @@ By Surdarla
   <div class="footer-item">
 
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-21 17:00:04
+  based on jupyter-book, last updated: 2023-11-27 14:12:53
 </div>
   </div>
 
