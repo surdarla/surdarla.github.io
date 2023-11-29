@@ -315,6 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="problem/20207.html">20207 : 달력</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problem/12018.html">12018 : Yonsei TOTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/2252.html">2252 : 줄 세우기</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="data_structure.html">data_structure</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -560,12 +561,14 @@ document.write(`
 </figure>
 <div class="note margin admonition">
 <p class="admonition-title">진입차수 진출차수</p>
-<p>진입차수(Indegree)
-:특정한 노드로 들어오는 간선의 개수</p>
-<p>진출차수(Outdegree)
-:특정한 노드에서 나가는 간선의 개수</p>
+<dl class="simple myst">
+<dt>진입차수(Indegree)</dt><dd><p>특정한 노드로 들어오는 간선의 개수</p>
+</dd>
+<dt>진출차수(Outdegree)</dt><dd><p>특정한 노드에서 나가는 간선의 개수</p>
+</dd>
+</dl>
 </div>
-<p>위의 정의 처럼 위상 정렬은 **DAG(Direct Acyclic Graph, 순환하지 않는 방향 그래프)**에서만 수행할 수 있다. 위상 정렬에서는 여러가지 답이 존재할 수 있다. 한 단계에서 큐에 새롭게 들어가는 원소가 2개 이상인 겨우가 있다면 여러 가지 답이 존재한다. 모든 원소를 방문하기 전에 큐가 빈다면 사이클이 존재한다고 판단할 수 있다. 사이클에 포함된 원소 중에서 어떠한 원소도 큐에 들어가지 못한다.</p>
+<p>위의 정의 처럼 위상 정렬은 <strong>DAG</strong>(Direct Acyclic Graph, 순환하지 않는 방향 그래프)에서만 수행할 수 있다. 위상 정렬에서는 여러가지 답이 존재할 수 있다. 한 단계에서 큐에 새롭게 들어가는 원소가 2개 이상인 겨우가 있다면 여러 가지 답이 존재한다. 모든 원소를 방문하기 전에 큐가 빈다면 사이클이 존재한다고 판단할 수 있다. 사이클에 포함된 원소 중에서 어떠한 원소도 큐에 들어가지 못한다.</p>
 <p>스택을 활용한 <span class="xref myst">DFS</span>를 이용해 위상정렬을 수행할 수 있다. 여기서는 큐를 이용한 것만 다룬다.</p>
 <section id="id2">
 <h2>방법<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
@@ -580,7 +583,7 @@ document.write(`
 </li>
 </ol>
 <p>결과적으로 각 노드가 큐에 들어온 순서가 위상정렬을 수행한 결과와 같다.</p>
-<p><span class="xref myst">줄세우기</span>문제를 보면 queue를 이용해서 문제를 해결한다. 진입차수가 0인 경우의 노드들을 큐에 넣은 다음 큐가 비어버릴 때까지 과정을 반복한다. now를 결과에 넣고, now와 연결된 노드들에서 진입차수를 하나씩 뺀다. 뒤꽁무니를 하나씩 지우는 과정이다. 그리고 다시 집입차수가 0인 것들을 다시 큐에 넣고 그 순서대로 FIFO로 과정을 반복한다.</p>
+<p><a class="reference internal" href="problem/2252.html#id1"><span class="std std-ref">줄세우기</span></a>문제를 보면 queue를 이용해서 문제를 해결한다. 진입차수가 0인 경우의 노드들을 큐에 넣은 다음 큐가 비어버릴 때까지 과정을 반복한다. now를 결과에 넣고, now와 연결된 노드들에서 진입차수를 하나씩 뺀다. 뒤꽁무니를 하나씩 지우는 과정이다. 그리고 다시 집입차수가 0인 것들을 다시 큐에 넣고 그 순서대로 FIFO로 과정을 반복한다.</p>
 </section>
 <section id="id3">
 <h2>성능<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
@@ -691,7 +694,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-29 12:10:35
+  based on jupyter-book, last updated: 2023-11-29 13:33:51
 </div>
   </div>
   

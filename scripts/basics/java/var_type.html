@@ -313,6 +313,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/20207.html">20207 : 달력</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2252.html">2252 : 줄 세우기</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -844,58 +845,70 @@ Python의 리스트</div>
 </div>
 </div>
 </div>
-<table class="table table-center" id="id5" style="width: 80%">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">java_list vs python_list</span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
+<table class="table table-center" id="id5">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">java_list</span></code> vs <code class="docutils literal notranslate"><span class="pre">python_list</span></code> vs <code class="docutils literal notranslate"><span class="pre">js_list</span></code></span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>기능</p></th>
 <th class="head text-left"><p>Java (List 인터페이스)</p></th>
 <th class="head text-left"><p>Python (리스트)</p></th>
+<th class="head text-left"><p>JavaScript (배열)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>요소 추가</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">add(element)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">append(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">push(element)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>특정 인덱스에 요소 추가</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">add(index,</span> <span class="pre">element)</span></code></p></td>
 <td class="text-left"><p>-</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">0,</span> <span class="pre">element)</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>요소 제거</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(element)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">1)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>인덱스로 요소 제거</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(index)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">splice(index,</span> <span class="pre">1)</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>리스트 크기</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array.length</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>특정 요소 검색</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">get(index)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array[index]</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>요소 존재 여부 확인</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">contains(element)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">list</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array.includes(element)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>리스트 비우기</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array.length</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>특정 인덱스의 요소 변경</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">set(index,</span> <span class="pre">element)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list[index]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array[index]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>리스트 복사</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;(list)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[...array]</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>리스트 정렬</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.sort(Comparator.naturalOrder())</span></code></p></td>
-<td class="text-left"><p>list.sort</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">list.sort()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array.sort()</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -983,54 +996,76 @@ Python의 dict</div>
 </div>
 </div>
 </div>
-<table class="table table-center" id="id6" style="width: 80%">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Java Map vs Python dict</span><a class="headerlink" href="#id6" title="Permalink to this table">#</a></caption>
+<table class="table table-center" id="id6">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">Map</span></code> vs <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">dict</span></code> vs <code class="docutils literal notranslate"><span class="pre">JS</span> <span class="pre">Obj</span></code> vs <code class="docutils literal notranslate"><span class="pre">JS</span> <span class="pre">Map</span></code></span><a class="headerlink" href="#id6" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>기능</p></th>
 <th class="head text-left"><p>Java (Map)</p></th>
 <th class="head text-left"><p>Python (dict)</p></th>
+<th class="head text-left"><p>JavaScript (Object)</p></th>
+<th class="head text-left"><p>JavaScript (Map)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>요소 추가</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">put(key,</span> <span class="pre">value)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict[key]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">obj[key]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.set(key,</span> <span class="pre">value)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>요소 접근</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">get(key)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict[key]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">obj[key]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.get(key)</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>요소 제거</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">remove(key)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">dict[key]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">delete</span> <span class="pre">obj[key]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.delete(key)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>크기 확인</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">size()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len(dict)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Object.keys(obj).length</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.size</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>키 존재 여부</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">containsKey(key)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">in</span> <span class="pre">dict</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">in</span> <span class="pre">obj</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.has(key)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>값 존재 여부</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">containsValue(value)</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">in</span> <span class="pre">dict.values()</span></code></p></td>
+<td class="text-left"><p>-</p></td>
+<td class="text-left"><p>-</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>키 목록 가져오기</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">keySet()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Object.keys(obj)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.keys()</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>값 목록 가져오기</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">values()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Object.values(obj)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.values()</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>키-값 쌍 가져오기</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">entrySet()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Object.entries(obj)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.entries()</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>모든 요소 제거</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></p></td>
+<td class="text-left"><p>-</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">map.clear()</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1206,7 +1241,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-29 12:10:35
+  based on jupyter-book, last updated: 2023-11-29 13:33:51
 </div>
   </div>
   
