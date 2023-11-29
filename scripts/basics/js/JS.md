@@ -5,7 +5,6 @@ typescript를 사용하기 위해서는 javascript를 원활하게 사용하는 
 ```{tableofcontents}
 ```
 
-
 ```{raw} html
 <script
    type="text/javascript"

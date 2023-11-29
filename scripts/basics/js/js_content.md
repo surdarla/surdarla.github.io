@@ -1,5 +1,16 @@
 # JS Challenge
 
+```{article-info}
+:avatar: /images/logos/my_favi.png
+:avatar-alt: supposed to be surdarla logo
+:avatar-link: https://surdarla.github.io
+:avatar-outline: muted
+:author: Surdarla
+:date: Nov 29 Wed 13:15, 2023
+:read-time: "{sub-ref}`wordcount-minutes` min read"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
+
 > web page interactive browser language
 
 JS는 모든 브라우저에 내장되어 있어서 설치가 필요없는 언어이다. front-end에 사용할 수 있는 유일한 언어라는 장점이 있다. 니코쌤은 JS를 프랑켄슈타인 언어라고 말한다. 그만큼 어쩔 수 없이 필요에 의해 사용하곤 있지만 완벽한 언어라고는 할 수 없기에 지속적인 패치와 수정으로 고쳐나아가는 중이라는 것이다.
@@ -25,7 +36,51 @@ true, false는 기본적인 값이므로 넘어간다
 
 ## array : []
 
-something
+javascript에서 배열을 initialize 초기화 하는 방법에는 여러가지 방법이 존재한다. 각 방법은 특정 상황에 적합하며, 다양한 방식으로 생성 및 초기화가 가능하다. 상황에 따라서 다른 방법에 대해서 알아보자.
+
+1. 리터럴
+   1. 가장 간단하고 직관적인 방법
+   2. `let arr = [1,2,3];`
+2. Array 생성자
+   1. 지정된 크기의 새 배열을 생성한다. 이 방법은 배열의 길이만 지정한다. 나중에 요소를 추가한다.
+   2. `let arr = new Array(10);` 길이 10의 배열 생성
+3. `Array.of` 메서드
+   1. 주어진 인자들로 배열을 생성한다.
+   2. `let arr = Array.of(1,2,3);`
+4. `Array.fill` 메서드
+   1. 배열을 특정 값으로 초기화 한다. 고정된 값으로 배열을 채움. 0으로 만들어진 arr 만들때 유용
+   2. `let arr = new Array(5).fill(0);`
+5. `Array.from` 메서드
+   1. 배열과 유사한 객체나 반복 가능한 객체로부터 새 배열 만들기
+   2. `let arr = Array.from({length:5},(_,index) => index);`
+   3. 0~4까지의 값을 가진 배열을 생성
+6. `spread` 연산자
+   1. 기존 배열이나 반복 가능한 객체를 새 배열로 복사
+   2. `let arr = [..."123"];`
+   3. 문자열"123"을 배열해서 \['1','2','3'\]으로 변환
+7. `map`,`forEach`
+   1. 기존 배열을 기반으로 새로운 배열을 생성하거나 기존 배열 수정
+   2. `let arr = [1,2,3].map(x => x*x)`
+
+```{admonition} forEach 주의점
+:class : topic, margin
+
+forEach 메서드를 사용하여 배열을 초기화하면, 기존의 각 요소에 대해 주어진 함수를 실행한다. 주의점은 **새로운 배열을 반환return 하지는 않는다는 것**이다. forEach는 주로 기존 배열을 변경하거나, 새로운 효과(사이트 이펙트)를 생성하는데 사용된다.
+
+기본적인 javascript가 html을 실시간으로 동적으로 변화하게 하는 브라우저 언어로 만들어졌기 때문인 것을 이런 특징들로 다시금 알 수 있다.
+```
+
+```javascript
+let originArr = [1,2,3];
+let newArr = [];
+
+originArr.forEach((x) => {
+  newArr.push(x*x);
+});
+
+console.log(newArr);
+// [1, 4, 9];
+```
 
 ## function
 
@@ -108,6 +163,7 @@ html은 정적인 리소스이다. 사용자에게 표시할 화면은 처음 ht
 
 ## class 바꾸기
 
+something for nothing
 
 ```{raw} html
 <script

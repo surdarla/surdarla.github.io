@@ -89,6 +89,8 @@ parts:
       - file : scripts/algorithm/problem/1065.ipynb
       - file : scripts/algorithm/problem/17952.ipynb
       - file : scripts/algorithm/problem/20207.ipynb
+      - file : scripts/algorithm/problem/1781.ipynb
+      - file : scripts/algorithm/problem/12018.ipynb
 
 
     - file  : scripts/algorithm/data_structure
@@ -99,6 +101,7 @@ parts:
       - file : scripts/algorithm/최대유량
       - file : scripts/algorithm/BFS
       - file : scripts/algorithm/DP
+      - file : scripts/algorithm/위상정렬
 
 
 
