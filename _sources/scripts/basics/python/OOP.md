@@ -99,11 +99,11 @@ public class Child extends Parent{
 :::
 
 :::{grid-item-card}
+:columns: 12
 ```{code-block} java
 :caption: Exam01
 :emphasize-lines: 11,12,13
 :lineno-start: 1
-:columns: 12
 
 public class Exam01{
     public static void main(String[] args){
