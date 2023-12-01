@@ -100,9 +100,10 @@ public class Child extends Parent{
 :::
 
 :::{grid-item-card}
+
 ```{code-block} java
 :caption: Exam01
-:emphasize-lines: comma-seperated list of integers
+:emphasize-lines: [10,11]
 :lineno-start: 1
 
 public class Exam01{
