@@ -65,9 +65,8 @@ Car c2 = new 이층버스();
 
 ### field overriding
 
-::::{grid} 1 1 2 3
+::::{grid} 2
 :gutter: 3
-:class-container: full-width
 
 :::{grid-item-card}
 ```{code-block} java
@@ -100,11 +99,11 @@ public class Child extends Parent{
 :::
 
 :::{grid-item-card}
-
 ```{code-block} java
 :caption: Exam01
-:emphasize-lines: 10,11
+:emphasize-lines: 11,12,13
 :lineno-start: 1
+:columns: 12
 
 public class Exam01{
     public static void main(String[] args){
@@ -123,7 +122,9 @@ public class Exam01{
 }
 ```
 :::
+
 ::::
+
 필드는 type을 따라가고 메소드는 오버라이딩 된 자식의 메소드가 실행된다. 마지막 두 줄이 주요한데, p2.i = 5, p2.printI() = 15의 결과가 나온다. 메소드는 오버라이딩 되면 무조건 자식의 것을 실행한다고 위에서 암기했었다. 부모의 필드값(i)은 현재 5이다. 그래서 필드를 그냥 실행(p2.i)을 하면 5가 나온다.
 
 하지만 method를 실행하면(p2.printI()) 15가 나온다. 필드가 오버라이딩 되서 자식의 값이 사용되다면 부모 클래스를 만든 사람이 예상하지 못한 결과가 출력될 것이기 때문이다. 그렇기 때문에 필드는 부모 타입을 따라간다.
