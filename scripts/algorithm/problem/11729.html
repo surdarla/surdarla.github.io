@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1065 : 한수 &#8212; surdarla-book</title>
+    <title>11729 : 하노이 탑 이동순서 &#8212; surdarla-book</title>
   
   
   
@@ -105,14 +105,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/algorithm/problem/1065';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/algorithm/problem/1065.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/algorithm/problem/11729';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/algorithm/problem/11729.html" />
     <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="17952 : 과제는 끝나지 않아!" href="17952.html" />
-    <link rel="prev" title="24465 : 데뷔의 꿈" href="24465.html" />
+    <link rel="next" title="data_structure" href="../data_structure.html" />
+    <link rel="prev" title="1021 : 회전하는 큐" href="1021.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -308,14 +308,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="9663.html">9663 : N-Queen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1006.html">1006 : 습격자 초라기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="24465.html">24465 : 데뷔의 꿈</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1065 : 한수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1065.html">1065 : 한수</a></li>
 <li class="toctree-l2"><a class="reference internal" href="17952.html">17952 : 과제는 끝나지 않아!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20207.html">20207 : 달력</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12018.html">12018 : Yonsei TOTO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2252.html">2252 : 줄 세우기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1021.html">1021 : 회전하는 큐</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11729.html">11729 : 하노이 탑 이동순서</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11729 : 하노이 탑 이동순서</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -414,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/algorithm/problem/1065.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/algorithm/problem/11729.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -444,7 +444,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/scripts/algorithm/problem/1065.ipynb" target="_blank"
+      <li><a href="../../../_sources/scripts/algorithm/problem/11729.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -528,7 +528,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1065 : 한수</h1>
+    <h1>11729 : 하노이 탑 이동순서</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -543,6 +543,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#think">think</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">javascript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#java">java</a></li>
 </ul>
             </nav>
         </div>
@@ -555,9 +557,31 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>1065 : 한수<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>11729 : 하노이 탑 이동순서<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<a class="reference external image-reference" href="https://surdarla.github.io"><img alt="supposed to be surdarla logo" class="sd-avatar-sm sd-outline-muted" src="../../../_images/my_favi.png" /></a>
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0">Surdarla</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-calendar" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z"></path></svg></span>Dec 01 Fri 09:38, 2023</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"></path></svg></span>1 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <ul class="simple">
-<li><p><a class="reference internal" href="https://d2gd6pc034wcta.cloudfront.net/tier/7.svg"><img alt="https://d2gd6pc034wcta.cloudfront.net/tier/7.svg" height="15" src="https://d2gd6pc034wcta.cloudfront.net/tier/7.svg" width="15" /></a> 실버 4</p></li>
+<li><p><a class="reference internal" href="https://d2gd6pc034wcta.cloudfront.net/tier/10.svg"><img alt="https://d2gd6pc034wcta.cloudfront.net/tier/10.svg" height="15" src="https://d2gd6pc034wcta.cloudfront.net/tier/10.svg" width="15" /></a> 골드 5</p></li>
 </ul>
 <table class="table">
 <thead>
@@ -567,27 +591,37 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>2초</p></td>
-<td class="text-center"><p>128MB</p></td>
-<td class="text-center"><p>54.286%</p></td>
+<tr class="row-even"><td class="text-center"><p>1초</p></td>
+<td class="text-center"><p>256MB</p></td>
+<td class="text-center"><p>50.536%</p></td>
 </tr>
 </tbody>
 </table>
 <section id="id2">
 <h2>문제<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>어떤 양의 정수 X의 각 자리가 등차수열을 이룬다면, 그 수를 한수라고 한다. 등차수열은 연속된 두 개의 수의 차이가 일정한 수열을 말한다. N이 주어졌을 때, 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력하는 프로그램을 작성하시오.</p>
+<p>세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다. 각 원판은 반경이 큰 순서대로 쌓여있다. 이제 수도승들이 다음 규칙에 따라 첫 번째 장대에서 세 번째 장대로 옮기려 한다.</p>
+<p>한 번에 한 개의 원판만을 다른 탑으로 옮길 수 있다.
+쌓아 놓은 원판은 항상 위의 것이 아래의 것보다 작아야 한다.
+이 작업을 수행하는데 필요한 이동 순서를 출력하는 프로그램을 작성하라. 단, 이동 횟수는 최소가 되어야 한다.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/11729/hanoi.png"><img alt="hanoi fig" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/11729/hanoi.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">그림은 원판이 5개인 경우의 예시이다.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="input">
 <h2>input<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h2>
-<p>0 &lt; n &lt;= 1000</p>
+<p>첫째 줄에 첫 번째 장대에 쌓인 원판의 개수 N (1 ≤ N ≤ 20)이 주어진다.</p>
 </section>
 <section id="output">
 <h2>output<a class="headerlink" href="#output" title="Permalink to this heading">#</a></h2>
-<p>1보다 크거나 같고, n보다 작거나 같은 한수의 개수를 출력</p>
+<p>첫째 줄에 옮긴 횟수 K를 출력한다.</p>
+<p>두 번째 줄부터 수행 과정을 출력한다. 두 번째 줄부터 K개의 줄에 걸쳐 두 정수 A B를 빈칸을 사이에 두고 출력하는데, 이는 A번째 탑의 가장 위에 있는 원판을 B번째 탑의 가장 위로 옮긴다는 뜻이다.</p>
 </section>
 <section id="think">
 <h2>think<a class="headerlink" href="#think" title="Permalink to this heading">#</a></h2>
-<p>딱 보아하니 n 이하의 작업물들을 기록하면서 가야할 <a class="reference internal" href="../DP.html#dp"><span class="std std-ref">dp</span></a>문제로 보인다. 점화식을 써보자… 고 했으나 풀고 보니, dp로 푸는 문제 같지만 사실상 사람들은 brute force로 완전탐색하면서 했던데 그게 훨씬 빠른 것 같다. 굳이 dp를 사용해야할 필요는 없는 것으로 보인다.</p>
+<p>하노이 탑은 기본적으로 백트레킹 문제이다. 여기서 이동 순서에 대해서 출력을 해야한다. 그런데 이동횟수가 최소가 되어야한다는 조건이 달려있다.</p>
 </section>
 <section id="python">
 <h2>python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
@@ -595,7 +629,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
 
-<span class="n">problem_num</span> <span class="o">=</span> <span class="s2">&quot;1065&quot;</span>
+<span class="n">problem_num</span> <span class="o">=</span> <span class="s2">&quot;11729&quot;</span>
 
 <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">txt</span><span class="se">\\</span><span class="si">{</span><span class="n">problem_num</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
@@ -613,43 +647,137 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-<span class="k">def</span> <span class="nf">spliting</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    make a x:int to list of elements</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">class</span> <span class="nc">Hansu</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-        
-    <span class="k">def</span> <span class="nf">arithmetic_sequence</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">bool_list</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dp</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">spliting</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">spliting</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spliting</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">spliting</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">]):</span>
-                <span class="n">bool_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">bool_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-                    
-        <span class="k">return</span> <span class="n">bool_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            
+
+<span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">via</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">via</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Hansu</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">arithmetic_sequence</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>144
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+1 3
+1 2
+3 2
+1 3
+2 1
+2 3
+1 3
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="javascript">
+<h2>javascript<a class="headerlink" href="#javascript" title="Permalink to this heading">#</a></h2>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text">nodejs code</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">const</span><span class="w"> </span><span class="nx">problem_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;11729&quot;</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">__dirname</span><span class="si">}</span><span class="sb">\\txt\\</span><span class="si">${</span><span class="nx">problem_num</span><span class="si">}</span><span class="sb">.txt`</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="c1">// const path = &quot;/dev/stdin&quot;;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kd">const</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">).</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="kd">let</span><span class="w"> </span><span class="nx">currentLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kd">function</span><span class="w"> </span><span class="nx">readLine</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">input</span><span class="p">[</span><span class="nx">currentLine</span><span class="o">++</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span>
+<span class="linenos">10</span><span class="p">}</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="kd">const</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">readLine</span><span class="p">()[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="linenos">13</span><span class="kd">let</span><span class="w"> </span><span class="nx">moves</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="kd">function</span><span class="w"> </span><span class="nx">hanoi</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="p">,</span><span class="w"> </span><span class="nx">via</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">16</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">17</span><span class="w">        </span><span class="nx">moves</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">start</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">to</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">        </span><span class="nx">hanoi</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">via</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="p">);</span>
+<span class="linenos">20</span><span class="w">        </span><span class="nx">moves</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">start</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">to</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="linenos">21</span><span class="w">        </span><span class="nx">hanoi</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">via</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="p">,</span><span class="w"> </span><span class="nx">start</span><span class="p">)</span>
+<span class="linenos">22</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">23</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">moves</span>
+<span class="linenos">24</span><span class="p">}</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="kd">let</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hanoi</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">27</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">moves</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="linenos">28</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">moves</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>숫자 하나만을 받으므로 [0] 인덱스 접근</p></li>
+<li><p>짜피 print해야함으로 `, $ 를 이용해서 변수 받아서 string해주기</p></li>
+</ul>
+</section>
+<section id="java">
+<h2>java<a class="headerlink" href="#java" title="Permalink to this heading">#</a></h2>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text">java block</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">problemNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;11729&quot;</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;user.dir&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\\scripts\\algorithm\\problem\\txt\\&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">problemNumber</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.txt&quot;</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">BufferedWriter</span><span class="w"> </span><span class="n">bw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedWriter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">OutputStreamWriter</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">));</span>
+<span class="linenos">10</span><span class="w">        </span><span class="c1">// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</span>
+<span class="hll"><span class="linenos">11</span><span class="w">        </span><span class="c1">// StringTokenizer st = new StringTokenizer(br.readLine());</span>
+</span><span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+<span class="linenos">14</span><span class="w">        </span><span class="n">br</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">moveCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">sb</span><span class="p">);</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">        </span><span class="n">bw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">moveCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">        </span><span class="n">bw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="linenos">20</span><span class="w">        </span><span class="n">bw</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+<span class="linenos">21</span><span class="w">        </span><span class="n">bw</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="linenos">22</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">via</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">25</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">            </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">start</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">to</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">);</span>
+<span class="linenos">27</span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">28</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">count1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="n">via</span><span class="p">,</span><span class="w"> </span><span class="n">sb</span><span class="p">);</span>
+<span class="linenos">30</span><span class="w">            </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">start</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">to</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">);</span>
+<span class="linenos">31</span><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">count2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">via</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="n">sb</span><span class="p">);</span>
+<span class="linenos">32</span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">count1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">33</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">34</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">35</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>맨처음엔 그냥 하니깐 시간초과가 나옴</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System.out</span></code>을 사용하면 엄청 느려서 모아놨다가 한번에 출력하는 <code class="docutils literal notranslate"><span class="pre">StringBuilder</span></code>에 가져다 붙여놨다가 한번에 출력하는 방식으로 해야함.</p></li>
+<li><p>굳이 이렇게까지 불편하게 해야하나 싶음. python은 신이다.</p></li>
+<li><p>하지만 메모리면에서는 java가 48412kb로 javascript(153640kb), python(123336kb)인 것에 비해서 굉장히 큰 이점이 존재하는 것은 맞는 것으로 보인다.</p></li>
+<li><p>string에는 append, list에는 add…    정말루다가 너무 헤깔린다.</p></li>
+</ul>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"
@@ -693,20 +821,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="24465.html"
+       href="1021.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">24465 : 데뷔의 꿈</p>
+        <p class="prev-next-title">1021 : 회전하는 큐</p>
       </div>
     </a>
     <a class="right-next"
-       href="17952.html"
+       href="../data_structure.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">17952 : 과제는 끝나지 않아!</p>
+        <p class="prev-next-title">data_structure</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -730,6 +858,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#think">think</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">javascript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#java">java</a></li>
 </ul>
   </nav></div>
 
