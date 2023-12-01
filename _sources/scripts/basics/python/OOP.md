@@ -65,7 +65,7 @@ Car c2 = new 이층버스();
 
 ### field overriding
 
-::::{grid} 1 1 2 2
+::::{grid} 1 1 2 3
 :gutter: 3
 :class-container: full-width
 
@@ -86,7 +86,7 @@ public class Parent {
 
 :::{grid-item-card}
 ```{code-block} java
-:caption: child
+:caption: Child.java
 :emphasize-lines: 2
 :lineno-start: 1
 
@@ -103,7 +103,7 @@ public class Child extends Parent{
 
 ```{code-block} java
 :caption: Exam01
-:emphasize-lines: [10,11]
+:emphasize-lines: 10,11
 :lineno-start: 1
 
 public class Exam01{
