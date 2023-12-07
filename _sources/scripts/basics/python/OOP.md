@@ -69,6 +69,7 @@ Car c2 = new 이층버스();
 :gutter: 3
 
 :::{grid-item-card}
+
 ```{code-block} java
 :caption: Parent.java
 :emphasize-lines: 2
@@ -81,9 +82,11 @@ public class Parent {
     }
 }
 ```
+
 :::
 
 :::{grid-item-card}
+
 ```{code-block} java
 :caption: Child.java
 :emphasize-lines: 2
@@ -96,10 +99,12 @@ public class Child extends Parent{
     }
 }
 ```
+
 :::
 
 :::{grid-item-card}
 :columns: 12
+
 ```{code-block} java
 :caption: Exam01
 :emphasize-lines: 11,12,13
@@ -121,6 +126,7 @@ public class Exam01{
     }
 }
 ```
+
 :::
 
 ::::
@@ -130,3 +136,16 @@ public class Exam01{
 하지만 method를 실행하면(p2.printI()) 15가 나온다. 필드가 오버라이딩 되서 자식의 값이 사용되다면 부모 클래스를 만든 사람이 예상하지 못한 결과가 출력될 것이기 때문이다. 그렇기 때문에 필드는 부모 타입을 따라간다.
 
 method overriding만 기억을 하면 된다. 이는 정보 은닉(information hiding)이라는 객체 지향의 중요한 특징이기 때문이다. **필드는 직접 접근하는 코드는 사용하면 안된다.** 메서드를 통해서만 필드값을 사용해야한다. 접근지정자를 사용해서 은닉하게 된다.
+
+```{raw} html
+<script
+type="text/javascript"
+src="https://utteranc.es/client.js"
+async="async"
+repo="surdarla/surdarla.github.io"
+issue-term="pathname"
+theme="github-light"
+label="💬 comment"
+crossorigin="anonymous"
+/>
+```

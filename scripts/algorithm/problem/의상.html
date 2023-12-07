@@ -316,6 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="2252.html">2252 : 줄 세우기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1021.html">1021 : 회전하는 큐</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11729.html">11729 : 하노이 탑 이동순서</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twoSum.html">twoSum</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -602,7 +603,7 @@ document.write(`
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input setting</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># input setting</span>
 <span class="n">problem_num</span> <span class="o">=</span> <span class="s2">&quot;의상&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
 
@@ -615,7 +616,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">solution 1   </span>
 <span class="sd">1번에 모든 종류에 하나씩만 있는 경우가 시간 초과가 걸림   </span>
 <span class="sd">collections.combination을 사용할 경우 주어진 의상 조합의 수가 많기 떄문에 모든 경우의 수를 구하는 것 자체가 상대적으로 비효율적임</span>
@@ -651,7 +652,7 @@ document.write(`
 <p>for문을 3번 돌면서 combination의 사실상 곱하기를 하면서 더하는 것이기 때문에 시간효율성 면에서 떨어지는 것으로 보인다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">solution2</span>
 <span class="sd">방법의 수만을 구하는 방법.</span>
 <span class="sd">모든 의상 종류별로 각각을 선택하거나 선택하지 않는 경우를 마지막에 빼주는 방법</span>
@@ -680,7 +681,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution2</span><span class="p">(</span><span class="n">clothes</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solution2</span><span class="p">(</span><span class="n">clothes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -848,7 +849,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-12-01 15:42:03
+  based on jupyter-book, last updated: 2023-12-07 16:27:23
 </div>
   </div>
   
