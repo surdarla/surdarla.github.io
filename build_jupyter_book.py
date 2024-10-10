@@ -14,9 +14,7 @@ def update_yaml(file_name):
 
     # 'html' 섹션 내의 'extra_footer' 키에 현재 시간을 삽입합니다.
     if "html" in data and "extra_footer" in data["html"]:
-        data["html"][
-            "extra_footer"
-        ] = f"based on jupyter-book, last updated: {current_time}"
+        data["html"]["extra_footer"] = f"based on jupyter-book, last updated: {current_time}"
     else:
         print("'extra_footer' key is not found in the YAML file.")
 
