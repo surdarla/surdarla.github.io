@@ -1,61 +1,58 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. SQL 기본 &#8212; surdarla-book</title>
-
-
-
+  
+  
+  
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css?v=20733ca3" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -91,7 +88,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -99,15 +96,19 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('js', new Date());
                 gtag('config', 'G-BMRNT7D57Q');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/certificate/SQLD/3';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/certificate/SQLD/3.html" />
-    <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
+    <link rel="icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -116,35 +117,30 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-
-
+  
+  
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-
-
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
   <div id="pst-scroll-pixel-helper"></div>
-
-
+  
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-
+  
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
@@ -166,53 +162,71 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
+</aside>
 
-  <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
-  </div>
-
-
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-
+      
+      
+      
       <div class="bd-sidebar-primary bd-sidebar">
+        
 
-
-
+  
   <div class="sidebar-header-items sidebar-primary__section">
-
-
-
-
+    
+    
+    
+    
   </div>
-
+  
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-
+  
+    
+  
 
 <a class="navbar-brand logo" href="../../../about.html">
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
     <img src="../../../_static/surdarla-logo_old.png" class="logo__image only-light" alt="surdarla-book - Home"/>
     <script>document.write(`<img src="../../../_static/surdarla-logo_old.png" class="logo__image only-dark" alt="surdarla-book - Home"/>`);</script>
-
-
+  
+  
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+        <div class="sidebar-primary-item">
 
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../about.html">
@@ -222,31 +236,31 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../CS229/1.html">Learning Algorithms</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../CS229/2-1.html">practice - torch sklearn numpy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/anal/anal_intro.html">Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/anal/linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/anal/information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/python/python_intro.html">python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/poetry.html">Poetry 사용하기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/pandas.html">join merge</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/OOP.html">객체 지향 프로그래밍</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/dl/DL_intro.html">Deep learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/NLP_basics.html">Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/perceptron.html">Perceptron</a></li>
@@ -254,38 +268,38 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/softmax.html">softmax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/dl/Logistic.html">Logistic</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/js/JS.html">Javascript</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/js/VUE.html">vue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/js/DOM.html">DOM</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/tips/tips_intro.html">Tips</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/tips/snippet_create.html">vscode snippet 만들기</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/java/java_intro.html">Java</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/java/var_type.html">변수와 자료형</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basics/java/control_state.html">제어문</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/resnet.html">Resnet</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV3.html">Deberta V3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV1.html">DeBERTa</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
@@ -314,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
@@ -324,60 +338,60 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/DP.html">Dynamic Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC.html">위상정렬 : Topological Sort</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="SQL_intro.html">SQLD 준비과정</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="SQL_intro.html">SQLD 준비과정</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">4. SQL 활용</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Big_data/big_intro.html">빅분기 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Big_data/1.html">1. 빅데이터 분석 기획</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Big_data/2.html">2. 빅데이터 탐색</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
 </nav></div>
     </div>
-
-
+  
+  
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
+  
   <div id="rtd-footer-container"></div>
 
 
       </div>
-
-      <main id="main-content" class="bd-main">
-
-
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
 <div class="sbt-scroll-pixel-helper"></div>
 
           <div class="bd-content">
             <div class="bd-article-container">
-
-              <div class="bd-header-article">
+              
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
-
+  
     <div class="header-article-items__start">
-
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
-
+</button></div>
+      
     </div>
-
-
+  
+  
     <div class="header-article-items__end">
-
+      
         <div class="header-article-item">
 
 <div class="article-header-buttons">
@@ -391,15 +405,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fab fa-github"></i>
   </button>
   <ul class="dropdown-menu">
-
-
-
+      
+      
+      
       <li><a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
@@ -407,16 +421,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-
-
-
-
+      
+      
+      
+      
       <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/certificate/SQLD/3.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
@@ -424,7 +438,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-
+      
   </ul>
 </div>
 
@@ -438,15 +452,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-
-
-
+      
+      
+      
       <li><a href="../../../_sources/scripts/certificate/SQLD/3.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
@@ -454,17 +468,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.md</span>
 </a>
 </li>
-
-
-
-
+      
+      
+      
+      
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
@@ -472,7 +486,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-
+      
   </ul>
 </div>
 
@@ -484,7 +498,7 @@ const thebe_selector_output = ".output, .cell_output"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-expand"></i>
@@ -496,10 +510,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -507,29 +521,29 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
-
+      
     </div>
-
+  
 </div>
 </div>
-
-
+              
+              
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>3. SQL 기본</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
-
+            
             <div>
                 <h2> Contents </h2>
             </div>
@@ -573,18 +587,18 @@ document.write(`
     </div>
 </div>
 
-
-
+              
+                
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
-
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="sql">
-<h1>3. SQL 기본<a class="headerlink" href="#sql" title="Permalink to this heading">#</a></h1>
+<h1>3. SQL 기본<a class="headerlink" href="#sql" title="Link to this heading">#</a></h1>
 <figure class="align-default">
 <img alt="https://th.bing.com/th/id/OIP.-KvoMKZ3ekyioo7aFrQgMgHaHH?pid=ImgDet&amp;rs=1" src="https://th.bing.com/th/id/OIP.-KvoMKZ3ekyioo7aFrQgMgHaHH?pid=ImgDet&amp;rs=1" />
 </figure>
 <section id="db">
-<h2>1. 관계형 DB<a class="headerlink" href="#db" title="Permalink to this heading">#</a></h2>
+<h2>1. 관계형 DB<a class="headerlink" href="#db" title="Link to this heading">#</a></h2>
 <p>DB<br />
 데이터를 일정한 형태로 저장해 놓은 것<br />
 DBMS를 이용하여 효율적인 데이터 관리와 데이터 손상 복구 가능\</p>
@@ -650,18 +664,18 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 <figure class="align-default" id="id5">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 <div class="legend">
 <p>그리고 분할된 테이블은 그 칼럼의 값에 의해 연결된다. 이렇게 테이블을 분할하여 데이터의 불필요한 중복을 줄이는 것을 정규화(Normalization)라고 한다. 데이터의 정합성 확보와 데이터 입력/수정/삭제시 발생할 수 있는 이상현상(Anomaly)을 방지하기 위해 정규화는 관계형 데이터베이스 모델링에서 매우 중요한 프로세스이다.</p>
 </div>
 </figcaption>
 </figure>
 <section id="ddl-cadrt">
-<h3>2. DDL : CADRT<a class="headerlink" href="#ddl-cadrt" title="Permalink to this heading">#</a></h3>
+<h3>2. DDL : CADRT<a class="headerlink" href="#ddl-cadrt" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id6">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>데이터 타입</strong>(Oracle,SQL Server 형식, 괄호안은 조건)</p>
@@ -677,7 +691,7 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 </ul>
 </section>
 <section id="create-table">
-<h3>2.1 CREATE TABLE<a class="headerlink" href="#create-table" title="Permalink to this heading">#</a></h3>
+<h3>2.1 CREATE TABLE<a class="headerlink" href="#create-table" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>테이블 및 컬럼 명명 규칙</p>
 <ul>
@@ -734,7 +748,7 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 DESCRIBE 테이블명 이 ANSI/ISO 표준</p>
 </section>
 <section id="alter-table">
-<h3>2.2 ALTER TABLE<a class="headerlink" href="#alter-table" title="Permalink to this heading">#</a></h3>
+<h3>2.2 ALTER TABLE<a class="headerlink" href="#alter-table" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>테이블의 컬럼 관련 변경 명령어</p>
 </div></blockquote>
@@ -780,22 +794,22 @@ DESCRIBE 테이블명 이 ANSI/ISO 표준</p>
 </ol>
 </section>
 <section id="rename-table">
-<h3>2.3 RENAME TABLE<a class="headerlink" href="#rename-table" title="Permalink to this heading">#</a></h3>
+<h3>2.3 RENAME TABLE<a class="headerlink" href="#rename-table" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">테이블명</span> <span class="pre">RENAME</span> <span class="pre">TO</span> <span class="pre">테이블명</span></code>도 가능\</p>
 </section>
 <section id="drop-table">
-<h3>2.4 DROP TABLE<a class="headerlink" href="#drop-table" title="Permalink to this heading">#</a></h3>
+<h3>2.4 DROP TABLE<a class="headerlink" href="#drop-table" title="Link to this heading">#</a></h3>
 <p>테이블의 데이터와 구조 삭제, <strong>복구 불가</strong><br />
 <code class="docutils literal notranslate"><span class="pre">CASCADE</span> <span class="pre">CONSTRAINT</span></code> 옵션으로 관련 테이블의 참조 제약조건도 삭제하여 참조 무결성을 준수할 수 있음. <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE에서</span> <span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">CASCADE</span> <span class="pre">옵션으로도</span> <span class="pre">동일</span> <span class="pre">기능</span> <span class="pre">실현</span> <span class="pre">가능</span></code></p>
 </section>
 <section id="truncate-table">
-<h3>2.5 TRUNCATE TABLE<a class="headerlink" href="#truncate-table" title="Permalink to this heading">#</a></h3>
+<h3>2.5 TRUNCATE TABLE<a class="headerlink" href="#truncate-table" title="Link to this heading">#</a></h3>
 <p>테이블의 전체 데이터 삭제 &lt;-&gt; DROP TABLE은 테이블 자체를 제거함<br />
 로그를 기록하지 않기 때문에 ROLLBACK 불가</p>
 </section>
 </section>
 <section id="dml-iuds">
-<h2>3. DML : IUDS<a class="headerlink" href="#dml-iuds" title="Permalink to this heading">#</a></h2>
+<h2>3. DML : IUDS<a class="headerlink" href="#dml-iuds" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>INSERT</p>
 <ul>
@@ -842,7 +856,7 @@ DESCRIBE 테이블명 이 ANSI/ISO 표준</p>
 </ul>
 </section>
 <section id="tcl-uid">
-<h2>4. TCL : UID<a class="headerlink" href="#tcl-uid" title="Permalink to this heading">#</a></h2>
+<h2>4. TCL : UID<a class="headerlink" href="#tcl-uid" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><strong>트랜잭션</strong>
 DB의 논리적 연산 단위, 하나 이상의 SQL문을 포함함<br />
@@ -859,7 +873,7 @@ DB를 정상적으로 종료하면 자동 커밋, 앱 등의 이상으로 DB접�
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_170.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_170.jpg" />
 </figure>
 <section id="commit">
-<h3>4-1 COMMIT<a class="headerlink" href="#commit" title="Permalink to this heading">#</a></h3>
+<h3>4-1 COMMIT<a class="headerlink" href="#commit" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>데이터를 DB에 영구적으로 반영하는 명력어<br />
 커밋 시 트랜잭션이 완료되어 LOCKING이 해제됨<br />
@@ -888,7 +902,7 @@ SQL SERVER는 기본적으로 자동 커밋</p>
 </ul>
 </section>
 <section id="rollback">
-<h3>4-2 ROLLBACK<a class="headerlink" href="#rollback" title="Permalink to this heading">#</a></h3>
+<h3>4-2 ROLLBACK<a class="headerlink" href="#rollback" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>트랜잭션 시작 이전의 상태로 되돌리는 명령어<br />
 COMMIT 이전 상태로 돌려줌<br />
@@ -906,7 +920,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 </section>
 </section>
 <section id="dcl">
-<h2>5. DCL<a class="headerlink" href="#dcl" title="Permalink to this heading">#</a></h2>
+<h2>5. DCL<a class="headerlink" href="#dcl" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>유저를 생성하거나 권한을 제어하는 명령어, 보안을 위해 필요함</p>
 </div></blockquote>
@@ -934,13 +948,13 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id7">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>CONNCECT ROLE의 권한은 CREATE SESSION 뿐이다. 나머지는 전부 RESOURCE다.</p>
 </section>
 <section id="where">
-<h2>6. WHERE 조건절<a class="headerlink" href="#where" title="Permalink to this heading">#</a></h2>
+<h2>6. WHERE 조건절<a class="headerlink" href="#where" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">[DISTINCT/ALL]</span> <span class="pre">칼럼명</span> <span class="pre">[ALIAS명]</span> <span class="pre">FROM</span> <span class="pre">테이블명</span> <span class="pre">WHERE</span> <span class="pre">조건식</span></code></p>
 <blockquote>
 <div><p>WHERE 절은 FROM 절 다음에 위치하며, 조건식은 아래 내용으로 구성된다<br />
@@ -952,14 +966,14 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id8">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_175.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_175.jpg" />
 </figure>
 <section id="id1">
-<h3>6-1 부분 범위 처리<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>6-1 부분 범위 처리<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>ROWNUM(oracle) : SQL 처리 결과 집합의 각 행에 임시로 부여되는 번호, 조건절 내에서 행의 개수를 제한하는 목적으로 사용함</p></li>
 <li><p>TOP(SQL Server) : 출력 행의 수 제한 함수, TOP (N) 로 n개 행 출력, 개수 대신 비율로도 제한 가능. order by 절이 없으면 rownum과 top의 기능이 같음</p></li>
@@ -967,7 +981,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 </section>
 </section>
 <section id="id2">
-<h2>7. 함수<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>7. 함수<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>함수명(컬럼이나 표현식 [,arg1, arg2, …])
 함수3 (함수2 (함수1 (칼럼이나 표현식 [, Arg1]) [, Arg2]) [, Arg3 ])</p>
@@ -975,11 +989,11 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <p>함수는 크게 벤더(oracle, mysql…) 에서 제공하는 내장 함수와 사용자가 정의할 수 있는 함수로 나눌 수 있다. 기본적으로 내장함수는 sql을 더욱 강력하게 해주고, 데이터 값을 간편하게 조작하는데 사용된다. 내장 함수는 또 단일행 값이 입력되는 단일행 함수(single-row function)과 여러 행의 값이 입력되는 다중행 함수(multi-row function)로 나눌 수 있다. 다중행 함수는 다시 집계함수, 그룹함수, 윈도우함수로 나눌 수 있다.</p>
 <p>함수는 아무리 입력되는 값이 많아도 출력은 하나만 되는 <code class="docutils literal notranslate"><span class="pre">m:1</span></code> 관계라는 것이 중요한 특징이다.</p>
 <section id="id3">
-<h3>7-1 단일행 함수<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>7-1 단일행 함수<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id9">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 <div class="legend">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SELECT,</span> <span class="pre">WHERE,</span> <span class="pre">ORDER</span> <span class="pre">BY</span></code> 절에 사용 가능하다.\</p></li>
@@ -1000,13 +1014,13 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id10">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id11">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id12">
@@ -1015,19 +1029,19 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <p><span class="caption-number">Fig. 27 </span><span class="caption-text">NVL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
 ISNULL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
 NULLIF (a, b) : return a==b -&gt; NULL, a!=b -&gt; a
-COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id4">
-<h3>7-2 조건문<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>7-2 조건문<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>IF-THEN_ELSE</p>
 </div></blockquote>
 <figure class="align-default" id="id13">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
 <div class="legend">
 <ul class="simple">
 <li><p>ELSE 생략시 NULL 출력\</p></li>
@@ -1041,7 +1055,7 @@ COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="hea
 </section>
 </section>
 <section id="aggregate-function">
-<h2>8. 집계 함수 : Aggregate Function<a class="headerlink" href="#aggregate-function" title="Permalink to this heading">#</a></h2>
+<h2>8. 집계 함수 : Aggregate Function<a class="headerlink" href="#aggregate-function" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>집계 함수명 ( [DISTINCT | ALL] 칼럼이나 표현식 )<br />
 ALL : Default 옵션이므로 생략 가능함<br />
@@ -1055,11 +1069,11 @@ DISTINCT : 같은 값을 하나의 데이터로 간주할 때 사용하는 옵�
 COUNT 함수를 제외하고는 전부 NULL값을 제외하고 계산한다.<br />
 COUNT도 표현식이 들어오면 NULL 을 제외하고 연산을 해준다.<br />
 GROUP BY 기준으로 나눠진 각 그룹을 연산하는 역할<br />
-하나 이상의 행을 그룹으로 묶어 연산하기 위한 함수이다.</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+하나 이상의 행을 그룹으로 묶어 연산하기 위한 함수이다.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="group-by">
-<h3>8-1 GROUP BY<a class="headerlink" href="#group-by" title="Permalink to this heading">#</a></h3>
+<h3>8-1 GROUP BY<a class="headerlink" href="#group-by" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>SELECT [DISTINCT] 칼럼명 [ALIAS명] FROM 테이블명 [WHERE 조건식] [GROUP BY 칼럼(Column)이나 표현식] [HAVING 그룹조건식] ;</p>
 </div></blockquote>
@@ -1068,7 +1082,7 @@ GROUP BY 기준으로 나눠진 각 그룹을 연산하는 역할<br />
 GROUP BY 구에도 다양한 함수가 사용 가능하다. SUBSTR, INSTR 등이 가능ㅎ다ㅏ.</p>
 </section>
 <section id="having">
-<h3>8-2 HAVING<a class="headerlink" href="#having" title="Permalink to this heading">#</a></h3>
+<h3>8-2 HAVING<a class="headerlink" href="#having" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>일반적으로 GROUPBY 절에 의한 집계 데이터의 출력 조건을 건다.<br />
 때문에 일반적으로 GROUP BY 뒤에 위치한다.</p>
@@ -1080,7 +1094,7 @@ WHERE 절과 헷갈리지 않게 조심해야한다.<br />
 </section>
 </section>
 <section id="order-by">
-<h2>9. ORDER BY<a class="headerlink" href="#order-by" title="Permalink to this heading">#</a></h2>
+<h2>9. ORDER BY<a class="headerlink" href="#order-by" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>SELECT 칼럼명 [ALIAS명] <br />
 FROM 테이블명 <br />
@@ -1096,7 +1110,7 @@ FROM 테이블명 <br />
 <p>oracle은 null을 가장 큰 값으로 취급하며, 반대로 SQL Server에서는 반대로 가장 작은 값으로 취급한다.</p>
 </section>
 <section id="join">
-<h2>10. JOIN<a class="headerlink" href="#join" title="Permalink to this heading">#</a></h2>
+<h2>10. JOIN<a class="headerlink" href="#join" title="Link to this heading">#</a></h2>
 <p>앞에서 배운 정규화를 통해서 우리는 불필요한 데이터의 정합성을 확보하고, 이상현상의 발생을 피하기 위해 테이블을 분할하여 생성했다. 사실 데이터웨어하우스 모델처럼 하나의 테이블에 모든 데이터를 집중시켜놓고 그 테이블로부터 필요한 데이터를 조회할 수 있다. 하지만 이렇게 됐을 겨우, 가장 주요한 데이터의 정합성에 더 큰 비용을 지불해야하며, 데이터 추가-삭제-수정 작업에도 더 많은 품이 든다. 조회도 속도면에서 장점이 있기는 힘들다. 이러한 상황에서 특정 요구조건을 만족하는 분할된 테이블들을 모으는 것이 join의 역할이다.</p>
 <p>여러 테이블을 연결 또는 결합하여 데이터 출력<br />
 일반적으로 PK, FK의 연관성에 의해 성립된다</p>
@@ -1133,14 +1147,14 @@ FROM 테이블명 <br />
     <script>kernelName = 'python3'</script>
 
                 </article>
+              
 
-
-
-
-
-
-                <footer class="prev-next-footer">
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="2.html"
@@ -1162,12 +1176,13 @@ FROM 테이블명 <br />
     </a>
 </div>
                 </footer>
-
+              
             </div>
-
-
-
+            
+            
+              
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1211,55 +1226,55 @@ FROM 테이블명 <br />
   </nav></div>
 
 </div></div>
-
-
+              
+            
           </div>
           <footer class="bd-footer-content">
-
+            
 <div class="bd-footer-content__inner container">
-
+  
   <div class="footer-item">
-
+    
 <p class="component-author">
 By Surdarla
 </p>
 
   </div>
-
+  
   <div class="footer-item">
-
+    
 
   <p class="copyright">
-
-      © Copyright 2023, Surdarla.
+    
+      © Copyright 2024, Surdarla.
       <br/>
-
+    
   </p>
 
   </div>
-
+  
   <div class="footer-item">
-
+    
   </div>
-
+  
   <div class="footer-item">
-
+    
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-29 12:10:35
+  based on jupyter-book, last updated: 2024-10-10 10:21:17
 </div>
   </div>
-
+  
 </div>
           </footer>
-
+        
 
       </main>
     </div>
   </div>
-
+  
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

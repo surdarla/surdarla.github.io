@@ -1,61 +1,58 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Deberta V3 &#8212; surdarla-book</title>
-
-
-
+  
+  
+  
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/my_css.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/my_css.css?v=20733ca3" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -91,7 +88,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -99,17 +96,21 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('js', new Date());
                 gtag('config', 'G-BMRNT7D57Q');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/paper_review/DebertaV3';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/paper_review/DebertaV3.html" />
-    <link rel="shortcut icon" href="../../_static/my_favi.png"/>
+    <link rel="icon" href="../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -118,35 +119,30 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-
-
+  
+  
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-
-
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
   <div id="pst-scroll-pixel-helper"></div>
-
-
+  
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-
+  
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
@@ -168,53 +164,71 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
+</aside>
 
-  <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
-  </div>
-
-
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-
+      
+      
+      
       <div class="bd-sidebar-primary bd-sidebar">
+        
 
-
-
+  
   <div class="sidebar-header-items sidebar-primary__section">
-
-
-
-
+    
+    
+    
+    
   </div>
-
+  
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-
+  
+    
+  
 
 <a class="navbar-brand logo" href="../../about.html">
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
     <img src="../../_static/surdarla-logo_old.png" class="logo__image only-light" alt="surdarla-book - Home"/>
     <script>document.write(`<img src="../../_static/surdarla-logo_old.png" class="logo__image only-dark" alt="surdarla-book - Home"/>`);</script>
-
-
+  
+  
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+        <div class="sidebar-primary-item">
 
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../about.html">
@@ -224,31 +238,31 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../CS229/1.html">Learning Algorithms</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../CS229/2-1.html">practice - torch sklearn numpy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/anal/anal_intro.html">Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python/python_intro.html">python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/poetry.html">Poetry 사용하기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/pandas.html">join merge</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/OOP.html">객체 지향 프로그래밍</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/NLP_basics.html">Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/perceptron.html">Perceptron</a></li>
@@ -256,38 +270,38 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/softmax.html">softmax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/Logistic.html">Logistic</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/js/VUE.html">vue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/js/DOM.html">DOM</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/tips/tips_intro.html">Tips</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/tips/snippet_create.html">vscode snippet 만들기</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/java/java_intro.html">Java</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/java/var_type.html">변수와 자료형</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/java/control_state.html">제어문</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">vision</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="resnet.html">Resnet</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="nlp.html">nlp</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="nlp.html">nlp</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Deberta V3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DebertaV1.html">DeBERTa</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/problem-solving.html">problem-solving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
@@ -316,8 +330,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/data_structure.html">data_structure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/type_in_python.html">Type in python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
@@ -326,60 +340,60 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/DP.html">Dynamic Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC.html">위상정렬 : Topological Sort</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/4.html">4. SQL 활용</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/1.html">1. 빅데이터 분석 기획</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/2.html">2. 빅데이터 탐색</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
 </nav></div>
     </div>
-
-
+  
+  
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
+  
   <div id="rtd-footer-container"></div>
 
 
       </div>
-
-      <main id="main-content" class="bd-main">
-
-
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
 <div class="sbt-scroll-pixel-helper"></div>
 
           <div class="bd-content">
             <div class="bd-article-container">
-
-              <div class="bd-header-article">
+              
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
-
+  
     <div class="header-article-items__start">
-
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
-
+</button></div>
+      
     </div>
-
-
+  
+  
     <div class="header-article-items__end">
-
+      
         <div class="header-article-item">
 
 <div class="article-header-buttons">
@@ -393,15 +407,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fab fa-github"></i>
   </button>
   <ul class="dropdown-menu">
-
-
-
+      
+      
+      
       <li><a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
@@ -409,16 +423,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-
-
-
-
+      
+      
+      
+      
       <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/paper_review/DebertaV3.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-
+      
   </ul>
 </div>
 
@@ -440,15 +454,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-
-
-
+      
+      
+      
       <li><a href="../../_sources/scripts/paper_review/DebertaV3.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
@@ -456,17 +470,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.md</span>
 </a>
 </li>
-
-
-
-
+      
+      
+      
+      
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
@@ -474,7 +488,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-
+      
   </ul>
 </div>
 
@@ -486,7 +500,7 @@ const thebe_selector_output = ".output, .cell_output"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-
+  
 
 <span class="btn__icon-container">
   <i class="fas fa-expand"></i>
@@ -498,10 +512,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -509,29 +523,29 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
-
+      
     </div>
-
+  
 </div>
 </div>
-
-
+              
+              
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>Deberta V3</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
-
+            
             <div>
                 <h2> Contents </h2>
             </div>
@@ -566,13 +580,13 @@ document.write(`
     </div>
 </div>
 
-
-
+              
+                
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
-
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="deberta-v3">
-<h1>Deberta V3<a class="headerlink" href="#deberta-v3" title="Permalink to this heading">#</a></h1>
+<h1>Deberta V3<a class="headerlink" href="#deberta-v3" title="Link to this heading">#</a></h1>
 <p>DEBERTAV3: IMPROVING DEBERTA USING ELECTRA-STYLE PRE-TRAINING WITH GRADIENT-DISENTANGLED EMBEDDING SHARING</p>
 <p>Published as a conference paper at ICLR 2023 <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="http://arxiv.org/abs/2111.09543"><span>Paper PDF</span></a></p>
 <div class="dropdown note admonition">
@@ -580,7 +594,7 @@ document.write(`
 <p>This paper presents a new pre-trained language model, <code class="docutils literal notranslate"><span class="pre">DeBERTaV3</span></code>, which improves the original DeBERTa model by replacing masked language modeling(MLM) with <code class="docutils literal notranslate"><span class="pre">replaced</span> <span class="pre">token</span> <span class="pre">detection</span> <span class="pre">(RTD)</span></code>, a more sample-efﬁcient pre-training task. Our analysis shows that vanilla embedding sharing in ELECTRA hurts training efﬁciency and model performance, because the training losses of the discriminator and the generator pull token embeddings in different directions, creating the “tug-of-war” dynamics. We thus propose a new gradient-disentangled embedding sharing method that avoids the tug-of-war dynamics, improving both training efﬁciency and the quality of the pre-trained model. We have pre-trained DeBERTaV3 using the same settings as DeBERTa to demonstrate its exceptional performance on a wide range of downstream natural language understanding (NLU) tasks. Taking the GLUE benchmark with eight tasks as an example, the DeBERTaV3 Large model achieves a 91.37% average score, which is 1.37% higher than DeBERTa and 1.91% higher than ELECTRA, setting a new state-of-the-art (SOTA) among the models with a similar structure. Furthermore, we have pre-trained a multilingual model mDeBERTaV3 and observed a larger improvement over strong baselines compared to English models. For example, the mDeBERTaV3 Base achieves a 79.8% zero-shot cross-lingual accuracy on XNLI and a 3.6% improvement over XLM-R Base, creating a new SOTA on this benchmark. Our models and code are publicly available at <a class="github reference external" href="https://github.com/microsoft/DeBERTa">microsoft/DeBERTa</a>.</p>
 </div>
 <section id="id1">
-<h2>문제 설정<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>문제 설정<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>PLMs(Pre-trained Language Models)를 scaling up을 해서 파라미터를 수십억 수백만 단위로 늘리는 것이 확실한 성능향상이 있었고 지금까지의 주도적인 방법이었지만, 더 주요한 것은 parameter를 줄이고 computation cost를 줄이는 것이라고 말한다.</p>
 <p>Improving Efficency</p>
 <ol class="arabic simple">
@@ -602,8 +616,8 @@ document.write(`
 <p>그러나 연구자들은 본인들의 연구에 따르면 이것은 학습 효율성 면이나 모델의 성능면에서 부정적인 영향을 준다고 말한다. <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">losses</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">discriminator</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">generator</span> <span class="pre">pull</span> <span class="pre">token</span> <span class="pre">embeddings</span> <span class="pre">into</span> <span class="pre">opposite</span> <span class="pre">directions</span></code> 즉 생성기와 분류기의 학습의 방향성이 반대이기 때문에 학습 loss가 갈팡질팡할 수 밖에 없다는 것이다. 그럼 생각해볼 수 있는 것이 뒤에 두개의 loss를 만들어서 학습 방향성을 반대로 갈 있도록 했을까 하는 점을 생각해 볼 수 있겠다. token embedding을 달리 준다는 것이 어떤 의미인지 뒤에서 확실하게 나와야 할 것이다. MLM은 generator를 token 중에서 서로 관련이 있어보이는 가까운 것들을 서로 잡아당기면서 학-습을 진행하게 된다. 하지만 반면에 RTD의 discriminator는 의미적으로 가까운 token의 사이를 최대한 멀리하는 방향으로 이진분류 최적화(맞다 아니다)를 하고 pull their embedding을 하게 됨으로써 더욱 구분을 잘 할 수 있도록 하는 것이다. 이러한 ‘줄다리기 tug-of-war’와 같은 역학이 학습을 망치고, 모델 성능을 떨어트리는 것이라고 말한다. 그렇다고 무조건적으로 seperated embedding을 할 수는 없는 것이 generator의 embedding을 discriminator의 다운스트림 task학습에 포함시키는 것이 도움이 된다고 말하는 논문도 있었기 때문이다.</p>
 <p>그래서 그들이 제안하는 것은 <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">gradient-disentangled</span> <span class="pre">embedding</span> <span class="pre">sharing(GDES)</span> <span class="pre">method</span></code>이다. the generator shares its embeddings with the discriminator but stops the gradients from the discriminator to the generator embeddings. embedding sharing의 장점만을 취하되, 줄다리기 역학은 피할 수 있도록 gradient의 흐름이 discriminator에서 generator로 흐르지는 않도록 하는 방식인 것이다.</p>
 <section id="model-table">
-<h3>Model Table<a class="headerlink" href="#model-table" title="Permalink to this heading">#</a></h3>
-<table class="table">
+<h3>Model Table<a class="headerlink" href="#model-table" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Model</p></th>
 <th class="head"><p>Vocabulary(K)</p></th>
@@ -686,6 +700,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <div><p>참조</p>
 <ol class="arabic simple">
@@ -696,20 +711,20 @@ document.write(`
 </section>
 </section>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <section id="transformer">
-<h3>1. Transformer<a class="headerlink" href="#transformer" title="Permalink to this heading">#</a></h3>
+<h3>1. Transformer<a class="headerlink" href="#transformer" title="Link to this heading">#</a></h3>
 <p>Transformer 기반 언어모델들은 <span class="math notranslate nohighlight">\(L\)</span>개의 transformer block이 쌓여진 형태로 구성된다. 각 블락들은 multi-head self-attention layer들을 포함하고 그 뒤로은 fully-connected positional feed-forward network가 뒤따른다. 기존의 self-attention 메커니즘은 단어의 위치 정보를 encode하는데는 적합하지 않았다. 그래서 기존의 접근법들은 positional bias를 각 input word embedding에 더함으로써, content와 position에 따라서 값이 달라지는 vector로 표현하려고 하였다. 이 positional bias는 absolute position embedding, relative position embedding 등이 있었다. 상대적 위치 임베딩이 좋은 결과들을 최근까지는 보여주고 있는 추세라고 한다.</p>
 </section>
 <section id="deberta">
-<h3>2. DeBERTa<a class="headerlink" href="#deberta" title="Permalink to this heading">#</a></h3>
+<h3>2. DeBERTa<a class="headerlink" href="#deberta" title="Link to this heading">#</a></h3>
 <p>BERT로부터 두 가지 개선점을 보여준다. 우선 DA(Disentengled Attention : 분리된 어텐션), 그리고 enhanced mask decoder이다. 이전의 single vector로 하나의 input word의 내용과 위지정보를 표현하려는 것과는 다른게, DA는 두 개의 seperate vector를 사용한다. <code class="docutils literal notranslate"><span class="pre">one</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">content</span> <span class="pre">and</span> <span class="pre">one</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">position</span></code>. 그러면서 DA 메커니즘의 단어들 사이의 attention weight는 disentangled matrices에 의해서 계산되고 이는 각각 내용과 상대적 위치 두 개가 각각의 행렬로 다르게 계산된다.</p>
 <p>그리고 MLM에 대해서는 BERT와 동일하게 사용된다. DA가 이미 내용과 상대적 위치에 대한 고민이 들어가는 있지만, 중요한 것은 absolute position에 대한 고민은 없다. absolute position은 예측에서 꽤나 주요한 요소임으로 이러한 점을 보완하기 위해서 DeBERTa에서는 enhanced Mask Decoder를 MLM을 보완하기 위해서 사용한다. 이는 MLM decoding layer에서 context word에 absolute position information이 추가로 들어가는 방식이다.</p>
 </section>
 <section id="electra">
-<h3>3. ELECTRA<a class="headerlink" href="#electra" title="Permalink to this heading">#</a></h3>
+<h3>3. ELECTRA<a class="headerlink" href="#electra" title="Link to this heading">#</a></h3>
 <section id="masked-language-model-mlm">
-<h4>2.3.1 Masked Language Model(MLM)<a class="headerlink" href="#masked-language-model-mlm" title="Permalink to this heading">#</a></h4>
+<h4>2.3.1 Masked Language Model(MLM)<a class="headerlink" href="#masked-language-model-mlm" title="Link to this heading">#</a></h4>
 <p>Large-scale Transformer-based PLMs 는 보통 많은 양의 텍스트로 사전학습되면서 self-supervision objective(자기주도학습의 목적)인 MLM을 실현하고 이 말인 즉슨 문맥을 이해하게 된다는 것이다.</p>
 <p><span class="math notranslate nohighlight">\(X = \{x_i\}\)</span>는 하나의 sequence이고 <span class="math notranslate nohighlight">\(\tilde{X}\)</span>는 15%의 토큰이 오염(masking)된 것이다. 목표는 다시 reconstruct <span class="math notranslate nohighlight">\(X\)</span>이다. 방법은 language model을 predicting the masked tokens <span class="math notranslate nohighlight">\(\tilde{x} \text{ conditioned on } \tilde{X}\)</span> 하면서 훈련시키는 것이고 parameterized by <span class="math notranslate nohighlight">\(\theta\)</span>이다.</p>
 <div class="math notranslate nohighlight">
@@ -720,7 +735,7 @@ document.write(`
 BERT에서는 10%의 masked tokens를 바꾼 상태로 유지하고, 다른 10%의 무작위 선택된 토큰을 바꾸었고, 나머지 80%는 아예 <span class="math notranslate nohighlight">\([MASK]\)</span> token으로 유지했다.</p>
 </section>
 <section id="replaced-token-detection-rtd">
-<h4>2.3.2 Replaced Token Detection(RTD)<a class="headerlink" href="#replaced-token-detection-rtd" title="Permalink to this heading">#</a></h4>
+<h4>2.3.2 Replaced Token Detection(RTD)<a class="headerlink" href="#replaced-token-detection-rtd" title="Link to this heading">#</a></h4>
 <p>BERT는 하나의 transformer encoder를 사용했고, MLM으로 훈련되었다. 이와 다르게 ELECTRA는 두 개의 transformer encoders를 사용하면서 GAN처럼 훈련했다. Generator encoder는 MLM으로 훈련되었고, discriminator encoder는 <code class="docutils literal notranslate"><span class="pre">token-level</span> <span class="pre">binary</span> <span class="pre">classifier</span></code>로 훈련되었다. generator는 input sequence에서 마스킹된 token을 대체할 ambiguous한 토큰을 생성했다. 그리고 이렇게 만들어진 sequence는 dicriminator로 들어가서 해당 토큰이 original 토큰이 맞는지 아니면 generator가 만든 토큰인지를 이진 분류한다. 그리고 이 이진분류하는 것이 RTD이다. 여기서 parameterized 되는 부분이 <span class="math notranslate nohighlight">\(\theta_{G}\)</span>는 generator의 파라미터이고, <span class="math notranslate nohighlight">\(\theta_{D}\)</span>는 discriminator의 파라미터이다. Loss function of the generator는 아래와 같다.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -769,16 +784,16 @@ L = L_{MLM} + \lambda L_{RTD}
 </section>
 </section>
 <section id="debertav3">
-<h2>DeBERTaV3<a class="headerlink" href="#debertav3" title="Permalink to this heading">#</a></h2>
+<h2>DeBERTaV3<a class="headerlink" href="#debertav3" title="Link to this heading">#</a></h2>
 <p>DeBERTa + RTD training loss + new weight-sharing method</p>
 <section id="deberta-rtd">
-<h3>3.1 DeBERTa + RTD<a class="headerlink" href="#deberta-rtd" title="Permalink to this heading">#</a></h3>
+<h3>3.1 DeBERTa + RTD<a class="headerlink" href="#deberta-rtd" title="Link to this heading">#</a></h3>
 <p>ELECTRA에서 가져온 RTD, 그리고 DeBERTa disentangled attention mechanism의 합은 프리트레이닝 과정에서 간단하고 효과적인 것으로 판별되었다. 이전 DeBERTa에서 사용되었던 MLM objective를 RTD objective로 바꿈으로써 더욱 disentangled attention mechainsm을 더욱 강화하는 것이다.</p>
 <p>training 데이터로는 Wikipedia, bookcorpus의 데이터가 사용되었다. generator는 discriminator와 같은 width를 가지되 depth는 절반만 가져간다. batch size는 2048이며 125,000 step이 훈련되었다. learning_rate = 5e-4, warmup_steps = 10,000, 그리고 위에서 말했듯이 RTD loss function에 가중치를 50을 줌으로서 optimization hyperparameter를 사용하였다.</p>
 <p>검증 데이터로는 MNLI, SQuAD v2.0을 사용하였고, 이 데이터들에 대한 정리도 필요할 것이다. 결과적으로 DeBERTa를 압도하지만 더욱더 improved될 있는 포인트를 말하는 지점이 있다. token Embedding Sharing(ES) used for RTD(기존에 사용되었던)를 new Gradient-Disentangled Embedding Sharing(GDES) method로 바꿈으로써 더욱 발전될 가능성이 있다고 말한다.</p>
 </section>
 <section id="token-embedding-sharing-in-electra">
-<h3>3.2 Token Embedding Sharing (in ELECTRA)<a class="headerlink" href="#token-embedding-sharing-in-electra" title="Permalink to this heading">#</a></h3>
+<h3>3.2 Token Embedding Sharing (in ELECTRA)<a class="headerlink" href="#token-embedding-sharing-in-electra" title="Link to this heading">#</a></h3>
 <p>ELECTRA에서는 generator와 discriminator가 token embedding을 공유한다. 이것이 <code class="docutils literal notranslate"><span class="pre">Embedding</span> <span class="pre">Sharing(ES)</span></code>이다. 이 방법은 generator가 discriminator에 input으로 들어갈 정보를 제공함으로써 학습에 필요한 parameter를 줄여주는 역할을 하고 학습을 용이하게 해준다. 그러나 앞에서 말했듯이 두 기제의 목적 방향성이 반대이기 때문에 서로를 방해하고, 학습 수렴을 저해할 가능성이 크다.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(E\)</span> : token embeddings</p></li>
@@ -797,12 +812,12 @@ L = L_{MLM} + \lambda L_{RTD}
 </div></blockquote>
 </section>
 <section id="average-cosine-similiarity-of-word-embeddings-of-the-g-vs-d">
-<h3>??? average cosine similiarity of word embeddings of the G vs D<a class="headerlink" href="#average-cosine-similiarity-of-word-embeddings-of-the-g-vs-d" title="Permalink to this heading">#</a></h3>
+<h3>??? average cosine similiarity of word embeddings of the G vs D<a class="headerlink" href="#average-cosine-similiarity-of-word-embeddings-of-the-g-vs-d" title="Link to this heading">#</a></h3>
 <p>average cosine similiarity가 높을수록 좋은 것인가?
 어떤 의미인지 제대로 이해를 못한 거 같다.</p>
 </section>
 <section id="gradient-disentangled-embedding-sharing-gdes">
-<h3>3.3 Gradient-Disentangled Embedding Sharing(GDES)<a class="headerlink" href="#gradient-disentangled-embedding-sharing-gdes" title="Permalink to this heading">#</a></h3>
+<h3>3.3 Gradient-Disentangled Embedding Sharing(GDES)<a class="headerlink" href="#gradient-disentangled-embedding-sharing-gdes" title="Link to this heading">#</a></h3>
 <p>ES, NES의 단점을 꽤 뚫기 위해 해당 논문에서 중요하게 말하는 지점이다. 두 개의 장 단점이 분명하게 존재하면서 두 개를 모두 챙길 방법으로 나온 것이다. 한 번 정리를 하자면 ES는 학습은 느리지만 generator output : token embedding를 discriminator가 참조하면서 학습 parameter reducing에 도움을 받는 다는 것이다. 하지만 단점은 generator discriminator token embeddings가 둘 다 일관성이 없어진다는 것이다.</p>
 <p>반면에 NES는 학습이 굉장히 빨라진다. G,D의 방향성의 정반대의 성질을 해결해 줌으로써 학습이 용이하게 된다고 볼 수 있다. 하지만 결론적으로는 학습을 오히려 ES보다 못한 꼴이 난다. 그래도 장점은 G의 token embedding이 코사인 유사도가 높은 일관성 있는 embedding을 만들어주는 경향성을 만드는 것이 가능하다고 볼 수 있다.</p>
 <p>이 모든 단점을 커버하고 도대체 어떻게 장점만 남긴다는 것인가? 장점만 남긴다면 학습의 속도도 빨라지면서 동시에 G,D의 token embedding이 유사성을 유지하는 것이 될 것이다. 후자를 논문에서는 ‘learn from same vocabulary and leverage the rich semantic information encoded in the embeddings’라고 말한다.</p>
@@ -825,7 +840,7 @@ computation cost의 차이가 없이 아이디어만으로 성능의 up을 한 �
 </section>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>pre-training paradigm for language models based on the combination of DeBERTa and ELECTRA, two state-of-the-art models that use relative position encoding and replaced token detection (RTD) respectively</p></li>
 <li><p>interference issue between the generator and the discriminator in the RTD framework which is well known as the “tug-of-war” dynamics.</p></li>
@@ -836,7 +851,7 @@ computation cost의 차이가 없이 아이디어만으로 성능의 up을 한 �
 </ul>
 </section>
 <section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://kpmgkr.notion.site/DeBERTa-421579f197f840f48cc920f09cbbb70b">kpmg notion - Deberta Review</a></p></li>
 <li><p><a class="reference external" href="https://huggingface.co/lighthouse/mdeberta-v3-base-kor-further">HF - lighthouse/mdeberta-v3-base-kor-further</a></p></li>
@@ -875,14 +890,14 @@ computation cost의 차이가 없이 아이디어만으로 성능의 up을 한 �
     <script>kernelName = 'python3'</script>
 
                 </article>
+              
 
-
-
-
-
-
-                <footer class="prev-next-footer">
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="nlp.html"
@@ -904,12 +919,13 @@ computation cost의 차이가 없이 아이디어만으로 성능의 up을 한 �
     </a>
 </div>
                 </footer>
-
+              
             </div>
-
-
-
+            
+            
+              
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -944,55 +960,55 @@ computation cost의 차이가 없이 아이디어만으로 성능의 up을 한 �
   </nav></div>
 
 </div></div>
-
-
+              
+            
           </div>
           <footer class="bd-footer-content">
-
+            
 <div class="bd-footer-content__inner container">
-
+  
   <div class="footer-item">
-
+    
 <p class="component-author">
 By Surdarla
 </p>
 
   </div>
-
+  
   <div class="footer-item">
-
+    
 
   <p class="copyright">
-
-      © Copyright 2023, Surdarla.
+    
+      © Copyright 2024, Surdarla.
       <br/>
-
+    
   </p>
 
   </div>
-
+  
   <div class="footer-item">
-
+    
   </div>
-
+  
   <div class="footer-item">
-
+    
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-29 12:10:35
+  based on jupyter-book, last updated: 2024-10-10 10:21:17
 </div>
   </div>
-
+  
 </div>
           </footer>
-
+        
 
       </main>
     </div>
   </div>
-
+  
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
