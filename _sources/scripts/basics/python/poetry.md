@@ -1,16 +1,4 @@
-(poetry)=
 # Poetry 사용하기
-
-```{article-info}
-:avatar: /images/logos/my_favi.png
-:avatar-alt: supposed to be surdarla logo
-:avatar-link: https://surdarla.github.io
-:avatar-outline: muted
-:author: Surdarla
-:date: Nov 29 Wed 13:15, 2023
-:read-time: "{sub-ref}`wordcount-minutes` min read"
-:class-container: sd-p-2 sd-outline-muted sd-rounded-1
-```
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 [![Poetry-github](https://img.shields.io/badge/GitHub-181717?logo=GitHub&logoColor=white)](https://github.com/python-poetry/poetry)
