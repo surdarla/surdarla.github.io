@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css?v=20733ca3" />
   
@@ -258,6 +258,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/pandas.html">join merge</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../basics/python/OOP.html">객체 지향 프로그래밍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basics/python/rolling.html">rolling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basics/dl/DL_intro.html">Deep learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -664,7 +665,7 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 <figure class="align-default" id="id5">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_156.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">선수와 관련된 데이터를 저장할 때 모든 데이터를 하나의 테이블로 저장하지 않는다. [그림 Ⅱ-1-5]를 보면 선수와 관련된 데이터를 선수 테이블과 구단 테이블이라는 복수의 테이블로 분할하여 저장하고 있다.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 <div class="legend">
 <p>그리고 분할된 테이블은 그 칼럼의 값에 의해 연결된다. 이렇게 테이블을 분할하여 데이터의 불필요한 중복을 줄이는 것을 정규화(Normalization)라고 한다. 데이터의 정합성 확보와 데이터 입력/수정/삭제시 발생할 수 있는 이상현상(Anomaly)을 방지하기 위해 정규화는 관계형 데이터베이스 모델링에서 매우 중요한 프로세스이다.</p>
 </div>
@@ -675,7 +676,7 @@ Field 필드 : 컬럼과 행이 겹치는 하나의 공간</p>
 <figure class="align-default" id="id6">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_162.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">데이터 유형은 데이터베이스의 테이블에 특정 자료를 입력할 때, 그 자료를 받아들일 공간을 자료의 유형별로 나누는 기준이라고 생각하면 된다</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>데이터 타입</strong>(Oracle,SQL Server 형식, 괄호안은 조건)</p>
@@ -948,7 +949,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id7">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_226.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">ROLE에는 시스템 권한과 오브젝트 권한을 모두 부여할 수 있으며, ROLE은 유저에게 직접 부여될 수도 있고, 다른 ROLE에 포함하여 유저에게 부여될 수도 있다. Oracle에서는 기본적으로 몇 가지 ROLE을 제공하고 있다. 그 중 가장 많이 사용하는 ROLE은 CONNECT와 RESOURCE</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>CONNCECT ROLE의 권한은 CREATE SESSION 뿐이다. 나머지는 전부 RESOURCE다.</p>
@@ -966,7 +967,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id8">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_177.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">LIKE의 사전적 의미는 ‘~와 같다’이다. 따라서 위와 같은 경우라면 비교 연산자인 ‘=’을 사용해서 작성해도 같은 결과를 얻을 수 있을 것이다. 그러나 만약 “장”씨 성을 가진 선수들을 조회할 경우는 어떻게 할까? 이런 문제를 해결하기 위해서 LIKE 연산자에서는 와일드카드(WildCard)를 사용할 수 있다. 와일드카드(WildCard)란 <code class="docutils literal notranslate"><span class="pre">한</span> <span class="pre">개</span> <span class="pre">혹은</span> <span class="pre">0개</span> <span class="pre">이상의</span> <span class="pre">문자를</span> <span class="pre">대신해서</span> <span class="pre">사용하기</span> <span class="pre">위한</span> <span class="pre">특수</span> <span class="pre">문자</span></code>를 의미하며, 이를 조합하여 사용하는 것도 가능하므로 SQL 문장에서 사용하는 스트링(STRING) 값으로 용이하게 사용할 수 있다.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default">
@@ -993,7 +994,7 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id9">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_181.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">단일행 함수의 중요한 특징은 다음과 같다.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 <div class="legend">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SELECT,</span> <span class="pre">WHERE,</span> <span class="pre">ORDER</span> <span class="pre">BY</span></code> 절에 사용 가능하다.\</p></li>
@@ -1014,19 +1015,19 @@ ROLLBACK 시 LOCKING이 해재됨</p>
 <figure class="align-default" id="id10">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_186.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">DATE 변수가 데이터베이스에 어떻게 저장되는지 살펴보면, 데이터베이스는 날짜를 저장할 때 내부적으로 세기(Century), 년(Year), 월(Month), 일(Day), 시(Hours), 분(Minutes), 초(Seconds)와 같은 숫자 형식으로 변환하여 저장한다. 날짜는 여러 가지 형식으로 출력이 되고 날짜 계산에도 사용되기 때문에 그 편리성을 위해서 숫자형으로 저장하는 것이다. 데이터베이스는 날짜를 숫자로 저장하기 때문에 덧셈, 뺄셈 같은 산술 연산자로도 계산이 가능하다. 즉, 날짜에 숫자 상수를 더하거나 뺄 수 있다.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id11">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_189.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">벤터의 고유항목이 많기 때문에 암기가 따로 필요하다.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id12">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_192.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_192.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">NVL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">NVL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
 ISNULL (NULL 판단 대상,‘NULL일 때 대체값’)<br />
 NULLIF (a, b) : return a==b -&gt; NULL, a!=b -&gt; a
 COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
@@ -1041,7 +1042,7 @@ COALESCE (a, b, c …) : return null이 아닌 첫번째 값</span><a class="hea
 <figure class="align-default" id="id13">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_190.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">CASE 표현을 하기 위해서는 조건절을 표현하는 두 가지 방법이 있고, Oracle의 경우 DECODE 함수를 사용할 수도 있다.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
 <div class="legend">
 <ul class="simple">
 <li><p>ELSE 생략시 NULL 출력\</p></li>
@@ -1065,7 +1066,7 @@ DISTINCT : 같은 값을 하나의 데이터로 간주할 때 사용하는 옵�
 <figure class="align-default" id="id14">
 <img alt="https://dataonair.or.kr/publishing/img/knowledge/SQL_193.jpg" src="https://dataonair.or.kr/publishing/img/knowledge/SQL_193.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">ALL,DISTINCT는 전체를 출력해주고 중복을 제외하고 출력한다.<br />
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">ALL,DISTINCT는 전체를 출력해주고 중복을 제외하고 출력한다.<br />
 COUNT 함수를 제외하고는 전부 NULL값을 제외하고 계산한다.<br />
 COUNT도 표현식이 들어오면 NULL 을 제외하고 연산을 해준다.<br />
 GROUP BY 기준으로 나눠진 각 그룹을 연산하는 역할<br />
@@ -1260,7 +1261,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2024-10-10 10:21:17
+  based on jupyter-book, last updated: 2024-10-11 14:36:35
 </div>
   </div>
   
