@@ -22,7 +22,6 @@ name : sliding window
 align : center
 width : 50 %
 alt : sliding window
-figclass : margin
 ---
 이렇게 일정한 크기의 window를 이동시키면서 통계량을 계산하는 것을 sliding window라고 한다.
 ```
