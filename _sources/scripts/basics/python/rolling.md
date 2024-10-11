@@ -16,7 +16,7 @@
 
 시계열 분석에서는 window라는 것을 많이 사용하게 된다. window라는 것은 시계열 데이터를 일정한 크기로 나누어서 그 안에서 통계량을 계산하는 것을 의미한다. pandas에서는 이러한 window를 쉽게 구현할 수 있도록 rolling이라는 함수를 제공한다.
 
-```{figure} https://miro.medium.com/v2/resize:fit:720/format:webp/0*QErT8iJARIUK48EY.png
+```{figure} ../../../images/sliding_window.png
 ---
 name : sliding window
 align : center
@@ -27,7 +27,6 @@ figclass : margin
 이렇게 일정한 크기의 window를 이동시키면서 통계량을 계산하는 것을 sliding window라고 한다.
 ```
 
-test
 
 ## referances
 
