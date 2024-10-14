@@ -25,19 +25,6 @@ alt : sliding window
 이렇게 일정한 크기의 window를 이동시키면서 통계량을 계산하는 것을 sliding window라고 한다.
 ```
 
-.. function:: pandas.DataFrame.rolling(window, min_periods=None, center=False, win_type=None, on=None, axis=<no_default>, closed=None, step=None, method='single')
-
-   Provide rolling window calculations.
-
-   :param window: Size of the moving window. Can be an integer, timedelta, str, offset, or BaseIndexer subclass.
-   :param min_periods: Minimum number of observations in the window required to have a value. Default is None.
-   :param center: Set to True to set the labels at the center of the window.
-   :param win_type: A string indicating the type of window to use.
-   :param on: Column name to use for the window calculations. Default is None.
-   :param axis: Axis along which to perform the rolling operation. Default is 0.
-   :param closed: Which side of the window is closed. Default is None.
-   :param step: Step size of the window. Default is None.
-   :param method: Method of calculation. Default is 'single'.
 
 ## referances
 
