@@ -25,6 +25,7 @@ parts:
         - file : scripts/basics/python/poetry
         - file : scripts/basics/python/pandas
         - file : scripts/basics/python/OOP
+        - file : scripts/basics/python/rolling
 
     - file :  scripts/basics/dl/DL_intro
       sections :
@@ -113,6 +114,10 @@ parts:
       - file : scripts/certificate/SQLD/2
       - file : scripts/certificate/SQLD/3
       - file : scripts/certificate/SQLD/4
+
+    - file : scripts/certificate/SQLD/nomad/sql_intro
+      sections :
+      - file : scripts/certificate/SQLD/nomad/sqlite
 
     - file : scripts/certificate/Big_data/big_intro
       sections :
