@@ -27,7 +27,6 @@ When?
 
 > 너비 우선 탐색\
 > 정점들과 같은 레벨에 있는 노드들(형제 노드)을 먼저 탐색하는 방식
-
 보통 [queue](queue)를 이용하여 구현한다. 이를 위해 deque를 사용한다.
 
 ```python
@@ -51,6 +50,32 @@ bfs(graph, 1, visited)
 (dfs)=
 ## Depth First Search
 > 깊이 우선 탐색
+
+(backtracking)=
+### backtracking
+
+```{prf:algorithm} Backtracking
+:label: Backtracking
+
+**P** : root node\
+**C** : child node
+
+void CheckNode(node P)
+{
+  node C;
+  if (promising(P)) {
+    if (there is a solution of P),
+      then writhe the solution
+    else {
+      for (each child node C of P) {
+        checkNode(C)
+      }
+    }
+  }
+  else
+    backtrack to parent node P
+}
+```
 
 ```{raw} html
 <script

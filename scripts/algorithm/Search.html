@@ -555,7 +555,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breadth-first-search">Breadth First Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search">Depth First Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search">Depth First Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backtracking">backtracking</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -592,9 +595,9 @@ document.write(`
 <span id="bfs"></span><h2>Breadth First Search<a class="headerlink" href="#breadth-first-search" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>너비 우선 탐색<br />
-정점들과 같은 레벨에 있는 노드들(형제 노드)을 먼저 탐색하는 방식</p>
+정점들과 같은 레벨에 있는 노드들(형제 노드)을 먼저 탐색하는 방식
+보통 <a class="reference internal" href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html#queue"><span class="std std-ref">queue</span></a>를 이용하여 구현한다. 이를 위해 deque를 사용한다.</p>
 </div></blockquote>
-<p>보통 <a class="reference internal" href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html#queue"><span class="std std-ref">queue</span></a>를 이용하여 구현한다. 이를 위해 deque를 사용한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 
 <span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
@@ -618,7 +621,30 @@ document.write(`
 <blockquote>
 <div><p>깊이 우선 탐색</p>
 </div></blockquote>
-<script
+<section id="backtracking">
+<span id="id1"></span><h3>backtracking<a class="headerlink" href="#backtracking" title="Link to this heading">#</a></h3>
+<div class="proof algorithm admonition" id="Backtracking">
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Backtracking)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>P</strong> : root node<br />
+<strong>C</strong> : child node</p>
+<p>void CheckNode(node P)
+{
+node C;
+if (promising(P)) {
+if (there is a solution of P),
+then writhe the solution
+else {
+for (each child node C of P) {
+checkNode©
+}
+}
+}
+else
+backtrack to parent node P
+}</p>
+</section>
+</div><script
    type="text/javascript"
    src="https://utteranc.es/client.js"
    async="async"
@@ -628,6 +654,7 @@ document.write(`
    label="💬 comment"
    crossorigin="anonymous"
 /></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -695,7 +722,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breadth-first-search">Breadth First Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search">Depth First Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search">Depth First Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backtracking">backtracking</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -734,7 +764,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2024-10-21 16:58:17
+  based on jupyter-book, last updated: 2024-10-21 17:22:02
 </div>
   </div>
   
