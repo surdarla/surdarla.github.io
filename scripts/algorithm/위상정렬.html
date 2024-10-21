@@ -335,9 +335,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="data_structure.html">data_structure</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="type_in_python.html">Type in python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Search.html">Search 탐색</a></li>
 <li class="toctree-l2"><a class="reference internal" href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
 <li class="toctree-l2"><a class="reference internal" href="%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BFS.html">BFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DP.html">Dynamic Programming</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">위상정렬 : Topological Sort</a></li>
 </ul>
@@ -574,7 +574,7 @@ document.write(`
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTrFfQ%2Fbtq3mv5wMop%2F5eQn65f96LFAJxrZgEZOck%2Fimg.png"><img alt="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTrFfQ%2Fbtq3mv5wMop%2F5eQn65f96LFAJxrZgEZOck%2Fimg.png" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTrFfQ%2Fbtq3mv5wMop%2F5eQn65f96LFAJxrZgEZOck%2Fimg.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">사이클이 없는 방향그래프(DAG)의 모든 노드를 방향성에 거스르지 않도록 순서대로 나열하기</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">사이클이 없는 방향그래프(DAG)의 모든 노드를 방향성에 거스르지 않도록 순서대로 나열하기</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="note margin admonition">
@@ -585,7 +585,7 @@ document.write(`
 :특정한 노드에서 나가는 간선의 개수</p>
 </div>
 <p>위의 정의 처럼 위상 정렬은 **DAG(Direct Acyclic Graph, 순환하지 않는 방향 그래프)**에서만 수행할 수 있다. 위상 정렬에서는 여러가지 답이 존재할 수 있다. 한 단계에서 큐에 새롭게 들어가는 원소가 2개 이상인 겨우가 있다면 여러 가지 답이 존재한다. 모든 원소를 방문하기 전에 큐가 빈다면 사이클이 존재한다고 판단할 수 있다. 사이클에 포함된 원소 중에서 어떠한 원소도 큐에 들어가지 못한다.</p>
-<p>스택을 활용한 <a class="reference internal" href="#dfs"><span class="xref myst">DFS</span></a>를 이용해 위상정렬을 수행할 수 있다. 여기서는 큐를 이용한 것만 다룬다.</p>
+<p>스택을 활용한 <a class="reference internal" href="Search.html#dfs"><span class="std std-ref">DFS</span></a>를 이용해 위상정렬을 수행할 수 있다. 여기서는 큐를 이용한 것만 다룬다.</p>
 <section id="id2">
 <h2>방법<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>큐를 이용하는 위상정렬 알고리즘의 동작 과정은 다음과 같다. 큐를 이용하는 것은 deque를 이용하면 편하다.</p>
@@ -711,7 +711,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2024-10-14 17:11:39
+  based on jupyter-book, last updated: 2024-10-21 16:30:48
 </div>
   </div>
   

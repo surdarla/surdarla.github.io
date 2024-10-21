@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Learning Algorithms &#8212; surdarla-book</title>
+    <title>Search 탐색 &#8212; surdarla-book</title>
   
   
   
@@ -106,16 +106,14 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-BMRNT7D57Q');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/CS229/1';</script>
-    <link rel="canonical" href="https://surdarla.github.io/scripts/CS229/1.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/algorithm/Search';</script>
+    <link rel="canonical" href="https://surdarla.github.io/scripts/algorithm/Search.html" />
     <link rel="icon" href="../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Linear Regressin &amp; Gradient Descent" href="2.html" />
-    <link rel="prev" title="intro" href="intro.html" />
+    <link rel="next" title="최소비용경로 문제" href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html" />
+    <link rel="prev" title="Type in python" href="type_in_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -237,11 +235,11 @@ commentsRunWhenDOMLoaded(addUtterances);
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">intro</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Learning Algorithms</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="2.html">Linear Regressin &amp; Gradient Descent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="2-1.html">practice - torch sklearn numpy</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CS229/1.html">Learning Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CS229/2-1.html">practice - torch sklearn numpy</a></li>
 </ul>
 </details></li>
 </ul>
@@ -301,45 +299,45 @@ commentsRunWhenDOMLoaded(addUtterances);
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/problem-solving.html">problem-solving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/3046.html">3046 : R2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2164.html">2164 : 카드2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2525.html">2525 : 오븐 시계</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1012.html">1012 : 유기농 배추</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%9D%98%EC%83%81.html">의상</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/10825.html">10825 : 국영수</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/23300.html">23300 : 웹 브라우저 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/%EC%98%AC%EB%B0%94%EB%A5%B8%EA%B4%84%ED%98%B8.html">올바른 괄호</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/10816.html">10816 : 숫자 카드 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/21921.html">21921 : 블로그</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1535.html">1535 : 안녕</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/9663.html">9663 : N-Queen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1006.html">1006 : 습격자 초라기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/24465.html">24465 : 데뷔의 꿈</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1065.html">1065 : 한수</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/17952.html">17952 : 과제는 끝나지 않아!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/20207.html">20207 : 달력</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1781.html">1781 : 컵라면</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="problem-solving.html">problem-solving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="problem/2558.html">2558 : A + B - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/2530.html">2530 : 인공지능 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/2117.html">2117 : 원형 댄스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/3046.html">3046 : R2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/2164.html">2164 : 카드2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/2525.html">2525 : 오븐 시계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/1012.html">1012 : 유기농 배추</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%EC%98%B9%EC%95%8C%EC%9D%B4%281%29.html">옹알이(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%EA%B0%99%EC%9D%80%EC%88%AB%EC%9E%90%EB%8A%94%EC%8B%AB%EC%96%B4.html">같은 숫자는 싫어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%EC%95%88%EC%A0%84%EC%A7%80%EB%8C%80.html">안전지대</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%EA%B3%B5%EB%8D%98%EC%A7%80%EA%B8%B0.html">공던지기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%20%ED%83%91.html">하노이의 탑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%EC%9D%98%EC%83%81.html">의상</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/10825.html">10825 : 국영수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/23300.html">23300 : 웹 브라우저 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/%EC%98%AC%EB%B0%94%EB%A5%B8%EA%B4%84%ED%98%B8.html">올바른 괄호</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/10816.html">10816 : 숫자 카드 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/21921.html">21921 : 블로그</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/1535.html">1535 : 안녕</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/9663.html">9663 : N-Queen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/1006.html">1006 : 습격자 초라기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/24465.html">24465 : 데뷔의 꿈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/1065.html">1065 : 한수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/17952.html">17952 : 과제는 끝나지 않아!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/20207.html">20207 : 달력</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/1781.html">1781 : 컵라면</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problem/12018.html">12018 : Yonsei TOTO</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/data_structure.html">data_structure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/type_in_python.html">Type in python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/Search.html">Search 탐색</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/DP.html">Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC.html">위상정렬 : Topological Sort</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="data_structure.html">data_structure</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_in_python.html">Type in python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Search 탐색</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%B5%9C%EB%8C%80%EC%9C%A0%EB%9F%89.html">Network Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DP.html">Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC.html">위상정렬 : Topological Sort</a></li>
 </ul>
 </details></li>
 </ul>
@@ -432,7 +430,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/CS229/1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/algorithm/Search.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -462,7 +460,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="../../_sources/scripts/CS229/1.md" target="_blank"
+      <li><a href="../../_sources/scripts/algorithm/Search.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -546,7 +544,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Learning Algorithms</h1>
+    <h1>Search 탐색</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -556,18 +554,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">what is machine learning?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-machine-learning">Definition of machine learning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning 지도 학습</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression 회귀</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification 분류</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning 비지도 학습</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning 강화학습</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">Deep learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breadth-first-search">Breadth First Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search">Depth First Search</a></li>
 </ul>
             </nav>
         </div>
@@ -579,89 +567,50 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="learning-algorithms">
-<h1>Learning Algorithms<a class="headerlink" href="#learning-algorithms" title="Link to this heading">#</a></h1>
-<p>random variables
-matrix vector eignevector</p>
-<section id="what-is-machine-learning">
-<h2>what is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Link to this heading">#</a></h2>
-<p>전통적인 프로그래밍은 <code class="docutils literal notranslate"><span class="pre">(rule</span> <span class="pre">based)</span> <span class="pre">explicit</span> <span class="pre">programming</span></code>이었다. 즉 특정 조건에서 특정 결과를 도출하는 방식이었다. 하지만 이런 방식은 규칙을 만드는 것이 어렵고, 규칙이 복잡해지면 복잡해질수록 규칙을 만드는 것이 어려워진다. 또한 규칙 기반의 프로그래밍은 그 규칙들을 피할 변칙들을 모두 커버해야 하는데 그것은 사실상 어렵다. 그렇기 때문에 기계가 스스로 pattern을 <code class="docutils literal notranslate"><span class="pre">learning</span></code>하는 접근법이 등장했는데, 그것이 Machine learning이다.</p>
-<section id="definition-of-machine-learning">
-<h3>Definition of machine learning<a class="headerlink" href="#definition-of-machine-learning" title="Link to this heading">#</a></h3>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-Arthur Samuel</label><div class="sd-tab-content docutils">
-<p>Field of study that gives computers the ability to learn without being explicitly programmed</p>
-<p>– Machine learning Definition by Arthur Samuel 1959</p>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Tom Mitchell</label><div class="sd-tab-content docutils">
-<p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</p>
-<p>– Tom Mitchell 1998  well-posed learning problem</p>
-</div>
-</div>
-</section>
-</section>
-<section id="supervised-learning">
-<h2>Supervised learning 지도 학습<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
-<p>가장 기본적인 머신러닝 툴은 supervised learning 지도학습 이다. Given a dataset with inputs X and labels Y, learn a mapping from X to y. 즉, 특정 input(X)에 대해서 label or targe(y) output이 주어진 데이터셋이 주어진 경우를 말한다. 컴퓨터는 이 X와 y 사이의 관계를 학습 및 유추를 하게 된다. 지도학습의 큰 분류는 regression 과 classification이 있다.</p>
-<section id="regression">
-<h3>Regression 회귀<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
-<blockquote class="epigraph">
-<div><p>the value y yor’re trying to predict is continuous</p>
-<p class="attribution">—Andrew Ng</p>
-</div></blockquote>
-<p>회귀란 output y의 값이 연속적인 즉 continuous한 값을 가지는 것을 말한다. 예를 들어서 집의 크기에 따른 집값을 예측하는 것이 회귀 문제이다. 집의 크기는 연속적인 값이기 때문에 회귀 문제이다. 반면에 집의 크기에 따라서 집이 있는 동네를 예측하는 것은 classification 문제이다. 동네는 연속적인 값이 아니기 때문이다.</p>
-<p>조금 더 나아가서 Lienar regression은 어떤 의미일까? 선형 회귀란 데이터를 가장 잘 표현할 수 있는 선형 함수를 찾는 것이다. <a class="reference internal" href="../basics/anal/linearity.html#linearity"><span class="std std-ref">선형의 의미</span></a> input x의 값의 변화에 따라서 예측가능하게 output y의 값이 어떻게 변화하는지를 나타내는 것이다. 즉 input x의 값의 변화에 따라 y 값은 종속적으로 변함으로 x는 <code class="docutils literal notranslate"><span class="pre">독립</span> <span class="pre">변수</span></code>이고 y는 <code class="docutils literal notranslate"><span class="pre">종속</span> <span class="pre">변수</span></code>라고 표현할 수 있다.</p>
-<p>선형 회귀는 다음과 같은 형태를 가진다.</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = w^Tx + b
-\]</div>
-<p>여기서 <span class="math notranslate nohighlight">\(w\)</span>는 weight, <span class="math notranslate nohighlight">\(b\)</span>는 bias이다. 이것을 행렬로 표현하면 다음과 같다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix} + b
-\end{split}\]</div>
-<p>아마 2강에서 더 자세하게 다룰 듯하다.</p>
-</section>
-<section id="classification">
-<h3>Classification 분류<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="search">
+<h1>Search 탐색<a class="headerlink" href="#search" title="Link to this heading">#</a></h1>
+<figure class="align-center" id="bfs-vs-dfs">
+<a class="reference internal image-reference" href="../../_images/bfsvsdfs.gif"><img alt="bfs vs dfs image alt" src="../../_images/bfsvsdfs.gif" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Bfs vs Dfs</span><a class="headerlink" href="#bfs-vs-dfs" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<dl class="simple myst">
+<dt>vs 최단경로, 최소비용 문제</dt><dd><p>탐색 문제는 그래프에서 경로를 찾는 것이 주된 목표다. 경로를 찾기만 하면 되는 것이고, 경로가 가중치가 있으면(비용이라던가, 거리라던가) 최단 경로 혹은 최소 비용의 경로를 찾는 문제가 된다. 이것(다익스트라, 벨만 포드)들에 대한 것은 따로 하고, 경로를 찾는 문제에 대해서만 다루겠다.</p>
+</dd>
+<dt>vs Greedy</dt><dd><p>보통 두 가지로 나뉜다. (1) 모든 경로 찾기, (2) 특정 경로 찾기. 둘 다 모든 경로를 살펴보는 것이 탐색 문제의 본질이라고 할 수 있다. Greedy랑은 다르다. Greedy는 그때그때 최선의 선택을 하는 것이고, 해당 선택은 모든 경로 중에 최선의 경로를 보장할 때 사용할 수 있다. 하지만 탐색은 모든 경우를 살펴봐야만 하는 경우에 사용한다.</p>
+</dd>
+</dl>
+<section id="breadth-first-search">
+<span id="bfs"></span><h2>Breadth First Search<a class="headerlink" href="#breadth-first-search" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>classification refers to that y takes on a discrete number of variables</p>
+<div><p>너비 우선 탐색<br />
+정점들과 같은 레벨에 있는 노드들(형제 노드)을 먼저 탐색하는 방식</p>
 </div></blockquote>
-<p>하나의 feature 즉 특성으로 plot하는 것은 쉽지만, 현실적으로 어떤 데이터를 분석하기 위해서는 여러 feature들과 y의 관계를 mapping하는게 대부분의 경우일 것이다.</p>
-<p>그런 경우에는 어떤 feature가 중요한지 feature extracting을 하기도 하고, feature들을 조합해서 새로운 feature를 만들기도 한다. 이렇게 feature들을 조합해서 새로운 feature를 만들어내는 것을 <code class="docutils literal notranslate"><span class="pre">feature</span> <span class="pre">engineering</span></code>이라고 한다.</p>
-<p>또한</p>
-<p>svm은 무한대의 input features를 사용한다?  kernels 를 나중에 사용해서 무한대의 정보를 머신러닝에 이용할 수 있는 방법을 나중에 나온다고 한다.</p>
+<p>보통 <a class="reference internal" href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html#queue"><span class="std std-ref">queue</span></a>를 이용하여 구현한다. 이를 위해 deque를 사용한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="mi">9</span>
+<span class="n">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-</section>
-<section id="unsupervised-learning">
-<h2>Unsupervised learning 비지도 학습<a class="headerlink" href="#unsupervised-learning" title="Link to this heading">#</a></h2>
+<section id="depth-first-search">
+<span id="dfs"></span><h2>Depth First Search<a class="headerlink" href="#depth-first-search" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>just input x, <strong>no labels</strong></p>
+<div><p>깊이 우선 탐색</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>k-means clustering</p></li>
-<li><p>구글 뉴스는 매일의 뉴스를 클러스터링해서 비슷한 뉴스들 끼리 묶는 것에서 예를 들 수 있다.</p></li>
-<li><p>Organize computing clusters</p></li>
-<li><p>social network analysis</p></li>
-<li><p>market segmentation</p></li>
-<li><p>astronomical data analysis</p></li>
-</ul>
-</section>
-<section id="reinforcement-learning">
-<h2>Reinforcement learning 강화학습<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>if behaves well, ‘good dog’ compliment</p>
-</div></blockquote>
-<p>개를 키우는 것과 비슷하다. 개가 잘하면 칭찬을 해주고 잘못하면 혼내주는 것처럼. 시간이 지남에 따라 잘하면 상을 주는 방식으로 진행된다. 게임 플레잉에서 이런 유형을 많이 볼 수 있다.</p>
-<iframe width="600" height="338" src="https://www.youtube.com/embed/xAXvfVTgqr0" title="Learning to Walk in the Real World in 1 Hour (No Simulator)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section>
-<section id="deep-learning">
-<h2>Deep learning<a class="headerlink" href="#deep-learning" title="Link to this heading">#</a></h2>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"
@@ -687,7 +636,7 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
         },
         kernelOptions: {
             name: "python3",
-            path: "./scripts\CS229"
+            path: "./scripts\algorithm"
         },
         predefinedOutput: true
     }
@@ -705,20 +654,20 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="type_in_python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">intro</p>
+        <p class="prev-next-title">Type in python</p>
       </div>
     </a>
     <a class="right-next"
-       href="2.html"
+       href="%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Regressin &amp; Gradient Descent</p>
+        <p class="prev-next-title">최소비용경로 문제</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -738,18 +687,8 @@ f(x) = w^Tx + b = \begin{bmatrix}w_1 &amp; w_2 &amp; \cdots &amp; w_n\end{bmatri
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">what is machine learning?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-machine-learning">Definition of machine learning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning 지도 학습</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression 회귀</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification 분류</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning 비지도 학습</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning 강화학습</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning">Deep learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breadth-first-search">Breadth First Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-first-search">Depth First Search</a></li>
 </ul>
   </nav></div>
 
