@@ -580,6 +580,22 @@ document.write(`
 </dd>
 <dt>vs Greedy</dt><dd><p>보통 두 가지로 나뉜다. (1) 모든 경로 찾기, (2) 특정 경로 찾기. 둘 다 모든 경로를 살펴보는 것이 탐색 문제의 본질이라고 할 수 있다. Greedy랑은 다르다. Greedy는 그때그때 최선의 선택을 하는 것이고, 해당 선택은 모든 경로 중에 최선의 경로를 보장할 때 사용할 수 있다. 하지만 탐색은 모든 경우를 살펴봐야만 하는 경우에 사용한다.</p>
 </dd>
+<dt>When?</dt><dd><ol class="arabic simple">
+<li><p>(가중치 없으면서) 모든 경우 구할 때 DFS</p></li>
+</ol>
+</dd>
+<dd><ol class="arabic simple" start="2">
+<li><p>검색 대상 그래프가 너무 크면 DFS</p></li>
+</ol>
+</dd>
+<dd><ol class="arabic simple" start="3">
+<li><p>(가중치 없으면서) 최단거리를 구해야할 때는 BFS</p></li>
+</ol>
+</dd>
+<dd><ol class="arabic simple" start="4">
+<li><p>검색 대상이 규모가 작고, 시작 지점부터 멀지 않다면 BFS</p></li>
+</ol>
+</dd>
 </dl>
 <section id="breadth-first-search">
 <span id="bfs"></span><h2>Breadth First Search<a class="headerlink" href="#breadth-first-search" title="Link to this heading">#</a></h2>
@@ -727,7 +743,7 @@ By Surdarla
   <div class="footer-item">
     
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2024-10-21 16:35:21
+  based on jupyter-book, last updated: 2024-10-21 16:55:03
 </div>
   </div>
   
