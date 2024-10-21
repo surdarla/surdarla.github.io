@@ -6,7 +6,6 @@ name : BFS vs DFS
 align : center
 width : 60 %
 alt : bfs vs dfs image alt
-figclass :  
 ---
 Bfs vs Dfs
 ```
