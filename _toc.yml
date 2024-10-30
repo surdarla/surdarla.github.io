@@ -49,6 +49,7 @@ parts:
       sections :
         - file : scripts/basics/java/var_type
         - file : scripts/basics/java/control_state
+        - file : scripts/basics/java/interface
 
   - caption : Paper Review
     chapters :
@@ -91,6 +92,10 @@ parts:
       - file : scripts/algorithm/problem/20207.ipynb
       - file : scripts/algorithm/problem/1781.ipynb
       - file : scripts/algorithm/problem/12018.ipynb
+      - file : scripts/algorithm/problem/2252.ipynb
+      - file : scripts/algorithm/problem/1021.ipynb
+      - file : scripts/algorithm/problem/11729.ipynb
+      - file : scripts/algorithm/problem/twoSum.ipynb
 
 
     - file  : scripts/algorithm/data_structure

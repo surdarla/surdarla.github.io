@@ -83,6 +83,8 @@ alt : block image
 
 위와 같은 여러 블록이 java에서 존재한다. 블록은 코드의 구조, 조건 및 반복 제어, 변수의 범위 제한 등 여러 가지 역할을 하면서 범위를 규정하는 역할을 한다. 블록 내에서 선언된 변수는 그 블록 내애서만 유효한 블록 scope를 가지며, 블록 밖에서는 접근할 수 없다.
 
+main method보다 먼저 실행되는 것이 있을까? 그건 바로 static block이다.
+
 ::::{grid} 3
 :gutter: 1
 :class-container: full-width
@@ -166,7 +168,7 @@ static method는 클래스 명 다음에 사용해준다. 이게 프로그래머
   - `System.out.println` : 마치 자동차.엔진.시동해 처럼 `class.field.method`
   - 그리고 이 긴 것을 명령문(statement)라고 한다.
 
-## Field
+### Field
 
 - 클래스가 가지는 속성을 java에서 Field라고 말한다.
 - 다른 언어에서는 멤버변수라고 말하기도 한다.
@@ -180,8 +182,39 @@ static method는 클래스 명 다음에 사용해준다. 이게 프로그래머
 [접근제한자 : public|default|private|protected] [static] [final] type fieldName [=default_value|false|null];
 ```
 
+중요한 것은 static method(class method) 안에서는 static field(class field)만 사용할 수 있다. 그 이유는 메모리에 생성되는 시점이 다르기 때문이다. class method(static)는 인스턴스가 없어도 사용가능하다. 사용가능하다는 것은 메모리에 올라가고 생성된다는 것이다. 반면 instance field는 인스턴스가 있어야만(선언해야만), 그때서야 메모리에 올라간다. class method가 실행되는 시점에서는 instance field가 메모리에 없으니까 사용할 수 없고 $\to$ compile error가 발생하게 되는 것이다.
 
+```{code-block} java
+:caption: Person.java
+:emphasize-lines: [2,5,12]
+:lineno-start: 1
 
+public class Person {
+  String name; // instance field
+  String address;
+  boolean isVip;
+  static int count = 0; // class field
+
+  public void printName(){
+    System.out.println("my name is " + name);
+  }
+
+  public static void printCount(){
+    // System.out.println(name)
+    // static method에서는 [instance field, instance method] 불가
+    System.out.println("count : " + count);
+  }
+}
+```
+
+## Memory 관리
+
+- new 연산자를 사용할 때 마다 메모리에 인스턴스가 생성됨
+- 인스턴스는 더 이상 참조되는 것이 없을때 - Garbage collection 된다.
+- static field는 클래스가 로딩될 때 딱 한번 메모리에 올라가서 초기화됨
+- instance method는 인스턴스가 생성되고나서 레퍼런스 변수를 이용해 사용할 수 있다. `something.methodName`
+- class method는 `className.methodName();`으로 사용
+- 메소드 안에 선언된 변수들은 메소드가 실행될 때 메모리에 생성되었다가, 메소드가 종료될 때 사라진다. scope가 local에 한정
 
 ## 앞으로 진행될 내용
 

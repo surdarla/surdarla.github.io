@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Normalization 정규화 &#8212; surdarla-book</title>
 
@@ -15,47 +14,45 @@
 
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
 
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
 
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css?v=20733ca3" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -91,7 +88,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -99,15 +96,19 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('js', new Date());
                 gtag('config', 'G-BMRNT7D57Q');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/dl/NLP_basics';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/basics/dl/NLP_basics.html" />
-    <link rel="shortcut icon" href="../../../_static/my_favi.png"/>
+    <link rel="icon" href="../../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -122,28 +123,23 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
   <div id="pst-scroll-pixel-helper"></div>
 
-
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
 
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
 
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
 
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -166,17 +162,22 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
+</aside>
 
-  <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
-  </div>
 
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
 
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+
+
 
       <div class="bd-sidebar-primary bd-sidebar">
 
@@ -191,6 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+
 
 
 
@@ -210,7 +213,18 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
 
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -222,31 +236,31 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../CS229/intro.html">intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../CS229/1.html">Learning Algorithms</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../CS229/2-1.html">practice - torch sklearn numpy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anal/anal_intro.html">Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../anal/linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anal/information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python_intro.html">python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python/poetry.html">Poetry 사용하기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">join merge</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../python/OOP.html">객체 지향 프로그래밍</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DL_intro.html">Deep learning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perceptron.html">Perceptron</a></li>
@@ -254,38 +268,38 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="softmax.html">softmax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Logistic.html">Logistic</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../js/JS.html">Javascript</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../js/VUE.html">vue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../js/DOM.html">DOM</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tips/tips_intro.html">Tips</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tips/snippet_create.html">vscode snippet 만들기</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../java/java_intro.html">Java</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../java/var_type.html">변수와 자료형</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/control_state.html">제어문</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/vision.html">vision</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/resnet.html">Resnet</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../paper_review/nlp.html">nlp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV3.html">Deberta V3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paper_review/DebertaV1.html">DeBERTa</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/problem-solving.html">problem-solving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
@@ -313,9 +327,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/20207.html">20207 : 달력</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2252.html">2252 : 줄 세우기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1021.html">1021 : 회전하는 큐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/11729.html">11729 : 하노이 탑 이동순서</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/twoSum.html">twoSum</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/type_in_python.html">Type in python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
@@ -324,22 +342,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/DP.html">Dynamic Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC.html">위상정렬 : Topological Sort</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/4.html">4. SQL 활용</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/Big_data/big_intro.html">빅분기 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/Big_data/1.html">1. 빅데이터 분석 기획</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/Big_data/2.html">2. 빅데이터 탐색</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -355,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
 
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
 
 
 
@@ -364,14 +382,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
 
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
 
     <div class="header-article-items__start">
 
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
 
     </div>
 
@@ -496,10 +514,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -507,14 +525,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
 
     </div>
@@ -559,10 +577,10 @@ document.write(`
 
 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
 
   <section class="tex2jax_ignore mathjax_ignore" id="normalization">
-<h1>Normalization 정규화<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h1>
+<h1>Normalization 정규화<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h1>
 <p><img alt="morpheme" src="../../../_images/9b29442026783ce1e7672cbd8ce504d9_MD5.png" /></p>
 <p>우리가 익히 알고 있는 정규화는 curr - min / max - min이다. 언어학과 자연어 처리에서 <code class="docutils literal notranslate"><span class="pre">morpheme(형태소</span> <span class="pre">:</span> <span class="pre">의미를</span> <span class="pre">가진</span> <span class="pre">가장</span> <span class="pre">작은</span> <span class="pre">단위)</span></code>라는 것이 단어의 기반으로 정의된다. 보통 token이라는 것은 두 개 이상의 morpheme의 합으로 구성된다. 접두사(prefix) 접미사(suffix)가 단어의 형태에 따라 변형되어 붙는다.</p>
 <p>정규화는 ‘converting a token into its base form’하는 과정이다. inflection form → base form.</p>
@@ -572,7 +590,7 @@ document.write(`
 <li><p>removing redundant information</p></li>
 </ol>
 <section id="stemming">
-<h2>3.1 stemming 어간 추출<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h2>
+<h2>3.1 stemming 어간 추출<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h2>
 <p>laughing, laughed, laughs, laugh → laugh
 단점 : 가끔 사전에 없는 단어를 만들 수도 있다. 그래서 좋은 normalization은 아닐 수 있다. 또한 winning 같은 경우 원래의 stem은 win인데 winn으로 만들 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
@@ -585,32 +603,32 @@ document.write(`
 <p>보통 어간 추출 속도가 표제어 추출보다 빠르다.</p>
 </section>
 <section id="lemmatization">
-<h2>3.2 lemmatization 표제어 추출<a class="headerlink" href="#lemmatization" title="Permalink to this heading">#</a></h2>
+<h2>3.2 lemmatization 표제어 추출<a class="headerlink" href="#lemmatization" title="Link to this heading">#</a></h2>
 <p>Lemma 표제어는 ‘기본 사전형 단어’ 정도의 의미를 가지고 있다. 표제어 추출을 위해서는 기본적으로 POS(part of speech)가 필요하다. 형태학적 파싱(morphological parsing)을 하게되면 어간(stem)과 접사(affix)로 단어를 쪼개게 된다. 이러한 과정을 통해서 더 이상 쪼갤 수 없는 단위로 의미를 쪼개는 것이다. 이런 과정을 위해서 품사 정보를 고려하여 단어의 원형을 추출하는 것이 의미적으로 정확하고 일관된 결과를 얻는데 도움이 된다.</p>
 </section>
 <section id="pos-part-of-speech-tags">
-<h2>3.3 POS(part of speech tags)<a class="headerlink" href="#pos-part-of-speech-tags" title="Permalink to this heading">#</a></h2>
+<h2>3.3 POS(part of speech tags)<a class="headerlink" href="#pos-part-of-speech-tags" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://datascienceschool.net/03%20machine%20learning/03.01.02%20KoNLPy%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B2%98%EB%A6%AC%20%ED%8C%A8%ED%82%A4%EC%A7%80.html">KoNLPy 한국어 처리 패키지</a></p>
 <p>품사란 문장내 단어의 문맥, 기능 그리고 활용을 정의하는 것이다. 품사는 문장 내의 다른 단어들 과의 관계로 정의된다. 머신러닝 모델이나 rule-based 모델들은 단어의 품사를 알아야 적용이 가능하다.</p>
 </section>
 <section id="grammer">
-<h2>4. 문법 Grammer<a class="headerlink" href="#grammer" title="Permalink to this heading">#</a></h2>
+<h2>4. 문법 Grammer<a class="headerlink" href="#grammer" title="Link to this heading">#</a></h2>
 <section id="constituency-grammar">
-<h3>4.1 Constituency Grammar<a class="headerlink" href="#constituency-grammar" title="Permalink to this heading">#</a></h3>
+<h3>4.1 Constituency Grammar<a class="headerlink" href="#constituency-grammar" title="Link to this heading">#</a></h3>
 </section>
 <section id="dependency-grammar">
-<h3>4.2 Dependency Grammar<a class="headerlink" href="#dependency-grammar" title="Permalink to this heading">#</a></h3>
+<h3>4.2 Dependency Grammar<a class="headerlink" href="#dependency-grammar" title="Link to this heading">#</a></h3>
 <p>words of a sentence are dependent upon other words of the sentence</p>
 </section>
 </section>
 <section id="subword-tokenizer">
-<h2>5. Subword Tokenizer 알고리즘<a class="headerlink" href="#subword-tokenizer" title="Permalink to this heading">#</a></h2>
+<h2>5. Subword Tokenizer 알고리즘<a class="headerlink" href="#subword-tokenizer" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Birthplace = Birth + Place</p>
 </div></blockquote>
 <p>아무리 많이 학습시켜도 모르는 단어가 학습과정에서 나오기 마련이다. 이를 OOV(out-of-vocabulary), UNK(unknown token)이라고 말한다. OOV문제를 일으키는 단어는 보통 더 작은 단위로 쪼개면 아는 2개로 해석될 수 있는 합성어, 희귀 단어 혹은 신조어 인 경우가 많기 때문에 단어를 더 쪼개갰다는 의미이다.</p>
 <section id="byte-pair-encoding-bpe-1994">
-<h3>5.1 Byte-Pair Encoding(BPE) 1994<a class="headerlink" href="#byte-pair-encoding-bpe-1994" title="Permalink to this heading">#</a></h3>
+<h3>5.1 Byte-Pair Encoding(BPE) 1994<a class="headerlink" href="#byte-pair-encoding-bpe-1994" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://huggingface.co/learn/nlp-course/chapter6/5?fw=pt">huggingface_DOC</a></p>
 <blockquote>
 <div><p>aaabdaaabac → (aa → Z) ZabdZabac → (ab → Y) ZYdZYac → (ZY → X) XdXac</p>
@@ -619,16 +637,16 @@ document.write(`
 <p>자연어 처리에서 BPE는 곧 subword segmentation 알고리즘을 말한다. 글자 단위에서 점차적으로 단어 집합을 만들어내는 bottom up 방식의 접근을 한다. 우선 훈련 데이터에 있는 단어들을 모든 글자 또는 유니코드 단위로 단어 집합을 만들고, 가장 많이 등장하는 유니그램을 하나의 유니그램으로 통합한다. 정리하자면 가장 빈번하게 등장하는 문자 혹은 subword의 쌍을 재귀적으로 합치며, 텍스트를 분할하는 방식이라고 볼 수 있다. 문제는 letter 수준에서 작동하기 때문에 단어 내의 내부 구조나 의미를 고려하진 않는다.</p>
 </section>
 <section id="wordpiece-tokenizer-for-bert">
-<h3>5.2 wordpiece tokenizer → for BERT<a class="headerlink" href="#wordpiece-tokenizer-for-bert" title="Permalink to this heading">#</a></h3>
+<h3>5.2 wordpiece tokenizer → for BERT<a class="headerlink" href="#wordpiece-tokenizer-for-bert" title="Link to this heading">#</a></h3>
 <p>bpe가 빈도수에 기반하여 가장 많이 등장한 쌍을 병합하는 것 과는 달리, 병합되었을 때 코퍼스의 우도 likelihood를 가장 높이는 쌍으로 구성. 모든 단어 앞에 <em>를 붙이고 기존에 없던 띄어쓰기 추가. 되돌릴때는 띄어쓰기 모두 없애고</em> 를 띄어쓰기화 하면 된다.
 BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BPE가 letter → token(subword) bottom up 방식이었다면, wordpiece는 word → token(subword) topdown 방식이라고 볼 수 있다. 또한 차이점은 단어 경계를 표시하는 특수 토큰[CLS],[SEP]등을 사용하여 서브워드를 생성할 수 있다는 것이다.</p>
 </section>
 <section id="sentencepiece">
-<h3>5.3 SentencePiece<a class="headerlink" href="#sentencepiece" title="Permalink to this heading">#</a></h3>
+<h3>5.3 SentencePiece<a class="headerlink" href="#sentencepiece" title="Link to this heading">#</a></h3>
 <p>사전 토큰화 작업(pretokenization) 없이 전처리를 하지 않은 데이터(raw data)에 바로 단어 분리 토크나이저를 사용할 수 있음. 단어 분리 토큰화 수행 → 어떤 언어에도 바로 적용 가능.</p>
 </section>
 <section id="libraries">
-<h3>6. Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h3>
+<h3>6. Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>spacy</p></li>
 </ol>
@@ -682,7 +700,7 @@ BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BP
 
 
 
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
 
 <div class="prev-next-area">
     <a class="left-prev"
@@ -711,6 +729,7 @@ BPE랑 비슷하긴 한데, 단어 수준에서 작동한다는게 다르다. BP
 
 
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -771,7 +790,7 @@ By Surdarla
   <div class="footer-item">
 
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-29 12:10:35
+  based on jupyter-book, last updated: 2024-10-30 10:52:20
 </div>
   </div>
 
@@ -784,8 +803,8 @@ By Surdarla
   </div>
 
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

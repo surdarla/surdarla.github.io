@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>DeBERTa &#8212; surdarla-book</title>
 
@@ -15,47 +14,45 @@
 
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
 
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
 
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/my_css.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/my_css.css?v=20733ca3" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -91,7 +88,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BMRNT7D57Q"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -99,17 +96,21 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('js', new Date());
                 gtag('config', 'G-BMRNT7D57Q');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BMRNT7D57Q');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/paper_review/DebertaV1';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/paper_review/DebertaV1.html" />
-    <link rel="shortcut icon" href="../../_static/my_favi.png"/>
+    <link rel="icon" href="../../_static/my_favi.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -124,28 +125,23 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
   <div id="pst-scroll-pixel-helper"></div>
 
-
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
 
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
 
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
 
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -168,17 +164,22 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
+</aside>
 
-  <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
-  </div>
 
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
 
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+
+
 
       <div class="bd-sidebar-primary bd-sidebar">
 
@@ -193,6 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+
 
 
 
@@ -212,7 +215,18 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
 
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -224,31 +238,31 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">CS229 summary</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CS229/intro.html">intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../CS229/1.html">Learning Algorithms</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CS229/2.html">Linear Regressin &amp; Gradient Descent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../CS229/2-1.html">practice - torch sklearn numpy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/anal/anal_intro.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/anal/anal_intro.html">Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/linearity.html">linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/information-value.html">Feature selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/anal/EDA.html">EDA(Exploratory Data Analysis) 탐색적 분석</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python/python_intro.html">python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/python/python_intro.html">python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/poetry.html">Poetry 사용하기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/pandas.html">join merge</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/OOP.html">객체 지향 프로그래밍</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/tokenizing.html">컴퓨터의 언어표현</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/NLP_basics.html">Normalization 정규화</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/perceptron.html">Perceptron</a></li>
@@ -256,38 +270,38 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/softmax.html">softmax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/dl/Logistic.html">Logistic</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/js/JS.html">Javascript</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/js/VUE.html">vue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/js/DOM.html">DOM</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/tips/tips_intro.html">Tips</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/tips/tips_intro.html">Tips</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/tips/markdownlint.html">vscode markdownlint diableing MD~</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/tips/snippet_create.html">vscode snippet 만들기</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/java/java_intro.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basics/java/java_intro.html">Java</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/java/var_type.html">변수와 자료형</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/java/control_state.html">제어문</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Paper Review</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">vision</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">vision</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="resnet.html">Resnet</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="nlp.html">nlp</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="nlp.html">nlp</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="DebertaV3.html">Deberta V3</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">DeBERTa</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/problem-solving.html">problem-solving</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/problem-solving.html">problem-solving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2558.html">2558 : A + B - 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2530.html">2530 : 인공지능 시계</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2117.html">2117 : 원형 댄스</a></li>
@@ -315,9 +329,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/20207.html">20207 : 달력</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/2252.html">2252 : 줄 세우기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/1021.html">1021 : 회전하는 큐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/11729.html">11729 : 하노이 탑 이동순서</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/problem/twoSum.html">twoSum</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/data_structure.html">data_structure</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithm/data_structure.html">data_structure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.html">자료구조</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/type_in_python.html">Type in python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9%EA%B2%BD%EB%A1%9C.html">최소비용경로 문제</a></li>
@@ -326,22 +344,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/DP.html">Dynamic Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algorithm/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC.html">위상정렬 : Topological Sort</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Certificate</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/SQL_intro.html">SQLD 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/1.html">1. 데이터 모델링의 이해</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/4.html">4. SQL 활용</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/1.html">1. 빅데이터 분석 기획</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/Big_data/2.html">2. 빅데이터 탐색</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -357,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
 
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
 
 
 
@@ -366,14 +384,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
 
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
 
     <div class="header-article-items__start">
 
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
 
     </div>
 
@@ -498,10 +516,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -509,14 +527,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
 
     </div>
@@ -562,10 +580,10 @@ document.write(`
 
 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
 
   <section class="tex2jax_ignore mathjax_ignore" id="deberta">
-<h1>DeBERTa<a class="headerlink" href="#deberta" title="Permalink to this heading">#</a></h1>
+<h1>DeBERTa<a class="headerlink" href="#deberta" title="Link to this heading">#</a></h1>
 <p>DEBERTA: DECODING-ENHANCED BERT WITH DIS-ENTANGLED ATTENTION</p>
 <p>Published as a conference paper at ICLR 2023 <a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference external" href="https://arxiv.org/pdf/2006.03654"><span>Paper PDF</span></a></p>
 <p>Pengcheng He, Microsoft Dynamics 365 AI<br />
@@ -579,10 +597,10 @@ Weizhu Chen, Microsoft Dynamics 365 AI<br />
 <p>Recent progress in pre-trained neural language models has significantly improved the performance of many natural language processing (NLP) tasks. In this paper we propose a new model architecture DeBERTa (Decoding-enhanced BERT with disentangled attention) that improves the BERT and RoBERTa models using two novel techniques. The first is <strong>the disentangled attention mechanism</strong>, where each word is represented using two vectors that encode its content and position, respectively, and the attention weights among words are computed using disentangled matrices on their contents and relative positions, respectively. Second, an <strong>enhanced mask decoder</strong> is used to incorporate absolute positions in the decoding layer to predict the masked tokens in model pre-training. In addition, a <strong>new virtual adversarial training method</strong> is used for fine-tuning to improve models’ generalization. We show that these techniques significantly improve the efficiency of model pre-training and the performance of both natural language understanding (NLU) and natural langauge generation (NLG) downstream tasks. Compared to RoBERTa-Large, a DeBERTa model trained on half of the training data performs consistently better on a wide range of NLP tasks, achieving improvements on MNLI by +0.9% (90.2% vs. 91.1%), on SQuAD v2.0 by +2.3% (88.4% vs. 90.7%) and RACE by +3.6% (83.2% vs. 86.8%). Notably, we scale up DeBERTa by training a larger version that consists of 48 Transform layers with 1.5 billion parameters. The significant performance boost makes the single DeBERTa model surpass the human performance on the SuperGLUE benchmark (Wang et al., 2019a) for the first time in terms of macro-average score (89.9 versus 89.8), and the ensemble DeBERTa model sits atop the SuperGLUE leaderboard as of January 6, 2021, out performing the human baseline by a decent margin (90.3 versus 89.8).</p>
 </div>
 <section id="introduction">
-<h2>문제 설정 Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>문제 설정 Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Transformer는 nlp에서 가장 효과적인 network architecture로 자리잡았다. 순서에 따라 text를 처리하는 RNN들과 다르게, tranformers는 입력 텍스트(input text)의 모든 단어(every words)에 대해서 self-attention을 적용하여, attention weight를 뽑아낸다. 그리고 이 attention weight는 각 단어들이 서로에게 어떠한 영향을 미치는지를 나타내는 수치이다. 이러한 방식(병렬처리)을 transformer가 사용하고 있기 때문에 RNN과 같은 순차처리 모델보다 large-scale training이 가능한 것이다.</p>
 <section id="parallelization">
-<h3>1.1 Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this heading">#</a></h3>
+<h3>1.1 Parallelization<a class="headerlink" href="#parallelization" title="Link to this heading">#</a></h3>
 <p>RNN과 transformer는 둘 다 sequence modeling architecture이다. 하지만 transformer는 시퀀스의 모든 위치에 대해 동시에 연산을 수행해서 병렬화가 더 쉽다. 병렬화라는 말 자체는 하나의 작업을 여러 개의 작은 자겅ㅂ으로 나누어 동시에 처리함으로써 전체적으로는 하나의 작업을 더 빠르고 효율적으로 수행하는 기술을 말한다. 딥러닝 모델의 학습은 계산량, 데이터량이 많을 수록 좋은 방향으로 흘러가고 있기 때문에 이러한 기술은 필수적이다. GPU를 동시에 사용하거나 데이터를 쪼개거나, 연산을 쪼개거나 하는 방식으로 여러 부분에서 쪼개어 동시다발적으로 수행하는 것을 전반적으로 병렬화라고 말할 수 있다.</p>
 <p>병렬화를 가능하게 하는 3가지 특징은 다음과 같다.</p>
 <ol class="arabic simple">
@@ -592,7 +610,7 @@ Weizhu Chen, Microsoft Dynamics 365 AI<br />
 </ol>
 </section>
 <section id="disentangled-attention">
-<h3>1.2 Disentangled attention<a class="headerlink" href="#disentangled-attention" title="Permalink to this heading">#</a></h3>
+<h3>1.2 Disentangled attention<a class="headerlink" href="#disentangled-attention" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>relative position embedding를 사용하자. 근데 vector를 두 개로 나눠서…</p>
 </div></blockquote>
@@ -605,7 +623,7 @@ Weizhu Chen, Microsoft Dynamics 365 AI<br />
 <li><p>relative position embedding : 단어간 상대적 위치만 고려</p></li>
 </ul>
 <p>기존 BERT를 본 논문에서는 이렇게 말한다. <code class="docutils literal notranslate"><span class="pre">each</span> <span class="pre">word</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">input</span> <span class="pre">layer</span> <span class="pre">is</span> <span class="pre">represented</span> <span class="pre">using</span> <span class="pre">**a</span> <span class="pre">vector**</span> <span class="pre">which</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">its</span> <span class="pre">word</span> <span class="pre">(content)</span> <span class="pre">embedding</span> <span class="pre">and</span> <span class="pre">(absolute)position</span> <span class="pre">embedding</span></code>. 분명하게 absolute position 정보가 중요한 것은 맞지만 뒤에서 따른 방법으로 이용하되, 여기서는 relative position embedding을 이용하여 위치정보를 input으로 사용하고, 실제로 많은 선제연구들에서 이 방법의 중요성을 말해줬다고 한다.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>…</p></th>
 <th class="head text-center"><p>word in input layer</p></th>
@@ -623,11 +641,12 @@ Weizhu Chen, Microsoft Dynamics 365 AI<br />
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>여기서는 relative word embedding을 사용</strong><br />
 disentangled attention은 이렇게 각각의 embedding으로 word에 대한 표현을 한 뒤, 각각의 attention weight를 <code class="docutils literal notranslate"><span class="pre">disentangled</span> <span class="pre">matrices</span> <span class="pre">=</span> <span class="pre">2개의</span> <span class="pre">vectors</span> <span class="pre">-&gt;</span> <span class="pre">2x2</span> <span class="pre">=</span> <span class="pre">4개의</span> <span class="pre">matrices</span></code>를 이용해서 계산한다. 이는 단어의 관계라는 것이 의미적 관계만 있는 것이 아니라 상대적인 위치에 의해서도 영향을 받는 것에서 나온 것이다. 본문의 예시는 ‘deep’,’learning’이라는 두 단어가 다른 문장에서 있을 때보다 옆에 붙어있을 때 의존성이 굉장히 높아지는 것으로 든다.</p>
 </section>
 <section id="enhanced-mask-decoder">
-<h3>1.3 Enhanced mask decoder<a class="headerlink" href="#enhanced-mask-decoder" title="Permalink to this heading">#</a></h3>
+<h3>1.3 Enhanced mask decoder<a class="headerlink" href="#enhanced-mask-decoder" title="Link to this heading">#</a></h3>
 <p>absolute position embedding 더하기</p>
 <p>MLM : masked language modeling은 Bert에서 나왔던 것으로 해당 모델 역시 이 방법을 사용해서 기본적인 pre-training을 진행한다. MLM 이라는 것은 <code class="docutils literal notranslate"><span class="pre">fill-in-the-black</span> <span class="pre">task</span></code>로 주변의 단어들을 사용해서 blank(masked word)의 원래 word를 유추해 내는 것이고, deberta의 차이는 MLM을 하되 위의 disentangled 어텐션을 사용해서 두 개의 별개의 vector를 이용해서 MLM을 수행한다. 문제는 position embedding이 상대적인 위치를 사용하지만 단어의 절대적 위치가 없다는 것이다. 절대적 위치는 구문론적으로 이해를 돕는 굉장히 중요한 정보라고 말한다.</p>
 <blockquote>
@@ -637,11 +656,11 @@ disentangled attention은 이렇게 각각의 embedding으로 word에 대한 표
 <p>해서 deberta에서는 이러한 absolute position embedding을 softmax layer 직전에 넣어준다. 바로 이 지점이 모델이 앞에서 말한 content, position embedding 조합을 기반으로 masking을 해독하기 직전이다. 그니깐 거의 마지막에 넣어주는 것으로 ‘참조’의 수준으로 하는 것으로 보인다.</p>
 </section>
 <section id="virtual-adversarial-training">
-<h3>1.3 virtual adversarial training<a class="headerlink" href="#virtual-adversarial-training" title="Permalink to this heading">#</a></h3>
+<h3>1.3 virtual adversarial training<a class="headerlink" href="#virtual-adversarial-training" title="Link to this heading">#</a></h3>
 <p>이건 자세하게 설명이 앞에 안나오는데 model generalization에 좋다고 한다.</p>
 </section>
 <section id="mlm">
-<h3>1.4 MLM<a class="headerlink" href="#mlm" title="Permalink to this heading">#</a></h3>
+<h3>1.4 MLM<a class="headerlink" href="#mlm" title="Link to this heading">#</a></h3>
 <p>Masked Language Model</p>
 <p>기존의 large-scale transformer-based PLM(pretrained language model)들은 보통 많은 양의 텍스트를 가지고 문맥적인 단어의 표현(contextual word representation)을 배우기 위해서 학습 과정을 거쳤다. 이 학습 과정은 ‘self-supervision objective’ 그러니깐 자기지도 학습인데, 방법론 적으로는 MLM을 가리킨다. 이제 수식적으로 들어가보자</p>
 <div class="dropdown note admonition">
@@ -665,9 +684,9 @@ by predicting the masked token <span class="math notranslate nohighlight">\(\til
 </section>
 </section>
 <section id="deberta-architecture">
-<h2>DeBERTa architecture<a class="headerlink" href="#deberta-architecture" title="Permalink to this heading">#</a></h2>
+<h2>DeBERTa architecture<a class="headerlink" href="#deberta-architecture" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>3.1 Disentangled attention<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>3.1 Disentangled attention<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>a two-vector approach to content and position embedding</p>
 <blockquote>
 <div><p>$i<span class="math notranslate nohighlight">\( : position of token in a sequence\
@@ -693,7 +712,7 @@ A_{i,j} &amp;=&amp; \{H_i,P_{i|j}\} \times \{H_i,P_{j|i}\}^{\intercal}\\
 이전의 relative position encoding은 기존의 attention weight에다가 relative position bias를 더해주는 식으로 위에서의 1,2번만을 사용하는 식으로 사용되었다. 하지만 deberta에서는 이렇게 모든 것을 사용하되 4번은 안사용한다. 이미 1,2,3에서 두 토큰 간의 상대적 위치 정보를 충분히 capture한다고 판단했기 때문에 수식상으로는 out되었다고 한다.</p>
 </section>
 <section id="standard-self-attention-operation">
-<h3>3.1.1 standard self-attention operation<a class="headerlink" href="#standard-self-attention-operation" title="Permalink to this heading">#</a></h3>
+<h3>3.1.1 standard self-attention operation<a class="headerlink" href="#standard-self-attention-operation" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(R^{N \times d}\)</span> : N(문장의 길이, 토큰의 수)개의 행 * d(토큰의 hidden 벡터의 차원)개의 열 - 차원의 실수® 행렬<br />
 <span class="math notranslate nohighlight">\(H \in R^{N \times d}\)</span> : input hidden vectors<br />
@@ -714,7 +733,7 @@ H_o &amp;=&amp; \text{softmax}(A)V\\
 <p>여기서 Q, K, V는 각각 query, key, value를 나타내며, d_k는 key의 차원을 나타냅니다. 이 때 각 토큰의 위치 정보는 absolute positional encoding 방식을 통해 각 토큰의 hidden state에 추가되고, 이 정보가 포함된 hidden state가 query, key, value로 사용됩니다.</p>
 </section>
 <section id="relative-distance">
-<h3>3.1.2 relative distance<a class="headerlink" href="#relative-distance" title="Permalink to this heading">#</a></h3>
+<h3>3.1.2 relative distance<a class="headerlink" href="#relative-distance" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(k\)</span> : maximum relative distance<br />
 <span class="math notranslate nohighlight">\(\delta(i,j)\in[0,2k)\)</span> : the relative distance from token i to token j</p>
@@ -731,7 +750,7 @@ i-j+k &amp;\text{others.} &amp;\\
 <p>여기서 [ : 포함, ) : 미포함을 의미한다. 상대적 거리값이 0&lt;=x&lt;2k 의 뜻이라고 한다. 0~2k-1사이의 정수 값</p>
 </section>
 <section id="disentangled-self-attention">
-<h3>3.1.3 disentangled self-attention<a class="headerlink" href="#disentangled-self-attention" title="Permalink to this heading">#</a></h3>
+<h3>3.1.3 disentangled self-attention<a class="headerlink" href="#disentangled-self-attention" title="Link to this heading">#</a></h3>
 <p>with relative position bias as equation 4</p>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(Q_c,K_c,V_c\)</span> : projected content vectors from projection matrices<br />
@@ -761,7 +780,7 @@ K_r &amp;=&amp; PW_{k,r}\\
 \]</div>
 </section>
 <section id="projection-matrix">
-<h3>projection matrix<a class="headerlink" href="#projection-matrix" title="Permalink to this heading">#</a></h3>
+<h3>projection matrix<a class="headerlink" href="#projection-matrix" title="Link to this heading">#</a></h3>
 <p>한 벡터나 공간을 다른 공간으로 mapping하는 것을 도우는 matrix</p>
 <script
    type="text/javascript"
@@ -803,7 +822,7 @@ K_r &amp;=&amp; PW_{k,r}\\
 
 
 
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
 
 <div class="prev-next-area">
     <a class="left-prev"
@@ -832,6 +851,7 @@ K_r &amp;=&amp; PW_{k,r}\\
 
 
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -893,7 +913,7 @@ By Surdarla
   <div class="footer-item">
 
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2023-11-29 12:10:35
+  based on jupyter-book, last updated: 2024-10-30 10:52:20
 </div>
   </div>
 
@@ -906,8 +926,8 @@ By Surdarla
   </div>
 
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
