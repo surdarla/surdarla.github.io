@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/my_css.css?v=20733ca3" />
 
@@ -260,6 +260,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/pandas.html">join merge</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../basics/python/OOP.html">객체 지향 프로그래밍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/python/rolling.html">rolling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../basics/dl/DL_intro.html">Deep learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -353,6 +354,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/4.html">4. SQL 활용</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/SQLD/nomad/sql_intro.html">SQL intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../certificate/SQLD/nomad/sqlite.html">SQLite</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../certificate/Big_data/big_intro.html">빅분기 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -619,7 +624,7 @@ document.write(`
 <figure class="align-default" id="resnet-fig1">
 <a class="reference internal image-reference" href="../../_images/resnet_1.png"><img alt="../../_images/resnet_1.png" src="../../_images/resnet_1.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">56 layer network가 20 layer network보다 error율이 높은 것을 확인할 수 있다. 성능이 더 잘 안나온 것이다.</span><a class="headerlink" href="#resnet-fig1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">56 layer network가 20 layer network보다 error율이 높은 것을 확인할 수 있다. 성능이 더 잘 안나온 것이다.</span><a class="headerlink" href="#resnet-fig1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>deeper is better를 하나의 요소만 넣으면 가능하게 하는 것, 즉 degradation problem을 해결하는 것 - 이 논문에서는 <code class="docutils literal notranslate"><span class="pre">Redisual</span> <span class="pre">mapping</span></code>이다.</p>
@@ -637,7 +642,7 @@ document.write(`
 <figure class="align-default" id="resnet-fig2">
 <a class="reference internal image-reference" href="../../_images/resnet_2.png"><img alt="../../_images/resnet_2.png" src="../../_images/resnet_2.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">obsidian으로 내맘대로 그려본 fig2</span><a class="headerlink" href="#resnet-fig2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">obsidian으로 내맘대로 그려본 fig2</span><a class="headerlink" href="#resnet-fig2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>기존의 vgg에서의 mapping block을 <span class="math notranslate nohighlight">\(H(\text{x})\)</span>이라고 한다면, 이런 block이 18개정도 이어져 붙어있는 형태였다. block 내부에는 cnn layer + relu layer + cnn layer + relu layer 로 구성되어 있다.</p>
@@ -772,7 +777,7 @@ document.write(`
 <figure class="align-default" id="resnet-fig3">
 <a class="reference internal image-reference" href="../../_images/resnet_3.png"><img alt="../../_images/resnet_3.png" src="../../_images/resnet_3.png" style="height: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">vgg19(19.6B FLOPs) - plain 34 layers(3.6B FLOPs) - with shortcut 34 layers(3.6B FLOPs). dotted line이 dimension이 늘어나는 부분이고 이 부분은 equ2 <span class="math notranslate nohighlight">\(W_s\)</span> 1x1 convolutions로 맞춰주었다고 한다.</span><a class="headerlink" href="#resnet-fig3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">vgg19(19.6B FLOPs) - plain 34 layers(3.6B FLOPs) - with shortcut 34 layers(3.6B FLOPs). dotted line이 dimension이 늘어나는 부분이고 이 부분은 equ2 <span class="math notranslate nohighlight">\(W_s\)</span> 1x1 convolutions로 맞춰주었다고 한다.</span><a class="headerlink" href="#resnet-fig3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>in training</p>
@@ -814,13 +819,13 @@ document.write(`
 <figure class="align-default" id="resnet-fig5">
 <a class="reference internal image-reference" href="../../_images/resnet_bottleneck.png"><img alt="../../_images/resnet_bottleneck.png" src="../../_images/resnet_bottleneck.png" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Bottlenect desingn for deeper network architecture</span><a class="headerlink" href="#resnet-fig5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Bottlenect desingn for deeper network architecture</span><a class="headerlink" href="#resnet-fig5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="resnet-fig6">
 <a class="reference internal image-reference" href="../../_images/resnet_50.png"><img alt="../../_images/resnet_50.png" src="../../_images/resnet_50.png" style="height: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">The architecture of ResNet-50-vd. (a) Stem block; (b) Stage1-Block1; © Stage1-Block2; (d) FC-Block.</span><a class="headerlink" href="#resnet-fig6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">The architecture of ResNet-50-vd. (a) Stem block; (b) Stage1-Block1; © Stage1-Block2; (d) FC-Block.</span><a class="headerlink" href="#resnet-fig6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>18, 34 layers에서는 3x3,3x3로 2개의 conv layer들을 쌓아서 만들었었다면, 더 나아가서 50,101,152 layers를 위해서 1x1,3x3,1x1 를 하나의 블록으로 사용한다. 이것을 bottleneck block 이라고 부른다.</p>
@@ -1142,7 +1147,7 @@ verbose: False, log level: Level.ERROR
 <figure class="align-default" id="id2">
 <img alt="../../_images/onnx_test.svg" src="../../_images/onnx_test.svg" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">onnx로 그려보고 svg로 저장한 resnet18.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">onnx로 그려보고 svg로 저장한 resnet18.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>여기서 W는 weight를 나타내고 <feature x input channel x height x width> 순으로 표시된다. 그리고 B는 bias이다.</p>
@@ -1155,7 +1160,7 @@ verbose: False, log level: Level.ERROR
 <figure class="align-default" id="resnet-fig7">
 <a class="reference internal image-reference" href="../../_images/resnet_imagenet.png"><img alt="../../_images/resnet_imagenet.png" src="../../_images/resnet_imagenet.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">“ImageNet Large Scale Visual Recognition Challenge” ILSVRC는 2010년부터 2017년까지 매년 개최된 이미지 인식 대회</span><a class="headerlink" href="#resnet-fig7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">“ImageNet Large Scale Visual Recognition Challenge” ILSVRC는 2010년부터 2017년까지 매년 개최된 이미지 인식 대회</span><a class="headerlink" href="#resnet-fig7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -1302,7 +1307,7 @@ By Surdarla
 
   <p class="copyright">
 
-      © Copyright 2023, Surdarla.
+      © Copyright 2024, Surdarla.
       <br/>
 
   </p>
@@ -1316,7 +1321,7 @@ By Surdarla
   <div class="footer-item">
 
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2024-10-30 10:52:20
+  based on jupyter-book, last updated: 2024-10-30 11:14:15
 </div>
   </div>
 

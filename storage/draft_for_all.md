@@ -1,6 +1,8 @@
 ()=
 # title
 
+`ctrl + space + info`
+
 Published as a conference paper at ICLR 2023 {bdg-link-primary}`Paper PDF<https://arxiv.org/pdf/2006.03654>`
 
 ```{admonition} Abstract

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css?v=20733ca3" />
 
@@ -114,7 +114,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Deep learning" href="../dl/DL_intro.html" />
+    <link rel="next" title="rolling" href="rolling.html" />
     <link rel="prev" title="join merge" href="pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -260,6 +260,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">join merge</a></li>
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">객체 지향 프로그래밍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rolling.html">rolling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dl/DL_intro.html">Deep learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -353,6 +354,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/2.html">2. 데이터 모델과 성능</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/3.html">3. SQL 기본</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/4.html">4. SQL 활용</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/SQLD/nomad/sql_intro.html">SQL intro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../certificate/SQLD/nomad/sqlite.html">SQLite</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../certificate/Big_data/big_intro.html">빅분기 준비과정</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -616,7 +621,7 @@ document.write(`
 <h3>method overriding<a class="headerlink" href="#method-overriding" title="Link to this heading">#</a></h3>
 <p>부모 클래스의 메서드를 자식 클래스가 재정의하는 것을 말한다. 메서드의 이름은 물로 파라미터의 갯수나 타입도 동일해야 하며, 주로 상위 클래스의 동작을 상속받은 하위 클래스에서 변경하기 위해서 사용된다. 기억해야할 것은 <strong>메서드가 오버라이딩 되면 무조건 자식의 메서드가 실행된다.</strong> 참조 타입이 부모 타입이라고 하더라도 실제 동작은 인스턴스에서 오버라이딩 된 기능이 동작하는 것이다. 자식이기는 부모 없다</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bus</span><span class="p">();</span>
-<span class="n">car</span><span class="p">.</span><span class="na">run</span><span class="p">();</span><span class="w"> </span>
+<span class="n">car</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>car도 <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">run()</span></code> 메서드를 가지고 있고, bus도 <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">run()</span></code> 메서드를 가지고 있다면 <span class="math notranslate nohighlight">\(\to\)</span> bus의 run() 메서드가 실행된다.</p>
@@ -750,11 +755,11 @@ crossorigin="anonymous"
       </div>
     </a>
     <a class="right-next"
-       href="../dl/DL_intro.html"
+       href="rolling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Deep learning</p>
+        <p class="prev-next-title">rolling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -806,7 +811,7 @@ By Surdarla
 
   <p class="copyright">
 
-      © Copyright 2023, Surdarla.
+      © Copyright 2024, Surdarla.
       <br/>
 
   </p>
@@ -820,7 +825,7 @@ By Surdarla
   <div class="footer-item">
 
 <div class="extra_footer">
-  based on jupyter-book, last updated: 2024-10-30 10:52:20
+  based on jupyter-book, last updated: 2024-10-30 11:14:15
 </div>
   </div>
 
