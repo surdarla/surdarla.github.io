@@ -32,12 +32,10 @@ series models. Code is available at https://github.com/thuml/Time-Series-Library
 
 ## Introduction
 
-
-
 ## referances
 
 - []()
-- 
+-
 
 ```{raw} html
 <script

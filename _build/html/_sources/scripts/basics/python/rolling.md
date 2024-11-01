@@ -25,7 +25,6 @@ alt : sliding window
 이렇게 일정한 크기의 window를 이동시키면서 통계량을 계산하는 것을 sliding window라고 한다.
 ```
 
-
 ## referances
 
 - [[pandas] Windowing operations](https://pandas.pydata.org/docs/user_guide/window.html#window-generic)

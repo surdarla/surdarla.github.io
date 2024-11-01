@@ -65,6 +65,7 @@ parts:
     chapters :
     - file : scripts/algorithm/problem-solving
       sections :
+      - file : scripts/algorithm/problem/1957.ipynb
       - file : scripts/algorithm/problem/2558.ipynb
       - file : scripts/algorithm/problem/2530.ipynb
       - file : scripts/algorithm/problem/2117.ipynb
@@ -98,9 +99,9 @@ parts:
       sections :
       - file : scripts/algorithm/자료구조
       - file : scripts/algorithm/type_in_python
+      - file : scripts/algorithm/Search
       - file : scripts/algorithm/최소비용경로
       - file : scripts/algorithm/최대유량
-      - file : scripts/algorithm/BFS
       - file : scripts/algorithm/DP
       - file : scripts/algorithm/위상정렬
 
