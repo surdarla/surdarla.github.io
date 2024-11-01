@@ -9,9 +9,9 @@ exclude_patterns:
 - .venv
 execute:
   allow_errors: false
-  cache: ''
+  cache: _build/.jupyter_cache
   exclude_patterns: []
-  execute_notebooks: auto
+  execute_notebooks: 'off'
   run_in_temp: false
   stderr_output: show
   timeout: 90
@@ -24,7 +24,11 @@ html:
     hypothesis: false
     utterances:
       repo: surdarla/surdarla.github.io
+<<<<<<< HEAD
   extra_footer: 'based on jupyter-book, last updated: 2024-11-01 14:12:36'
+=======
+  extra_footer: 'based on jupyter-book, last updated: 2024-10-30 11:14:15'
+>>>>>>> c424194691c9cf2ab72e6a646a5c7648c066f8cc
   favicon: ./images/logos/my_favi.png
   google_analytics_id: G-BMRNT7D57Q
   home_page_in_navbar: true

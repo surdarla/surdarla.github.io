@@ -182,23 +182,23 @@ fruits.remove("Banana")
 
 ::::
 
-:::{table} java_list vs python_list
-:width: 80%
+:::{table} `java_list` vs `python_list` vs `js_list`
 :align: center
 
-| 기능                    | Java (List 인터페이스)                 | Python (리스트)       |
-| :---------------------- | :------------------------------------- | :-------------------- |
-| 요소 추가               | `add(element)`                         | `append(element)`     |
-| 특정 인덱스에 요소 추가 | `add(index, element)`                  | -                     |
-| 요소 제거               | `remove(element)`                      | `remove(element)`     |
-| 인덱스로 요소 제거      | `remove(index)`                        | `pop(index)`          |
-| 리스트 크기             | `size()`                               | `len(list)`           |
-| 특정 요소 검색          | `get(index)`                           | `list[index]`         |
-| 요소 존재 여부 확인     | `contains(element)`                    | `element in list`     |
-| 리스트 비우기           | `clear()`                              | `clear()`             |
-| 특정 인덱스의 요소 변경 | `set(index, element)`                  | `list[index] = value` |
-| 리스트 복사             | `new ArrayList<>(list)`                | `list.copy()`         |
-| 리스트 정렬             | `list.sort(Comparator.naturalOrder())` | list.sort             |
+| 기능                    | Java (List 인터페이스)                 | Python (리스트)       | JavaScript (배열)           |
+| :---------------------- | :------------------------------------- | :-------------------- | :-------------------------- |
+| 요소 추가               | `add(element)`                         | `append(element)`     | `push(element)`             |
+| 특정 인덱스에 요소 추가 | `add(index, element)`                  | -                     | `splice(index, 0, element)` |
+| 요소 제거               | `remove(element)`                      | `remove(element)`     | `splice(index, 1)`          |
+| 인덱스로 요소 제거      | `remove(index)`                        | `pop(index)`          | `splice(index, 1)`          |
+| 리스트 크기             | `size()`                               | `len(list)`           | `array.length`              |
+| 특정 요소 검색          | `get(index)`                           | `list[index]`         | `array[index]`              |
+| 요소 존재 여부 확인     | `contains(element)`                    | `element in list`     | `array.includes(element)`   |
+| 리스트 비우기           | `clear()`                              | `clear()`             | `array.length = 0`          |
+| 특정 인덱스의 요소 변경 | `set(index, element)`                  | `list[index] = value` | `array[index] = value`      |
+| 리스트 복사             | `new ArrayList<>(list)`                | `list.copy()`         | `[...array]`                |
+| 리스트 정렬             | `list.sort(Comparator.naturalOrder())` | `list.sort()`         | `array.sort()`              |
+
 :::
 
 ### 5. Map
@@ -275,22 +275,22 @@ Python에서는 키로 사용되는 객체가 불변(immutable)이어야 하며,
 :::
 ::::
 
-:::{table} Java Map vs Python dict
-:width: 80%
+:::{table} `Java Map` vs `Python dict` vs `JS Obj` vs `JS Map`
 :align: center
 
-| 기능              | Java (Map)             | Python (dict)            |
-| :---------------- | :--------------------- | :----------------------- |
-| 요소 추가         | `put(key, value)`      | `dict[key] = value`      |
-| 요소 접근         | `get(key)`             | `dict[key]`              |
-| 요소 제거         | `remove(key)`          | `del dict[key]`          |
-| 크기 확인         | `size()`               | `len(dict)`              |
-| 키 존재 여부      | `containsKey(key)`     | `key in dict`            |
-| 값 존재 여부      | `containsValue(value)` | `value in dict.values()` |
-| 키 목록 가져오기  | `keySet()`             | `dict.keys()`            |
-| 값 목록 가져오기  | `values()`             | `dict.values()`          |
-| 키-값 쌍 가져오기 | `entrySet()`           | `dict.items()`           |
-| 모든 요소 제거    | `clear()`              | `dict.clear()`           |
+| 기능              | Java (Map)             | Python (dict)            | JavaScript (Object)       | JavaScript (Map)      |
+| :---------------- | :--------------------- | :----------------------- | :------------------------ | :-------------------- |
+| 요소 추가         | `put(key, value)`      | `dict[key] = value`      | `obj[key] = value`        | `map.set(key, value)` |
+| 요소 접근         | `get(key)`             | `dict[key]`              | `obj[key]`                | `map.get(key)`        |
+| 요소 제거         | `remove(key)`          | `del dict[key]`          | `delete obj[key]`         | `map.delete(key)`     |
+| 크기 확인         | `size()`               | `len(dict)`              | `Object.keys(obj).length` | `map.size`            |
+| 키 존재 여부      | `containsKey(key)`     | `key in dict`            | `key in obj`              | `map.has(key)`        |
+| 값 존재 여부      | `containsValue(value)` | `value in dict.values()` | -                         | -                     |
+| 키 목록 가져오기  | `keySet()`             | `dict.keys()`            | `Object.keys(obj)`        | `map.keys()`          |
+| 값 목록 가져오기  | `values()`             | `dict.values()`          | `Object.values(obj)`      | `map.values()`        |
+| 키-값 쌍 가져오기 | `entrySet()`           | `dict.items()`           | `Object.entries(obj)`     | `map.entries()`       |
+| 모든 요소 제거    | `clear()`              | `dict.clear()`           | -                         | `map.clear()`         |
+
 :::
 
 ## static

@@ -9,20 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>객체 지향 프로그래밍 &#8212; surdarla-book</title>
-  
-  
-  
+
+
+
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  
+
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 <link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-  
+
   <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/my_css.css?v=20733ca3" />
-  
+
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
@@ -106,6 +106,8 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-BMRNT7D57Q');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/basics/python/OOP';</script>
     <link rel="canonical" href="https://surdarla.github.io/scripts/basics/python/OOP.html" />
     <link rel="icon" href="../../../_static/my_favi.png"/>
@@ -117,30 +119,30 @@ commentsRunWhenDOMLoaded(addUtterances);
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-  
-  
+
+
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-  
-  
+
+
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
+
   <div id="pst-scroll-pixel-helper"></div>
-  
+
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-  
+
   <input type="checkbox"
           class="sidebar-toggle"
           id="pst-primary-sidebar-checkbox"/>
   <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
+
   <input type="checkbox"
           class="sidebar-toggle"
           id="pst-secondary-sidebar-checkbox"/>
   <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
+
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
@@ -169,49 +171,49 @@ commentsRunWhenDOMLoaded(addUtterances);
   <div class="bd-header-announcement__content">Refactoing Ongoing ...</div>
 </aside>
 
-  
+
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
-  
+
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
 
-  
+
+
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
   <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
+
+
+
+
   </div>
-  
+
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
-  
-    
-  
+
+
+
 
 <a class="navbar-brand logo" href="../../../about.html">
-  
-  
-  
-  
-  
-    
-    
-      
-    
-    
+
+
+
+
+
+
+
+
+
+
     <img src="../../../_static/surdarla-logo_old.png" class="logo__image only-light" alt="surdarla-book - Home"/>
     <script>document.write(`<img src="../../../_static/surdarla-logo_old.png" class="logo__image only-dark" alt="surdarla-book - Home"/>`);</script>
-  
-  
+
+
 </a></div>
         <div class="sidebar-primary-item">
 
@@ -226,7 +228,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
+
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../about.html">
@@ -329,6 +331,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/20207.html">20207 : 달력</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1781.html">1781 : 컵라면</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/12018.html">12018 : Yonsei TOTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/2252.html">2252 : 줄 세우기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/1021.html">1021 : 회전하는 큐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/11729.html">11729 : 하노이 탑 이동순서</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/problem/twoSum.html">twoSum</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/data_structure.html">data_structure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -365,39 +371,39 @@ commentsRunWhenDOMLoaded(addUtterances);
     </div>
 </nav></div>
     </div>
-  
-  
+
+
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-  
+
   <div id="rtd-footer-container"></div>
 
 
       </div>
-      
+
       <main id="main-content" class="bd-main" role="main">
-        
-        
+
+
 
 <div class="sbt-scroll-pixel-helper"></div>
 
           <div class="bd-content">
             <div class="bd-article-container">
-              
+
               <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
-  
+
     <div class="header-article-items__start">
-      
+
         <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
 </button></div>
-      
+
     </div>
-  
-  
+
+
     <div class="header-article-items__end">
-      
+
         <div class="header-article-item">
 
 <div class="article-header-buttons">
@@ -411,15 +417,15 @@ commentsRunWhenDOMLoaded(addUtterances);
     <i class="fab fa-github"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
+
+
+
       <li><a href="https://github.com/surdarla/surdarla.github.io" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
@@ -427,16 +433,16 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-      
-      
-      
-      
+
+
+
+
       <li><a href="https://github.com/surdarla/surdarla.github.io/issues/new?title=Issue%20on%20page%20%2Fscripts/basics/python/OOP.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
@@ -444,7 +450,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-      
+
   </ul>
 </div>
 
@@ -458,15 +464,15 @@ commentsRunWhenDOMLoaded(addUtterances);
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
+
+
+
       <li><a href="../../../_sources/scripts/basics/python/OOP.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
@@ -474,17 +480,17 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__text-container">.md</span>
 </a>
 </li>
-      
-      
-      
-      
+
+
+
+
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
@@ -492,7 +498,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-      
+
   </ul>
 </div>
 
@@ -504,7 +510,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-expand"></i>
@@ -536,37 +542,44 @@ document.write(`
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
-      
+
     </div>
-  
+
 </div>
 </div>
-              
-              
+
+
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>객체 지향 프로그래밍</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
-            
+
             <div>
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">객체는 자율적임 책임을 진다</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">캡슐화</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">다형성</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-overloading">method overloading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-overriding">method overriding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-overriding">field overriding</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
     </div>
 </div>
 
-              
-                
+
+
 <div id="searchbox"></div>
                 <article class="bd-article">
-                  
+
   <section class="tex2jax_ignore mathjax_ignore" id="oop">
 <span id="id1"></span><h1>객체 지향 프로그래밍<a class="headerlink" href="#oop" title="Link to this heading">#</a></h1>
 <div class="sd-rounded-3 sd-border-2 sd-shadow-md sd-p-5 sd-m-5 docutils">
@@ -589,6 +602,117 @@ document.write(`
 <li><p>책임 : response, 반응, resposible?. 자판기에 동전 넣으면 나올 것이 나와줘야한다.</p></li>
 <li><p>메시징 : 객체가 다른 객체에 메소드를 호출하는 것, method call</p></li>
 </ul>
+</section>
+<section id="id3">
+<h2>캡슐화<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>encapsulation 캡슐화는 관련된 것을 모아서 가지고 있는 것을 말한다. 관련된 것을 잘 모을수록 정보의 응집도(Cohesion)이 높다고 표현한다. 좋은 객체는 <strong>응집도는 높고 (객체와 객체간에는)결합도(coupling)은 낮다</strong>. 물건을 사용하기 편하려면 결합도가 낮아야한다.</p>
+</section>
+<section id="id4">
+<h2>다형성<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><strong>Polymorphism</strong>은 해당 프로그래밍 언어의 자료형 체계의 성질을 나타내는 것이다. 프로그램 언어의 각 요소(constant, variable, funtion, object, method)이 다양한 자료형(type)에 속하는 것이 허가되는 성질을 가리킨다. 반댓말은 단형성으로, 프로그램 언어의 각 요소가 한 가지 형태만 가지는 성질을 가리킨다.</p>
+<section id="method-overloading">
+<h3>method overloading<a class="headerlink" href="#method-overloading" title="Link to this heading">#</a></h3>
+<p>다형성에 대한 설명이 한국말인데 겁나게 어렵다. 다형성을 활용한 방법 중의 하나인 method overloading의 예시를 직접 확인해보면 조금 이해하기 쉬울 것이다. <code class="docutils literal notranslate"><span class="pre">System.out.println()</span></code>을 보자. 여기 안에 들어갈 수 있는 인자는 int, float, double, String 등이 될 수 있다. 중요한건 메소드는 인자에 변화하지 않고 출력이라는 기능을 사용할 때는 전부 동일하게 사용한다. 이름을 잘 지은 것이다. printIntln, printFloatln 등으로 변수에 따라 전부 다른 메소드를 사용한다면 외워야할 것이 몇 배는 늘어날 것이다.</p>
+<p>메서드의 이름은 같고 매개변수의 갯수나 타입이 다른 함수를 정의하는 것을 말한다. 리턴값만을 다르게 갖는 오버로딩은 작성할 수 없다.</p>
+<blockquote>
+<div><p>요지는 내가 힘들게 만들어서 사용하는 사람은 쉽게 사용하도록 만드는 과정이다.</p>
+</div></blockquote>
+</section>
+<section id="method-overriding">
+<h3>method overriding<a class="headerlink" href="#method-overriding" title="Link to this heading">#</a></h3>
+<p>부모 클래스의 메서드를 자식 클래스가 재정의하는 것을 말한다. 메서드의 이름은 물로 파라미터의 갯수나 타입도 동일해야 하며, 주로 상위 클래스의 동작을 상속받은 하위 클래스에서 변경하기 위해서 사용된다. 기억해야할 것은 <strong>메서드가 오버라이딩 되면 무조건 자식의 메서드가 실행된다.</strong> 참조 타입이 부모 타입이라고 하더라도 실제 동작은 인스턴스에서 오버라이딩 된 기능이 동작하는 것이다. 자식이기는 부모 없다</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bus</span><span class="p">();</span>
+<span class="n">car</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>car도 <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">run()</span></code> 메서드를 가지고 있고, bus도 <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">run()</span></code> 메서드를 가지고 있다면 <span class="math notranslate nohighlight">\(\to\)</span> bus의 run() 메서드가 실행된다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Car</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bus</span><span class="p">();</span>
+<span class="n">Bus</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Bus</span><span class="p">)</span><span class="n">c1</span><span class="p">;</span>
+
+<span class="n">Car</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">이층버스</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>이렇게 되면 c1이 참조하는 Bus instance를 Bus 타입으로 변환해서 b2가 참조하게 하라는 의미이다. 자식 인스턴스를 부모 타입의 참조 변수로 참조하는 것은 당연하게 가능하다. 버스를 상속받고 있는 이층 버스가 있다고 생각해보자. “이층버스는 자동차다”. 이것은 말이 되지만, 모든 자동차는 이층버스라고 하는 것은 틀린 말이 된다.</p>
+</section>
+<section id="field-overriding">
+<h3>field overriding<a class="headerlink" href="#field-overriding" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Parent.java</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos">2</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span class="linenos">3</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printI</span><span class="p">(){</span>
+<span class="linenos">4</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;parent - printI() : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="linenos">5</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Child.java</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Child</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="p">{</span>
+<span class="hll"><span class="linenos">2</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</span><span class="linenos">3</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printI</span><span class="p">(){</span>
+<span class="linenos">4</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;child - printI() : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="linenos">5</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">Exam01</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Exam01</span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
+<span class="linenos"> 3</span><span class="w">        </span><span class="n">Parent</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Parent</span><span class="p">();</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">i</span><span class="p">);</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="n">p1</span><span class="p">.</span><span class="na">printI</span><span class="p">();</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="n">Child</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Child</span><span class="p">();</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="na">i</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">c1</span><span class="p">.</span><span class="na">printI</span><span class="p">;</span>
+<span class="linenos">10</span>
+<span class="hll"><span class="linenos">11</span><span class="w">        </span><span class="n">Parent</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Child</span><span class="p">();</span><span class="w"> </span><span class="c1">// child는 parent의 자식</span>
+</span><span class="hll"><span class="linenos">12</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">p2</span><span class="p">.</span><span class="na">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</span><span class="hll"><span class="linenos">13</span><span class="w">        </span><span class="n">p2</span><span class="p">.</span><span class="na">printI</span><span class="p">();</span><span class="w"> </span><span class="c1">// 15</span>
+</span><span class="linenos">14</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">15</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>필드는 type을 따라가고 메소드는 오버라이딩 된 자식의 메소드가 실행된다. 마지막 두 줄이 주요한데, p2.i = 5, p2.printI() = 15의 결과가 나온다. 메소드는 오버라이딩 되면 무조건 자식의 것을 실행한다고 위에서 암기했었다. 부모의 필드값(i)은 현재 5이다. 그래서 필드를 그냥 실행(p2.i)을 하면 5가 나온다.</p>
+<p>하지만 method를 실행하면(p2.printI()) 15가 나온다. 필드가 오버라이딩 되서 자식의 값이 사용되다면 부모 클래스를 만든 사람이 예상하지 못한 결과가 출력될 것이기 때문이다. 그렇기 때문에 필드는 부모 타입을 따라간다.</p>
+<p>method overriding만 기억을 하면 된다. 이는 정보 은닉(information hiding)이라는 객체 지향의 중요한 특징이기 때문이다. <strong>필드는 직접 접근하는 코드는 사용하면 안된다.</strong> 메서드를 통해서만 필드값을 사용해야한다. 접근지정자를 사용해서 은닉하게 된다.</p>
+<script
+type="text/javascript"
+src="https://utteranc.es/client.js"
+async="async"
+repo="surdarla/surdarla.github.io"
+issue-term="pathname"
+theme="github-light"
+label="💬 comment"
+crossorigin="anonymous"
+/></section>
 </section>
 </section>
 
@@ -613,14 +737,14 @@ document.write(`
     <script>kernelName = 'python3'</script>
 
                 </article>
-              
 
-              
-              
-              
-              
+
+
+
+
+
                 <footer class="prev-next-footer d-print-none">
-                  
+
 <div class="prev-next-area">
     <a class="left-prev"
        href="pandas.html"
@@ -642,11 +766,11 @@ document.write(`
     </a>
 </div>
                 </footer>
-              
+
             </div>
-            
-            
-              
+
+
+
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
@@ -657,56 +781,67 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">객체는 자율적임 책임을 진다</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">캡슐화</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">다형성</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-overloading">method overloading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-overriding">method overriding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-overriding">field overriding</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
 </div></div>
-              
-            
+
+
           </div>
           <footer class="bd-footer-content">
-            
+
 <div class="bd-footer-content__inner container">
-  
+
   <div class="footer-item">
-    
+
 <p class="component-author">
 By Surdarla
 </p>
 
   </div>
-  
+
   <div class="footer-item">
-    
+
 
   <p class="copyright">
-    
+
       © Copyright 2024, Surdarla.
       <br/>
-    
+
   </p>
 
   </div>
-  
+
   <div class="footer-item">
-    
+
   </div>
-  
+
   <div class="footer-item">
-    
+
 <div class="extra_footer">
+<<<<<<< HEAD
   based on jupyter-book, last updated: 2024-11-01 14:12:36
+=======
+  based on jupyter-book, last updated: 2024-10-30 11:14:15
+>>>>>>> c424194691c9cf2ab72e6a646a5c7648c066f8cc
 </div>
   </div>
-  
+
 </div>
           </footer>
-        
+
 
       </main>
     </div>
   </div>
-  
+
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
 <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
