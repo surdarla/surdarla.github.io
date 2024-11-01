@@ -1,4 +1,7 @@
+=(search)
 # Search 탐색
+
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](<YOUR URL HERE>)
 
 ```{figure} ../../images/bfsvsdfs.gif
 ---
@@ -18,9 +21,9 @@ vs Greedy
 
 When?
 : 1. (가중치 없으면서) 모든 경우 구할 때 DFS
-  2. 검색 대상 그래프가 너무 크면 DFS
-  3. (가중치 없으면서) 최단거리를 구해야할 때는 BFS
-  4. 검색 대상이 규모가 작고, 시작 지점부터 멀지 않다면 BFS
+  1. 검색 대상 그래프가 너무 크면 DFS
+  2. (가중치 없으면서) 최단거리를 구해야할 때는 BFS
+  3. 검색 대상이 규모가 작고, 시작 지점부터 멀지 않다면 BFS
 
 (bfs)=
 ## Breadth First Search
@@ -60,21 +63,21 @@ bfs(graph, 1, visited)
 **P** : root node\
 **C** : child node
 
-void CheckNode(node P)
-{
-  node C;
-  if (promising(P)) {
-    if (there is a solution of P),
-      then writhe the solution
-    else {
-      for (each child node C of P) {
-        checkNode(C)
-      }
-    }
-  }
-  else
-    backtrack to parent node P
-}
+void CheckNode(node P)\
+{\
+  node C;\
+  if (promising(P)) {\
+    if (there is a solution of P),\
+      then writhe the solution  \
+    else {\
+      for (each child node C of P) {\
+        checkNode(C)\
+      }\
+    }\
+  }\  
+  else\
+    backtrack to parent node P\
+}\
 ```
 
 ```{raw} html
